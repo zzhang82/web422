@@ -11,5 +11,5 @@ Most recent notes are at the top of the page.
 | ---- | ----- | ------------- | ----- |
 | 3 | Intro | - | - |
 | 2 | Intro | - | - |
-| 1 | Intro | - | - |
+| 1 | Intro<br>[link to notes](/web422/notes/week01/) | - | - |
 

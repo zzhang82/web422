@@ -7,8 +7,8 @@ layout: default
 
 The theme for this week is to transition your success in the previous course to the new topics in this course.
 
-We begin with [flurb](/notes/flurb). 
+We begin with [flurb](/web422/notes/flurb). 
 
-Then, we discuss [blat](/notes/blat).
+Then, we discuss [blat](/web422/notes/blat).
 
-Remember to always be connected to the [learning resources](/resources).
+Remember to always be connected to the [learning resources](/web422/resources).

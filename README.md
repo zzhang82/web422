@@ -1,37 +1,32 @@
-## Welcome to GitHub Pages
+### WEB422 - Web Programming for Apps and Services
 
-You can use the [editor on GitHub](https://github.com/sictweb/web422/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is the home page for the WEB422 course.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+> This is the third course in the web programming course sequence. Students learn to design and create moderately complex web applications and services that can be deployed at scale. The JavaScript language is used, with widely-used and powerful tools and frameworks. The major topic themes of this course include a study of the patterns for app and service development, using frameworks that enable rich and functional browser apps, working with robust and scalable data storage platforms, and deployment methodologies.
 
-### Markdown
+<br>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Coming into this course, we assume that you have knowledge of and experience in:
+* JavaScript
+* Creating Node.js (with Express and MongoDB) apps on a web server
+* Performing a number of tasks that support users on the web
 
-```markdown
-Syntax highlighted code block
+In this WEB422 course, we build upon that knowledge. 
 
-# Header 1
-## Header 2
-### Header 3
+First, you will learn the foundations of client-side browser-based programming. We explore a range of frameworks and libraries.
 
-- Bulleted
-- List
+Then, you will learn the foundations of the Angular app development platform. 
 
-1. Numbered
-2. List
+Finally, you will learn more about Angular, while building rich and functional client-side browser-based apps.
 
-**Bold** and _Italic_ and `Code` text
+The following table has links to course content:
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sictweb/web422/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+| Link | Description |
+| ---- | ----------- |
+| [Course notes](/web422/notes/) | Weekly and daily class notes, and related information |
+| [Learning resources](/web422/resources) | A list of digital and physical resources that we’ll use during the course |
+| [Weekly schedule](/web422/#/) | Topics covered during the course, organized by week; includes test dates and assignment due dates |
+| [Graded work](/web422/#/) | Information about graded work and values |
+| [Policies and standards](/web422/#/) | Policies & standards that govern conduct and expectations in the course |
+| [Course outline](/web422/#/) | Official course outline from the College course outline system |
+| [Course addendum](/web422/#/) | Addendum that adds details to the course outline |
