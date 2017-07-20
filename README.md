@@ -19,6 +19,8 @@ Then, you will learn the foundations of the Angular app development platform.
 
 Finally, you will learn more about Angular, while building rich and functional client-side browser-based apps.
 
+<br>
+
 The following table has links to course content:
 
 | Link | Description |
