@@ -1,4 +1,4 @@
-### WEB422 - Web Programming for Apps and Services
+## WEB422 - Web Programming for Apps and Services
 
 This is the home page for the WEB422 course.
 
