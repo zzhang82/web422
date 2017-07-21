@@ -181,7 +181,7 @@ a {
   h6 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-weight: normal;
+    font-weight: /*normal*/bold;
     color: $section-headings-color;
   }
 
@@ -314,7 +314,7 @@ a {
   }
 
   hr {
-    height: 2px;
+    height: /*2px*/4px;
     padding: 0;
     margin: 1rem 0;
     background-color: $hr-border-color;
