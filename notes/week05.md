@@ -5,7 +5,7 @@ layout: default
 
 ## WEB422 Week 5 to 6 Notes
 
-The theme for the next week or more is to get started with the app development platform that we will use for the remainder of the course.
+The theme for the next week or more is to get started with the app development platform - Angular - that we will use for the remainder of the course.
 
 Remember to frequently use the [learning resources](/web422/resources).
 
