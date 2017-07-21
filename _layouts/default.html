@@ -15,7 +15,7 @@
         <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>-->
         <h2 class="project-tagline"><span style="font-size:xx-large;font-weight:700;">{{ site.title | default: site.github.repository_name }}</span> {{ site.description | default: site.github.project_tagline }}</h2>
         <a href="https://sictweb.github.io/web422/" class="btn">WEB422 home</a>
-        <a href="https://sictweb.github.io/web422/weekly-schedule/" class="btn">Schedule</a>
+        <a href="https://sictweb.github.io/web422/weekly-schedule" class="btn">Schedule</a>
         <a href="https://sictweb.github.io/web422/notes/" class="btn">Notes</a>
         <a href="https://sictweb.github.io/web422/resources" class="btn">Resources</a>
         {% if site.github.is_project_page %}
@@ -33,7 +33,6 @@
         <footer class="site-footer">
             <!-- new... -->
             <p>&copy; {{ site.time | date: '%Y' }} - Seneca School of ICT<br>
-            This document was most recently revised on {{ page.date | date: '%Y-%m-%d' }}</p>
             <!--{% if site.github.is_project_page %}
             <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
             {% endif %}
