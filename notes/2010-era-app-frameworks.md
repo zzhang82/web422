@@ -1,3 +1,8 @@
+---
+title: 2010-era app frameworks
+layout: default
+---
+
 ## Client app frameworks that appeared in 2010
 
 Including:

@@ -1,3 +1,8 @@
+---
+title: jQuery
+layout: default
+---
+
 ## jQuery
 
 Goal: DOM manipulation.

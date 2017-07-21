@@ -1,3 +1,8 @@
+---
+title: Angular getting started
+layout: default
+---
+
 ## Getting started with Angular
 
 Three core concepts:
