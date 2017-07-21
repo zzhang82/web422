@@ -7,7 +7,7 @@ layout: default
 
 This page has details about the graded work in WEB422, for the current academic term.
 
-> Placeholder text... the content below is tentative, and may be revised.
+Placeholder text... the content below is tentative, and may be revised.
 
 <br>
 
@@ -36,7 +36,7 @@ Each assignment will be worth 3% to 5% of your final course grade. The total val
 ### Summary
 
 Tests - about 12 - 50%  
-Assignments - about 8 - 50%
+Assignments - about 8 - 50%  
 
 **Make-up (replacement) tests?**
 
@@ -56,7 +56,7 @@ We don't do due date extensions for assignments, for a number of reasons, includ
 
 * They cause problems for other work that follows an assignment, because it leaves less time to complete the next piece of work.
 
-* They take your attention away from new topics in this course. You're less receptive – or will ignore – new topics that follow the ones that are tested on the assignment.
+* They take your attention away from new topics in this course. You're less receptive, or will ignore, new topics that follow the ones that are practiced on the assignment.
 
 * A due date extension is disrespectful to other students in the course, because it tells them that the work they did to meet the due date doesn't have value.
 
