@@ -17,7 +17,7 @@ We have planned twelve (12) tests during the term.
 
 The duration of each test will range from 10 to 20 minutes. Each test will be worth 3% to 5% of your final course grade. All tests will be hand-written, and are done at the beginning of the class timeslot. The total value of all tests will be 50%.
 
-If you miss a test, there is <u>no</u> opportunity to do a replacement test. However, absence due to illness or other reasons happen occasionally. As a result, you can miss up to two (2) tests, without suffering the loss of grades.
+If you miss a test, there is no opportunity to do a replacement test. However, absence due to illness or other reasons happen occasionally. As a result, you can miss up to two (2) tests, without suffering the loss of grades.
 
 The effect of this policy will be extended to all students. At the end of the course, your two lowest test results will be discarded, leaving your best ten results.
 
@@ -27,7 +27,7 @@ The effect of this policy will be extended to all students. At the end of the co
 
 We have planned eight (8) assignments during the term.
 
-Most assignments have a one-week lifetime. Most are independent of each other. If you do not submit an assignment by the due date, its grade is zero, and there is <u>no</u> opportunity to earn marks for a late submission.
+Most assignments have a one-week lifetime. Most are independent of each other. If you do not submit an assignment by the due date, its grade is zero, and there is no opportunity to earn marks for a late submission.
 
 Each assignment will be worth 3% to 5% of your final course grade. The total value of all assignments will be 50%. At the end of the course, the lowest assignment result will be discarded, leaving your best seven results.
 
@@ -42,7 +42,7 @@ Assignments - about 8 - 50%
 
 We don't do make-up or replacement tests, for a number of reasons, including the following:
 
-* Tests are designed, in part, to force you to prepare for class before you walk into the room. Doing a test after the class has happened just doesn't make sense.
+* Tests are designed, in part, to encourage you to prepare for class before you walk into the room. Doing a test after the class has happened just doesn't make sense.
 
 * Your lowest two test results are discarded before your final grade is calculated, so missing a test does not affect your final grade.
 
