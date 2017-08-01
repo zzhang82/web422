@@ -53,6 +53,19 @@ Video - [On the road to Angular 2](https://www.safaribooksonline.com/library/vie
 
 [Introduction to TypeScript: Static Typing for the Web](https://www.sitepoint.com/introduction-to-typescript/) - sitepoint
 
+[Why write JavaScript apps in TypeScript](https://yakovfain.com/2015/10/02/why-writing-javascript-applications-in-typescript/) - Yakov Fain
+* Good summary of the reasons
+* He has a book...  
+[Angular 2 Development with TypeScript](https://www.manning.com/books/angular-2-development-with-typescript)  
+Yakov Fain and Anton Moiseev  
+December 2016  
+ISBN 9781617293122 
+* Two free chapters from the book, [getting started](https://manning-content.s3.amazonaws.com/download/b/9d06b99-3e13-4f62-a395-8a6274bdf634/sample%20chapter%202.pdf), [component communications](https://manning-content.s3.amazonaws.com/download/4/f7270a7-5878-4a9b-aaf2-e2ab96ebe801/sample%20chapter%206.pdf) 
+* And some source code
+
+> Should seriously consider this book - it matches my original sequence pretty well  
+> Look at its detailed table of contents
+
 <br>
 
 ### JavaScript and ecosystem
@@ -112,10 +125,13 @@ Video - [On the road to Angular 2](https://www.safaribooksonline.com/library/vie
 [Angular 2 vs. React (dance-off)](https://medium.com/javascript-scene/angular-2-vs-react-the-ultimate-dance-off-60e7dfbc379c) - Medium
 
 [Why Angular 2 will be big in 2016](https://medium.com/codingthesmartway-com-blog/why-angular-2-will-be-big-in-2016-64c3e066f82e) - Medium
+* Simple design for a new component
 
 [AngularJS creator on Angular 2 etc.](http://blog.backand.com/angularjs-creator-misko-hevery-on-angular-2-and-more/) - blog
 
-[Why devs will embrace Angular 2 and TypeScript](https://www.voxxed.com/2016/02/why-java-developers-will-embrace-angular-2-and-typescript/) - blog
+[Why Java devs will embrace Angular 2 and TypeScript](https://www.voxxed.com/2016/02/why-java-developers-will-embrace-angular-2-and-typescript/) - blog
+* Very good article - *come back to this*
+* It also has a 50-minute video (which I did not watch)
 
 [Why we (Biznas) chose Angular 2 over React](https://blog.biznas.io/why-we-chose-angular-2-over-react-for-our-enterprise-software-development-work-392e2c9e39a9) - Biznas - blog
 
