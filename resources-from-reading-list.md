@@ -11,6 +11,19 @@ Markdown preview on macOS:
 
 <br>
 
+### New
+
+VS Code docs has setup info, e.g. [Running VS Code on Mac](https://code.visualstudio.com/docs/setup/mac)
+
+TypeScript docs [has a tutorial](http://www.typescriptlang.org/docs/home.html)
+
+After installation, [add the "code" command to the path](https://stackoverflow.com/a/39604469)
+
+[Using Angular in VS Code](https://code.visualstudio.com/docs/nodejs/angular-tutorial)
+
+
+<br>
+
 ### Angular coding and examples
 
 [Angular 2 Tutorial: Create a CRUD App with Angular CLI](https://www.sitepoint.com/angular-2-tutorial/) - sitepoint

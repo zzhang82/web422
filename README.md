@@ -27,8 +27,8 @@ The following table has links to course content:
 | ---- | ----------- |
 | [Course notes](/web422/notes/) | Weekly and daily class notes, and related information |
 | [Learning resources](/web422/resources) | A list of digital and physical resources that we’ll use during the course |
-| [Weekly schedule](/web422/#/) | Topics covered during the course, organized by week; includes test dates and assignment due dates |
-| [Graded work](/web422/#/) | Information about graded work and values |
+| [Weekly schedule](/web422/weekly-schedule) | Topics covered during the course, organized by week; includes test dates and assignment due dates |
+| [Graded work](/web422/graded-work) | Information about graded work and values |
 | [Policies and standards](/web422/#/) | Policies & standards that govern conduct and expectations in the course |
-| [Course outline](/web422/#/) | Official course outline from the College course outline system |
+| [Course outline](https://ict.senecacollege.ca/course/web422) | Official course outline from the College course outline system |
 | [Course addendum](/web422/#/) | Addendum that adds details to the course outline |
