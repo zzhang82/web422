@@ -19,8 +19,39 @@ TypeScript docs [has a tutorial](http://www.typescriptlang.org/docs/home.html)
 
 After installation, [add the "code" command to the path](https://stackoverflow.com/a/39604469)
 
-[Using Angular in VS Code](https://code.visualstudio.com/docs/nodejs/angular-tutorial)
+Should probably add the [Angular 2 snippets (John Papa)](https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2)  
+Should add to the software image?  
 
+Nice how-to docs - [Editing TypeScript](https://code.visualstudio.com/docs/languages/typescript) - VSCode
+
+[Using Angular in VS Code](https://code.visualstudio.com/docs/nodejs/angular-tutorial) - VSCode  
+Got part way through this - it works  
+
+Also has a [Node.js in VS Code tutorial](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial#_debugging-your-node-application) - VSCode 
+
+[MEAN stack with Angular 2 example](https://scotch.io/tutorials/mean-app-with-angular-2-and-the-angular-cli) - blog
+
+[MEAN app with Angular 2 example](http://thejackalofjavascript.com/developing-a-mean-app-with-angular-2-0/) - blog  
+Supposedly the MEAN.io site has (?) links to full examples that have a database etc.
+
+Yikes! Maybe this job is done for me... [Angular 2 education](https://github.com/timjacobi/angular-education) on GitHub 
+
+[Becoming a full stack dev in 2017](https://medium.com/coderbyte/a-guide-to-becoming-a-full-stack-developer-in-2017-5c3c08a1600c) - Medium
+
+Google search words - express rest content negotiation
+
+Riff: Google search words - node express mongo generator  
+This led to...  
+
+[Yeoman, Node, Restify, MongoDB](https://programmaticponderings.com/2016/06/22/scaffold-a-restful-api-with-yeoman-node-restify-and-mongodb/) - blog
+
+FYI - [restify.com](http://restify.com/) - alternative to Express, look for 'restify vs express' on Google
+
+[Node, Express, MongoDB](https://www.airpair.com/javascript/complete-expressjs-nodejs-mongodb-crud-skeleton) - blog
+
+On npmjs.com... [Node, Express, Mongo](https://www.npmjs.com/package/generator-node-express-mongo) - npm
+
+[Hapi vs. Express, with code examples](https://medium.com/@cabot_solutions/creating-restful-api-with-node-js-hapi-vs-express-ccb97a776c02) - Medium
 
 <br>
 
