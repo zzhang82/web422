@@ -3,11 +3,11 @@ title: Graded work
 layout: default
 ---
 
-## Learning resources
+## Graded work
 
 This page has details about the graded work in WEB422, for the current academic term.
 
-Placeholder text... the content below is tentative, and may be revised.
+> Placeholder text... the content below is tentative, and may be revised.
 
 <br>
 
@@ -40,7 +40,7 @@ Assignments - about 8 - 50%
 
 <br>
 
-**Make-up (replacement) tests?**
+**Make-up (replacement) tests? No.**
 
 We don't do make-up or replacement tests, for a number of reasons, including the following:
 
@@ -54,7 +54,7 @@ Therefore, no make-up or replacement tests.
 
 <br>
 
-**Due date extensions?**
+**Due date extensions? No.**
 
 We don't do due date extensions for assignments, for a number of reasons, including the following:
 

@@ -3,7 +3,7 @@ title: WEB422 Notes
 layout: default
 ---
 
-## WEB422 Notes
+## Notes
 
 Most recent notes are at the top of the table (below).  
 New notes will be published a few weeks before they're covered.  
