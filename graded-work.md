@@ -15,7 +15,7 @@ Placeholder text... the content below is tentative, and may be revised.
 
 We have planned twelve (12) tests during the term.
 
-The duration of each test will range from 10 to 20 minutes. Each test will be worth 3% to 5% of your final course grade. All tests will be hand-written, and are done at the beginning of the class timeslot. The total value of all tests will be 50%.
+The duration of each test will range from 10 to 20 minutes. Each test will be worth 3% to 5% of your final course grade. All tests will be hand-written, and will happen sometime during the class timeslot. The total value of all tests will be 50%.
 
 If you miss a test, there is no opportunity to do a replacement test. However, absence due to illness or other reasons happen occasionally. As a result, you can miss up to two (2) tests, without suffering the loss of grades.
 
@@ -38,6 +38,8 @@ Each assignment will be worth 3% to 5% of your final course grade. The total val
 Tests - about 12 - 50%  
 Assignments - about 8 - 50%  
 
+<br>
+
 **Make-up (replacement) tests?**
 
 We don't do make-up or replacement tests, for a number of reasons, including the following:
@@ -48,7 +50,9 @@ We don't do make-up or replacement tests, for a number of reasons, including the
 
 * Test answers are discussed during class, so doing a test after class is pointless.
 
-So, no make-up or replacement tests. 
+Therefore, no make-up or replacement tests. 
+
+<br>
 
 **Due date extensions?**
 
@@ -62,4 +66,4 @@ We don't do due date extensions for assignments, for a number of reasons, includ
 
 * Finally a due date extension is disrespectful to other professors and their courses, because it takes your attention away from their coursework while you are working on late work.
 
-So, no due date extensions.
+Therefore, no due date extensions.
