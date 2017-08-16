@@ -28,27 +28,156 @@ Proposed Detailed Topic List:
 <br>
 
 <table>
-<thead>
-<tr>
-<th>Week</th><th>Topic theme and coverage</th><th>Due</th><th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="/web422/notes/week01">1 - Course Introduction</a></td>
-<td>
-<ul>
-<li>Development Environment / Technology / Tools</li>
-<li>Introduction to Front-end web development / Single Page Applications</li>
-<li>Review: Node.js / Express</li>
-<li>Review: Creating a simple REST API in Express</li>
-<li>Review: Client-Side JavaScript (AJAX) & Bootstrap</li>
-</ul>
-</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
+    <thead>
+        <tr>
+            <th>Week</th>
+            <th>Topic theme and coverage</th>
+            <th>Due</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="/web422/notes/week01">1 - Course Introduction</a></td>
+            <td>
+                <ul>
+                    <li>Development Environment / Technology / Tools</li>
+                    <li>Introduction to Front-end web development / Single Page Applications</li>
+                    <li>Review: Node.js / Express</li>
+                    <li>Review: Creating a simple REST API in Express</li>
+                    <li>Review: Client-Side JavaScript (AJAX) & Bootstrap</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week02">2 - JS Utilities &amp; SASS</a></td>
+            <td>
+                <ul>
+                    <li>Review: jQuery</li>
+                    <li>jQuery UI & jQuery Bootstrap Components</li>
+                    <li>The Lodash JS Utility Library</li>
+                    <li>Moment.js for dates / times</li>
+                    <li>Introduction to SASS</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week03">3 - Mongoose &amp; React.js</a></td>
+            <td>
+                <ul>
+                    <li>Review: MongoDB (Mongoose) & Importing Existing Data</li>
+                    <li>Review: Modifying the DOM using jQuery / Bootstrap</li>
+                    <li>Introduction to React.js</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week04">4</a></td>
+            <td>
+                <ul>
+                    <li>...</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week05">5</a></td>
+            <td>
+                <ul>
+                    <li>...</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week06">6</a></td>
+            <td>
+                <ul>
+                    <li>...</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week07">7</a></td>
+            <td>
+                <ul>
+                    <li>...</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week08">8</a></td>
+            <td>
+                <ul>
+                    <li>...</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week09">9</a></td>
+            <td>
+                <ul>
+                    <li>...</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week10">10</a></td>
+            <td>
+                <ul>
+                    <li>...</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week11">11</a></td>
+            <td>
+                <ul>
+                    <li>...</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week12">12</a></td>
+            <td>
+                <ul>
+                    <li>...</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="/web422/notes/week13">13</a></td>
+            <td>
+                <ul>
+                    <li>...</li>
+                </ul>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
 </table>
 
 <br>
