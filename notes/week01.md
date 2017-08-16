@@ -31,4 +31,14 @@ More about web services, adding them to the back end app
 * Code endpoints (resources) for typical GET and POST operations
 * Adding web client app features incrementally
 
+(intro blurb here)
+
+Links to notes...
+
+[Development environment setup](setup-dev-env)
+
+[Back end project setup](setup-base-project)
+
+[Web services (re)introduction](intro-web-services)
+
 <br>

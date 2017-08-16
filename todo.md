@@ -3,6 +3,10 @@ title: Web site to do tasks
 layout: default
 ---
 
+Lecture and lab config - verify delivery model  
+
+DB3078 computer configuration - versions of runtimes and editors  
+
 Nav menu, responsive
 
 Maybe Bootstrap styling
