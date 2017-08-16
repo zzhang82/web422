@@ -23,7 +23,7 @@ Week | Topic theme and coverage | Due | Value
 
 <br>
 
-Proposed, Detailed Topic List:
+Proposed Detailed Topic List:
 
 <br>
 
