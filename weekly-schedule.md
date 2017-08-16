@@ -78,102 +78,62 @@ Proposed Detailed Topic List:
             <td></td>
         </tr>
         <tr>
-            <td><a href="/web422/notes/week04">4</a></td>
-            <td>
-                <ul>
-                    <li>...</li>
-                </ul>
-            </td>
+            <td><a href="/web422/notes/week04">4 - Introduction to AngularJS, Ember & Backbone</a></td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td><a href="/web422/notes/week05">5</a></td>
-            <td>
-                <ul>
-                    <li>...</li>
-                </ul>
-            </td>
+            <td><a href="/web422/notes/week05">5 - Introduction to Angular</a></td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td><a href="/web422/notes/week06">6</a></td>
-            <td>
-                <ul>
-                    <li>...</li>
-                </ul>
-            </td>
+            <td><a href="/web422/notes/week06">6 - Introduction to Angular (Cont'd)</a></td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td><a href="/web422/notes/week07">7</a></td>
-            <td>
-                <ul>
-                    <li>...</li>
-                </ul>
-            </td>
+            <td><a href="/web422/notes/week07">7 - Angular Components</a></td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td><a href="/web422/notes/week08">8</a></td>
-            <td>
-                <ul>
-                    <li>...</li>
-                </ul>
-            </td>
+            <td><a href="/web422/notes/week08">8 - Angular Routing</a></td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td><a href="/web422/notes/week09">9</a></td>
-            <td>
-                <ul>
-                    <li>...</li>
-                </ul>
-            </td>
+            <td><a href="/web422/notes/week09">9 - Services &amp; dependency injection in Angular</a></td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td><a href="/web422/notes/week10">10</a></td>
-            <td>
-                <ul>
-                    <li>...</li>
-                </ul>
-            </td>
+            <td><a href="/web422/notes/week10">10 - Complex Forms </a></td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td><a href="/web422/notes/week11">11</a></td>
-            <td>
-                <ul>
-                    <li>...</li>
-                </ul>
-            </td>
+            <td><a href="/web422/notes/week11">11 - Putting it All Together</a></td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td><a href="/web422/notes/week12">12</a></td>
-            <td>
-                <ul>
-                    <li>...</li>
-                </ul>
-            </td>
+            <td><a href="/web422/notes/week12">12 - Putting it All Together (cont'd)</a></td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td><a href="/web422/notes/week13">13</a></td>
-            <td>
-                <ul>
-                    <li>...</li>
-                </ul>
-            </td>
+            <td><a href="/web422/notes/week13">13 - Course Review</a></td>
+            <td></td>
             <td></td>
             <td></td>
         </tr>
