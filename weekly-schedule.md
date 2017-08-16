@@ -22,3 +22,18 @@ Week | Topic theme and coverage | Due | Value
 [11-13](/web422/notes/week11) | Putting it all together, app create / modify / assemble
 
 <br>
+
+Proposed Detailed Topic List:
+
+<br>
+
+Week | Topic theme and coverage | Due | Value
+:---: | --- | :---: | :---:
+[1](/web422/notes/week01) | Course Introduction: <br />
+* Development Environment / Technology / Tools
+* Introduction to Front-end web development / Single Page Applications
+* Review: Node.js / Express
+* Review: Creating a simple REST API in Express
+* Review: Client-Side JavaScript (AJAX) & Bootstrap
+
+<br>
