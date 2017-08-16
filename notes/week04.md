@@ -5,4 +5,4 @@ layout: default
 
 ## WEB422 Week 4 Notes
 
-( Coming Soon... )
+Coming Soon...
