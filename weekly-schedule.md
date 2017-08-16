@@ -132,8 +132,13 @@ Proposed Detailed Topic List:
             <td></td>
         </tr>
         <tr>
-            <td><a href="/web422/notes/week13">13 - Course Review</a></td>
-            <td></td>
+            <td>13 - Course Review</td>
+            <td>
+                <ul>
+                    <li>Review Final Application</li>
+                    <li>Help with outstanding projects</li>
+                </ul>
+            </td>
             <td></td>
             <td></td>
         </tr>
