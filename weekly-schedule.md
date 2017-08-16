@@ -27,8 +27,28 @@ Proposed Detailed Topic List:
 
 <br>
 
-Week | Topic theme and coverage | Due | Value
-:---: | --- | :---: | :---:
-[1 - Course Introduction](/web422/notes/week01) | <ul><li>Development Environment / Technology / Tools</li><li>Introduction to Front-end web development / Single Page Applications</li><li>Review: Node.js / Express</li><li>Review: Creating a simple REST API in Express</li><li>Review: Client-Side JavaScript (AJAX) & Bootstrap</li></ul>
+<table>
+<thead>
+<tr>
+<th>Week</th><th>Topic theme and coverage</th><th>Due</th><th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/web422/notes/week01">1 - Course Introduction</a></td>
+<td>
+<ul>
+<li>Development Environment / Technology / Tools</li>
+<li>Introduction to Front-end web development / Single Page Applications</li>
+<li>Review: Node.js / Express</li>
+<li>Review: Creating a simple REST API in Express</li>
+<li>Review: Client-Side JavaScript (AJAX) & Bootstrap</li>
+</ul>
+</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 <br>
