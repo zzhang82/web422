@@ -17,6 +17,14 @@ Here's how the topic notes are presented:
 
 Each week has its own page (e.g. week01, week02, etc.). 
 
-This page will state the *theme*, and have content that will discuss and link to separate *topic* pages.
+This page will introduce or state the *theme*, and have content that will discuss and link to separate *topic* pages.
 
 The idea is that a specific topic page can be used as a module, which can be moved around or replaced in future versions of the course. The editing task will hopefully be easier too.
+
+**Topic page**
+
+Each topic has its own page (e.g. intro-web-services, etc.). 
+
+Many topic pages will *guide* the reader to read (or go through) an external article, post, tutorial, or document. In this course, we will prefer to re-use excellent content that already exists, instead of content authored by the course professors. 
+
+However, when necessary, the course professors will create new and original content. 

@@ -6,6 +6,10 @@ This is the home page for the WEB422 course.
 
 <br>
 
+> **To do** - Insert diagram that shows the topic progression from WEB222, through WEB322, and into this course, WEB422
+
+<br>
+
 Coming into this course, we assume that you have knowledge of and experience in:
 * JavaScript
 * Creating Node.js (with Express and MongoDB) apps on a web server
