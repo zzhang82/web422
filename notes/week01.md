@@ -35,10 +35,12 @@ More about web services, adding them to the back end app
 
 Links to notes...
 
+We'll be jumping around a bit. No straight line or step-by-step recipe. Some overlap, some repetition (but that's OK for connecting the topics together).
+
 [Development environment setup](setup-dev-env)
 
-[Back end project setup](setup-base-project)
-
 [Web services (re)introduction](intro-web-services)
+
+[Back end project setup](setup-base-project)
 
 <br>

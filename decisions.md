@@ -5,6 +5,10 @@ layout: default
 
 Most recent decisions are at the top.
 
+**2017-08-18**
+
+(more to come)
+
 **2017-08-17**
 
 Pat items:
@@ -24,7 +28,7 @@ Other and general items:
 * No "review" periods during the course - all content
 * Delivery was fixed, now 2 class then 2 lab (as originally requested)
 
-Software updates in the DB3078 Mac mini lab (from above):
+Software updates in the DB3078 Mac mini lab (mentioned above):
 * macOS standard maintenance release update
 * Chrome and Firefox version update
 * Update Visual Studio Code to latest
@@ -38,3 +42,9 @@ Software updates in the DB3078 Mac mini lab (from above):
 * Remove RoboMongo and install Robo 3T (the updated version) here: https://robomongo.org/download
 
 For the software that checks for updates, turn that feature off.
+
+**2017-07-22**
+
+Other and general items:
+* We'll start out (and try to use) GitHub Pages for the 422 web site for students
+* In the future, we'll consider moving the 222 and 322 content there

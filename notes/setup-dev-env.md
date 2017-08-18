@@ -17,6 +17,8 @@ Sketch out (or describe) the goal:
 
 TBA
 
+Include coverage of Postman, and a bit of sample use.
+
 <br>
 
 ### Using a sample project
