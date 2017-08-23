@@ -46,8 +46,9 @@ Review
 
 New
 
-* Using jQuery to talk to the Teams API & Update the DOM
-* jQuery UI 
+* Using jQuery to talk to the Teams API & Update the DOM (creating / appending elements, etc)
+* Exercise in using jQuery plugins with Bootstrap (modal
+* Incorporating a jQuery plugin (ie: flot) render information
 
 
 
