@@ -32,6 +32,26 @@ No concept of an underlying data model.
 
 <br>
 
+(jQuery Topics - Rough)
+
+Review
+
+* Including jQuery in our Projects 
+  * Client Side JS & $(document).ready()
+* jQuery Selectors 
+  * Accessing the Selected Elements
+* Event Handling
+* DOM Modification
+* Using AJAX
+
+New
+
+* Using jQuery to talk to the Teams API & Update the DOM
+* jQuery UI 
+
+
+
+
 ### Other libraries
 
 Including:
