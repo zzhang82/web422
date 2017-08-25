@@ -6,7 +6,7 @@ layout: default
 ## Notes
 
 Most recent notes are at the top of the table (below).  
-New notes will be published a few weeks before they're covered.  
+New notes will be published as they become available.  
 
 | Week | Theme | Due this week | Value |
 | ---- | ----- | ------------- | ----- |
