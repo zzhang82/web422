@@ -7,7 +7,7 @@ This is the home page for the WEB422 course.
 <br>
 
 
-![Web Topic Progression](https://raw.githubusercontent.com/sictweb/resources/58596ab9/big-picture-web.png)
+<img src="https://raw.githubusercontent.com/sictweb/resources/58596ab9/big-picture-web.png">
 
 
 <br>
