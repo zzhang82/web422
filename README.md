@@ -9,7 +9,6 @@ This is the home page for the WEB422 course.
 
 ![Web Topic Progression](https://raw.githubusercontent.com/sictweb/resources/58596ab9/big-picture-web.png)
 
-> **To do** - Insert diagram that shows the topic progression from WEB222, through WEB322, and into this course, WEB422
 
 <br>
 
