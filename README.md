@@ -7,7 +7,9 @@ This is the home page for the WEB422 course.
 <br>
 
 
-<img src="https://raw.githubusercontent.com/sictweb/resources/58596ab9/big-picture-web.png">
+
+
+![Big Picture](https://raw.githubusercontent.com/sictweb/resources/58596ab9/big-picture-web.png "Big Picture") 
 
 
 <br>
