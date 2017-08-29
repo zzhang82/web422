@@ -49,6 +49,8 @@ Most assignments have a one-week lifetime. Most are independent of each other. I
 
 Each assignment will be worth 5% of your final course grade. The total value of all assignments will be 40%. At the end of the course, the lowest assignment result will be discarded, leaving your best seven results.
 
+<br />
+
 ### Summary
 
 Tests - about 12 - 60%  
