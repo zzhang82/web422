@@ -47,8 +47,7 @@ There are several required online resources:
 
 * JavaScript Reference
   * [JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-  * (Suggested) [You Don't Know JavaScript](https://github.com/getify/You-Dont-Know-JS)
-
+  * (Suggested) [You Don't Know JavaScript](https://github.com/getify/You-Dont-Know-JS)<br><br>
 
 * [DOM Reference](https://developer.mozilla.org/en-US/docs/DOM)
 
