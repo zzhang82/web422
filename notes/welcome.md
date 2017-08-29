@@ -69,7 +69,7 @@ During the course, the professor(s) will guide the student in the installation, 
 Every class/session will have notes posted on this web site.
 
 All notes will be linked from the index page:  
-[sictweb.github.io/web422/notes/](notes)  
+[sictweb.github.io/web422/notes/](/web422/notes)  
 Study that page's URI to learn the naming convention for a specific weekly notes page.
 
 Your professor(s) plan to post the notes at least two days before the class/session begins. Before you come into a class, you are expected to read and process the topics covered in the notes.
