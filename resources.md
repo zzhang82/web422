@@ -7,8 +7,6 @@ layout: default
 
 This page has information about and links to learning resources that you will use in this course.
 
-> Tentative; to be discussed and negotiated
-
 <br>
 
 ### Previous courses
@@ -90,7 +88,7 @@ Google [web developers](https://developers.google.com/web/fundamentals/) content
 [Beginning Angular 2](https://www.amazon.com/Beginning-Angular-Typescript-updated-ebook/dp/B01N9ZUHBA/) - Greg Lim  
 ![Book Beginning Angular 2](media/book-beginning-angular-2.png)
 
-### Other (to be discussed, organized, edited)
+### Other
 
 **Common / core**  
 JavaScript  
@@ -107,17 +105,17 @@ Angular (which is NOT AngularJS, a legacy technology)
 Alternatives:  
 * React  
 * Knockout  
-* Aurelia  
+* Ember
 * and many others  
 
 **State management**  
-TBA (flux, redux, ?)  
-[JSON data API](http://jsonplaceholder.typicode.com)  
+<a href="/web422">Our own "Teams" API</a><br>
+[JSON data API - jsonplaceholder](http://jsonplaceholder.typicode.com)  
 
-**To be categorized**  
+<!--**To be categorized**  
 RxJS (ReactiveX library for JavaScript) - compose async and event-based programs using observables and LINQ-style queries  
 Was known as "Reactive Extensions"  
-[reactivex.io - official docs](http://reactivex.io/rxjs/manual/overview.html#introduction)  
+[reactivex.io - official docs](http://reactivex.io/rxjs/manual/overview.html#introduction) --> 
 
 **HTML and CSS**  
 [CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) - MDN  
