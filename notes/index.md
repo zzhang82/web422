@@ -24,6 +24,7 @@ Please note: new notes will be published as they become available.
 <li>Dev env setup</li>
 <li>Back end setup, including base project</li>
 <li>Re-introduction to web services, and create some resources</li>
+</ul>
 </td>
 </tr>
 <tr>
