@@ -11,8 +11,6 @@ It is up to the individual faculty member to inform you about their availability
 
 If you need help debugging your code, please make an appointment with your professor during their office hours so that you can work through the solution together.
 
-<br>
-
 ### Lectures & Student Conduct
 
 * Be on time for class
@@ -33,8 +31,6 @@ If you need help debugging your code, please make an appointment with your profe
 
 Please Note: The following is taken directly from the <a href="/web422/graded-work">Graded Work</a> section of the website:
 
-<br>
-
 ### Tests
 
 We have planned twelve (12) tests during the term.
@@ -45,8 +41,6 @@ If you miss a test, there is no opportunity to do a replacement test. However, a
 
 The effect of this policy will be extended to all students. At the end of the course, your two lowest test results will be discarded, leaving your best ten results.
 
-<br>
-
 ### Assignments
 
 We have planned eight (8) assignments during the term.
@@ -54,8 +48,6 @@ We have planned eight (8) assignments during the term.
 Most assignments have a one-week lifetime. Most are independent of each other. If you do not submit an assignment by the due date, its grade is zero, and there is no opportunity to earn marks for a late submission.
 
 Each assignment will be worth 5% of your final course grade. The total value of all assignments will be 40%. At the end of the course, the lowest assignment result will be discarded, leaving your best seven results.
-
-<br>
 
 ### Summary
 
