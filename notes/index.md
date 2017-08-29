@@ -24,15 +24,7 @@ Please note: new notes will be published as they become available.
 <li>Dev env setup</li>
 <li>Back end setup, including base project</li>
 <li>Re-introduction to web services, and create some resources</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td>2</td>
-<td>
-<ul>
-<li><a href="/web422/notes/week02">jQuery coverage, new code, and existing code/projects</a></li>
-<li>Some coverage of other useful libraries (Moment, Underscore)</li>
+<li>jQuery Review</li>
 </ul>
 </td>
 </tr>
