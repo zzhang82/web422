@@ -5,7 +5,7 @@ layout: default
 
 ## Back-End REST API Setup
 
-The following instructions are copied word-for-word from the README.md file for the teams-api sample (available Under <a href="/web422">"Code Examples"</a>)
+The following instructions are copied word-for-word from the README.md file for the teams-api sample (available Under <a href="https://github.com/sictweb/web422">"Code Examples"</a>)
 
 ## Teams API
 
@@ -19,7 +19,7 @@ If you open the "server.js" file, you will notice that the top 2 lines define th
 
 For this course we will be continuing to use MLab:
 
-1. Log into your MLab Account here: https://mlab.com/login/
+1. Log into your MLab Account here: [https://mlab.com/login/](https://mlab.com/login/)
 
 2. Create a new "MongoDB Deployment" by clicking on the "Create new" button on the top right of the table of existing deployments (you should see a few from your WEB322 assignments)
 
