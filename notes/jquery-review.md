@@ -3,7 +3,7 @@ title: jQuery Review
 layout: default
 ---
 
-## jQuery Review (from WEB322)
+## jQuery Review
 
 * Including jQuery in our projects
 * document ready state - $(function() {});
