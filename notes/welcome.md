@@ -91,7 +91,7 @@ In other words, do not come into the classroom expecting somehow to soak up know
 
 Also, beginning in Week 2 (usually the first class/session of the week), there will be a test sometime during the timeslot. The questions are based on the week's new topics.
 
-In the Wednesday class, we expect you to be an engaged and actively-learning participant. This means:
+In the Lecture class, we expect you to be an engaged and actively-learning participant. This means:
 * Listening effectively
 * Asking and answering questions
 * Writing notes
