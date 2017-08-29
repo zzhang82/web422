@@ -7,7 +7,6 @@ layout: default
 
 This page has information about and links to learning resources that you will use in this course.
 
-<br>
 
 ### Previous courses
 
@@ -18,29 +17,23 @@ Therefore, continue to use the content from the courses that you have successful
 * WEB222 - Web Programming Principles
 * WEB322 - Web Programming Tools and Frameworks
 
-<br>
 
 ### Developer tools
 
 * [Visual Studio Code](https://code.visualstudio.com/)  
 * Browsers (current versions of Chrome, Firefox, Safari, Opera, Edge)  
 * Browser dev tools  
-H* TTP inspector (e.g. [Postman](https://www.getpostman.com/))  
+* HTTP inspector (e.g. [Postman](https://www.getpostman.com/))
+* [Plunker](https://plnkr.co/)
+* [jsFiddle](https://jsfiddle.net/)
+* [jsBin](https://jsbin.com)
 
 You will need one or more devices. A College or personal desktop or laptop, and (likely) a personal mobile device (e.g. a smartphone).
 
-Other editors:
-
-* [Plunker](https://plnkr.co/)
-* JSFiddle, JS Bin
-
-<br>
 
 ### Required textbook
 
 None. This is a web programming course therefore, the best source for content is on the web!
-
-<br>
 
 ### Required online resources
 
@@ -74,17 +67,13 @@ Oh, and you should must know (and love!) the series of RFCs that describe HTTP, 
 
 ### Other resources
 
-* [W3C Standards](https://www.w3.org/standards/) - a very good resource
+* [W3C Standards](https://www.w3.org/standards/) 
 
 * Google [web developers](https://developers.google.com/web/fundamentals/) content
 
 * [Angular 4: From Theory to Practice](https://www.amazon.ca/dp/B01N9S0CZN/ref=docs-os-doi_0) - Asim Hussain (free!)
 
-![Angular 4](media/book-angular-4-theory-practice.png)  
-
 * [Beginning Angular 2](https://www.amazon.com/Beginning-Angular-Typescript-updated-ebook/dp/B01N9ZUHBA/) - Greg Lim
-
-![Book Beginning Angular 2](media/book-beginning-angular-2.png)
 
 ### Other
 
