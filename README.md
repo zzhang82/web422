@@ -35,4 +35,3 @@ The following table has links to course content:
 | [Graded work](/web422/graded-work) | Information about graded work and values |
 | [Policies and standards](/web422/policies-standards) | Policies & standards that govern conduct and expectations in the course |
 | [Course outline](https://ict.senecacollege.ca/course/web422) | Official course outline from the College course outline system |
-| [Course addendum](/web422/course-addendum) | Addendum that adds details to the course outline |
