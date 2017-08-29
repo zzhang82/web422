@@ -20,7 +20,7 @@ Please note: new notes will be published as they become available.
 <td>
 <ul>
 <li><a href="welcome">Welcome</a> to the WEB422 course</li>
-<li><a href="/web422/notes/week1">Intro to front end dev</a></li>
+<li><a href="/web422/notes/week01">Intro to front end dev</a></li>
 <li>Dev env setup</li>
 <li>Back end setup, including base project</li>
 <li>Re-introduction to web services, and create some resources</li>
