@@ -58,7 +58,7 @@ There are several required online resources:
 
 * Node Reference
   * [Node.js Documentation](https://nodejs.org/en/docs/)
-  * (Suggested) [nodejitsu](https://docs.nodejitsu.com/)<br>
+  * (Suggested) [nodejitsu](https://docs.nodejitsu.com/)<br><br>
 
 * [Express.js Documentation](https://expressjs.com/en/4x/api.html)
 
