@@ -7,8 +7,6 @@ layout: default
 
 This page has details about the graded work in WEB422, for the current academic term.
 
-> Placeholder text... the content below is tentative, and may be revised.
-
 <br>
 
 ### Tests
