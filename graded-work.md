@@ -7,6 +7,7 @@ layout: default
 
 This page has details about the graded work in WEB422, for the current academic term.
 
+<br>
 
 ### Tests
 
@@ -18,6 +19,7 @@ If you miss a test, there is no opportunity to do a replacement test. However, a
 
 The effect of this policy will be extended to all students. At the end of the course, your two lowest test results will be discarded, leaving your best ten results.
 
+<br>
 
 ### Assignments
 
@@ -27,6 +29,7 @@ Most assignments have a one-week lifetime. Most are independent of each other. I
 
 Each assignment will be worth 5% of your final course grade. The total value of all assignments will be 40%. At the end of the course, the lowest assignment result will be discarded, leaving your best seven results.
 
+<br>
 
 ### Summary
 
