@@ -78,8 +78,6 @@ Oh, and you should must know (and love!) the series of RFCs that describe HTTP, 
 
 * [Beginning Angular 2](https://www.amazon.com/Beginning-Angular-Typescript-updated-ebook/dp/B01N9ZUHBA/) - Greg Lim
 
-### Other
-
 **Front end frameworks**  
 * [Angular](https://angular.io/docs) (which is NOT AngularJS, a legacy technology)  
 
