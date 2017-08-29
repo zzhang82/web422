@@ -49,6 +49,7 @@ There are several required online resources:
   * [JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
   * (Suggested) [You Don't Know JavaScript](https://github.com/getify/You-Dont-Know-JS)
 
+
 * [DOM Reference](https://developer.mozilla.org/en-US/docs/DOM)
 
 * Official [Angular Documentation](https://angular.io/docs)
@@ -61,9 +62,11 @@ There are several required online resources:
 
 * [Express.js Documentation](https://expressjs.com/en/4x/api.html)
 
-Oh, and you should must know (and love!) the series of RFCs that describe HTTP, [7230](https://tools.ietf.org/html/rfc7230) through 7235. If you want a friendlier introduction to [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol), read its Wikipedia article.
+* [TypesSript Reference](https://www.typescriptlang.org/docs/home.html)
 
 <br>
+
+Oh, and you should must know (and love!) the series of RFCs that describe HTTP, [7230](https://tools.ietf.org/html/rfc7230) through 7235. If you want a friendlier introduction to [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol), read its Wikipedia article.
 
 ### Other resources
 
@@ -77,22 +80,17 @@ Oh, and you should must know (and love!) the series of RFCs that describe HTTP, 
 
 ### Other
 
-**Common / core**  
-* JavaScript / TypeScript 
-* HTML  
-* CSS
-
 **Front end frameworks**  
-* Angular (which is NOT AngularJS, a legacy technology)  
+* [Angular](https://angular.io/docs) (which is NOT AngularJS, a legacy technology)  
 
-Alternatives:  
-* React  
-* Knockout  
-* Ember
-* and many others  
+Alternatives:
+* [Knockout](http://knockoutjs.com/documentation/introduction.html)  
+* [React](https://facebook.github.io/react/docs/hello-world.html)  
+* [Ember](https://www.emberjs.com/api)
+* and many others...  
 
 **State management**  
-* <a href="https://github.com/sictweb/web422">Our own "Teams" API</a><br>
+* [Our own "Teams" API](https://github.com/sictweb/web422)
 * [JSON data API - jsonplaceholder](http://jsonplaceholder.typicode.com)  
 
 <!--**To be categorized**  
