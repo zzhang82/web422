@@ -2,3 +2,9 @@
 ---
 
 @import 'jekyll-theme-cayman';
+
+/* Fix table width issue with small tables */
+
+.main-content table{
+  display: table;
+}
