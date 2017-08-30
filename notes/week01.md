@@ -33,13 +33,11 @@ More about web services, adding them to the back end app
 
 (intro blurb here)
 
-Links to notes...
-
-We'll be jumping around a bit. No straight line or step-by-step recipe. Some overlap, some repetition (but that's OK for connecting the topics together).
-
 * [Welcome](welcome) to the WEB422 course
 * [Web services (re)introduction](/web422/notes/intro-web-services)
 * [Setting up the back-end REST API](/web422/notes/teams-api-setup)
 * [jQuery Review & Rendering API Data](/web422/notes/jquery-review)
+
+We'll be jumping around a bit. No straight line or step-by-step recipe. Some overlap, some repetition (but that's OK for connecting the topics together).
 
 <br>
