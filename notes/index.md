@@ -16,13 +16,13 @@ Please note: new notes will be published as they become available.
 </thead>
 <tbody>
 <tr>
-<td>1</td>
+<td><a href="/web422/notes/week01">1 - Notes</a></td>
 <td>
 <ul>
-<li><a href="welcome">Welcome</a> to the WEB422 course</li>
-<li><a href="/web422/notes/intro-web-services">Web services (re)introduction</a></li>
-<li><a href="/web422/notes/teams-api-setup">Setting up the back-end REST API</a></li>
-<li><a href="/web422/notes/jquery-review">jQuery Review &amp; Rendering API Data</a></li>
+<li>Welcome to the WEB422 course</li>
+<li>Web services (re)introduction</li>
+<li>Setting up the back-end REST API</li>
+<li>jQuery Review &amp; Rendering API Data</li>
 </ul>
 </td>
 </tr>
