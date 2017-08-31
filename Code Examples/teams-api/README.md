@@ -45,17 +45,20 @@ where
 * &lt;dbuser&gt; will be the user name that you just created to access the new database
 * &lt;dbpassword&gt; will be the password that you created for the above user
 
-6. Once you have recorded all of that information, go back to the integrated terminal in Visual Studio code and Change the working directory ("cd") in the integrated terminal to "API-data-restore"
+6. Once you have recorded all of that information, go back to the integrated terminal in Visual Studio code and Change the working directory ("cd") in the integrated terminal to "API-data-restore/dump" 
 
-7. Once this is done and your working directory is "API-data-restore", execute the command:
+7. Once this is done and your working directory is "API-data-restore/dump" (you should see some .bson & .json files), execute the following 4 commands to populate each of the collecitons in the database:
 
-`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>"`
+`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection employees`
+`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection projects`
+`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection teams`
+`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection positions`
 
-using the information identified above - it should look something like: 
+using the information identified above - each command should look something like the below (if you were updating the "employees" collection ,for example): 
 
-`mongorestore -h ds123456.mlab.com:23456 -d teams-api-db -u user -p pass`
+`mongorestore -h ds123456.mlab.com:23456 -d teams-api-db -u user -p pass --collection employees`
 
-8. You should see a number of lines output to the terminal indicating the progress, and then finally a "done" message
+8. For each of the 4 commands, you should see a number of lines output to the terminal indicating the progress, and then finally a "done" message.
 
 ### UPDATING The mongoDBConnectionString:
 
@@ -71,7 +74,13 @@ using the information identified above - it should look something like:
 
 `mongodb://user:password@ds123456.mlab.com:23456/teams-api-db`
 
-2. Save the changes and run the server from the integrated terminal using the familiar command "node server.js"
+3. Save the changes and run the server from the integrated terminal using the familiar command "node server.js"
+
+4. If the server starts successfully (ie: you see the output: "API listening on: 8081", then the connection to your MLab Account has succeeded!  
+
+5.  At this point, it will be easiest if you push this server to Heroku, so that you can easily use it in all of your projects, without having to start up a local copy of the API server every time we want access to the data.  
+
+**Note:** For a refresher on how initialize the folder with a .git repository, create an App with the Heroku CLI, and publish the App to Heroku, refer to the WEB322 notes on ["Getting Started with Heroku"](http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/course-notes/getting-started-with-heroku).
 
 ## USING THE API
 
