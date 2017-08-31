@@ -50,8 +50,11 @@ where
 7. Once this is done and your working directory is "API-data-restore/dump" (you should see some .bson & .json files), execute the following 4 commands to populate each of the collecitons in the database:
 
 `mongorestore employees.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection employees`
+
 `mongorestore projects.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection projects`
+
 `mongorestore teams.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection teams`
+
 `mongorestore positions.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection positions`
 
 using the information identified above - each command should look something like the below (if you were updating the "employees" collection ,for example): 
