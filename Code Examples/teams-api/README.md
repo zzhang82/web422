@@ -67,7 +67,7 @@ using the information identified above - each command should look something like
 
 Now that we have our back-end MongoDB all set up and populated with data, we just have to make that all-important update to the mongoDBConnectionString constant.
 
-1. First, switch back to the previous directory using the integrated terminal (cd ..) so that our working directory has the "server.js" file in it.
+1. First, switch back to the previous directory using the integrated terminal (cd ../..) so that our working directory has the "server.js" file in it.
 
 2. Next, open the server.js file and using the credentials identified above, modify the mongoDBConnectionString value to use the following format:
 
