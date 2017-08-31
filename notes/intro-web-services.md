@@ -91,6 +91,8 @@ Each web service that you create will be treated as a *separate and distinct* pr
 
 During development, you will use an *HTTP inspector* app, like [Postman](https://www.getpostman.com/), to create and send requests to a web service. 
 
+> [Postman how-to article](https://www.sitepoint.com/master-api-workflow-postman/)
+
 Then, you will be creating *separate* web app *clients*, which send requests to your web service. 
 
 Each program can be individually and separately deployed to any device platform that meets your needs.
