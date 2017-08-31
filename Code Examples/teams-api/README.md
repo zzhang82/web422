@@ -49,14 +49,14 @@ where
 
 7. Once this is done and your working directory is "API-data-restore/dump" (you should see some .bson & .json files), execute the following 4 commands to populate each of the collecitons in the database:
 
-`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection employees`
-`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection projects`
-`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection teams`
-`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection positions`
+`mongorestore employees.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection employees`
+`mongorestore projects.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection projects`
+`mongorestore teams.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection teams`
+`mongorestore positions.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection positions`
 
 using the information identified above - each command should look something like the below (if you were updating the "employees" collection ,for example): 
 
-`mongorestore -h ds123456.mlab.com:23456 -d teams-api-db -u user -p pass --collection employees`
+`mongorestore employees.bson -h ds123456.mlab.com:23456 -d teams-api-db -u user -p pass --collection employees`
 
 8. For each of the 4 commands, you should see a number of lines output to the terminal indicating the progress, and then finally a "done" message.
 
