@@ -51,7 +51,7 @@ As we have seen, these selectors typically follow the syntax of CSS selectors (i
 
 <br>
 
-Selector | Description | Number of Elements Selected
+Selector | Description | Number of Elements
 --- | --- | ---
 `$( "*" );` | **All Selector:** Selects all elements | 96
 `$( "#animal-table" );`| **id Selector:** Selects a single element with the given id attribute. | 1
