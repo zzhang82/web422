@@ -27,7 +27,7 @@ $(function() { // this is the same as: $(document).ready(function(){
     // Accessing the elements (and applying a style):
 
     selector9.each(function(index){
-        $(this).css({"background-color":"#eff6f7"}); // same as selector9[index] 
+        $(this).css({"background-color":"#eff6f7"}); 
     });
 
 
