@@ -53,18 +53,100 @@ As we have seen, these selectors typically follow the syntax of CSS selectors (i
 
 Selector | Description | Number of Elements
 --- | --- | ---
-`$( "*" );` | **All Selector:** Selects all elements | 96
-`$( "#animal-table" );`| **id Selector:** Selects a single element with the given id attribute. | 1
-`$( ".table-heading" );`| **class Selector:** Selects all elements with the given class. | 3
-`$( ":input" );`| **input Selector:** Selects all input, textarea, select and button elements. | 9
-`$( ":radio" );`| **radio Selector:** Selects all elements of type radio. | 2
-`$( ":checkbox" );`| **checkbox Selector:** Selects all elements of type checkbox. | 2
-`$( ":visible" );`| **visible Selector:** Selects all elements that are visible. | 80
-`$( ":hidden" );`| **hidden Selector:** Selects all elements that are hidden (the opposite of :visible). | 16
-`$( "tr:odd" );`| **odd Selector:** Selects odd elements, zero-indexed. See also [even](https://api.jquery.com/even-selector/) | 3
-`$( ".row:has(#animal-table)" );`| **has() Selector:** Selects elements which contain at least one element that matches the specified selector. | 1
+$( "*" ); | **All Selector:** Selects all elements | 96
+$( "#animal-table" );| **id Selector:** Selects a single element with the given id attribute. | 1
+$( ".table-heading" );| **class Selector:** Selects all elements with the given class. | 3
+$( ":input" );| **input Selector:** Selects all input, textarea, select and button elements. | 9
+$( ":radio" );| **radio Selector:** Selects all elements of type radio. | 2
+$( ":checkbox" );| **checkbox Selector:** Selects all elements of type checkbox. | 2
+$( ":visible" );| **visible Selector:** Selects all elements that are visible. | 80
+$( ":hidden" );| **hidden Selector:** Selects all elements that are hidden (the opposite of :visible). | 16
+$( "tr:odd" );| **odd Selector:** Selects odd elements, zero-indexed. See also [even](https://api.jquery.com/even-selector/) | 3
+$( ".row:has(#animal-table)" );| **has() Selector:** Selects elements which contain at least one element that matches the specified selector. | 1
 
 <br>
+
+As you can see from the above table, it is often the case that a selector will select **more than one** element. This is fine if we want to apply the same operations to a group of elements.  However, if we wish to access each selected element individually,  we can leverage jQuery's [each() function](http://api.jquery.com/jquery.each/) to iterate over the elements in the collection. For Example:
+
+<br>
+
+```javascript
+$( "tr:odd" ).each(function(index){
+    $(this).css({"background-color":"#eff6f7"}); // color the odd rows gray
+});
+```
+
+<br>
+
+The .each() function will iterate over every selected element returned by the selector and invoke the provided "callback" function.  You can optionally pass a parameter to the callback function if you wish to know the current index (0, 1, 2, 3, etc).  
+
+During the iteration, the current element can be accessed using "$(this)".  It's a little strange to see "this" wrapped in a jQuery function, however we need to wrap "this" (ie: the current element) into a jQuery object so that we can perform jQuery specific operations on it (ie, using the [.css()](http://api.jquery.com/css/) method).  If we remove the code surrounding "this", we will run into the error:
+
+```
+TypeError: this.css is not a function
+```
+<br>
+
+### Watching for Events
+
+Now that we have access to the element (or elements) we wish to modify in the DOM, we can apply a number of operations to modify their appearance and/or behaviour using jQuery.  One extremely important aspect in creating a reactive and dynamic view (DHTML) is watching a given element for a user / system initiated event and responding to it with custom code.
+
+jQuery provides this functionality via it's [on()](http://api.jquery.com/on/) method:
+
+
+```
+.on( events [, selector ] [, data ], handler )
+```
+
+We can apply this method to any selected element in order to wire up ("respond to") an "event" by passing a callback function to the "handler" parameter, ie:
+
+<br>
+
+```javascript
+ $(".row").on("change", ":input", function(){ // watch existing "row" div elemennts for when input elements change
+     console.log("id: " + $(this).attr("id") + "changed");
+ });
+```
+
+<br>
+
+What makes this function so powerful is that if we invoke the ".on" method on an element that isn't likely to change (an outer container or "document", for example), we can use the "selector" parameter to apply the callback function to **any** element that matches that selector (even if it's dynamically created in the future).  
+
+This means that even if we use some of jQuery's DOM modification methods (see below) to dynamically create a new input element (contained with an element with class="row") **after** we define the event, it will **still be applied** to the new input element.  This can sometimes lead to event handlers that take the form:
+
+<br>
+
+```javascript
+$("document").on("click", "tr", function(){ // watch the whole document for when existing (or new) tr elements are clicked
+     console.log("table row clicked!");
+});
+```
+
+<br>
+
+By defining the "click" element on the entire "document" object and filtering it by only affecting "tr" elememnts, we can guarantee that all "tr" elements will invoke the supplied function when clicked, regardless of when they are created in the future.  This saves us the hassle of wiring up new events every time we create a new element.
+
+<br>
+
+### Updating Elements
+
+The final piece in creating dynamic html (DHTML) is actually modifying the DOM by creating, destroying or modifying elements (nodes) within the DOM tree. JavaScript itself provides a number of methods for dealing with the DOM, however jQuery extends this functionality and provides some new methods as well.  Some of the more common methods are as follows:
+
+Method | Description | Result
+--- | --- | ---
+let newDiv = $('<div>'); | **$('', {})** Create a new element by specifying a string defining a single, standalone, HTML element (e.g. <div/> or <div></div>), followed by an optional object consisting of attributes, events, and methods to call on the newly-created element. | Creates a new "div" element and stores it in the variable: "newDiv"
+newDiv.css({"border":"1px solid lightgray", "padding":"10px"}); | **.css()** Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element. | ...
+newDiv.html("<span>New Div!</div>"); | **.html()** Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element. | ...
+$("#new-content").append(newDiv); | **.append()** Insert content, specified by the parameter, to the end of each element in the set of matched elements. | ...
+let newDiv2 = newDiv.clone(); | **.clone()** Create a deep copy of the set of matched elements. | ...
+newDiv2.attr("id", "clonedDiv1"); | **.attr()** Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element. | ...
+newDiv2.addClass("bg-color-lightgray"); | **.addClass()** Adds the specified class(es) to each element in the set of matched elements. Also see [.removeClass()](https://api.jquery.com/removeclass/) | ...
+newDiv2.wrap("<div class='outer'></div>"); | **.wrap()** Wrap an HTML structure around each element in the set of matched elements. | ...
+newDiv2.text("Cloned Div!"); | **.text()** Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.| ...
+$("#to-be-replaced p").replaceWith(newDiv2); | **.replaceWith()** Replace each element in the set of matched elements with the provided new content and return the set of elements that was removed.| ...
+$("#exampleInputEmail1").val("from jQuery!"); | **.val()** Get the current value of the first element in the set of matched elements or set the value of every matched element.| ...
+
+
 
 ## Next Week
 
