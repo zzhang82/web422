@@ -132,19 +132,72 @@ By defining the "click" element on the entire "document" object and filtering it
 
 The final piece in creating dynamic html (DHTML) is actually modifying the DOM by creating, destroying or modifying elements (nodes) within the DOM tree. JavaScript itself provides a number of methods for dealing with the DOM, however jQuery extends this functionality and provides some new methods as well.  Some of the more common methods are as follows:
 
-Method | Description | Result
---- | --- | ---
-let newDiv = $('<div>'); | **$('', {})** Create a new element by specifying a string defining a single, standalone, HTML element (e.g. <div/> or <div></div>), followed by an optional object consisting of attributes, events, and methods to call on the newly-created element. | Creates a new "div" element and stores it in the variable: "newDiv"
-newDiv.css({"border":"1px solid lightgray", "padding":"10px"}); | **.css()** Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element. | ...
-newDiv.html("<span>New Div!</div>"); | **.html()** Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element. | ...
-$("#new-content").append(newDiv); | **.append()** Insert content, specified by the parameter, to the end of each element in the set of matched elements. | ...
-let newDiv2 = newDiv.clone(); | **.clone()** Create a deep copy of the set of matched elements. | ...
-newDiv2.attr("id", "clonedDiv1"); | **.attr()** Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element. | ...
-newDiv2.addClass("bg-color-lightgray"); | **.addClass()** Adds the specified class(es) to each element in the set of matched elements. Also see [.removeClass()](https://api.jquery.com/removeclass/) | ...
-newDiv2.wrap("<div class='outer'></div>"); | **.wrap()** Wrap an HTML structure around each element in the set of matched elements. | ...
-newDiv2.text("Cloned Div!"); | **.text()** Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.| ...
-$("#to-be-replaced p").replaceWith(newDiv2); | **.replaceWith()** Replace each element in the set of matched elements with the provided new content and return the set of elements that was removed.| ...
-$("#exampleInputEmail1").val("from jQuery!"); | **.val()** Get the current value of the first element in the set of matched elements or set the value of every matched element.| ...
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>let newDiv = $('<div>');</td>
+<td><strong>$('', {})</strong> Create a new element by specifying a string defining a single, standalone, HTML element (e.g. <div/> or <div></div>), followed by an optional object consisting of attributes, events, and methods to call on the newly-created element.</td>
+<td>Creates a new "div" element and stores it in the variable: "newDiv"</td>
+</tr>
+<tr>
+<td>newDiv.css({"border":"1px solid lightgray", "padding":"10px"});</td>
+<td><strong>.css()</strong> Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.</td>
+<td></td>
+</tr>
+<tr>
+<td>newDiv.html("<span>New Div!</div>");</td>
+<td><strong>.html()</strong> Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.</td>
+<td></td>
+</tr>
+<tr>
+<td>$("#new-content").append(newDiv);</td>
+<td><strong>.append()</strong> Insert content, specified by the parameter, to the end of each element in the set of matched elements.</td>
+<td></td>
+</tr>
+<tr>
+<td>let newDiv2 = newDiv.clone();</td>
+<td><strong>.clone()</strong> Create a deep copy of the set of matched elements.</td>
+<td></td>
+</tr>
+<tr>
+<td>newDiv2.attr("id", "clonedDiv1");</td>
+<td><strong>.attr()</strong> Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</td>
+<td></td>
+</tr>
+<tr>
+<td>newDiv2.addClass("bg-color-lightgray");</td>
+<td><strong>.addClass()</strong> Adds the specified class(es) to each element in the set of matched elements. Also see <a href="https://api.jquery.com/removeclass/">.removeClass()</a></td>
+<td></td>
+</tr>
+<tr>
+<td>newDiv2.wrap("<div class='outer'></div>");</td>
+<td><strong>.wrap()</strong> Wrap an HTML structure around each element in the set of matched elements.</td>
+<td></td>
+</tr>
+<tr>
+<td>newDiv2.text("Cloned Div!");</td>
+<td><strong>.text()</strong> Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.</td>
+<td></td>
+</tr>
+<tr>
+<td>$("#to-be-replaced p").replaceWith(newDiv2);</td>
+<td><strong>.replaceWith()</strong> Replace each element in the set of matched elements with the provided new content and return the set of elements that was removed.</td>
+<td></td>
+</tr>
+<tr>
+<td>$("#exampleInputEmail1").val("from jQuery!");</td>
+<td><strong>.val()</strong> Get the current value of the first element in the set of matched elements or set the value of every matched element.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
 
