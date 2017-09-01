@@ -142,7 +142,7 @@ The final piece in creating dynamic html (DHTML) is actually modifying the DOM b
 </thead>
 <tbody>
 <tr>
-<td>let newDiv = $('<div>');</td>
+<td>let newDiv = $('&lt;div&gt;');</td>
 <td><strong>$('', {})</strong> Create a new element by specifying a string defining a single, standalone, HTML element (e.g. <div/> or <div></div>), followed by an optional object consisting of attributes, events, and methods to call on the newly-created element.</td>
 <td>Creates a new "div" element and stores it in the variable: "newDiv"</td>
 </tr>
@@ -152,7 +152,7 @@ The final piece in creating dynamic html (DHTML) is actually modifying the DOM b
 <td></td>
 </tr>
 <tr>
-<td>newDiv.html("<span>New Div!</div>");</td>
+<td>newDiv.html("&lt;span&gt;New Div!&lt;/span&gt;");</td>
 <td><strong>.html()</strong> Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.</td>
 <td></td>
 </tr>
@@ -177,7 +177,7 @@ The final piece in creating dynamic html (DHTML) is actually modifying the DOM b
 <td></td>
 </tr>
 <tr>
-<td>newDiv2.wrap("<div class='outer'></div>");</td>
+<td>newDiv2.wrap("&lt;div class='outer'&gt;&lt;/div&gt;");</td>
 <td><strong>.wrap()</strong> Wrap an HTML structure around each element in the set of matched elements.</td>
 <td></td>
 </tr>
