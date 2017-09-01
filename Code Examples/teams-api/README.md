@@ -45,29 +45,23 @@ where
 * &lt;dbuser&gt; will be the user name that you just created to access the new database
 * &lt;dbpassword&gt; will be the password that you created for the above user
 
-6. Once you have recorded all of that information, go back to the integrated terminal in Visual Studio code and Change the working directory ("cd") in the integrated terminal to "API-data-restore/dump" 
+6. Once you have recorded all of that information, go back to the integrated terminal in Visual Studio code and Change the working directory ("cd") in the integrated terminal to "API-data-restore"
 
-7. Once this is done and your working directory is "API-data-restore/dump" (you should see some .bson & .json files), execute the following 4 commands to populate each of the collecitons in the database:
+7. Once this is done and your working directory is "API-data-restore", execute the command:
 
-`mongorestore employees.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection employees`
+`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>"`
 
-`mongorestore projects.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection projects`
+using the information identified above - it should look something like: 
 
-`mongorestore teams.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection teams`
+`mongorestore -h ds123456.mlab.com:23456 -d teams-api-db -u user -p pass`
 
-`mongorestore positions.bson -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>" --collection positions`
-
-using the information identified above - each command should look something like the below (if you were updating the "employees" collection ,for example): 
-
-`mongorestore employees.bson -h ds123456.mlab.com:23456 -d teams-api-db -u user -p pass --collection employees`
-
-8. For each of the 4 commands, you should see a number of lines output to the terminal indicating the progress, and then finally a "done" message.
+8. You should see a number of lines output to the terminal indicating the progress, and then finally a "done" message
 
 ### UPDATING The mongoDBConnectionString:
 
 Now that we have our back-end MongoDB all set up and populated with data, we just have to make that all-important update to the mongoDBConnectionString constant.
 
-1. First, switch back to the previous directory using the integrated terminal (cd ../..) so that our working directory has the "server.js" file in it.
+1. First, switch back to the previous directory using the integrated terminal (cd ..) so that our working directory has the "server.js" file in it.
 
 2. Next, open the server.js file and using the credentials identified above, modify the mongoDBConnectionString value to use the following format:
 
