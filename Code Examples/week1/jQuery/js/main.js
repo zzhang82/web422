@@ -55,7 +55,7 @@ $(function() { // this is the same as: $(document).ready(function(){
     newDiv.css({"border":"1px solid lightgray", "padding":"10px"});
 
     // add some content (HTML)
-    newDiv.html("<span>New Div!</div>")
+    newDiv.html("<span>New Div!</div>");
 
     // append it to "new-content"
     $("#new-content").append(newDiv); // we could also call ".remove() to remove it"
@@ -83,6 +83,5 @@ $(function() { // this is the same as: $(document).ready(function(){
 
     // Modify the value in the "exampleInputEmail1" text input
     $("#exampleInputEmail1").val("from jQuery!");
-
 
 });
