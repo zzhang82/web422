@@ -7,11 +7,15 @@ layout: default
 
 As we have seen from the notes in WEB322, the jQuery Library is an extremely popular and valuable tool for front-end web application development.  To refresh your memory:
 
+<br>
+
 > "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript."
+
+<br>
 
 Today, we will be re-examining the way that jQuery can help us manipulate the DOM to gain complete control of the elements on the page, including: "Selecting / Accessing Elements", "Watching for Events" & "Updating Elements".
 
-Lastly, we will look at how jQuery can make AJAX calls simple to execute and we will try querying our Teams API for data and updating the DOM.  You can think of this as a way to replace what was initially done in Handlebars.js in WEB322.  However, instead of relying on the server to generate the dynamic content before serving the page, we will shift that logic to the client (in this case, a web browser). By decoupling the data-rendering tasks from the server, we gain more freedom in how we render the data and create rich user experiences across different platforms. 
+Lastly, we will look at how jQuery can make AJAX calls simple to execute and we will try querying our Teams API for data and updating the DOM.  You can think of this as a way to replace what was initially done in Handlebars.js in WEB322.  However, instead of relying on the server to generate the dynamic content before serving the page, we will shift that logic to the client (in this case, a web browser). By decoupling the data-rendering tasks from the server, we gain more freedom in how we render the data.  This allows us to create richer user experiences across multiple different platforms. 
 
 <br>
 
