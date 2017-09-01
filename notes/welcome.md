@@ -5,7 +5,7 @@ layout: default
 
 ## Welcome to the WEB422 course
 
-Welcome to the WEB422 course. This post has information that helps you get started in the course.
+Welcome to the WEB422 course. This document has information that helps you get started in the course.
 
 <br>
 
@@ -44,7 +44,7 @@ Get familiar with the course web site. All areas.
 
 **Using your own personal computer**
 
-We expect the student to do their work on a computer that runs macOS (formerly known as Mac OS X), Linux, or another Unix-like computer. If a student has a Windows-only computer, then plan to install a virtualization environment that enables the installation of Linux.
+We expect the student to do their work on a computer that runs macOS (formerly known as Mac OS X), Linux, or another Unix-like operating system. If a student has a Windows-only computer, then plan to install a virtualization environment that enables the installation of Linux.
 
 The student will use a number of applications and development tools, including:
 * A modern web app execution environment (Node.js, Express.js, MongoDB)
@@ -69,11 +69,7 @@ During the course, the professor(s) will guide the student in the installation, 
 Every class/session will have notes posted on this web site.
 
 All notes will be linked from the index page:  
-<<<<<<< Updated upstream
 [sictweb.github.io/web422/notes/](/web422/notes)  
-=======
-[sictweb.github.io/web422/notes/](../notes)  
->>>>>>> Stashed changes
 Study that page's URI to learn the naming convention for a specific weekly notes page.
 
 Your professor(s) plan to post the notes at least two days before the class/session begins. Before you come into a class, you are expected to read and process the topics covered in the notes.
