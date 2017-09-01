@@ -35,7 +35,7 @@ $(function() { // this is the same as: $(document).ready(function(){
 
     // event handling
 
-    $(".row").on("change", ":input", function(){ // watch existing "row" div elemenents for when input elements change
+    $(".row").on("change", ":input", function(){ // watch existing "row" div elemennts for when input elements change
         console.log("id: " + $(this).attr("id") + "changed");
     });
 
