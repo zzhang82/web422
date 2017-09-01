@@ -53,16 +53,16 @@ As we have seen, these selectors typically follow the syntax of CSS selectors (i
 
 Selector | Description | Number of Elements Selected
 --- | --- | ---
-`$( "*" );` | ... | 96
-$( "#animal-table" );
-$( ".table-heading" );
-$( ":input" );
-$( ":radio" );
-$( ":checkbox" );
-$( ":visible" );
-$( ":hidden" );
-$( "tr:odd" );
-$( ".row:has(#animal-table)" );
+`$( "*" );` | **All Selector:** Selects all elements | 96
+`$( "#animal-table" );`| **id Selector:** Selects a single element with the given id attribute. | 1
+`$( ".table-heading" );`| **class Selector:** Selects all elements with the given class. | 3
+`$( ":input" );`| **input Selector:** Selects all input, textarea, select and button elements. | 9
+`$( ":radio" );`| **radio Selector:** Selects all elements of type radio. | 2
+`$( ":checkbox" );`| **checkbox Selector:** Selects all elements of type checkbox. | 2
+`$( ":visible" );`| **visible Selector:** Selects all elements that are visible. | 80
+`$( ":hidden" );`| **hidden Selector:** Selects all elements that are hidden (the opposite of :visible). | 16
+`$( "tr:odd" );`| **odd Selector:** Selects odd elements, zero-indexed. See also [even](https://api.jquery.com/even-selector/) | 3
+`$( ".row:has(#animal-table)" );`| **has() Selector:** Selects elements which contain at least one element that matches the specified selector. | 1
 
 <br>
 
