@@ -34,10 +34,10 @@ To begin, open up the **week1/jQuery** folder and take a look at the index.html 
 * [The bootstrap 3.3.7 minified JS file from the maxcdn.bootstrapcdn.com CDN](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js)
 * Our own custom js file (main.js) located in the "js" directory
 <br>
+<br>
 
 ### The '$(function() { });' or '$(document).ready(function(){ });' functions
 
-<br>
 
 It stands to reason that any JavaScript code that deals with accessing elements in the DOM **must** be executed *after* the DOM is built.   It is for this reason that you will see most jQuery code residing in an anonymous function delcared as a parameter to either **$();** or **$(document.ready());**
 
