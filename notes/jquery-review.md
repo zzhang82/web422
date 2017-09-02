@@ -143,58 +143,58 @@ The final piece in creating dynamic html (DHTML) is actually modifying the DOM b
 <tbody>
 <tr>
 <td>let newDiv = $('&lt;div&gt;');</td>
-<td><strong>$('', {})</strong> Create a new element by specifying a string defining a single, standalone, HTML element (e.g. <div/> or <div></div>), followed by an optional object consisting of attributes, events, and methods to call on the newly-created element.</td>
+<td><strong>$('', {})</strong> Create a new element by specifying a string defining a single, standalone, HTML element (e.g. &lt;div/&gt; or &lt;div&gt;&lt;/div&gt;), followed by an optional object consisting of attributes, events, and methods to call on the newly-created element.</td>
 <td>Creates a new "div" element and stores it in the variable: "newDiv"</td>
 </tr>
 <tr>
 <td>newDiv.css({"border":"1px solid lightgray", "padding":"10px"});</td>
 <td><strong>.css()</strong> Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.</td>
-<td></td>
+<td>Sets the "border" and "padding" CSS properties on the "newDiv" element via it's "style" attribute</td>
 </tr>
 <tr>
 <td>newDiv.html("&lt;span&gt;New Div!&lt;/span&gt;");</td>
 <td><strong>.html()</strong> Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.</td>
-<td></td>
+<td>Sets the inner HTML of the "newDiv" element to contain a &lt;span&gt; element with the text "New Div!"</td>
 </tr>
 <tr>
 <td>$("#new-content").append(newDiv);</td>
 <td><strong>.append()</strong> Insert content, specified by the parameter, to the end of each element in the set of matched elements.</td>
-<td></td>
+<td>Adds the element "newDiv" as a child of the element with id="new-content"</td>
 </tr>
 <tr>
 <td>let newDiv2 = newDiv.clone();</td>
 <td><strong>.clone()</strong> Create a deep copy of the set of matched elements.</td>
-<td></td>
+<td>Creates an exact copy of the "newDiv" element and saves it as "newDiv2" (does not automatically add it to the DOM)</td>
 </tr>
 <tr>
 <td>newDiv2.attr("id", "clonedDiv1");</td>
 <td><strong>.attr()</strong> Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</td>
-<td></td>
+<td>Set the "id" attribute of the "newDiv2" element as "clonedDiv1"</td>
 </tr>
 <tr>
 <td>newDiv2.addClass("bg-color-lightgray");</td>
 <td><strong>.addClass()</strong> Adds the specified class(es) to each element in the set of matched elements. Also see <a href="https://api.jquery.com/removeclass/">.removeClass()</a></td>
-<td></td>
+<td>Add the class "bg-color-lightgray" to the "class" attribute (since there is no class attribute, it creates one)</td>
 </tr>
 <tr>
 <td>newDiv2.wrap("&lt;div class='outer'&gt;&lt;/div&gt;");</td>
 <td><strong>.wrap()</strong> Wrap an HTML structure around each element in the set of matched elements.</td>
-<td></td>
+<td>Wrap the "newDiv2" element in a &lt;div class="outer"&gt;...&lt;/div&gt; element</td>
 </tr>
 <tr>
 <td>newDiv2.text("Cloned Div!");</td>
 <td><strong>.text()</strong> Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.</td>
-<td></td>
+<td>Set the text content inside the "newDiv2" element to read "Cloned Div!" (effectively replacing the text "New Div!")</td>
 </tr>
 <tr>
 <td>$("#to-be-replaced p").replaceWith(newDiv2);</td>
 <td><strong>.replaceWith()</strong> Replace each element in the set of matched elements with the provided new content and return the set of elements that was removed.</td>
-<td></td>
+<td>replace the &lt;p&gt; element inside the element with id="to-be-replaced" with the "newDiv2" element</td>
 </tr>
 <tr>
 <td>$("#exampleInputEmail1").val("from jQuery!");</td>
 <td><strong>.val()</strong> Get the current value of the first element in the set of matched elements or set the value of every matched element.</td>
-<td></td>
+<td>Sets the value of the input element with id="exampleInputEmail1" to "from jQuery!"</td>
 </tr>
 </tbody>
 </table>
