@@ -13,7 +13,7 @@ $(function() { // this is the same as: $(document).ready(function(){
 
         for(let i = 0; i < 5; i++){ // only show the first 5 employees
 
-            // Create each table cell for the current employee row and add teh text
+            // Create each table cell for the current employee row and add the text
             let fNameTD = $('<td>').text(employees[i].FirstName);
             let lNameTD = $('<td>').text(employees[i].LastName);
             let positionTD = $('<td>').text(employees[i].Position.PositionName);
