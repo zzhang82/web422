@@ -301,7 +301,7 @@ Lastly, we append the new row onto the tbody element and move onto the next empl
 
 <br>
 
-Using this strategy of creating DOM elements in response to the acquisition of new data is the first step in creating rich, data-driven web applications.  It may seem more effort to simply serve up the rendered page using Handlebars, but we're only getting started.  The JavaScript community has been busy and there are lots of frameworks to help us to deal with dynamic, on-demand data on the client side, and we will see some of these in the coming weeks.  In the mean time...
+Using this strategy of creating DOM elements in response to the acquisition of new data is the first step in creating rich, data-driven web applications.  It may seem easier to simply serve up the rendered page using Handlebars, but we're only getting started with client-side development.  The JavaScript community has been busy and there are lots of frameworks to help us to deal with dynamic, on-demand data on the client side, and we will see some of these in the coming weeks.  In the mean time...
 
 ## More jQuery Next Week
 
