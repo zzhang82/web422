@@ -199,9 +199,110 @@ The final piece in creating dynamic html (DHTML) is actually modifying the DOM b
 </tbody>
 </table>
 
+Once again, this is only a small sampling of some of the more commonly used DOM manipulation methods - for a full list of the 40+ methods available, refer to the [Official Documentation here](https://api.jquery.com/category/manipulation/).
 
+<br>
 
-## Next Week
+### AJAX with jQuery
+
+One of the most important technologies used in this course will, of course be AJAX (Asychronous Javascript and XML).  As we have seen from previous courses, AJAX allows us to make requests for data using JavaScript without having to reload the page.  This will form the basis for our Single Page Application (SPA) architecture: we will be sending / recieving data from our Back-End REST API on demand using AJAX.
+
+For this next example, open the "jQuery-AJAX" folder within the "week1" examples folder.  Here, you will find that the file structure is much the same, ie: 
+
+* a single index.html page referencing our own custom JavaScript / CSS (main.js / main.css) as well as the jQuery and Bootstrap libraries (JS & CSS).
+* a js folder for our main.js file
+* a css folder for our main.css file
+
+However, the content of the files is very different:  Instead of a complete page in the index.html file, we only have a skeleton of a Bootstrap table:
+
+```html
+<table class="table" id="employees-table">
+    <thead>
+        <tr>
+            <th class="table-heading">First Name</th>
+            <th class="table-heading">Last Name</th>
+            <th class="table-heading">Position</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+```
+
+Instead of filling the table with static data in the HTML file, we will instead use AJAX and our Teams API to fetch the data.
+
+<br>
+
+Recall: to perform an AJAX "Get" request with jQuery, we can use the following code (**Note:** this assumes that the Teams API is running locally.  If you have pushed the Teams API to your Heroku account and wish to use that instead, simply replace "http://localhost:8081" with your Heroku URL, ie: https://some-crazy-heroku-name.herokuapp.com.
+
+```javascript
+$.ajax({
+        url: "http://localhost:8081/employees", // This only works if the Teams API is running 
+                                                // locally - change this url to your Heroku API 
+                                                // (/employees) to use your API on Heroku
+        type: "GET",
+        //data: JSON.stringify({ some: "data" }), // we can also send data using the "data" option with PUT or POST
+        contentType: "application/json"
+    })
+    .done(function (employees) {
+        console.log(employees); // output all employees to the console
+    })
+    .fail(function (err) {
+        console.log("error: " + err.statusText);
+    });
+```
+
+If the Teams API is up and running properly, this will show an array in the console that consists of the complete list of all 300 employees.  This data is no good to us in the console however, so let's make use of some of those DOM modification techniques that we learned above to populate our #employees-table?
+
+<br>
+
+To begin, why don't we restrict the results to the first 5 employees (for now)?  Each employee should be in it's own &lt;tr&gt; element with each piece of data (First Name, Last Name & Position) in their own nested &lt;td&gt; element.  For each employee that we're going to add to the DOM (specifically, the &lt;tbody&gt; element inside the #employees-table), the end result should look like:
+
+```html
+<tr>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Position</td>
+</tr>
+```
+
+To achieve this, we can use the following code within the ".done()" callback (explained below)
+
+<br>
+
+```javascript
+let tbody = $("#employees-table tbody");
+
+for(let i = 0; i < 5; i++){ // only show the first 5 employees
+
+    // Create each table cell for the current employee row and add the text
+    let fNameTD = $('<td>').text(employees[i].FirstName);
+    let lNameTD = $('<td>').text(employees[i].LastName);
+    let positionTD = $('<td>').text(employees[i].Position.PositionName);
+
+    // append all table cells to a new row
+    let row = $('<tr>').append(fNameTD).append(lNameTD).append(positionTD); // create the row and append 
+                                                                            // all of the TD elements.
+
+    // append the row to the table body
+    tbody.append(row);
+}
+```
+
+Here, we save a reference to the target &lt;tbody&gt; element as "tbody" so that we do not have to query the DOM over and over again unnecessairly when we want to append our data (&lt;tr&gt; elements) to it.  Additionally, we will restrict the loop to only 5 iterations (ie, the first 5 employees in the collection) and append our data to the "tbody" at the end of every iteration.
+
+To construct the table row & cells, as efficiently as possible, we can leverage ["chaining"](https://www.w3schools.com/jquery/jquery_chaining.asp) in jQuery.  Essentially, since most jQuery methods return the newly modified element, we can keep invoking DOM modification methods one at a time on the same element in the pattern *element.doSomething().doSomethingElse().doSomethingElse().etcEtcEtc();*. 
+
+In the code above, we create new &lt;td&gt; elements for each of the properties that we want to show in the table - in this case: First Name, Last Name and Position Name (PositionName being a property of the "Position" object within the "employee" object).  We can immediately invoke the **.text()** method because $('') returns a reference to the new object!
+
+This notion of chaining really starts to show it's value when we append all of the newly creaed &lt;td&gt; elements to a brand new &lt;tr&gt; element.  
+
+Lastly, we append the new row onto the tbody element and move onto the next employee.
+
+<br>
+
+Using this strategy of creating DOM elements in response to the acquisition of new data is the first step in creating rich data-driven applications.  It may seem like more effort than simply serving up the rendered page using Handlebars, but we're only getting started.  The JavaScript community has been busy and there are lots of frameworks to help us to deal with dynamic, on-demand data on the client side - we will see some of these in the coming weeks.  In the mean time...
+
+## More jQuery Next Week
 
 * Continuing coverage of jQuery, including topics:
   * [jQuery Utility Methods](http://api.jquery.com/category/utilities/)
@@ -209,25 +310,6 @@ The final piece in creating dynamic html (DHTML) is actually modifying the DOM b
   * Advanced data rendering (Bootstrap, flot, populating forms)
   * Using jQuery to invoke Bootstrap Controls
   * Using jQuery to implement "data binding"
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-Notes (TODO: Remove)
-
-* Selectors
-* Event Handling
-* DOM Modification
-* AJAX
-* Using jQuery render our data (Bootstrap tables)
-
-Coming soon...
-
 
   
   
