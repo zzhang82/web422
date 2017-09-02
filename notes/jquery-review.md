@@ -232,7 +232,7 @@ Instead of filling the table with static data in the HTML file, we will instead 
 
 <br>
 
-Recall: to perform an AJAX "Get" request with jQuery, we can use the following code (**Note:** this assumes that the Teams API is running locally.  If you have pushed the Teams API to your Heroku account and wish to use that instead, simply replace "http://localhost:8081" with your Heroku URL, ie: https://some-crazy-heroku-name.herokuapp.com.
+Recall: to perform an AJAX "Get" request with jQuery, we can use the following code (**Note:** this assumes that the Teams API is running locally.  If you have pushed the Teams API to your Heroku account and wish to use that instead, simply replace "http://localhost:8081" with your Heroku URL, ie: "https://some-crazy-heroku-name.herokuapp.com".
 
 ```javascript
 $.ajax({
