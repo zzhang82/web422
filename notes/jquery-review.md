@@ -80,7 +80,7 @@ $( "tr:odd" ).each(function(index){
 
 The .each() function will iterate over every selected element returned by the selector and invoke the provided "callback" function.  You can optionally pass a parameter to the callback function if you wish to know the current index (0, 1, 2, 3, etc).  
 
-During the iteration, the current element can be accessed using "$(this)".  It's a little strange to see "this" wrapped in a jQuery function, however we need to wrap "this" (ie: the current element) into a jQuery object so that we can perform jQuery specific operations on it (ie, using the [.css()](http://api.jquery.com/css/) method).  If we remove the code surrounding "this", we will run into the error:
+During each iteration, the current element can be accessed using "$(this)".  It's a little strange to see "this" wrapped in a jQuery function, however we need to wrap "this" (ie: the current element) into a jQuery object so that we can perform jQuery specific operations on it (ie, using the [.css()](http://api.jquery.com/css/) method).  If we remove the code surrounding "this", we will run into the error:
 
 ```
 TypeError: this.css is not a function
