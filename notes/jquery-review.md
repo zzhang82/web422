@@ -289,7 +289,7 @@ for(let i = 0; i < 5; i++){ // only show the first 5 employees
 
 Here, we save a reference to the target &lt;tbody&gt; element as "tbody" so that we do not have to query the DOM over and over again unnecessairly when we want to append our data (&lt;tr&gt; elements) to it.  Additionally, we will restrict the loop to only 5 iterations (ie, the first 5 employees in the collection) and append our data to the "tbody" at the end of every iteration.
 
-To construct the table row & cells, as efficiently as possible, we can leverage ["chaining"](https://www.w3schools.com/jquery/jquery_chaining.asp) in jQuery.  Essentially, since most jQuery methods return the newly modified element, we can keep invoking DOM modification methods one at a time on the same element in the pattern *element.doSomething().doSomethingElse().doSomethingElse().etcEtcEtc();*. 
+To construct the table row & cells as efficiently as possible, we can leverage ["chaining"](https://www.w3schools.com/jquery/jquery_chaining.asp) in jQuery.  Essentially, since most jQuery methods return the newly modified element, we can keep invoking DOM modification methods one at a time on the same element in the pattern *element.doSomething().doSomethingElse().doSomethingElse().etcEtcEtc();*. 
 
 In the code above, we create new &lt;td&gt; elements for each of the properties that we want to show in the table - in this case: First Name, Last Name and Position Name (PositionName being a property of the "Position" object within the "employee" object).  We can immediately invoke the **.text()** method because $('') returns a reference to the new object!
 
