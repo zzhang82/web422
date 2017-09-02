@@ -143,7 +143,7 @@ The final piece in creating dynamic html (DHTML) is actually modifying the DOM b
 <tbody>
 <tr>
 <td>let newDiv = $('&lt;div&gt;');</td>
-<td><strong>$('', {})</strong> Create a new element by specifying a string defining a single, standalone, HTML element (e.g. &lt;div/&gt; or &lt;div&gt;&lt;/div&gt;), followed by an optional object consisting of attributes, events, and methods to call on the newly-created element.</td>
+<td><strong>$('', {})</strong> Create a new element by specifying a string defining a single, standalone, HTML element (e.g. &lt;div&gt; or &lt;div&gt;&lt;/div&gt;), followed by an optional object consisting of attributes, events, and methods to call on the newly-created element.</td>
 <td>Creates a new "div" element and stores it in the variable: "newDiv"</td>
 </tr>
 <tr>
