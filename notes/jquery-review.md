@@ -264,10 +264,9 @@ To begin, why don't we restrict the results to the first 5 employees (for now)? 
     <td>Position</td>
 </tr>
 ```
+<br>
 
 To achieve this, we can use the following code within the ".done()" callback (explained below)
-
-<br>
 
 ```javascript
 let tbody = $("#employees-table tbody");
