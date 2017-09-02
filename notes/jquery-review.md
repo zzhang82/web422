@@ -293,7 +293,7 @@ To construct the table row & cells as efficiently as possible, we can leverage [
 
 `element.doSomething().doSomethingElse().doSomethingElse().etcEtcEtc();`
 
-In the code above, we create new &lt;td&gt; elements for each of the properties that we want to show in the table - in this case: First Name, Last Name and Position Name (PositionName being a property of the "Position" object within the "employee" object).  We can immediately invoke the **.text()** method because $('') returns a reference to the new object!
+In the code above, we create new &lt;td&gt; elements for each of the properties that we want to show in the table - in this case: First Name, Last Name and Position Name (PositionName being a property of the "Position" object within the "employee" object).  We can immediately invoke the **.text()** method because $(' ') returns a reference to the new object!
 
 This notion of chaining really starts to show it's value when we append all of the newly creaed &lt;td&gt; elements to a brand new &lt;tr&gt; element.  
 
