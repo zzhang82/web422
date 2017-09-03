@@ -30,7 +30,7 @@ We'll build on that with a *thorough survey* of front end development techniques
 
 The first part of this course will ensure that you have your development environment configured correctly. We will install and configure a data-rich project on the server, which will persist resources that can be used by all of the front end apps that we create during the course. A natural result will be that you will learn more about, and write code for, web services (also known as a web API). In summary, you'll transition from writing server code that generates and delivers HTML, to code that works with resources that are formatted as JSON. 
 
-The weekly notes will be delivered as a collection of topic-themed documents. This page - "week01" - will simply guide you throught the topics in sequence. (Read [more about this here](notes).)
+The weekly notes will be delivered as a collection of topic-themed documents. This page - "week01" - will simply guide you throught the topics in sequence. (Read [more about this here](/web422/notes))
 
 <br>
 
