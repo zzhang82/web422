@@ -46,6 +46,8 @@ Get familiar with the course web site. All areas.
 
 We expect the student to do their work on a computer that runs macOS (formerly known as Mac OS X), Linux, or another Unix-like operating system. If a student has a Windows-only computer, then plan to install a virtualization environment that enables the installation of Linux.
 
+> Important - We expect you to do your work on macOS, Linux, or another Unix-like operating system. 
+
 The student will use a number of applications and development tools, including:
 * A modern web app execution environment (Node.js, Express.js, MongoDB)
 * Visual Studio Code

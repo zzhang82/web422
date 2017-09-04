@@ -13,7 +13,7 @@ This page has details about the graded work in WEB422, for the current academic 
 
 We have planned twelve (12) tests during the term.
 
-The duration of each test will range from 10 to 20 minutes. Each test will be worth 5% of your final course grade. All tests will be hand-written, and will happen sometime during the class timeslot. The total value of all tests will be 60%.
+The duration of each test will be less than 20 minutes. Each test will be worth 5% of your final course grade. All tests will be hand-written, and will happen sometime during the class timeslot. The total value of all tests will be 60%.
 
 If you miss a test, there is no opportunity to do a replacement test. However, absence due to illness or other reasons happen occasionally. As a result, you can miss up to two (2) tests, without suffering the loss of grades.
 

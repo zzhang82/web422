@@ -3,7 +3,7 @@ title: Web site to do tasks
 layout: default
 ---
 
-Test scheduling... sometime during the timeslot vs. at the start (as stated on the weekly-schedule page)  
+Test scheduling... sometime during the timeslot vs. at the start (as stated on the **weekly-schedule** page)  
 
 DB3078 computer configuration - versions of runtimes and editors  
 
