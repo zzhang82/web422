@@ -81,7 +81,7 @@ using the information identified above - it should look something like:
 
 ## USING THE API
 
-The TeamsAPI project is a simple REST Api consisting of 4 collections:
+The TeamsAPI project is a simple Web Api consisting of 4 collections:
 
 * Employees
 * Positions
