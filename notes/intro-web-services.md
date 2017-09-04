@@ -5,12 +5,17 @@ layout: default
 
 ## Web services (re)introduction
 
-Sketch out (or describe) the goal:
-* Understand use case
-* Roles of requester (client) and responder (server)
-* JSON, and XmlHttpRequest
+In this document, the authors have a number of goals:
 
-> Come back and edit this part.
+1. Re-introduce the idea of a web service, and cover the relevant terminology
+
+2. Explain the roles of the requestor (the client) and the responder (the server
+
+3. Discuss how a client uses an XmlHttpRequest object to contact a server, and handle (typically) JSON data responses
+
+4. Promote the idea that we are building and working with a *distributed* computing system, that has two or more autonomous programs that pass messages (requests, responses) among the programs
+
+At this point in time, please review and study the [week 9 notes from the previous WEB322 course](http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/course-notes/week9-class1/), so that you are in a position to build upon that knowledge and experience. 
 
 <br>
 
@@ -70,11 +75,11 @@ Let's step back for a moment, and identify the topics that a web service program
 * The JSON media type (and a little about the XML media type)
 
 Returning to the knowledge and skills that you gained in the previous web programming course, you can map to the list above:
-* Your requestor was a JavaScript XmlHttpRequest object that was running in a browser
-* Your responder was a Node+Express web app that was running in a server
+* The requestor was a JavaScript *XmlHttpRequest object* that was running in a browser
+* The responder was a *Node+Express web app* that was running in a server
 * You learned some fundamentals of the HTTP protocol, including using the GET and POST methods, as well as learning (and maybe using) other methods (PUT, DELETE, OPTIONS)
-* You also learned about responses from the server, and what to do when an HTTP 200 response comes back (update the DOM with the response content!)
-* You worked with JSON as the media type for the data in your requests and responses
+* You also learned about responses from the server, and what to do when an HTTP 200 response comes back (which was to update the DOM with the response content!)
+* JSON was the media type for the data in the requests and responses
 
 <br>
 
@@ -87,7 +92,7 @@ You will continue to use the frameworks and tools from the previous web programm
 * Visual Studio Code
 * Unix-like (macOS or Linux) development and execution environment
 
-Each web service that you create will be treated as a *separate and distinct* program. It will be concerned only with listening then responding to requests that come in. 
+Each web service that you create will be treated as a *separate and distinct* program, and not bundled in with the front end client (browser) app that you may be working on. It will be concerned only with listening then responding to requests that come in. 
 
 During development, you will use an *HTTP inspector* app, like [Postman](https://www.getpostman.com/), to create and send requests to a web service. 
 
@@ -115,7 +120,7 @@ Alternatively, if you create a server-based program, and it is intended to be us
 
 **Resource**
 
-A resource is a digital asset.
+A *resource* is a *digital asset*.
 
 Familiar examples include a document, or an image.
 
@@ -129,7 +134,10 @@ What is the format, or representation, of the resource? Well, it depends on the 
 
 As defined above, a resource is a digital asset.
 
-A representation is a digital asset that is formatted as a specific internet media type.
+A *representation* is a *digital asset* that is *formatted as a specific internet media type*.
+
+> The concrete or real form of a representation "is a sequence of bytes, plus ... metadata to describe those bytes".  
+> From Roy Fielding, "Architectural Styles and the Design of Network-based Software Architectures", [section 5.2.1.2](http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_2_1_2)
 
 Think about a scenario where a web service was used to manage students in a course. Each student is a resource - a digital asset - that can be identified by a URI.
 
@@ -163,103 +171,74 @@ Later, you will probably learn how to work with non-text media types. From now o
 
 <br>
 
-**State**
+**State, data**
 
-> TBA - the following is a brain dump - will be updated
+Let's discuss *state* in this section, and the next. 
 
-state transition
+In this section, we are interested in the state of the *data* elements in a distributed system. (In the next section, we will be interested in the state of the *interaction* among programs in a distributed system.) 
 
-reading the current state of a resource, or  
-changing the current state  
-this is *state transfer*
+In a web app or web service context, the meaning of the word *state* is the *current value of a resource*. 
 
-we work with a *representation* of a *resource*  
-so, when we're reading or changing...  
-we are transferring, from one app to another, a representation of the state of a resource  
-hence, REST
+At the server, a resource could be in the form of an item in a persistent store (i.e. a database system), or it could be in the form of an item that is generated upon request. That difference doesn't matter; what matters is that when a resource is requested, its current state is sent, or *transferred*, as the response. 
 
-ta da
+A resource's state can be *changed* (or modified), of course. The stimulus for the change can originate from anywhere in the distributed system, ranging from server-based batch or automatic processes that modify the persistent store (apart from or separately from the web app or web service), through to client-sent requests that are received by a web app or web service. 
 
-roy fielding
+> Does this work the other way, when a client app changes the state of an resource?  
+> Yes.  
+> A client can send a request that includes a *representation* of a resource. (For example, an HTTP POST or PUT request.)  
+> The *state* of the resource is *transferred*, from the client app to the server (web app or web service).  
+> Upon acceptance (and validation etc.), the server appends to or updates the resource in the persistent store.  
 
-parts of a web server...  
-TCP/IP stack  
-http listener
-runtime, execution environment for static and dynamic requests
-logger
-file system
-persistent store manager
+<br>
 
-state management...  
-server has a data store to persist resources (state persistence, permanent)  
-in HTTP, every request is atomic  
+**State, interaction**
 
-server's request-handling process: GET static resource
-1. server receives a request for a resource
-2. if the request is for a static resource that's in the file system, the server simply locates and fetches the resource
-3. assemble the response, which includes metadata and the representation of the resource, and then send the response
-4. log the fact that the request-response happened
-5. return to listening mode
+In this section, we are interested in the state of the *interaction* among programs in a distributed system. (In the previous section, we were interested in the state of the *data* elements in a distributed system.) 
 
-request-handling process: GET dynamically-generated resource
-1. server receives a request for a resource
-2. load the program code that does the dynamic generation
-3. assemble the response, which includes metadata and the representation of the resource, and then send the response
-4. unload the code that dynamically generated the resource
-5. log the fact that the request-response happened
-6. return to listening mode
+One of the characteristics of a web app or web service is that it can be used by a single client app, or by theoretically unlimited numbers of client apps. 
 
-the main point is that the server effectively treats every request as separate / discrete / atomic, and DOES NOT actively maintain any notion of a continual logical session
+Does the server keep track of the interaction state with each client? No. This responsibility is borne by the client app. This design feature is one of most important parts of the web.
 
-in other words, no state maintenance or state management at the server
+"Each request from client to server must contain all of the information necessary to understand the request, and cannot take advantage of any stored context on the server. Session state is kept entirely on the client." (Roy Fielding, [section 3.4.3](http://www.ics.uci.edu/~fielding/pubs/dissertation/net_arch_styles.htm#sec_3_4_3))
 
-this runs counter to a fimilar message-passing activity we as people do... a face-to-face or voice telephone conversation, in which each person in this kind of interactive information exchange maintains state naturally; each can easily recall what was said a few moments ago, and build upon that 
+The main point is that the server effectively treats every request as separate/discrete/atomic, and *does not* actively maintain any notion of a logical session over time. In other words, no interaction state maintenance or management is done at the server. 
 
-maybe define what a "session" is when used in a networked app context
-
-if the state of a (message exchange) session is important to maintain, it's done by the requester
-
-old web apps did more of this at the server, but scale is a problem  
-new web apps are designed for fast networks and fast client execution platforms (browsers or native like iOS or Android)
-
-shopping cart, bad direct analogy, because it's a hybrid  
-anonymous shopping is stateless  
-but if you're authenticated, the server will use that to create a shopping cart that's persisted in the data store 
-the server's MEMORY (active request-serving process) is not maintaining the shopping cart state in this situation  
-it's in the database  
+Therefore, if the interaction state of a (message exchange) session is important to maintain, it's done by the client.
 
 <br>
 
 **REST**
 
-Now we can circle back to REST. 
+Now we can circle back to REST. It is an acronym for **RE**presentational **S**tate **T**ransfer.
 
-**RE**presentational **S**tate **T**ransfer
+In the [week 9 notes](http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/course-notes/week9-class1/) of the previous course, you were introduced to the term "REST API", where it was explained *"as a way to use the HTTP protocol with a standard message format to preform operations on data"*.
 
+While that explanation is clear and understandable for a web programming student, it embeds a much deeper understanding that can come only through more learning and experience. If a student is serious about a career that includes web programming, then it is essential to study Roy Fielding's PhD dissertation from the year 2000, [Architectural Styles and the Design of Network-based Software Architectures](http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm).
 
+> More information about [Roy Fielding is here](https://en.wikipedia.org/wiki/Roy_Fielding).
+
+Will we be creating "REST APIs"? Yes, if we follow all the guidance and practices. However, that will come only with more knowledge and experience. (The School of ICT offers a web services pro option course that equips the student with most of what's needed to create a true REST API.) 
+
+As a result, it may be more accurate and safer to use the term "web API" when naming or describing our web service work. 
 
 <br>
 
-### TBA
+**Web API**
 
-let's get back to...
+The term "web API" captures the essence of "REST API" above, but it uses a more generic and easier to understand or explain word. Arguably, every computer user has a reasonably accurate knowledge of the word "web", so that word doesn't have to be explained. The expansion of the "API" initialism is also easy to understand or explain. It's just a bit better (and safer) than using "REST", and avoids the immediate need to cover large chunks of a [180-page PhD dissertation](http://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf). 
 
-In the previous web programming course, you got started with this task in the [Week 9 coverage](http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/course-notes/week9-class1/) (Ajax Review / Practical Ajax Programming). 
+So, let's define "web API" as *an API to a web app or web service*.
 
+<br>
 
-REST is an architectural style for designing networked apps
+### In summary
 
-remember curl
+In this document, we have defined and explained a web service.
 
-hmmm... in part of the course, use a public api
-* youtube
-* github
-* instagram
-* etc.
+We have been reminded of our brief introduction to web service programming in the previous WEB322 course.
 
-would be a good/efficient way to begin learning about auth too
+Terminology was introduced, argued, and explained. 
 
+Now, you're ready to take the next step, and create web services that support the main focus of this WEB422 course, which is front end client-side browser apps. 
 
-
-
-
+<br>
