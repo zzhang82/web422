@@ -21,7 +21,7 @@ Please note: new notes will be published as they become available.
 <ul>
 <li>Welcome to the WEB422 course</li>
 <li>Web services (re)introduction</li>
-<li>Setting up the back-end REST API</li>
+<li>Setting up the back-end Web API</li>
 <li>jQuery Review &amp; Rendering API Data</li>
 </ul>
 </td>
