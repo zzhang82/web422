@@ -3,7 +3,7 @@ title: Teams API Setup
 layout: default
 ---
 
-## Back-End REST API Setup
+## Back-End Web API Setup
 
 The following instructions are copied word-for-word from the README.md file for the teams-api sample (available Under <a href="https://github.com/sictweb/web422">"Code Examples"</a>)
 
@@ -84,7 +84,7 @@ using the information identified above - it should look something like:
 
 ## USING THE API
 
-The TeamsAPI project is a simple REST Api consisting of 4 collections:
+The TeamsAPI project is a simple Web Api consisting of 4 collections:
 
 * Employees
 * Positions
