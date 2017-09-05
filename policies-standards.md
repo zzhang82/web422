@@ -19,7 +19,7 @@ If you need help debugging your code, please make an appointment with your profe
 
 * Lectures will explain and demonstrate the skills and concepts you need to complete the assignments.
 
-* Frequent absence will be noted. You are responsible on all tests and labs for any material covered or assigned in class. People who do not come to class generally have significant problems completing their labs and traditionally do not perform well on their tests.
+* Frequent absence will be noted. You are responsible on all tests and labs for any material covered or assigned in class. People who do not come to class generally have significant problems completing their assignments and traditionally do not perform well on their tests.
 
 * Classes will start on time and late arrivals must not disturb the class. Enter quietly and take a seat. Do not disturb the class by asking questions about what took place before your arrival.
 
