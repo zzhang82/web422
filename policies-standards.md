@@ -58,6 +58,14 @@ Assignments - about 8 - 40%
 
 <br>
 
+### Promotion Policy
+
+* Achieve an average of 50% or better for all assignments
+*	Achieve an average of 50% or better for all tests
+*	Achieve a weighted average of 50% or better for the course
+
+<br>
+
 **Make-up (replacement) tests? No.**
 
 We don't do make-up or replacement tests, for a number of reasons, including the following:
