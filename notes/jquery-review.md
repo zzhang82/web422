@@ -117,14 +117,14 @@ This means that even if we use some of jQuery's DOM modification methods (see be
 <br>
 
 ```javascript
-$("document").on("click", "tr", function(){ // watch the whole document for when existing (or new) tr elements are clicked
+$(document).on("click", "tr", function(){ // watch the whole document for when existing (or new) tr elements are clicked
      console.log("table row clicked!");
 });
 ```
 
 <br>
 
-By defining the "click" element on the entire "document" object and filtering it by only affecting "tr" elememnts, we can guarantee that all "tr" elements will invoke the supplied function when clicked, regardless of when they are created in the future.  This saves us the hassle of wiring up new events every time we create a new &lt;tr&gt; element.
+By defining the "click" element on the entire document object and filtering it by only affecting "tr" elememnts, we can guarantee that all "tr" elements will invoke the supplied function when clicked, regardless of when they are created in the future.  This saves us the hassle of wiring up new events every time we create a new &lt;tr&gt; element.
 
 <br>
 
