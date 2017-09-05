@@ -39,7 +39,7 @@ $(function() { // this is the same as: $(document).ready(function(){
         console.log("id: " + $(this).attr("id") + "changed");
     });
 
-    $("document").on("click", "tr", function(){ // watch the whole document for when existing (or new) tr elements are clicked
+    $(document).on("click", "tr", function(){ // watch the whole document for when existing (or new) tr elements are clicked
         console.log("table row clicked!");
     });
 
