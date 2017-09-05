@@ -110,7 +110,7 @@ We can apply this method to any selected element in order to wire up ("respond t
 
 <br>
 
-What makes this function so powerful is that if we invoke the ".on" method on an element that isn't likely to change (an outer container or "document", for example), we can use the "selector" parameter to apply the callback function to **any** child element that matches that selector (even if it's dynamically created in the future).  
+What makes this function so powerful is that if we invoke the ".on" method on an element that isn't likely to change (an outer container or document, for example), we can use the "selector" parameter to apply the callback function to **any** child element that matches that selector (even if it's dynamically created in the future).  
 
 This means that even if we use some of jQuery's DOM modification methods (see below) to dynamically create a new input element (contained within an existing element with class="row") **after** we define the event, it will **still be applied** to the new input element.  This can sometimes lead to event handlers that take the form:
 
