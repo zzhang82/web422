@@ -3,18 +3,22 @@ title: WEB422 Week 2
 layout: default
 ---
 
-## WEB422 Week 2 to 3 Notes
+## WEB422 Week 2 Notes
 
-The theme for the next week or more is to build client-side browser-based JavaScript skills, using long-established libraries.
+The theme for the next week or more is to continue to build client-side browser-based JavaScript skills, using long-established libraries such as jQuery (continued coverage), Moment.js and Lodash. 
+
+We will also be introducing at SASS as a powerful and widely adopted CSS preprocessor / extension language.
 
 Remember to frequently use the [learning resources](/web422/resources).
 
 **Topics:**
 
-[Coverage of jQuery](jquery), new and existing code
+[jQuery Continued...](jquery)
 
-Study [other useful JavaScript libraries](other-js-libraries) (Underscore, Lodash, Moment)
+Handling Date/Time information using [Moment.js](moment)
 
-Setting the stage for a transition to "modern" front end dev...
+Helpful Utility Functions with [Lodash](lodash)
+
+[Introduction to SASS](sass)
 
 <br>
