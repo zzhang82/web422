@@ -3,7 +3,7 @@ title: WEB422 Week 1
 layout: default
 ---
 
-## WEB422 Week 1 to 2 Notes
+## WEB422 Week 1 Notes
 
 The theme for the first week or more is to transition your success in the previous course to the new topics in this course.
 
