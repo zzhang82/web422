@@ -310,7 +310,5 @@ Using this strategy of creating DOM elements in response to the acquisition of n
   * jQuery Plugin Community: [https://plugins.jquery.com/](https://plugins.jquery.com/) & [NPM](https://www.npmjs.com/browse/keyword/jquery-plugin)
   * Advanced data rendering (Bootstrap, flot, populating forms)
   * Using jQuery to invoke Bootstrap Controls
-  * Using jQuery to implement "data binding"
-
   
   
