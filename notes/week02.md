@@ -9,8 +9,6 @@ The theme for the next week or more is to continue to build client-side browser-
 
 We will also be introducing at SASS as a powerful and widely adopted CSS preprocessor / extension language.
 
-Remember to frequently use the [learning resources](/web422/resources).
-
 **Topics:**
 
 [jQuery Continued...](jquery)
