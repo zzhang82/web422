@@ -58,7 +58,7 @@ where
 
 7. Once this is done and your working directory is "API-data-restore", execute the command:
 
-`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>"`
+`mongorestore -h ds######.mlab.com:##### -d <dbname> -u <dbuser> -p <dbpassword>`
 
 using the information identified above - it should look something like: 
 
