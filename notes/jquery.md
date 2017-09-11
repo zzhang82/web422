@@ -21,7 +21,7 @@ $.ajax({
 });
 ```
 
-Today, we will be rounding out our discussion of jQuery by discussing some of jQuery's **Utility** methods, as well as introducing the notion of **jQuery Plugins** and the **Plugin Community**. We will discuss how to handle **form data** (ie: reading / writing form information) using jQuery and lastly, how to work with **Bootstrap 3 Components** using jQuery:
+Today, we will be rounding out our discussion of jQuery by discussing some of jQuery's **Utility** methods, as well as how to handle **form data** (ie: reading / writing form information) using jQuery. Lastly, we will have a quick discussion on working with **Bootstrap 3 Components** using jQuery:
 
 ## Utility Methods
 
@@ -106,7 +106,7 @@ let htmlArr = $.parseHTML( "hello, <b>my name is</b> jQuery." ); // => 3 element
 
 jQuery has a very nice interface for handling form values.  The following sections illustrate how we can **get**, **set** and correctly **clear** the values of **text** / **password**, **checkbox**, **radiobutton**, **textarea** and **select (single / multiple)** elements.  
 
-If you’re following along with the “Code Samples” the following functionality is located in the “week2/jQuery-AJAX” folder
+If you’re following along with the “Code Samples” the following functionality is located in the “week2/jQuery” folder
 
 ### text / password elements
 
@@ -235,18 +235,23 @@ $("#select1").val("");
 $("#select2").val("");
 ```
 
-## jQuery Plugins
+## jQuery & Bootstrap
 
-A large part of what makes jQuery so handy for front-end development is it's vast collection of community (free & paid) plugins.
+The Bootstrap UI framework has become so instrumental in the construction of modern, responsive web apps; largety due to it's execellent design patterns, modern tooling and wealth of online resources and templates.  However, we have only really used it's CSS (and minimal) JavaScript capabilities.  In order to unlock Bootstrap's full potential as a UI/UX framework, is to familiarize ourselves with the interactive UI components and the jQuery API used to invoke/manipulate them.  
 
-The initial jQuery plugin registry began at: [https://plugins.jquery.com/](https://plugins.jquery.com/) however, these days the recommended location is (you guessed it) NPM: https://www.npmjs.com/browse/keyword/jquery-plugin.  The plugins.jquery.com registry is currently in "read-only mode", stating that "new plugin releases will not be processed".
+As we have seen, we don't necessairly need to touch any JS code to make use of some of the interactive components.  The bootstrap framework uses jQuery in an unobtrusive way, by utalizing '**data-**' attributes, ie:
 
-The more popular plugins are usually extremely well documented and very simple to use once you have jQuery installed.  Since we have been working with jQuery and are now fairly comftorable using it in our solutions; why don't we try to download something that will help us render our data in a more interesting way?
+```html
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+```
 
-### The 'graphart' Plugin
+However, what if we wish to launch a modal window at a different (unknown) time? For example; when an AJAX request completes?  This is where the [Programmatic API](https://getbootstrap.com/docs/3.3/javascript/#js-programmatic-api) comes in to play. It gives us more power and flexability to work with the compoments.
 
-One of the more popular free jQuery graphing plugins is [**graphart**](https://github.com/styopdev/graphart)
+Using the API we can interact with all of Bootstrap's JavaScript components programmatically (from JavaScript).  The following examples illustrate how we can use the API to take advantage of some of Bootstraps most useful components:
 
+### Modal Window
 
-
+Arguably one of the most important elements in modern UI/UX design is the "modal" window.  We can use it to display error/success warnings or focus the user's attention on a specific task.
 
