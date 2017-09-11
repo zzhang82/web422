@@ -112,7 +112,7 @@ If you’re following along with the “Code Samples” the following functional
 
 ```html
 <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-input type="password" class="form-control" id="inputPassword" placeholder="Password">
+<input type="password" class="form-control" id="inputPassword" placeholder="Password">
 ```
 
 ***Set***
