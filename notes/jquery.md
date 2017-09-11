@@ -235,6 +235,18 @@ $("#select1").val("");
 $("#select2").val("");
 ```
 
+## jQuery Plugins
+
+A large part of what makes jQuery so handy for front-end development is it's vast collection of community (free & paid) plugins.
+
+The initial jQuery plugin registry began at: [https://plugins.jquery.com/](https://plugins.jquery.com/) however, these days the recommended location is (you guessed it) NPM: https://www.npmjs.com/browse/keyword/jquery-plugin.  The plugins.jquery.com registry is currently in "read-only mode", stating that "new plugin releases will not be processed".
+
+The more popular plugins are usually extremely well documented and very simple to use once you have jQuery installed.  Since we have been working with jQuery and are now fairly comftorable using it in our solutions; why don't we try to download something that will help us render our data in a more interesting way?
+
+### The 'graphart' Plugin
+
+One of the more popular free jQuery graphing plugins is [**graphart**](https://github.com/styopdev/graphart)
+
 
 
 
