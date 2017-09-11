@@ -133,6 +133,108 @@ $("#inputEmail").val("");
 $("#inputPassword").val("");
 ```
 
+### checkbox elements
+
+```html
+<input type="checkbox" id="checkbox1"> Checkbox
+```
+
+***Set***
+```js
+$("#checkbox1").prop("checked", true); // set to "checked"
+```
+
+***Get***
+```js
+$("#checkbox1").prop("checked"); // true / false
+```
+
+***Clear***
+```js
+$("#checkbox1").prop("checked", false);
+```
+
+### radiobutton elements
+
+```html
+<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"> Option One
+<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Option Two
+```
+
+***Set***
+```js
+$('input[name=optionsRadios][value=' + 'option2' + ']').prop("checked", true ); // set "option 2" to checked
+```
+
+***Get***
+```js
+$('input[name=optionsRadios]:checked').val(); // get the value of the checked "optionsRadio"
+```
+
+***Clear***
+```js
+$('input[name=optionsRadios]').prop("checked", false);
+```
+
+### textarea elements
+
+```html
+<textarea class="form-control" rows="3" id="textarea1"></textarea>
+```
+
+***Set***
+```js
+$("#textarea1").val("from jQuery"); // set to "from jQuery"
+```
+
+***Get***
+```js
+$("#textarea1").val();
+```
+
+***Clear***
+```js
+$("#textarea1").val("");
+```
+
+### select (single / multiple) elements
+
+```html
+<select class="form-control" id="select1">
+    <option value="">Please Select</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+    <option value="4">Four</option>
+    <option value="5">Five</option>
+</select>
+<select multiple="" class="form-control" id="select2">
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+    <option value="4">Four</option>
+    <option value="5">Five</option>
+</select>
+```
+
+***Set***
+```js
+$("#select1").val(3); // set to "Three"
+$("#select2").val([4,5]); // set to "Four" and "Five"
+```
+
+***Get***
+```js
+$("#select1").val();
+$("#select2").val();
+```
+
+***Clear***
+```js
+$("#select1").val("");
+$("#select2").val("");
+```
+
 
 
 
