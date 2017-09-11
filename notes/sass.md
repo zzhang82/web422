@@ -76,6 +76,8 @@ You will know when the process has completed successfully when you see the follo
 
 With our script humming along in the background waiting for changes, why don't we try out some of the great features of our new (Awesome) CSS extension language?
 
+Please Note: If you're following along with the "Code Samples" the following functionality is located in the **"week2/SASS"** folder
+
 ### Variables
 
 Think of variables as a way to store information that you want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value you think you'll want to reuse. Sass uses the $ symbol to make something a variable. Here's an example:
