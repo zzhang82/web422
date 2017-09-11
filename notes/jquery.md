@@ -45,7 +45,7 @@ jQuery.data( div, "test" ).first; // => 16
 jQuery.data( div, "test" ).last; // => "pizza!"
 ```
 
-## jQuery.removeData()
+### jQuery.removeData()
 
 Remove a previously-stored piece of data.
 
