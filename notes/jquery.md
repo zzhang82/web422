@@ -102,6 +102,37 @@ See: [http://api.jquery.com/jQuery.parseHTML/](http://api.jquery.com/jQuery.pars
 let htmlArr = $.parseHTML( "hello, <b>my name is</b> jQuery." ); // => 3 elements: 'hello, ', <b> and ' jQuery.'
 ```
 
+## Handling Form Data
+
+jQuery has a very nice interface for handling form values.  The following sections illustrate how we can **get**, **set** and correctly **clear** the values of **text** / **password**, **checkbox**, **radiobutton**, **textarea** and **select (single / multiple)** elements.  
+
+If you’re following along with the “Code Samples” the following functionality is located in the “week2/jQuery-AJAX” folder
+
+### text / password elements
+
+```html
+<input type="text" class="form-control" id="inputEmail" placeholder="Email">
+input type="password" class="form-control" id="inputPassword" placeholder="Password">
+```
+
+***Set***
+```js
+$("#inputEmail").val("from jQuery"); // set to "from jQuery"
+$("#inputPassword").val("abc"); // set to "abc"
+```
+
+***Get***
+```js
+$("#inputEmail").val(); 
+$("#inputPassword").val();
+```
+
+***Clear***
+```js
+$("#inputEmail").val(""); 
+$("#inputPassword").val("");
+```
+
 
 
 
