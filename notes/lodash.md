@@ -25,4 +25,127 @@ As previously stated, this is only a sampling of some of the more interesting an
 
 If you're following along with the "Code Samples" the following functionality is located in the **"week2/Lodash"** folder
 
+### Sample Data
+
+For the following code examples, we will assume that we have a Flintstones-inspired **users** collection that contains the following data:
+
+```js
+let users = [
+    { 'user': 'fred',    'active': false, 'age': 40 },
+    { 'user': 'pebbles', 'active': false, 'age': 1  },
+    { 'user': 'barney',  'active': true,  'age': 36 }
+];
+```
+
+## Array Methods
+
+### \_.chunk(array, [size=1])
+
+Creates an array of elements split into groups the length of size. If array can't be split evenly, the final chunk will be the remaining elements. See: [https://lodash.com/docs/4.17.4#chunk](https://lodash.com/docs/4.17.4#chunk)
+
+```js
+let chunk1 = _.chunk(['a', 'b', 'c', 'd'], 2); // => [['a', 'b'], ['c', 'd']] 
+let chunk2 = _.chunk(['a', 'b', 'c', 'd'], 3); // => [['a', 'b', 'c'], ['d']]
+let chunk3 = _.chunk(users, 2); // objects for [['fred', 'pebbles'], 'barney']
+```
+
+### \_.findIndex(array, [predicate=_.identity], [fromIndex=0])
+
+Returns the index of the first element **predicate** returns truthy for, instead of the element itself. 
+
+See: [https://lodash.com/docs/4.17.4#findIndex](https://lodash.com/docs/4.17.4#findIndex) and also [https://lodash.com/docs/4.17.4#findLastIndex](https://lodash.com/docs/4.17.4#findLastIndex) and [https://lodash.com/docs/4.17.4#find](https://lodash.com/docs/4.17.4#find)
+
+```js
+let findIndex1 = _.findIndex(users, function(user) { 
+    return user.user == 'fred'; 
+}); // => 1
+```
+
+### \_.take(array, [n=1])
+
+Creates a slice of array with n elements taken from the beginning.
+
+See: [https://lodash.com/docs/4.17.4#take](https://lodash.com/docs/4.17.4#take)
+
+```js
+ let take1 = _.take(users,2) // => objects for ['fred, pebbles']
+```
+
+## Collection Methods
+
+### \_.filter(collection, [predicate=_.identity])
+
+... See: [https://lodash.com/docs/4.17.4#filter](https://lodash.com/docs/4.17.4#filter) and also: [https://lodash.com/docs/4.17.4#find](https://lodash.com/docs/4.17.4#find)
+
+```js
+
+```
+
+### 
+
+... See: 
+
+```js
+
+```
+
+### 
+
+... See: 
+
+```js
+
+```
+
+## Number Methods
+
+### 
+
+... See: 
+
+```js
+
+```
+
+## Object Methods
+
+### 
+
+... See: 
+
+```js
+
+```
+
+### 
+
+... See: 
+
+```js
+
+```
+
+## String Methods
+
+### 
+
+... See: 
+
+```js
+
+```
+
+### 
+
+... See: 
+
+```js
+
+```
+
+
+
+
+
+
 
