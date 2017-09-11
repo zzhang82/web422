@@ -68,7 +68,7 @@ Creates a slice of array with n elements taken from the beginning.
 See: [https://lodash.com/docs/4.17.4#take](https://lodash.com/docs/4.17.4#take)
 
 ```js
- let take1 = _.take(users,2) // => objects for ['fred, pebbles']
+let take1 = _.take(users,2) // => objects for ['fred, pebbles']
 ```
 
 ## Collection Methods
@@ -78,69 +78,120 @@ See: [https://lodash.com/docs/4.17.4#take](https://lodash.com/docs/4.17.4#take)
 ... See: [https://lodash.com/docs/4.17.4#filter](https://lodash.com/docs/4.17.4#filter) and also: [https://lodash.com/docs/4.17.4#find](https://lodash.com/docs/4.17.4#find)
 
 ```js
-
+let filter1 = _.filter(users, function(user) {
+    return user.active == true;
+}); // => objects for ['barney']
 ```
 
-### 
+### \_.sortBy(collection, [iteratees=[_.identity]])
 
-... See: 
+Creates an array of elements, sorted in ascending order by the results of running each element in a collection thru each iteratee. This method performs a stable sort, that is, it preserves the original sort order of equal elements. The iteratees are invoked with one argument: (value). 
+
+See: [https://lodash.com/docs/4.17.4#sortBy](https://lodash.com/docs/4.17.4#sortBy)
 
 ```js
-
+let sortBy1 = _.sortBy(users, [
+    function(user) { 
+        return user.user; 
+    }
+]); // => objects for ['barney', 'fred', 'pebbles']
 ```
 
-### 
+### \_.forEachRight(collection, [iteratee=_.identity])
 
-... See: 
+This method is like \_.forEach except that it iterates over elements of collection from right to left.
+
+See: [https://lodash.com/docs/4.17.4#forEachRight](https://lodash.com/docs/4.17.4#forEachRight) and also: [https://lodash.com/docs/4.17.4#forEach](https://lodash.com/docs/4.17.4#forEach)
 
 ```js
+let forEachRight1 = [];
 
+_.forEachRight(users, function(user) {
+    forEachRight1.push(user);
+}); // iterates as ['barney', 'pebbles', 'fred']
 ```
 
 ## Number Methods
 
-### 
+### \_.random([lower=0], [upper=1], [floating])
 
-... See: 
+Produces a random number between the inclusive lower and upper bounds. If only one argument is provided, a number between 0 and the given number is returned. If floating is true, or either lower or upper are floats, a floating-point number is returned instead of an integer.
+
+See: [https://lodash.com/docs/4.17.4#random](https://lodash.com/docs/4.17.4#random)
 
 ```js
-
+let random1 = _.random(0, 5); // => an integer between 0 and 5
+let random2 = _.random(5); // => also an integer between 0 and 5
+let random3 = _.random(5, true); // => a floating-point number between 0 and 5
+let random4 = _.random(1.2, 5.2);// => a floating-point number between 1.2 and 5.2
 ```
 
 ## Object Methods
 
-### 
+### \_.cloneDeep(value)
 
-... See: 
+This method is like \_.clone except that it recursively clones value.
+
+See: [https://lodash.com/docs/4.17.4#cloneDeep](https://lodash.com/docs/4.17.4#cloneDeep) and also: [https://lodash.com/docs/4.17.4#clone](https://lodash.com/docs/4.17.4#clone)
 
 ```js
-
+let cloneDeep1 = _.cloneDeep(users); // cloneDeep1[0] !== users[0]
 ```
 
-### 
+### \_.pick(object, [paths])
 
-... See: 
+Creates an object composed of the picked object properties.
+
+See: [https://lodash.com/docs/4.17.4#pick](https://lodash.com/docs/4.17.4#pick)
 
 ```js
-
+let pick1 = _.pick(users[0], ['user', 'age']); // => { 'user': 'fred', 'age': 40 } // note: pick !== users[0]
 ```
 
 ## String Methods
 
-### 
+### \_.escape([string=''])
 
-... See: 
+Converts the characters "&", "<", ">", '"', and "'" in string to their corresponding HTML entities.
+
+See: [https://lodash.com/docs/4.17.4#escape](https://lodash.com/docs/4.17.4#escape) and also: [https://lodash.com/docs/4.17.4#unescape](https://lodash.com/docs/4.17.4#unescape)
 
 ```js
-
+let escape1 = _.escape('fred, barney, & pebbles'); // => 'fred, barney, &amp; pebbles'
 ```
 
-### 
+### \_.template([string=''], [options={}])
 
-... See: 
+Creates a compiled template function that can interpolate data properties in "interpolate" delimiters, HTML-escape interpolated data properties in "escape" delimiters, and execute JavaScript in "evaluate" delimiters. Data properties may be accessed as free variables in the template. If a setting object is given, it takes precedence over [\_.templateSettings](https://lodash.com/docs/4.17.4#templateSettings) values.
+
+See: [https://lodash.com/docs/4.17.4#template](https://lodash.com/docs/4.17.4#template)
 
 ```js
+// Use the "interpolate" delimiter to create a compiled template.
+let template1 = _.template('hello <%= user %>!');
+let template1Result = template1({ 'user': users[0].user });  // => 'hello fred!'
 
+// Use the HTML "escape" delimiter to escape data property values.
+let template2 = _.template('<b><%- value %></b>');
+let template22Result = template2({ 'value': '<script>' }); // => '<b>&lt;script&gt;</b>'
+
+// Use the "evaluate" delimiter to execute JavaScript and generate HTML.
+let template3 = _.template('<ul>' + 
+                                '<% _.forEach(users, function(user) { %>' +
+                                    '<li><%- user %></li>' + 
+                                '<% }); %>' +
+                            '</ul>');
+
+let template3Result = template3({ 'users': ['fred', 'barney'] }); // => '<ul><li>fred</li><li>barney</li></ul>'
+
+// Use the "evaluate" delimiter to execute JavaScript and generate HTML from our "users" collection.
+let template4 = _.template('<ul>' + 
+                                '<% _.forEach(users, function(user) { %>' + 
+                                    '<li><%- user.user %></li>' + 
+                                '<% }); %>' + 
+                            '</ul>');
+
+let template4Result = template4({ 'users': users }); // => '<ul><li>fred</li><li>pebbles</li><li>barney</li></ul>'
 ```
 
 
