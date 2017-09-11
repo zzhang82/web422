@@ -18,6 +18,7 @@ SASS functions as a CSS precompiler - that is, it adds functionality to CSS in a
 NPM - what can't it do?  Today we'll be using it to obtain a package called "[node-sass](https://www.npmjs.com/package/node-sass)":
 
 1. Even though we aren't using Node.js for our application, it still pays to have a "package.json" file in our working directory to manage our dependencies.  In the root of your current working directory (If you're following along with the code examples, it will be the "SASS" directory), create a very simple "package.json" file with an empty list of dependencies:
+
 ```json
 {
   "dependencies": {}
@@ -25,11 +26,13 @@ NPM - what can't it do?  Today we'll be using it to obtain a package called "[no
 ```
 
 2. Once you have saved this file, close it and open your Integrated Terminal in order to execute the command:
-```
-npm install --save node-sass
-```
+
+  ```
+  npm install --save node-sass
+  ```
 
 3. Next, we need to add a few directories and files to our working directory:
+
 * CSS
   * *[empty]*
 * SASS
@@ -38,11 +41,11 @@ npm install --save node-sass
   
 4. And finally, to make sure our new "node-sass" CLI works to "watch" our **main.scss** file for changes and correctly update a new file **CSS/main.css**, we must add the following "scripts" property to our "package.json" file:
 
-```json
-"scripts": {
-  "build-css": "node-sass scss/main.scss css/main.css --include-path scss -w"
-}
-```
+  ```json
+  "scripts": {
+    "build-css": "node-sass scss/main.scss css/main.css --include-path scss -w"
+  }
+  ```
 
 Now, your complete "package.json" file should look something like:
 
