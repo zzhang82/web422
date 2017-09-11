@@ -194,7 +194,11 @@ let template4 = _.template('<ul>' +
 let template4Result = template4({ 'users': users }); // => '<ul><li>fred</li><li>pebbles</li><li>barney</li></ul>'
 ```
 
+## Adding Sorting & Paging
 
+Using the methods outlined above, we can very easily add "paging" and "sorting" functionality to our week1 **jquery-AJAX** example.  This can be accomplished using the **.\_template()**, **.\_chunk()**, **.\_take()** and **.\_sortBy()** methods.
+
+To see how we can use Lodash and the aforementioned properties to implement **sorting** and **paging**, open the **Lodash-AJAX** Example located in the **week2** folder.  We will walk through the solution together in class.
 
 
 
