@@ -11,7 +11,7 @@ There are two syntaxes available for Sass. The first, known as SCSS (Sassy CSS) 
 
 ### Getting Started
 
-SASS functions as a CSS precompiler - that is, it adds functionality to CSS in a layer *above* it and we must run a script / program to convert our SASS files into regular CSS.  Where do we find this program?  There are [plenty](http://sass-lang.com/install) to choose from, ranging from simple command line tools to elaborate GUI applications.  However, we will be sticking with something simple... 
+SASS functions as a CSS precompiler - it adds functionality to CSS in a layer *above* it and we must run a script / program to convert our SASS files into regular CSS.  Where do we find this program?  There are [plenty](http://sass-lang.com/install) to choose from, ranging from simple command line tools to elaborate GUI applications.  However, we will be sticking with something simple... 
 
 ### Using NPM (of course)
 
