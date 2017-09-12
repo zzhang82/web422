@@ -5,7 +5,7 @@ layout: default
 
 ## jQuery
 
-Last week we introduced jQuery and it's value proposition as a the "swiss army knife" of the DOM, giving us everything we need to create DHTML (ie: selecting elements, watching for / responding to events & updating the DOM).  We finished off the lecture by discussing how we can make AJAX requests using jQuery.  As we saw, this code can be very clean and compact:
+Last week we introduced jQuery and it's value proposition as a the "swiss army knife" of the DOM, giving us everything we need to create DHTML (ie: selecting elements, watching for / responding to events & updating the DOM).  We finished off the lecture by discussing how we can make AJAX requests using jQuery, ie:
 
 ```js
 $.ajax({
@@ -106,7 +106,7 @@ let htmlArr = $.parseHTML( "hello, <b>my name is</b> jQuery." ); // => 3 element
 
 jQuery has a very nice interface for handling form values.  The following sections illustrate how we can **get**, **set** and correctly **clear** the values of **text** / **password**, **checkbox**, **radiobutton**, **textarea** and **select (single / multiple)** elements.  
 
-If you’re following along with the “Code Samples” the following functionality is located in the “week2/jQuery” folder
+If you’re following along with the “Code Samples” the following functionality is located in the **“week2/jQuery”** folder
 
 ### text / password elements
 
@@ -235,8 +235,6 @@ $("#select1").val("");
 $("#select2").val("");
 ```
 
-
-
 ## jQuery & Bootstrap
 
 The Bootstrap UI framework has become so instrumental in the construction of modern, responsive web apps; largety due to it's execellent design patterns, modern tooling and wealth of online resources and templates.  However, we have only really used it's CSS (and minimal) JavaScript capabilities.  In order to unlock Bootstrap's full potential as a UI/UX framework, is to familiarize ourselves with the interactive UI components and the jQuery API used to invoke/manipulate them.  
@@ -268,7 +266,9 @@ $('#myModal').modal({ // show the modal programmatically
 
 ### Button States
 
-...
+Although, technically deprecated, the 'loading' and 'reset' button states are simple way to programmatically enable/disable a button while at the same time, changing it's text.  This is useful in cases where clicking the button makes an AJAX request and we wish to disable the button until the request has completed.
+
+The 'toggle' state is not deprecated and provides a quick way to show a button as 'pressed'.   
 
 See: [https://getbootstrap.com/docs/3.3/javascript/#buttons-stateful](https://getbootstrap.com/docs/3.3/javascript/#buttons-stateful) and also: [https://getbootstrap.com/docs/3.3/javascript/#buttons-methods](https://getbootstrap.com/docs/3.3/javascript/#buttons-methods)
 
@@ -280,14 +280,41 @@ $("#loadingDelay").button('toggle'); // toggles 'push' state
 
 ### Popovers
 
-...
+Popovers are like a tooltip, however they have their own title bar, and are capable of rendering HTML content.  If we wish to use these components, we must 'opt-in' by using the following "popover" method in JavaScript.  The full list of options provided can be found here: [https://getbootstrap.com/docs/3.3/javascript/#popovers-options](https://getbootstrap.com/docs/3.3/javascript/#popovers-options)
 
 See: [https://getbootstrap.com/docs/3.3/javascript/#popovers-usage](https://getbootstrap.com/docs/3.3/javascript/#popovers-usage)
 
+```js
+$("#dynamicPopover").popover({
+    template: '<div class="popover" role="tooltip"><div class="arrow"></div>' + 
+              '<h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+    title: 'Tooltip Title',
+    content: 'Lorem ipsum dolor sit amet',
+    placement: 'top',
+    trigger: 'click'
+});
+```
 
 ### Alerts
 
-...
+Alerts are small messages that take the form of "**success**", "**informational**", "**warning**", or "**danger**".  The template for creating alerts is fairly consistant, ie:
+
+```js
+let alertTemplate = '<div class="alert alert-warning alert-dismissible fade in" role="alert">' +
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' + 
+                            '<span aria-hidden="true">×</span>' +
+                        '</button>' +
+                        '<strong>Warning</strong>' + alertMessage + 
+                    '</div>';
+```
+We can use this to create alert messages on the fly and .append() them to our page whenever we wish to alert the user.  
+
+Unlike the modal window, these small messages don't block the UI and don't demand any action from the user, except to expictly close them.  We can however, get around this limitation by using the .alert('close') method after a certain amount of time:
+
+```js
+setTimeout(function(){
+            $warningAlert.alert('close'); 
+        },3000)
+```
 
 See: [https://getbootstrap.com/docs/3.3/javascript/#alerts-methods](https://getbootstrap.com/docs/3.3/javascript/#alerts-methods)
-
