@@ -313,8 +313,8 @@ Unlike the modal window, these small messages don't block the UI and don't deman
 
 ```js
 setTimeout(function(){
-            $warningAlert.alert('close'); 
-        },3000)
+    $warningAlert.alert('close'); 
+},3000);
 ```
 
 See: [https://getbootstrap.com/docs/3.3/javascript/#alerts-methods](https://getbootstrap.com/docs/3.3/javascript/#alerts-methods)
