@@ -259,6 +259,12 @@ Arguably one of the most important elements in modern UI/UX design is the "modal
 
 See: [https://getbootstrap.com/docs/3.3/javascript/#modals](https://getbootstrap.com/docs/3.3/javascript/#modals)
 
+```js
+$('#myModal').modal({ // show the modal programmatically
+    backdrop: 'static', // disable clicking on the backdrop to close
+    keyboard: false // disable using the keyboard to close
+});
+````
 
 ### Button States
 
@@ -266,6 +272,22 @@ See: [https://getbootstrap.com/docs/3.3/javascript/#modals](https://getbootstrap
 
 See: [https://getbootstrap.com/docs/3.3/javascript/#buttons-stateful](https://getbootstrap.com/docs/3.3/javascript/#buttons-stateful) and also: [https://getbootstrap.com/docs/3.3/javascript/#buttons-methods](https://getbootstrap.com/docs/3.3/javascript/#buttons-methods)
 
+```js
+$("#loadingDelay").button('loading'); // switch to a disabled 'loading' state
+$("#loadingDelay").button('reset'); // reset the button state
+$("#loadingDelay").button('toggle'); // toggles 'push' state
+```
 
 ### Popovers
+
+...
+
+See: [https://getbootstrap.com/docs/3.3/javascript/#popovers-usage](https://getbootstrap.com/docs/3.3/javascript/#popovers-usage)
+
+
+### Alerts
+
+...
+
+See: [https://getbootstrap.com/docs/3.3/javascript/#alerts-methods](https://getbootstrap.com/docs/3.3/javascript/#alerts-methods)
 
