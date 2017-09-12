@@ -21,7 +21,7 @@ $.ajax({
 });
 ```
 
-Today, we will be rounding out our discussion of jQuery by discussing some of jQuery's **Utility** methods, as well as how to handle **form data** (ie: reading / writing form information) using jQuery. Lastly, we will have a quick discussion on working with **Bootstrap 3 Components** using jQuery:
+Today, we will be rounding out our discussion of jQuery by discussing some of jQuery's **Utility** methods, as well as how to handle **form data** (ie: reading / writing form information). Lastly, we will have a quick discussion on working with **Bootstrap 3 Components** using jQuery:
 
 ## Utility Methods
 
@@ -235,6 +235,8 @@ $("#select1").val("");
 $("#select2").val("");
 ```
 
+
+
 ## jQuery & Bootstrap
 
 The Bootstrap UI framework has become so instrumental in the construction of modern, responsive web apps; largety due to it's execellent design patterns, modern tooling and wealth of online resources and templates.  However, we have only really used it's CSS (and minimal) JavaScript capabilities.  In order to unlock Bootstrap's full potential as a UI/UX framework, is to familiarize ourselves with the interactive UI components and the jQuery API used to invoke/manipulate them.  
@@ -254,4 +256,16 @@ Using the API we can interact with all of Bootstrap's JavaScript components prog
 ### Modal Window
 
 Arguably one of the most important elements in modern UI/UX design is the "modal" window.  We can use it to display error/success warnings or focus the user's attention on a specific task.
+
+See: [https://getbootstrap.com/docs/3.3/javascript/#modals](https://getbootstrap.com/docs/3.3/javascript/#modals)
+
+
+### Button States
+
+...
+
+See: [https://getbootstrap.com/docs/3.3/javascript/#buttons-stateful](https://getbootstrap.com/docs/3.3/javascript/#buttons-stateful) and also: [https://getbootstrap.com/docs/3.3/javascript/#buttons-methods](https://getbootstrap.com/docs/3.3/javascript/#buttons-methods)
+
+
+### Popovers
 
