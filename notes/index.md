@@ -26,5 +26,16 @@ Please note: new notes will be published as they become available.
 </ul>
 </td>
 </tr>
+<tr>
+<td><a href="/web422/notes/week02">2 - Notes</a></td>
+<td>
+<ul>
+<li>jQuery Continued...</li>
+<li>Handling Date/Time information using Moment.js</li>
+<li>Helpful Utility Functions with Lodash</li>
+<li>Introduction to SASS</li>
+</ul>
+</td>
+</tr>
 </tbody>
 </table>
