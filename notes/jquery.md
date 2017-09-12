@@ -297,7 +297,7 @@ $("#dynamicPopover").popover({
 
 ### Alerts
 
-Alerts are small messages that take the form of "**success**", "**informational**", "**warning**", or "**danger**".  The template for creating alerts is fairly consistant, ie:
+Alerts are small messages that take the form of "**success**", "**information**", "**warning**", or "**danger**".  The template for creating alerts is fairly consistant, ie:
 
 ```js
 let alertTemplate = '<div class="alert alert-warning alert-dismissible fade in" role="alert">' +
