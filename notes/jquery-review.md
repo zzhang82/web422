@@ -66,7 +66,7 @@ $( ".row:has(#animal-table)" );| **has() Selector:** Selects elements which cont
 
 <br>
 
-As you can see from the above table, it is often the case that a selector will select **more than one** element. This is fine if we want to apply the same operations to a group of elements.  However, if we wish to access each selected element individually,  we can leverage jQuery's [each() function](http://api.jquery.com/jquery.each/) to iterate over the elements in the collection. For Example:
+As you can see from the above table, it is often the case that a selector will select **more than one** element. This is fine if we want to apply the same operations to a group of elements.  However, if we wish to access each selected element individually,  we can leverage jQuery's [each() function](http://api.jquery.com/each/) to iterate over the elements in the collection. For Example:
 
 <br>
 
