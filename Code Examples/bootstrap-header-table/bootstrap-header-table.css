@@ -1,5 +1,6 @@
 .bootstrap-header-table {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    max-width:100%;
 }
 .bootstrap-header-table .header-row {
     background-color: #F5F5F5;

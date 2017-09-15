@@ -3,6 +3,7 @@ $bootstrap-header-table-color: #F5F5F5;
 
 .bootstrap-header-table{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    max-width:100%;
     .header-row{
         background-color: $bootstrap-header-table-color;
         border: 1px solid darken($bootstrap-header-table-color, 10%);
