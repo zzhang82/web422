@@ -199,7 +199,7 @@ Knockout.js offers the following binding syntax for dealing with text and the ap
 <tr>
 <th>Binding Type</th>
 <th>Description</th>
-<th>Example</th>
+<th>Usage</th>
 </tr>
 </thead>
 <tbody>
@@ -207,10 +207,7 @@ Knockout.js offers the following binding syntax for dealing with text and the ap
 <td><a href="http://knockoutjs.com/documentation/visible-binding.html">The "visible" binding</a></td>
 <td>The visible binding causes the associated DOM element to become hidden or visible according to the value you pass to the binding.</td>
 <td>
-
-```
-<div data-bind="visible: shouldShowMessage">
-```
+<pre lang="html">&lt;div data-bind=&quot;visible: shouldShowMessage&quot;&gt;</pre>
 </td>
 </tr>
 <tr>
@@ -250,7 +247,7 @@ Knockout.js offers the following binding syntax for dealing with "control flow",
 <tr>
 <th>Binding Type</th>
 <th>Description</th>
-<th>Example</th>
+<th>Usage</th>
 </tr>
 </thead>
 <tbody>
