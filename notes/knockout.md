@@ -208,18 +208,8 @@ Knockout.js offers the following binding syntax for dealing with text and the ap
 <td>The visible binding causes the associated DOM element to become hidden or visible according to the value you pass to the binding.</td>
 <td>
 
-```javascript
+```html
 <div data-bind="visible: shouldShowMessage">
-    You will see this message only when "shouldShowMessage" holds a true value.
-</div>
- 
-<script type="text/javascript">
-    var viewModel = {
-        shouldShowMessage: ko.observable(true) // Message initially visible
-    };
-    viewModel.shouldShowMessage(false); // ... now it's hidden
-    viewModel.shouldShowMessage(true); // ... now it's visible again
-</script>
 ```
 </td>
 </tr>
