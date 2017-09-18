@@ -22,9 +22,9 @@ Since Knockout.js is a **client-side** library, we will include it in the same w
 
 ### Data Model? - Enter the "MVVM" Pattern
 
-Knockout.js an important library for us to examine in this course, because it does an excellent job of introducing the "MVVM" ("Model-View-View Model") design Pattern:
+Knockout.js is an important library for us to examine in this course, because it does an excellent job of introducing the "MVVM" ("Model-View-View Model") design Pattern, as well as introducing us to a more "modern" approach to web app development:
 
-MVVM describes how you can keep a potentially sophisticated UI simple by splitting it into three parts:
+Essentially, MVVM describes how you can keep a potentially sophisticated UI simple by splitting it into three parts:
 
 #### A model: 
 
@@ -102,6 +102,13 @@ The name is <span data-bind="text: personName"></span>
 ```
 
 However, if we save both our **main.js** and **index.html** files at this point and run them in the browser, we will find that our HTML isn't updated!  
+
+This is because The **data-bind** attribute isn’t native to HTML, though it is perfectly OK (it’s strictly compliant in HTML 5). But since the browser doesn’t know what it means, you need to activate Knockout to make it take effect:
+
+At the bottom of your **server.js** file, we must add the code to actually apply the "data-bind" properties to our "model"
+
+```js
+```
 
 <br><br>
 Source: [Knockout.js Official Documentation](http://knockoutjs.com/)
