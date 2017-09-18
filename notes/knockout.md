@@ -199,40 +199,31 @@ Knockout.js offers the following binding syntax for dealing with text and the ap
 <tr>
 <th>Binding Type</th>
 <th>Description</th>
-<th>Usage</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="http://knockoutjs.com/documentation/visible-binding.html">The "visible" binding</a></td>
 <td>The visible binding causes the associated DOM element to become hidden or visible according to the value you pass to the binding.</td>
-<td>
-<pre lang="html">&lt;div data-bind=&quot;visible: shouldShowMessage&quot;&gt;</pre>
-</td>
 </tr>
 <tr>
 <td><a href="http://knockoutjs.com/documentation/text-binding.html">The "text" binding</a></td>
-<td>...</td>
 <td>...</td>
 </tr>
 <tr>
 <td><a href="http://knockoutjs.com/documentation/html-binding.html">The "html" binding</a></td>
 <td>...</td>
-<td>...</td>
 </tr>
 <tr>
 <td><a href="http://knockoutjs.com/documentation/css-binding.html">The "css" binding</a></td>
-<td>...</td>
 <td>...</td>
 </tr>
 <tr>
 <td><a href="http://knockoutjs.com/documentation/style-binding.html">The "style" binding</a></td>
 <td>...</td>
-<td>...</td>
 </tr>
 <tr>
 <td><a href="http://knockoutjs.com/documentation/attr-binding.html">The "attr" binding</a></td>
-<td>...</td>
 <td>...</td>
 </tr>
 </tbody>
@@ -247,13 +238,11 @@ Knockout.js offers the following binding syntax for dealing with "control flow",
 <tr>
 <th>Binding Type</th>
 <th>Description</th>
-<th>Usage</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="">...</a></td>
-<td>...</td>
 <td>...</td>
 </tr>
 </tbody>
@@ -268,13 +257,11 @@ Knockout.js offers the following binding syntax for handling two-way binding bet
 <tr>
 <th>Binding Type</th>
 <th>Description</th>
-<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="">...</a></td>
-<td>...</td>
 <td>...</td>
 </tr>
 </tbody>
