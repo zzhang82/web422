@@ -202,7 +202,11 @@ Knockout.js offers the following binding syntax for dealing with text and the ap
 <th>Example</th>
 </tr>
 </thead>
-<bdody>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
 </tbody>
 </table>
 
