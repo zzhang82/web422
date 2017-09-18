@@ -11,8 +11,8 @@ layout: default
 
 Since Knockout.js is a **client-side** library, we will include it in the same way that we would include Lodash, Moment.js or jQuery; by downloading it and referencing it in a **&lt;script&gt;** element.  We can also reference the library using the popular [CDNJS Content Delivery Network](https://cdnjs.com/).
 
-* The official source code can be downloaded [from here](http://knockoutjs.com/downloads/knockout-3.4.2.js)
-* The CDN Link is: `https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js`
+* The official, full source code can be downloaded [from here](http://knockoutjs.com/downloads/knockout-3.4.2.js)
+* The CDN Link for the minified code is: `https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js`
 
 ### Headline features:
 
@@ -41,6 +41,48 @@ Note that this is not the UI itself: it doesn’t have any concept of buttons or
 A visible, interactive UI representing the state of the view model. It displays information from the view model, sends commands to the view model (e.g., when the user clicks buttons), and updates whenever the state of the view model changes.
 
 When using KO, your view is simply your HTML document with declarative bindings to link it to the view model. Alternatively, you can use templates that generate HTML using data from your view model.
+
+## Creating a View Model
+
+To start working with Knockout and creating View Models, we should first create a new folder with the following (minimal) file/folder structure:
+
+* js
+  * main.js
+* index.html
+
+In your index.html file, enter the following boiler plate code (this includes the CDN links to Bootstrap, jQuery and Knockout.js)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- Latest compiled and minified Bootstrap 3.3.7 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <title>Knockout</title>
+    </head>
+    <body>
+
+            
+
+        <!-- Latest compiled and minified jQuery 3.2.1 JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+        <!-- Latest compiled and minified Bootstrap 3.3.7 JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <!-- Knockout.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+        <!-- custom JS (main) -->
+        <script src="js/main.js"></script>    
+    </body>
+</html>
+```
 
 
 <br><br>
