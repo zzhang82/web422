@@ -211,6 +211,48 @@ Knockout.js offers the following binding syntax for dealing with text and the ap
 </tbody>
 </table>
 
+### Bindings (Control Flow)
+
+Knockout.js offers the following binding syntax for dealing with "control flow", ie: iterating over elements and/or conditionally hiding or showing data:
+
+<table>
+<thead>
+<tr>
+<th>Binding Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+
+### Bindings (Form Fields)
+
+Knockout.js offers the following binding syntax for handling two-way binding between form fields and the View Model, as well as handling events like "click", "checked", "hasFocus", etc.
+
+<table>
+<thead>
+<tr>
+<th>Binding Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+
 ## Explicitly Watching for View Model Changes
 
 Sometimes in addition to updating the view,  we wish to execute some *other* code when the View Model data changes (ie, log the data, set a "dirty" flag, update a property, etc).
@@ -228,3 +270,12 @@ Creating custom objects in the client side is pretty straightforward (Recall: we
 
 <br><br>
 Source: [Knockout.js Official Documentation](http://knockoutjs.com/)
+
+
+## Editing "Employee" Data
+
+Using the methods outlined above, we can very easily..... **TODO**
+
+To see how we can use Knockout.js and the aforementioned properties to implement "Employee" editing, open the **nockout-AJAX** Example located in the week2 folder. We will walk through the solution together in class.
+
+
