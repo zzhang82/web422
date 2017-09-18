@@ -179,11 +179,42 @@ For compatibility with older browsers, Knockout defines ko.observable objects as
 To see this in action, why don't we wire up a **timeout** function to change the data (**myViewModel.personName**) after 2 seconds and see what happens to our view.  In the main.js file, add the following timeout code:
 
 ```js
+window.setTimeout(function(){
+    myViewModel.personName("Dave");
+},2000);
 ```
+
+If we refresh our page, we'll see that "Bob" changes to "Dave" after 2 seconds without us having to write any extra DOM modification code!  The change was "observed" by "text" binding.
+
+## Beyond "text" Binding
+
+Knockout provides many ways of watching the View Model and updating the DOM automatically.  There are even bindings that work with form elements to create **"Two-way"** binding, in which changes to the data presented in the view (ie: form elements) will **automatically update** the correct view model data, keeping them in sync.  
+
+### Bindings (Controlling Text & Appearance)
+
+Knockout.js offers the following binding syntax for dealing with text and the appearance of elements:
+
+<table>
+<thead>
+<tr>
+<th>Binding Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<bdody>
+</tbody>
+</table>
+
+## Explicitly Watching for View Model Changes
+
+Sometimes in addition to updating the view,  we wish to execute some *other* code when the View Model data changes (ie, log the data, set a "dirty" flag, update a property, etc).
+
+TODO: [Explicitly subscribing to observables](http://knockoutjs.com/documentation/observables.html)
 
 ## Using Existing Data (ie: Teams API)
 
-Creating custom objects in the client side is pretty straightforward (we just define the properties as "observables".  However, what if we're pulling down some large-scale data from an API? This is exactly the case with our Teams API, however fortunately Knockout.js **has the answer!**
+Creating custom objects in the client side is pretty straightforward (Recall: we define View Model properties as "observables".  However, what if we're pulling down some large-scale data from an API? This is exactly the case with our Teams API, however fortunately Knockout.js **has the answer!**
 
 ### The Mapping Plugin
 
