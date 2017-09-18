@@ -84,6 +84,24 @@ In your index.html file, enter the following boiler plate code (this includes th
 </html>
 ```
 
+### Editing main.js and creating a View Model
+
+Fortunately for us, a View Model is defined using a simple object literal, ie:
+
+```js
+var myViewModel = {
+    personName: 'Bob',
+    personAge: 123
+};
+```
+
+This object's data can be **referenced** in our **view** (index.html) using the following **template**:
+
+```html
+The name is <span data-bind="text: personName"></span>            
+```
+
+However, if we save both our **main.js** and **index.html** files at this point and run them in the browser, we will find that our HTML isn't updated!  
 
 <br><br>
 Source: [Knockout.js Official Documentation](http://knockoutjs.com/)
