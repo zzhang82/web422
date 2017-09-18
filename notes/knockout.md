@@ -207,6 +207,7 @@ Knockout.js offers the following binding syntax for dealing with text and the ap
 <td>...</td>
 <td>...</td>
 <td>...</td>
+</tr>
 </tbody>
 </table>
 
