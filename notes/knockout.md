@@ -204,7 +204,46 @@ Knockout.js offers the following binding syntax for dealing with text and the ap
 </thead>
 <tbody>
 <tr>
+<td><a href="http://knockoutjs.com/documentation/visible-binding.html">The "visible" binding</a></td>
+<td>The visible binding causes the associated DOM element to become hidden or visible according to the value you pass to the binding.</td>
+<td>
+```js
+<div data-bind="visible: shouldShowMessage">
+    You will see this message only when "shouldShowMessage" holds a true value.
+</div>
+ 
+<script type="text/javascript">
+    var viewModel = {
+        shouldShowMessage: ko.observable(true) // Message initially visible
+    };
+    viewModel.shouldShowMessage(false); // ... now it's hidden
+    viewModel.shouldShowMessage(true); // ... now it's visible again
+</script>
+```
+</td>
+</tr>
+<tr>
+<td><a href="http://knockoutjs.com/documentation/text-binding.html">The "text" binding</a></td>
 <td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td><a href="http://knockoutjs.com/documentation/html-binding.html">The "html" binding</a></td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td><a href="http://knockoutjs.com/documentation/css-binding.html">The "css" binding</a></td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td><a href="http://knockoutjs.com/documentation/style-binding.html">The "style" binding</a></td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td><a href="http://knockoutjs.com/documentation/attr-binding.html">The "attr" binding</a></td>
 <td>...</td>
 <td>...</td>
 </tr>
@@ -225,7 +264,7 @@ Knockout.js offers the following binding syntax for dealing with "control flow",
 </thead>
 <tbody>
 <tr>
-<td>...</td>
+<td><a href="">...</a></td>
 <td>...</td>
 <td>...</td>
 </tr>
@@ -246,7 +285,7 @@ Knockout.js offers the following binding syntax for handling two-way binding bet
 </thead>
 <tbody>
 <tr>
-<td>...</td>
+<td><a href="">...</a></td>
 <td>...</td>
 <td>...</td>
 </tr>
