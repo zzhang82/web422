@@ -108,7 +108,87 @@ This is because The **data-bind** attribute isn’t native to HTML, though it is
 At the bottom of your **server.js** file, we must add the code to actually apply the "data-bind" properties to our "model"
 
 ```js
+$(function(){
+    ko.applyBindings(myViewModel, $("body")[0]);
+});
 ```
+
+Here, we're telling Knockout (ko) to use the **"myViewModel"** object with all of the bindings (ie: "data-bind") in the **&lt;body&gt;** element. Since we're using jQuery to select the element from the DOM, we are including the "applyBindings" function with a jQuery document.ready callback (ie: `$(function(){ ... });`).  (Quick Note: We use the syntax <a href="https://learn.jquery.com/using-jquery-core/faq/how-do-i-pull-a-native-dom-element-from-a-jquery-object/">$(selector)[0]</a> to fetch the raw DOM element).
+
+Since we have placed our `<span data-bind="text: personName"></span>` code within the &lt;body&gt;, the "text: personName" binding makes sense (it's pulling it from "myViewModel").
+
+Using this syntax actually affords us a lot of flexability, as we can apply different viewModels to different areas of the DOM!, for example, say we have the following two models:
+
+```js
+var myPersonModel = {
+    personName: 'Bob',
+    personAge: 123
+};
+
+var myPetModel = {
+    petName: 'Fluffy',
+    personAge: 6
+};
+```
+
+We can represent them in separate sections of the DOM:
+
+```html
+<div id="person">
+    The Person name is <span data-bind="text: personName"></span>  
+</div>
+<div id="pet">
+    The Pet name is <span data-bind="text: petName"></span>    
+</div> 
+```
+
+And we can apply the "data-bind" properties separately to each &lt;div&gt; container using their respective "id" attributes once again with the **applyBindings()** function:
+
+```js
+$(function(){
+    ko.applyBindings(myPersonModel, $("#person")[0]);
+    ko.applyBindings(myPetModel, $("#pet")[0]);
+});
+```
+
+## Responding to View Model Changes
+
+So far, we've seen how to create a basic view model and how to display one of its properties using a binding. But one of the key benefits of KO is that it updates your UI automatically when the view model changes. How can KO know when parts of your view model change? Answer: you need to declare your model properties as observables, because these are special JavaScript objects that can notify subscribers about changes, and can automatically detect dependencies.
+
+For example, if we rewrite our simple viewmodel object as follows:
+
+```javascript
+var myViewModel = {
+    personName: ko.observable('Bob'),
+    personAge: ko.observable(123)
+};
+```
+
+You don’t have to change the view at all - the same **data-bind** syntax will keep working. The difference is that it’s now capable of detecting changes, and when it does, it will update the view automatically.
+
+### Reading and writing observables
+
+For compatibility with older browsers, Knockout defines ko.observable objects as functions.  What this means is that if we want to **get** or **set** the value of a **View Model Property**, we will be invoking the property names as functions.
+
+* To read the observable’s current value, just call the observable with no parameters. In this example, **myViewModel.personName()** will return **'Bob'**, and **myViewModel.personAge()** will return **123**.
+
+* To write a new value to the observable, call the observable and pass the new value as a parameter. For example, calling **myViewModel.personName('Mary')** will change the **name** value to **'Mary'**.
+
+* To write values to multiple observable properties on a model object, you can use chaining syntax. For example, **myViewModel.personName('Mary').personAge(50)** will change the **name** value to **'Mary'** and the **age** value to **50**.
+
+To see this in action, why don't we wire up a **timeout** function to change the data (**myViewModel.personName**) after 2 seconds and see what happens to our view.  In the main.js file, add the following timeout code:
+
+```js
+```
+
+## Using Existing Data (ie: Teams API)
+
+Creating custom objects in the client side is pretty straightforward (we just define the properties as "observables".  However, what if we're pulling down some large-scale data from an API? This is exactly the case with our Teams API, however fortunately Knockout.js **has the answer!**
+
+### The Mapping Plugin
+
+[here](http://knockoutjs.com/documentation/plugins-mapping.html)
+
 
 <br><br>
 Source: [Knockout.js Official Documentation](http://knockoutjs.com/)
