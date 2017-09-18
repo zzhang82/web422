@@ -9,7 +9,7 @@ layout: default
 
 ### Installation
 
-Since Knockout.js is a **client-side** library, we will include it in the same way that we would include Lodash, Moment.js or jQuery; by downloading it and referencing it in a **<script>** element.  We can also reference the library using the popular [CDNJS Content Delivery Network](https://cdnjs.com/).
+Since Knockout.js is a **client-side** library, we will include it in the same way that we would include Lodash, Moment.js or jQuery; by downloading it and referencing it in a **&lt;script&gt;** element.  We can also reference the library using the popular [CDNJS Content Delivery Network](https://cdnjs.com/).
 
 * The official source code can be downloaded [from here](http://knockoutjs.com/downloads/knockout-3.4.2.js)
 * The CDN Link is: `https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js`
