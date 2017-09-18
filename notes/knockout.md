@@ -208,7 +208,7 @@ Knockout.js offers the following binding syntax for dealing with text and the ap
 <td>The visible binding causes the associated DOM element to become hidden or visible according to the value you pass to the binding.</td>
 <td>
 
-```html
+```
 <div data-bind="visible: shouldShowMessage">
 ```
 </td>
