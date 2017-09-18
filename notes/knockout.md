@@ -233,39 +233,12 @@ Knockout.js offers the following binding syntax for dealing with text and the ap
 
 Knockout.js offers the following binding syntax for dealing with "control flow", ie: iterating over elements and/or conditionally hiding or showing data:
 
-<table>
-<thead>
-<tr>
-<th>Binding Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="">...</a></td>
-<td>...</td>
-</tr>
-</tbody>
-</table>
 
 ### Bindings (Form Fields)
 
 Knockout.js offers the following binding syntax for handling two-way binding between form fields and the View Model, as well as handling events like "click", "checked", "hasFocus", etc.
 
-<table>
-<thead>
-<tr>
-<th>Binding Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="">...</a></td>
-<td>...</td>
-</tr>
-</tbody>
-</table>
+
 
 ## Explicitly Watching for View Model Changes
 
