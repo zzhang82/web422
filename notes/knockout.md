@@ -218,40 +218,14 @@ Knockout provides many ways of watching the View Model and updating the DOM auto
 
 Knockout.js offers the following binding syntax for dealing with text and the appearance of elements:
 
-<table>
-<thead>
-<tr>
-<th>Binding Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://knockoutjs.com/documentation/visible-binding.html">The "visible" binding</a></td>
-<td>The visible binding causes the associated DOM element to become hidden or visible according to the value you pass to the binding.</td>
-</tr>
-<tr>
-<td><a href="http://knockoutjs.com/documentation/text-binding.html">The "text" binding</a></td>
-<td>...</td>
-</tr>
-<tr>
-<td><a href="http://knockoutjs.com/documentation/html-binding.html">The "html" binding</a></td>
-<td>...</td>
-</tr>
-<tr>
-<td><a href="http://knockoutjs.com/documentation/css-binding.html">The "css" binding</a></td>
-<td>...</td>
-</tr>
-<tr>
-<td><a href="http://knockoutjs.com/documentation/style-binding.html">The "style" binding</a></td>
-<td>...</td>
-</tr>
-<tr>
-<td><a href="http://knockoutjs.com/documentation/attr-binding.html">The "attr" binding</a></td>
-<td>...</td>
-</tr>
-</tbody>
-</table>
+Binding Type | Description
+--- | --- 
+[The "visible" binding](http://knockoutjs.com/documentation/visible-binding.html) | The **visible** binding causes the associated DOM element to become hidden or visible according to the value you pass to the binding.<br><br>`<div data-bind="visible: shouldShowMessage">`
+[The "text" binding](http://knockoutjs.com/documentation/text-binding.html) | The **text** binding causes the associated DOM element to display the text value of your parameter. Typically this is useful with elements like **&lt;span&gt;** or **&lt;em&gt;** that traditionally display text, but technically you can use it with any element.<br><br>`Today's message is: <span data-bind="text: myMessage"></span>`
+[The "html" binding](http://knockoutjs.com/documentation/html-binding.html) | The **html** binding causes the associated DOM element to display the HTML specified by your parameter. Typically this is useful when values in your view model are actually strings of HTML markup that you want to render.<br><br>`<div data-bind="html: details"></div>`
+[The "css" binding](http://knockoutjs.com/documentation/css-binding.html) | The **css** binding adds or removes one or more named CSS classes to the associated DOM element. This is useful, for example, to highlight some value in red if it becomes negative.(Note: If you don’t want to apply a CSS class but instead want to assign a **style** attribute value directly, see the style binding.)<br><br>`<div data-bind="css: { profitWarning: currentProfit() < 0 }">Phase 3: Profit</div>`
+[The "style" binding](http://knockoutjs.com/documentation/style-binding.html) | The **style** binding adds or removes one or more style values to the associated DOM element. This is useful, for example, to highlight some value in red if it becomes negative, or to set the width of a bar to match a numerical value that changes. (Note: If you don’t want to apply an explicit style value but instead want to assign a **CSS class**, see the css binding.)<br><br>`<div data-bind="style: { color: currentProfit() < 0 ? 'red' : 'black' }">Phase 3: Profit</div>`
+[The "attr" binding](http://knockoutjs.com/documentation/attr-binding.html) | The **attr** binding provides a generic way to set the value of any attribute for the associated DOM element. This is useful, for example, when you need to set the **title** attribute of an element, the **src** of an **img** tag, or the **href** of a link based on values in your view model, with the attribute value being updated automatically whenever the corresponding model property changes.<br><br>`<a data-bind="attr: { href: url, title: details }">Report</a>`
 
 <br>
 
