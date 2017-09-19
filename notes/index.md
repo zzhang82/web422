@@ -37,5 +37,15 @@ Please note: new notes will be published as they become available.
 </ul>
 </td>
 </tr>
+<tr>
+<td><a href="/web422/notes/week03">3 - Notes</a></td>
+<td>
+The current front end dev environment, including:<br><br>
+<ul>
+<li>Knockout- Short Introduction</li>
+<li>React - Deeper dive into the core concepts</li>
+</ul>
+</td>
+</tr>
 </tbody>
 </table>
