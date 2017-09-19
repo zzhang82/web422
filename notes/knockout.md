@@ -18,7 +18,7 @@ Since Knockout.js is a **client-side** library, we will include it in the same w
 
 <br>
 
-### Headline features:
+### Headline features
 
 * **Elegant dependency tracking** - automatically updates the right parts of your UI whenever your data model changes.
 * **Declarative bindings** - a simple and obvious way to connect parts of your UI to your data model. You can construct a complex dynamic UIs easily using arbitrarily nested binding contexts.
