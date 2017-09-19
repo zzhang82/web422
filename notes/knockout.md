@@ -32,13 +32,13 @@ Knockout.js is an important library for us to examine in this course, because it
 
 Essentially, MVVM describes how you can keep a potentially sophisticated UI simple by splitting it into three parts:
 
-<br>
+
 
 #### A model: 
 
 Your application’s stored data. This data represents objects and operations in your business domain (e.g., bank accounts that can perform money transfers) and is independent of any UI. When using KO, you will usually make Ajax calls to some server-side code to read and write this stored model data.
 
-<br>
+
 
 #### A view model: 
 
@@ -46,7 +46,7 @@ A pure-code representation of the data and operations on a UI. For example, if y
 
 Note that this is not the UI itself: it doesn’t have any concept of buttons or display styles. It’s not the persisted data model either - it holds the unsaved data the user is working with. When using KO, your view models are pure JavaScript objects that hold no knowledge of HTML. Keeping the view model abstract in this way lets it stay simple, so you can manage more sophisticated behaviors without getting lost.
 
-<br>
+
 
 #### A view: 
 
