@@ -167,6 +167,8 @@ $(function(){
 });
 ```
 
+**Note:** It is not strictly necessary to provide a selector as a second parameter to the **applyBindings()** method. This is useful if you wish to have your model apply to the whole document, ie: `ko.applyBinds(someViewModel);`
+
 <br>
 
 ## Responding to View Model Changes
@@ -210,7 +212,9 @@ If we refresh our page, we'll see that "Bob" changes to "Dave" after 2 seconds w
 
 ## Beyond "text" Binding
 
-Knockout provides many ways of watching the View Model and updating the DOM automatically.  There are even bindings that work with form elements to create **"Two-way"** binding, in which changes to the data presented in the view (ie: form elements) will **automatically update** the correct view model data, keeping them in sync.  
+Knockout provides many ways of watching the View Model and updating the DOM automatically.  There are even bindings that work with form elements to create **"Two-way"** binding, in which changes to the data presented in the view (ie: form elements) will **automatically update** the correct view model data, keeping them in sync.
+
+It is also important to note that the **binding value** can be a **single value**, **variable**, or **literal** or almost any **valid JavaScript expression**
 
 <br>
 
@@ -221,11 +225,10 @@ Knockout.js offers the following binding syntax for dealing with text and the ap
 Binding Type | Description
 --- | --- 
 [The "visible" binding](http://knockoutjs.com/documentation/visible-binding.html) | The **visible** binding causes the associated DOM element to become hidden or visible according to the value you pass to the binding.<br><br>`<div data-bind="visible: shouldShowMessage">`
-[The "text" binding](http://knockoutjs.com/documentation/text-binding.html) | The **text** binding causes the associated DOM element to display the text value of your parameter. Typically this is useful with elements like **&lt;span&gt;** or **&lt;em&gt;** that traditionally display text, but technically you can use it with any element.<br><br>`Today's message is: <span data-bind="text: myMessage"></span>`
-[The "html" binding](http://knockoutjs.com/documentation/html-binding.html) | The **html** binding causes the associated DOM element to display the HTML specified by your parameter. Typically this is useful when values in your view model are actually strings of HTML markup that you want to render.<br><br>`<div data-bind="html: details"></div>`
-[The "css" binding](http://knockoutjs.com/documentation/css-binding.html) | The **css** binding adds or removes one or more named CSS classes to the associated DOM element. This is useful, for example, to highlight some value in red if it becomes negative.(Note: If you don’t want to apply a CSS class but instead want to assign a **style** attribute value directly, see the style binding.)<br><br>`<div data-bind="css: { profitWarning: currentProfit() < 0 }">Phase 3: Profit</div>`
-[The "style" binding](http://knockoutjs.com/documentation/style-binding.html) | The **style** binding adds or removes one or more style values to the associated DOM element. This is useful, for example, to highlight some value in red if it becomes negative, or to set the width of a bar to match a numerical value that changes. (Note: If you don’t want to apply an explicit style value but instead want to assign a **CSS class**, see the css binding.)<br><br>`<div data-bind="style: { color: currentProfit() < 0 ? 'red' : 'black' }">Phase 3: Profit</div>`
-[The "attr" binding](http://knockoutjs.com/documentation/attr-binding.html) | The **attr** binding provides a generic way to set the value of any attribute for the associated DOM element. This is useful, for example, when you need to set the **title** attribute of an element, the **src** of an **img** tag, or the **href** of a link based on values in your view model, with the attribute value being updated automatically whenever the corresponding model property changes.<br><br>`<a data-bind="attr: { href: url, title: details }">Report</a>`
+[The "text" binding](http://knockoutjs.com/documentation/text-binding.html) | The **text** binding causes the associated DOM element to display the text value of your parameter.<br><br>Typically this is useful with elements like **&lt;span&gt;** or **&lt;em&gt;** that traditionally display text, but technically you can use it with any element.<br><br>`Today's message is: <span data-bind="text: myMessage"></span>`
+[The "html" binding](http://knockoutjs.com/documentation/html-binding.html) | The **html** binding causes the associated DOM element to display the HTML specified by your parameter.<br><br>Typically this is useful when values in your view model are actually strings of HTML markup that you want to render.<br><br>`<div data-bind="html: details"></div>`
+[The "css" binding](http://knockoutjs.com/documentation/css-binding.html) | The **css** binding adds or removes one or more named CSS classes to the associated DOM element.<br><br>This is useful, for example, to highlight some value in red if it becomes negative.(Note: If you don’t want to apply a CSS class but instead want to assign a **style** attribute value directly, see the style binding.)<br><br>`<div data-bind="css: { profitWarning: currentProfit() < 0 }">Phase 3: Profit</div>`
+[The "attr" binding](http://knockoutjs.com/documentation/attr-binding.html) | The **attr** binding provides a generic way to set the value of any attribute for the associated DOM element.<br><br>This is useful, for example, when you need to set the **title** attribute of an element, the **src** of an **img** tag, or the **href** of a link based on values in your view model, with the attribute value being updated automatically whenever the corresponding model property changes.<br><br>`<a data-bind="attr: { href: url, title: details }">Report</a>`
 
 <br>
 
@@ -233,11 +236,32 @@ Binding Type | Description
 
 Knockout.js offers the following binding syntax for dealing with "control flow", ie: iterating over elements and/or conditionally hiding or showing data:
 
+Binding Type | Description
+--- | --- 
+[The "foreach" binding](http://knockoutjs.com/documentation/foreach-binding.html) | The **foreach** binding duplicates a section of markup for each entry in an array, and binds each copy of that markup to the corresponding array item. This is especially useful for rendering lists or tables.<br><br>Assuming your array is an observable array, whenever you later add, remove, or re-order array entries, the binding will efficiently update the UI to match - inserting or removing more copies of the markup, or re-ordering existing DOM elements, without affecting any other DOM elements. This is far faster than regenerating the entire **foreach** output after each array change.<br><br>Of course, you can arbitrarily nest any number of **foreach** bindings along with other control-flow bindings such as **if** and **with**.
+[The "if" binding](http://knockoutjs.com/documentation/if-binding.html) | The **if** binding causes a section of markup to appear in your document (and to have its **data-bind** attributes applied), only if a specified expression evaluates to **true** (or a **true-ish** value such as a **non-null** object or nonempty string).<br><br>**if** plays a similar role to the **visible** binding. The difference is that, with visible, the contained markup always remains in the DOM and always has its **data-bind** attributes applied - the visible binding just uses CSS to toggle the container element’s visiblity. The **if** binding, however, physically adds or removes the contained markup in your DOM, and only applies bindings to descendants if the expression is **true**.<br><br>`<div data-bind="if: displayMessage">Hey!</div>`
+[The "with" binding](http://knockoutjs.com/documentation/with-binding.html) | The **with** binding creates a new binding context, so that descendant elements are bound in the context of a specified object.<br><br>Of course, you can arbitrarily nest **with** bindings along with the other control-flow bindings such as **if** and **foreach**.
+
 <br>
 
 ### Bindings (Form Fields)
 
 Knockout.js offers the following binding syntax for handling two-way binding between form fields and the View Model, as well as handling events like "click", "checked", "hasFocus", etc.
+
+Binding Type | Description
+--- | --- 
+[The "click" binding](http://knockoutjs.com/documentation/click-binding.html) | ...
+[The "event" binding](http://knockoutjs.com/documentation/event-binding.html) | ...
+[The "submit" binding](http://knockoutjs.com/documentation/submit-binding.html) | ...
+[The "enable" binding](http://knockoutjs.com/documentation/enable-binding.html) | ...
+[The "disable" binding](http://knockoutjs.com/documentation/disable-binding.html) | ...
+[The "value" binding](http://knockoutjs.com/documentation/value-binding.html) | ...
+[The "textInput" binding](http://knockoutjs.com/documentation/textinput-binding.html) | ...
+[The "hasFocus" binding](http://knockoutjs.com/documentation/hasfocus-binding.html) | ...
+[The "checked" binding](http://knockoutjs.com/documentation/checked-binding.html) | ...
+[The "options" binding](http://knockoutjs.com/documentation/options-binding.html) | ...
+[The "selectedOptions" binding](http://knockoutjs.com/documentation/selectedOptions-binding.html) | ...
+[The "uniqueName" binding](http://knockoutjs.com/documentation/uniqueName-binding.html) | ...
 
 <br>
 
@@ -263,7 +287,7 @@ Creating custom objects in the client side is pretty straightforward (Recall: we
 
 Using the methods outlined above, we can very easily..... **TODO**
 
-To see how we can use Knockout.js and the aforementioned properties to implement "Employee" editing, open the **nockout-AJAX** Example located in the week2 folder. We will walk through the solution together in class.
+To see how we can use Knockout.js and the aforementioned properties to implement "Employee" editing, open the **knockout-AJAX** Example located in the week2 folder. We will walk through the solution together in class.
 
 <br><br>
 Source: [Knockout.js Official Documentation](http://knockoutjs.com/)
