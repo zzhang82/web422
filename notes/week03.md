@@ -11,8 +11,9 @@ Remember to frequently use the [learning resources](/web422/resources).
 
 **Topics:**
 
-The current front end dev environment (2014 onwards)
+The current front end dev environment, including:
 
-[Survey and brief study of front end dev landscape](2010-era-app-frameworks) (React, AngularJS, knockout.js, Ember.js, Backbone; maybe Aurelia, Vue.js)
+* [Knockout](knockout) - Short Introduction
+* React - Deeper dive into the core concepts
 
 <br>
