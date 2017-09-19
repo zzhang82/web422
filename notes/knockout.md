@@ -265,9 +265,15 @@ Binding Type | Description
 
 ## Explicitly Watching for View Model Changes
 
-Sometimes in addition to updating the view,  we wish to execute some *other* code when the View Model data changes (ie, log the data, set a "dirty" flag, update a property, etc).
+Sometimes we wish to execute some *other* code when the View Model data changes (ie, log the data, set a "dirty" flag, update a property, etc).
 
-TODO: [Explicitly subscribing to observables](http://knockoutjs.com/documentation/observables.html)
+To accomplish this in Knockout, we can register our own subscriptions to observables using the "subscribe" method, ie:
+
+```javascript
+myViewModel.personName.subscribe(function(newValue) {
+    console.log("The person's new name is " + newValue);
+});
+```
 
 <br>
 
@@ -277,15 +283,30 @@ Creating custom objects in the client side is pretty straightforward (Recall: we
 
 ### The Mapping Plugin
 
-[here](http://knockoutjs.com/documentation/plugins-mapping.html)
+Knockout provides a plugin for just this type of scenario.  Using the official "mapping plugin" - [available here](http://knockoutjs.com/documentation/plugins-mapping.html).  Before we can use it however, we must include it on our page using a &lt;script&gt; element, ie:
 
+```html
+<script src="lib/knockout.mapping.js"></script>
+```
+
+Now that we have included the mapping plugin, converting an existing JSON structure (such as our "Employees" collection from "/employees", for example) into an "observable" view model is easily accomplished.  We simply using the **ko.mapping.fromJS** function.  
+
+For example, assuming we have successfully made a **GET** request for all "/employees" and store the result in a "data" object.  To define an "employeesModel", we can use the following line of code:
+
+```javascript
+let employeesModel = ko.mapping.fromJS(data);
+```
+
+If we want to convert the observable "employeesModel" back into a regular object collection, we can invoke the **ko.mapping.toJS** function, ie:
+
+```javascript
+let plainObjects = ko.mapping.toJS(employeesModel);
+```
 <br>
 
 ## Editing "Employee" Data
 
-Using the methods outlined above, we can very easily..... **TODO**
-
-To see how we can use Knockout.js and the aforementioned properties to implement "Employee" editing, open the **knockout-AJAX** Example located in the week2 folder. We will walk through the solution together in class.
+To see how we can use Knockout.js to implement a simple interface to edit existing "Employee" objects within our Teams API, open the **knockout-AJAX** Example located in the week3 folder. We will walk through the solution together in class.
 
 <br><br>
 Source: [Knockout.js Official Documentation](http://knockoutjs.com/)
