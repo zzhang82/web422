@@ -42,7 +42,7 @@ Please note: new notes will be published as they become available.
 <td>
 The current front end dev environment, including:<br><br>
 <ul>
-<li>Knockout- Short Introduction</li>
+<li>Knockout - Short Introduction</li>
 <li>React - Deeper dive into the core concepts</li>
 </ul>
 </td>
