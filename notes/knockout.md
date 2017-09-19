@@ -279,7 +279,9 @@ myViewModel.personName.subscribe(function(newValue) {
 
 ## Using Existing Data (ie: Teams API)
 
-Creating custom objects in the client side is pretty straightforward (Recall: we define View Model properties as "observables".  However, what if we're pulling down some large-scale data from an API? This is exactly the case with our Teams API, however fortunately Knockout.js **has the answer!**
+Creating custom objects in the client side is pretty straightforward (Recall: we define View Model properties as "observables".  However, what if we're pulling down some large-scale data from an API? 
+
+This is exactly the case with our Teams API, however fortunately Knockout.js **has the answer!**
 
 ### The Mapping Plugin
 
