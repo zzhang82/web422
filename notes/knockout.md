@@ -220,7 +220,7 @@ It is also important to note that the **binding value** can be a **single value*
 
 ### Bindings (Controlling Text & Appearance)
 
-Knockout.js offers the following binding syntax for dealing with text and the appearance of elements:
+Knockout.js offers the following binding syntax for dealing with text and the appearance of elements (for the full list, see the [documentation](http://knockoutjs.com/documentation/introduction.html)):
 
 Binding Type | Description
 --- | --- 
@@ -234,7 +234,7 @@ Binding Type | Description
 
 ### Bindings (Control Flow)
 
-Knockout.js offers the following binding syntax for dealing with "control flow", ie: iterating over elements and/or conditionally hiding or showing data:
+Knockout.js offers the following binding syntax for dealing with "control flow", ie: iterating over elements and/or conditionally hiding or showing data (for the full list, see the [documentation](http://knockoutjs.com/documentation/introduction.html)):
 
 Binding Type | Description
 --- | --- 
@@ -246,22 +246,20 @@ Binding Type | Description
 
 ### Bindings (Form Fields)
 
-Knockout.js offers the following binding syntax for handling two-way binding between form fields and the View Model, as well as handling events like "click", "checked", "hasFocus", etc.
+Knockout.js offers the following binding syntax for handling two-way binding between form fields and the View Model, as well as handling events like "click", "checked", "hasFocus", etc. (for the full list, see the [documentation](http://knockoutjs.com/documentation/introduction.html)):
 
 Binding Type | Description
 --- | --- 
-[The "click" binding](http://knockoutjs.com/documentation/click-binding.html) | ...
-[The "event" binding](http://knockoutjs.com/documentation/event-binding.html) | ...
-[The "submit" binding](http://knockoutjs.com/documentation/submit-binding.html) | ...
-[The "enable" binding](http://knockoutjs.com/documentation/enable-binding.html) | ...
-[The "disable" binding](http://knockoutjs.com/documentation/disable-binding.html) | ...
-[The "value" binding](http://knockoutjs.com/documentation/value-binding.html) | ...
-[The "textInput" binding](http://knockoutjs.com/documentation/textinput-binding.html) | ...
-[The "hasFocus" binding](http://knockoutjs.com/documentation/hasfocus-binding.html) | ...
-[The "checked" binding](http://knockoutjs.com/documentation/checked-binding.html) | ...
-[The "options" binding](http://knockoutjs.com/documentation/options-binding.html) | ...
-[The "selectedOptions" binding](http://knockoutjs.com/documentation/selectedOptions-binding.html) | ...
-[The "uniqueName" binding](http://knockoutjs.com/documentation/uniqueName-binding.html) | ...
+[The "click" binding](http://knockoutjs.com/documentation/click-binding.html) | The **click** binding adds an event handler so that your chosen JavaScript function will be invoked when the associated DOM element is clicked. This is most commonly used with elements like **button**, **input**, and **a**, but actually works with any visible DOM element.<br><br>`<button data-bind="click: incrementClickCounter">Click me</button>`
+[The "event" binding](http://knockoutjs.com/documentation/event-binding.html) | The **event** binding allows you to add an event handler for a specified event so that your chosen JavaScript function will be invoked when that event is triggered for the associated DOM element. This can be used to bind to any event, such as **keypress**, **mouseover** or **mouseout**.
+[The "submit" binding](http://knockoutjs.com/documentation/submit-binding.html) | The **submit** binding adds an event handler so that your chosen JavaScript function will be invoked when the associated DOM element is submitted. Typically you will only want to use this on **form** elements.<br><br>When you use the **submit** binding on a form, Knockout will prevent the browser’s default submit action for that form. In other words, the browser will call your handler function but will not submit the form to the server. This is a useful default because when you use the **submit** binding, it’s normally because you’re using the form as an interface to your view model, not as a regular HTML form. If you do want to let the form submit like a normal HTML form, just return **true** from your **submit** handler.<br><br>`<form data-bind="submit: doSomething">`
+[The "enable" binding](http://knockoutjs.com/documentation/enable-binding.html) | The **enable** binding causes the associated DOM element to be enabled only when the parameter value is **true**. This is useful with form elements like **input**, **select**, and **textarea**.<br><br>`<input type='text' data-bind="value: cellphoneNumber, enable: hasCellphone" />`
+[The "disable" binding](http://knockoutjs.com/documentation/disable-binding.html) | The **disable** binding causes the associated DOM element to be disabled only when the parameter value is **true**. This is useful with form elements like **input**, **select**, and **textarea**.<br><br>This is the mirror image of the enable binding.
+[The "value" binding](http://knockoutjs.com/documentation/value-binding.html) | The value binding links the associated DOM element’s **value** with a property on your view model. This is typically useful with form elements such as **input**, **select** and **textarea**.<br><br>When the user edits the value in the associated form control, it updates the value on your view model. Likewise, when you update the value in your view model, this updates the value of the form control on screen.<br><br>Note: If you’re working with checkboxes or radio buttons, use the checked binding to read and write your element’s **checked** state, not the **value** binding.`Login name: <input data-bind="value: userName" />`
+[The "checked" binding](http://knockoutjs.com/documentation/checked-binding.html) | The **checked** binding links a checkable form control — i.e., a **checkbox** or a **radio button** — with a property on your view model.<br><br>When the user checks the associated form control, this updates the value on your view model. Likewise, when you update the value in your view model, this checks or unchecks the form control on screen.<br><br>Note: For text boxes, drop-down lists, and all non-checkable form controls, use the **value** binding to read and write the element’s value, not the **checked** binding.<br><br>`Send me spam: <input type="checkbox" data-bind="checked: wantsSpam" />`
+[The "options" binding](http://knockoutjs.com/documentation/options-binding.html) | The **options** binding controls what options should appear in a drop-down list (i.e., a **select** element) or **multi-select** list. This binding cannot be used with anything other than **select** elements.<br><br>The value you assign should be an array (or observable array). The **select** element will then display one item for each item in your array.<br><br>Note: For a **multi-select** list, to set which of the options are selected, or to read which of the options are selected, use the **selectedOptions** binding. For a single-select list, you can also read and write the selected option using the **value** binding.<br><br>`<select data-bind="options: availableCountries"></select>`
+[The "selectedOptions" binding](http://knockoutjs.com/documentation/selectedOptions-binding.html) | The **selectedOptions** binding controls which elements in a multi-select list are currently selected. This is intended to be used in conjunction with a **select** element and the **options** binding.<br><br>When the user selects or de-selects an item in the multi-select list, this adds or removes the corresponding value to an array on your view model. Likewise, assuming it’s an observable array on your view model, then whenever you add or remove (e.g., via **push** or **splice**) items to this array, the corresponding items in the UI become selected or deselected. It’s a 2-way binding.<br><br>Note: To control which element in a single-select drop-down list is selected, you can use the **value** binding instead.<br><br>`<select data-bind="options: availableCountries, selectedOptions: chosenCountries" size="5" multiple="true"></select>`
+
 
 <br>
 
