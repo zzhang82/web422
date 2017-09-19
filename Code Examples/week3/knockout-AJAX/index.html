@@ -27,44 +27,22 @@
     <br /><br />
     <div class="container">
         <div class="row">
-            
-                
-                    <!--<div data-bind="text: employeesModel()[0].FirstName"></div> --> <!-- see updates immediately -->
 
-                    <div class="container bootstrap-header-table">
-                        <div class="row header-row">
-                            <div>
-                                <div class="col-xs-6 header-column">First Name</div>
-                                <div class="col-xs-6 header-column">Last Name</div>
-                            </div>
-                        </div>
-                        <div class="row body-rows" data-bind="foreach: employeesModel">
-                            <div class="row body-row">
-                                <div class="col-xs-6 body-column"><input type='text' class='form-control' placeholder='First Name' name='FirstName' data-bind="value: FirstName"></div>
-                                <div class="col-xs-6 body-column"><input type='text' class='form-control' placeholder='First Name' name='FirstName' data-bind="value: LastName"></div>
-                            </div>
-                        </div>
+            <!--<div data-bind="text: employeesModel()[0].FirstName"></div> --> <!-- see updates immediately -->
+            <div class="container bootstrap-header-table">
+                <div class="row header-row">
+                    <div>
+                        <div class="col-xs-6 header-column">First Name</div>
+                        <div class="col-xs-6 header-column">Last Name</div>
                     </div>
-
-
-                    <!--<div class="table-responsive">
-                        <table class="table table-striped table-hover" >
-                            <thead>
-                                <tr>
-                                    <th class="">First Name</th>
-                                    <th class="">Last Name</th>
-                                </tr>
-                            </thead>
-                            <tbody id="employee-table-body" data-bind="foreach: employeesModel">
-                                <tr>
-                                        <td><input type='text' class='form-control' placeholder='First Name' name='FirstName' data-bind="textInput: FirstName"></td>
-                                        <td><input type='text' class='form-control' placeholder='First Name' name='FirstName' data-bind="textInput: LastName"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>-->
-
-           
+                </div>
+                <div class="row body-rows" data-bind="foreach: employeesModel">
+                    <div class="row body-row">
+                        <div class="col-xs-6 body-column"><input type='text' class='form-control' placeholder='First Name' name='FirstName' data-bind="value: FirstName"></div>
+                        <div class="col-xs-6 body-column"><input type='text' class='form-control' placeholder='First Name' name='FirstName' data-bind="value: LastName"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-2 col-md-offset-10">
@@ -77,26 +55,24 @@
     <!-- Modal Window -->
 
     <div class="modal fade" id="pageModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle">
-            <div class="modal-dialog " role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="modalTitle"><!-- dynamic content here --></h4>
-                    </div>
-                    <div class="modal-body" id="modalContent">
-                        <!-- dynamic content here -->
-                    </div>
+        <div class="modal-dialog " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalTitle"><!-- dynamic content here --></h4>
+                </div>
+                <div class="modal-body" id="modalContent">
+                    <!-- dynamic content here -->
                 </div>
             </div>
         </div>
-
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    
     
     <script src="lib/knockout-3.4.2.js"></script>
     <script src="lib/knockout.mapping.js"></script>
