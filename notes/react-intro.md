@@ -27,4 +27,6 @@ At scale, the app that the user interacts with must offer good-enough performanc
 
 Components
 
+Virtual DOM
+
 <br>
