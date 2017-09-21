@@ -15,7 +15,7 @@ This week:
 * Intro to React
 * JSX
 * Creating a simple application 
-* Introduction to components (as an architectural element)
+* Introduction to components (as an architectural design)
 
 Next week:
 * Routing
