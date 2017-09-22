@@ -102,8 +102,10 @@ You can access Create, Read and Update (no Delete) operations on each of the col
 
 #### Employees
 
-* GET /employees (returns all employees)
-* GET /employee/:employeeId (returns a single employee)
+* GET /employees (returns all employees with all foreign keys populated)
+* GET /employees-raw (returns all "raw" employees, ie: foreign keys not populated)
+* GET /employee/:employeeId (returns a single employee with all foreign keys populated)
+* GET /employee-raw/:employeeId (returns a single "raw" employee, ie: foreign keys not populated)
 * PUT /employee/:employeeId (updates a single employee)
 * POST /employees (adds an employee to the system)
 
@@ -123,7 +125,9 @@ You can access Create, Read and Update (no Delete) operations on each of the col
 
 #### Teams
 
-* GET /teams (returns all teams)
-* GET /team/:teamId (returns a single team)
+* GET /teams (returns all teams with all foreign keys populated)
+* GET /teams-raw (returns all "raw" teams, ie: foreign keys not populated)
+* GET /team/:teamId (returns a single team with all foreign keys populated)
+* GET /team-raw/:teamId (returns a single "raw" team, ie: foreign keys not populated)
 * PUT /team/:teamId (updates a single team)
 * POST /teams (adds a team to the system)

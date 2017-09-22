@@ -24,8 +24,30 @@ app.get("/employees", (req,res) => {
     })
 });
 
+app.get("/employees-raw", (req,res) => {
+    data.getAllEmployeesRaw().then((data)=>{
+        res.json(data);
+    })
+    .catch((err)=>{
+        res.status(500).end();
+    })
+});
+
 app.get("/employee/:employeeId", (req,res) => {
     data.getEmployeeById(req.params.employeeId).then((data)=>{
+        if(data.length > 0){
+            res.json(data);
+        }else{
+            res.status(404).end();
+        }
+    })
+    .catch((err)=>{
+        res.status(500).end();
+    })
+});
+
+app.get("/employee-raw/:employeeId", (req,res) => {
+    data.getEmployeeByIdRaw(req.params.employeeId).then((data)=>{
         if(data.length > 0){
             res.json(data);
         }else{
@@ -160,8 +182,30 @@ app.get("/teams", (req,res) => {
     })
 });
 
+app.get("/teams-raw", (req,res) => {
+    data.getAllTeamsRaw().then((data)=>{
+        res.json(data);
+    })
+    .catch((err)=>{
+        res.status(500).end();
+    })
+});
+
 app.get("/team/:teamId", (req,res) => {
     data.getTeamById(req.params.teamId).then((data)=>{
+        if(data.length > 0){
+            res.json(data);
+        }else{
+            res.status(404).end();
+        }
+    })
+    .catch((err)=>{
+        res.status(500).end();
+    })
+});
+
+app.get("/team-raw/:teamId", (req,res) => {
+    data.getTeamByIdRaw(req.params.teamId).then((data)=>{
         if(data.length > 0){
             res.json(data);
         }else{

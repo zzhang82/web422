@@ -47,12 +47,40 @@ module.exports = function(mongoDBConnectionString){
                 });
             })
         },
+        getAllEmployeesRaw: function(){
+            return new Promise(function(resolve,reject){
+    
+                Employee.find()
+                //.sort({}) //optional "sort" - https://docs.mongodb.com/manual/reference/operator/aggregation/sort/ 
+                .exec()
+                .then((employees) => {
+                    resolve(employees);
+                })
+                .catch((err)=>{
+                    reject(err);
+                });
+            })
+        },
         getEmployeeById: function(employeeId){
             return new Promise(function(resolve,reject){
 
                 Employee.find({_id: employeeId})
                 //.sort({}) //optional "sort" - https://docs.mongodb.com/manual/reference/operator/aggregation/sort/ 
                 .populate("Position") // populate the "Position" field
+                .exec()
+                .then((employees) => {
+                    resolve(employees);
+                })
+                .catch((err)=>{
+                    reject(err);
+                });
+            })
+        },
+        getEmployeeByIdRaw: function(employeeId){
+            return new Promise(function(resolve,reject){
+
+                Employee.find({_id: employeeId})
+                //.sort({}) //optional "sort" - https://docs.mongodb.com/manual/reference/operator/aggregation/sort/ 
                 .exec()
                 .then((employees) => {
                     resolve(employees);
@@ -254,6 +282,20 @@ module.exports = function(mongoDBConnectionString){
                 });
             })
         },
+        getAllTeamsRaw: function(){
+            return new Promise(function(resolve,reject){
+
+                Team.find()
+                //.sort({}) //optional "sort" - https://docs.mongodb.com/manual/reference/operator/aggregation/sort/ 
+                .exec()
+                .then((teams) => {
+                    resolve(teams);
+                })
+                .catch((err)=>{
+                    reject(err);
+                });
+            })
+        },
         getTeamById: function(teamId){
             return new Promise(function(resolve,reject){
 
@@ -276,6 +318,19 @@ module.exports = function(mongoDBConnectionString){
                     model: 'Position'
                     } 
                 })
+                .exec()
+                .then((teams) => {
+                    resolve(teams);
+                })
+                .catch((err)=>{
+                    reject(err);
+                });
+            })
+        },
+        getTeamByIdRaw: function(teamId){
+            return new Promise(function(resolve,reject){
+
+                Team.find({_id: teamId})
                 .exec()
                 .then((teams) => {
                     resolve(teams);
