@@ -59,7 +59,11 @@ Study the diagram below. Its visual design is understandable - it shows current 
 
 As a React app, each rectangle is a *component*. Each component includes content (text, image, etc.), and elements that support user interaction. Depending on navigation, old components are replaced by new components (e.g. a new city). 
 
-( diagram will be posted )
+Notice the light green box (titled "Info container") surrounding the content below the header and navigation. That would be a component, with embedded components inside. 
+
+Notice also the darker green box (titled "Current weather details"). That is also a component, with embedded components inside. 
+
+![Weather app](../media/react-components-weather.png)
 
 <br>
 
@@ -69,6 +73,8 @@ Study the diagram below. It too should be understandable - it shows the "payment
 
 As a React app, each rectangle is a *component*. In contrast to the above, many of the components will maintain state, and/or manage persistence, handle communication with back-end processes, perform calculations, and display or dispose of nested/embedded components. 
 
-( diagram will be posted )
+Notice the nesting of components.
+
+![Online store app](../media/react-components-shopping.png)
 
 <br>
