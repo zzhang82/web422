@@ -11,7 +11,7 @@ As John puts it, Lodash is a toolkit or library of functions that extend some of
 
 ### Downloading Lodash
 
-Like most JavaScript libraries, Lodash exists as a single, minified .js file that you can either [download](https://raw.githubusercontent.com/lodash/lodash/4.17.4/dist/lodash.core.min.js) and include in your local solution, or [reference the CDN](https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js) in your pages/views.  If you're thinking that you might want to use it in your Node.js server applications, you can do that as well [via NPM](https://www.npmjs.com/package/lodash).
+Like most JavaScript libraries, Lodash exists as a single, minified .js file that you can either [download](https://raw.githubusercontent.com/lodash/lodash/4.17.4/dist/lodash.min.js) and include in your local solution, or [reference the CDN](https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js) in your pages/views.  If you're thinking that you might want to use it in your Node.js server applications, you can do that as well [via NPM](https://www.npmjs.com/package/lodash).
 
 ### The Full Documentation
 
