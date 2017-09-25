@@ -14,4 +14,8 @@ Planned:
 And:
 * Comparison architectural style (old vs. new)
 
+### Thinking in React
+
+Excellent - [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html)
+
 ( more to come )
