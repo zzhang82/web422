@@ -40,10 +40,23 @@ Please note: new notes will be published as they become available.
 <tr>
 <td><a href="/web422/notes/week03">3 - Notes</a></td>
 <td>
-The current front end dev environment, including:<br><br>
+Introduction to MVVM using Knockout.js:
 <ul>
-<li>Knockout - Short Introduction</li>
-<li>React - Deeper dive into the core concepts</li>
+<li>Introduction to Knockout.js</li>
+<li>Creating an "observable" ViewModel</li>
+<li>Data binding (one-way / two-way)</li>
+<li>Working with existing data</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><a href="/web422/notes/week04">4 - Notes</a></td>
+<td>
+Introduction to Component-based architecture using React:<br><br>
+<ul>
+<li>Introduction to React</li>
+<li>Getting started by creating a simple application</li>
+<li>More about components (as an architectural design)</li>
 </ul>
 </td>
 </tr>
