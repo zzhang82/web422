@@ -49,7 +49,7 @@ In summary:
 
 Consider two widely-known kinds apps that are used by many people on a browser or mobile device:
 1. Weather app
-2. Online stor
+2. Online store
 
 <br>
 
