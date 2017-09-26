@@ -11,9 +11,6 @@ Remember to frequently use the [learning resources](/web422/resources).
 
 **Topics:**
 
-The current front end dev environment, including:
-
-* [Knockout](knockout) - Short Introduction
-* React - Deeper dive into the core concepts
+This week, we will focus on the MVVM design pattern using [Knockout](knockout)
 
 <br>
