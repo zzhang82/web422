@@ -40,7 +40,7 @@ Please note: new notes will be published as they become available.
 <tr>
 <td><a href="/web422/notes/week03">3 - Notes</a></td>
 <td>
-Introduction to MVVM using Knockout.js:
+Introduction to MVVM using Knockout.js:<br><br>
 <ul>
 <li>Introduction to Knockout.js</li>
 <li>Creating an "observable" ViewModel</li>
