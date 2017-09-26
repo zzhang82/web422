@@ -81,13 +81,13 @@ Therefore, spend a few hours (before, during, and after class) to go through the
 
 <br>
 
-### "Building" The Application
+### "Build" The App
 
-Now that we've scratched the surface of React and worked with some of it's core functionality, why don't we actually "build" the application.  So far, we've been learning and practicing our React.js skills in a controlled, "development" environment.  Once we're happy with the end result however, we can actually "build" the application, which will generate a much smaller footprint (bundled, minified JavaScript / CSS, etc). 
+Now that we've scratched the surface of React and worked with some of it's core functionality, why don't we actually "build" the application.  So far, we've been learning and practicing our React skills in a controlled, "development" environment.  Once we're happy with the end result however, we can actually "build" the application, which will generate a much smaller footprint (bundled, minified JavaScript / CSS, etc). 
 
 If you take a look at the generated `package.json` file, you will see that the `"scripts"` property contains our initial `"start"` script (ie: **npm start**), as well as a number of *other* scripts that we can invoke.  The one we're most interested in here, is the `"build"` script (ie: **npm build**).  Once executed, this script initiates a "build" process that creates a highly optomized "production" build of our code in a new folder called "build".
 
-Try executing this command by following the following steps:
+Try executing this command by following the below steps:
 
 * Stop the "development server" currently running using **ctrl + c**
 * Execute the command **"npm run build"**
