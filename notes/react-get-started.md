@@ -81,7 +81,7 @@ Therefore, spend a few hours (before, during, and after class) to go through the
 
 <br>
 
-### "Build" The App
+### "Build" the app
 
 Now that we've scratched the surface of React and worked with some of it's core functionality, why don't we actually "build" the application.  So far, we've been learning and practicing our React skills in a controlled, "development" environment.  Once we're happy with the end result however, we can actually "build" the application, which will generate a much smaller footprint (bundled, minified JavaScript / CSS, etc). 
 
