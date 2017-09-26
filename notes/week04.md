@@ -15,7 +15,7 @@ Remember to frequently use the [learning resources](/web422/resources).
 
 This week:
 * Introduction to React
-* Getting started by creating a simple application &amp; Deploying to Heroku
+* Getting started by creating a simple application
 * More about components (as an architectural design)
 
 Next week:
