@@ -7,9 +7,9 @@ layout: default
 
 The next part of our learning journey will depend almost completely on the excellent content that the React development team has published. 
 
-Get ready by visiting the [React home page](https://facebook.github.io/react/), and read/scan the content.
+Get ready by visiting the [React home page](https://reactjs.org/), and read/scan the content.
 
-On the top navigation menu, notice the [Docs](https://facebook.github.io/react/docs/installation.html) (documentation) and [Tutorial](https://facebook.github.io/react/tutorial/tutorial.html) items. 
+On the top navigation menu, notice the [Docs](https://reactjs.org/docs/installation.html) (documentation) and [Tutorial](https://reactjs.org/tutorial/tutorial.html) items. 
 
 ![React web site](../media/react-web-site.png)
 
@@ -17,7 +17,7 @@ On the top navigation menu, notice the [Docs](https://facebook.github.io/react/d
 
 ### Installation
 
-As described in the [Docs](https://facebook.github.io/react/docs/installation.html) installation notes, React is installed by using the Node Package Manager. 
+As described in the [Docs](https://reactjs.org/docs/installation.html) installation notes, React is installed by using the Node Package Manager. 
 
 For best results, use the React app generator. Install it on your computer:
 
@@ -71,13 +71,13 @@ At the top of this document we noted that the next part of our learning journey 
 
 Therefore, spend a few hours (before, during, and after class) to go through these topics:
 
-[Installation](https://facebook.github.io/react/docs/installation.html)  
-[Hello World](https://facebook.github.io/react/docs/hello-world.html)  
-[Introducing JSX](https://facebook.github.io/react/docs/introducing-jsx.html)  
-[Rendering Elements](https://facebook.github.io/react/docs/rendering-elements.html)  
-[Components and Props](https://facebook.github.io/react/docs/components-and-props.html)  
-[State and Lifecycle](https://facebook.github.io/react/docs/state-and-lifecycle.html)  
-[Handling Events](https://facebook.github.io/react/docs/handling-events.html)  
+[Installation](https://reactjs.org/docs/installation.html)  
+[Hello World](https://reactjs.org/docs/hello-world.html)  
+[Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)  
+[Rendering Elements](https://reactjs.org/docs/rendering-elements.html)  
+[Components and Props](https://reactjs.org/docs/components-and-props.html)  
+[State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)  
+[Handling Events](https://reactjs.org/docs/handling-events.html)  
 
 <br>
 
@@ -124,7 +124,7 @@ There are three more documents that can help you understand more about the React
 
 The first is the `README.md` that the React generator creates. As it states near the top of that file, you can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md). Surprisingly, there are many nuggets that give you hints about the app design and deployment process. Most will be beyond your need during this short two-week treatment of React, but many of the themes will be reused when we begin working with Angular (and you never know, you may end up working with React in the future). 
 
-Another is the official [React tutorial](https://facebook.github.io/react/tutorial/tutorial.html). It's a recommended skim/read, and you may or may not want to code along with it.
+Another is the official [React tutorial](https://reactjs.org/tutorial/tutorial.html). It's a recommended skim/read, and you may or may not want to code along with it.
 
 The other is from the Visual Studio Code documentation set, titled [Using React in VS Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial). It's a reasonably short document. One of its very useful topics is the how-to for debugging React in VS Code. 
 
