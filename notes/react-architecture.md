@@ -73,7 +73,7 @@ A component has a well-defined organizational structure, and includes:
 
 The React development team has published a document that is obviously useful for React apps, but will also be useful to us in the near future when we begin learning Angular:
 
-[Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html)
+[Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
 
 Have a look at it. It's just another way of getting accustomned to the "new" way of thinking about app building.
 
