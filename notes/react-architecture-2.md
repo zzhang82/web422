@@ -17,7 +17,7 @@ Inside the **src/index.js** file is where everything really kicks off.  It's kno
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-Here, we invoke the [ReactDom.render](https://reactjs.org/docs/react-dom.html#render) method to render our primary "App" element onto the main `div` element in `index.html`
+Here, we invoke the [ReactDom.render](https://reactjs.org/docs/react-dom.html#render) method to render our primary "App" element onto the main `<div>` element in `index.html`
 
 You will notice however, that `<App />` isn't defined in index.js and neither is `ReactDOM`.  References to the original source is included via ["import"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) statements at the top of the file.  This behaviour is defined in ES6 and it simply functions as a method for us to include modules from other files.  You can think of this as analogous to our "require" statements that we use when writing server code in Node.js.  
 
