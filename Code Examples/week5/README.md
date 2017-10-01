@@ -4,7 +4,7 @@ The code example this week is a single application created in React using the "c
 
 This example illustrates how we can use React to create a SPA (Single Page Application) with multiple routes (including those with parameters, as well as a "Not Found" page). The application also shows how we can read and write "Employee" data using our Teams API.
 
-**Note:** The application is currently configured to look to "http://localhost:8081" for a running version of the Teams API.  To get the example working for your specific API, the App.js file (defining the routes) will need to be updated.
+**Note:** The application is currently configured to look to "http://localhost:8081" for a running version of the Teams API.  To get the example working for your specific API, the App.js file (defining the routes) will need to be updated to point to your Heroku API
 
 #### Routes
 
