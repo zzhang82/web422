@@ -13,4 +13,6 @@ Remember to frequently use the [learning resources](/web422/resources).
 
 **Topics:**
 
-... coming soon
+* [React App Structure / Organization (Simple Style Guide) & Creating Pages using Components](react-architecture-2)
+* [Routing in React](react-routing)
+* [Simple Forms & Connecting to our Teams API](react-ajax-forms)
