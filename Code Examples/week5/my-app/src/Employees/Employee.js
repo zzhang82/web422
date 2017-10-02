@@ -74,6 +74,7 @@ class Employee extends React.Component {
         });
     }
 
+    // NOTE: This code could be better optomized by writing Components for the "row", "column" and form input elements
 
     render() {
         if(this.state.dataLoaded === true){
