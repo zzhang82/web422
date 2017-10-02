@@ -284,117 +284,26 @@ If you have been following along and implementing the above changes to the "App"
 </div>
 ```
 
-However, there's still room to organize things a little more. For example: Rather than relying on the Bootstrap class names for "container", "row", and "col-md-6", why don't we create `<Container>`, `<Row>`, and `<ColumnMd6>` classes.  This way, if Bootstrap ever changes their class names with a new version (and we decide to update), or we wish to add additional code to the `<div>` elements with those classes (ie: another class, or attribute), we can do it in one place and our entire App will be affected.  
-
-Using Components in this way helps to make our application more manageable and maintainable.  Additionally, since these are essentially "layout" components, we can organize our solution even further by placing their .js files in a "layout" directory (ie: "src/layout")
-
-The following code shows how we can define the **Container**, **Row** and **ColumnMd6** components using a special property: **children** (ie: `{this.props.children}`)
-
-#### &lt;Container&gt;
-
-```javascript
-import React, { Component } from 'react';
-
-class Container extends Component {
-    render() {
-        return (
-            <nav className="container">
-                {this.props.children}
-            </nav> 
-        );
-    }
-}
-
-export default Container;
-```
-
-#### &lt;Row&gt;
-
-```javascript
-import React, { Component } from 'react';
-
-class Row extends Component {
-    render() {
-        return (
-            <nav className="row">
-                {this.props.children}
-            </nav> 
-        );
-    }
-}
-
-export default Row;
-```
-
-#### &lt;ColumnMd6&gt;
-
-```javascript
-import React, { Component } from 'react';
-
-class ColumnMd6 extends Component {
-    render() {
-        return (
-            <nav className="col-md-6">
-                {this.props.children}
-            </nav> 
-        );
-    }
-}
-
-export default ColumnMd6;
-```
-
-#### Final &lt;App /&gt; Component
-
-With all of our new Components in place, the final `<App />` Component can be defined as:
-
-```javascript
-import React, { Component } from 'react';
-
-import Navbar from './Navbar';
-import Panel from './Panel';
-import Container from './layout/Container';
-import Row from './layout/Row';
-import ColumnMd6 from './layout/ColumnMd6';
-
-import './App.css';
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Navbar title="React Practice" />
-        <Container>
-            <Row>
-              <ColumnMd6>
-                <Panel title="Panel title" content="Panel content" />
-              </ColumnMd6>
-              <ColumnMd6>
-                <Panel title="Panel title" content="Panel content" /> 
-              </ColumnMd6>
-            </Row>
-        </Container>
-      </div>
-    );
-  }
-}
-
-export default App;
-```
-
 <br>
 
 ### Rendering Data in a Collection
 
-The above code is great for generating code that does not repeat based on a collection (ie, "render this Component here").  However, as we've seen in this course so far, rendering items in a collection is an extremely important part of creating a Single Page Application. 
+The above code is great for generating code that does not repeat (ie, "render this Component here").  However, as we've seen in this course so far, rendering items in a collection is an extremely important part of creating a Single Page Application.
+
+To see how we can do this in React, let's add one more "stateful" component: **ListNames**.  This component does not accept any "props" but  
 
 ... TODO (show the timestables once every second.... 9x1=9 ... 9x2=18.. in an unordered list):
 
+<br>
 
 ### Responding to Events
 
 ... (updating the above example to use a button press instead
 
+<br>
 
+### Reminder: Using "state"
+
+... show how you can't use the state of one component to kickstart the state of a child component
 
 
