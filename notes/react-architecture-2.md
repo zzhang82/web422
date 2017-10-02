@@ -353,11 +353,54 @@ The concern here is that React uses a unique ["key" property](https://reactjs.or
 
 ### Responding to Events
 
-... (updating the above example to use a button press instead
+Fortunately for us, responding to events is relatively simple in React.  
+
+For example; let's say that we want to extend our ListNames component to accept some user input and dynamically add new names to the list.  We can re-write the component to include a `<button>` element that invokes a "handleListItemAdd()" method of our ListNames Component:
+
+```javascript
+import React, { Component } from 'react';
+
+class ListNames extends Component {
+    constructor(){ // list names does *not* accept props
+        super();
+        this.state = {
+            names: ["Dean", "Adrien", "Sarah", "Chandra"]
+        }
+    }
+
+    handleListItemAdd = () =>{
+        let newArray = this.state.names;
+        newArray.push("New Item");
+
+        this.setState({
+            names: newArray
+        });
+    }
+    
+    render() {
+        return (
+            <div>
+                <ul>
+                    {this.state.names.map((name, index) => {
+                        return (
+                            <li key={index} >{name}</li>
+                        );
+                    })}
+                </ul>
+                <button type="button" className="btn btn-primary btn-sm" onClick={() => {this.handleListItemAdd()} }>Add List Item</button>
+            </div>
+        );
+    }
+}
+
+export default ListNames;
+```
+
+Notice how we had to wrap the whole thing in a `<div>` element?  This is because we can only return a **single** element in our Render method.
 
 <br>
 
-### Reminder: Using "state"
+### Warning: Initializing this.state
 
 ... show how you can't use the state of one component to kickstart the state of a child component
 
