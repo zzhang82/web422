@@ -7,7 +7,7 @@ layout: default
 
 Now that we have learned all about Components in React (Stateful, Statless, Functional, etc).  It's time that we start using this knowledge to create something that resembles a real page using these ideas.
 
-To get started, create **new app** using **create-react-app**.  Once this is complete follow the steps in the terminal to start the development server (ie: **npm start**).  This *should* open a new browser window to **http://localhost:3000**, but if it doesn't - proceed to open up that url now.
+To get started, create a **new app** using **create-react-app**.  Once this is complete follow the steps in the terminal to start the development server (ie: **npm start**).  This *should* open a new browser window to **http://localhost:3000**, but if it doesn't - proceed to open up that url now.
 
 Notice how the create-react-app tool has created a pretty cool start page for us already (you should remember this from last week).  However, now that we know a little bit more about how React is used to define and manage "Components", let's disect what's happening here and create our own start page.
 
