@@ -78,8 +78,8 @@ For simpliity, we're simply going to include all of the relavent CDN links that 
 **JavaScript**
 
 ```html
- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 ```
 
 * Copy the **CSS** code into the `<head>` section of your **public/index.html** file directly beneath the `<meta>` tags.
@@ -233,7 +233,7 @@ class Panel extends Component {
                     <h3 className="panel-title">{this.props.title}</h3>
                 </div>
                 <div className="panel-body">
-                    {this.props.content}
+                    {this.props.children}
                 </div>
             </div>
         );
@@ -243,7 +243,7 @@ class Panel extends Component {
 export default Panel;
 ```
 
-For the "Panel", we have removed all of the "panel" code and placed it in it's own component, defined in "Panel.js" (**src/Panel.js**).  The static text has been removed in favour of accepting "title" and "content" properties to our new component.
+For the "Panel", we have removed all of the "panel" code and placed it in it's own component, defined in "Panel.js" (**src/Panel.js**).  The static title has been removed in favour of accepting a "title" property and the "content" of the panel is set up to render all components that rest inside the <Panel></Panel> element.  This is accomplished via a reserved property: **"children"**.
 
 Like our "Navbar" component, if any other file wishes to use the "Panel", they can simply "import" the module.  For example, to ensure that we can use it in our App.js file, we add the line:
 
@@ -254,13 +254,15 @@ import Panel from './Panel';
 And if we want to reference it within our "App" component, we can use the JSX code:
 
 ```html
-<Panel title="Panel title" content="Panel content" /> 
+<Panel title="Panel title">
+  Panel content
+</Panel>
 ```
 <br>
 
-#### Checking in on the App Component &amp; Updating Containers
+#### Uppdated &lt;App /&gt; JSX
 
-If you have been following along and implementing the above changes to the "App" component, you will find that the "render" method now returns the (much cleaner) JSX
+If you have been following along and implementing the above changes to the "App" component, you will find that the "render" method now returns the (much cleaner) JSX code.
 
 ```html
 <div>
@@ -271,11 +273,15 @@ If you have been following along and implementing the above changes to the "App"
     <div className="row">
 
       <div className="col-md-6">
-        <Panel title="Panel title" content="Panel content" />
+        <Panel title="Panel title">
+          Panel content
+        </Panel>
       </div>
       
       <div className="col-md-6">
-        <Panel title="Panel title" content="Panel content" /> 
+        <Panel title="Panel title">
+          Panel content
+        </Panel>
       </div>
 
     </div>
@@ -286,13 +292,62 @@ If you have been following along and implementing the above changes to the "App"
 
 <br>
 
+We could continue this trend by also making the "container", "row", and "col-md-6" `<div>` elements into their own containers as well.  This would place all of the containers that bootstrap class names into their own modules, which makes it much easier to manage any changes to our containers in the future (ie, new classes / modifying existing classes, or adding new child/parent elements to the containers).
+
 ### Rendering Data in a Collection
 
 The above code is great for generating code that does not repeat (ie, "render this Component here").  However, as we've seen in this course so far, rendering items in a collection is an extremely important part of creating a Single Page Application.
 
-To see how we can do this in React, let's add one more "stateful" component: **ListNames**.  This component does not accept any "props" but  
+To see how we can do this in React, let's add one more "stateful" component: **ListNames**.  This component does not accept any "props" but it does have an internal "state" that holds an array of names.  
 
-... TODO (show the timestables once every second.... 9x1=9 ... 9x2=18.. in an unordered list):
+```javascript
+import React, { Component } from 'react';
+
+class ListNames extends Component {
+    constructor(){ // list names does *not* accept props
+        super();
+        this.state = {
+            names: ["Dean", "Adrien", "Sarah", "Chandra"]
+        }
+    }
+    render() {
+        return (
+            <ul>
+                <li>TODO: Render Names Here</li>
+            </ul>
+        );
+    }
+}
+
+export default ListNames;
+```
+
+If we wish to render each name in it's own `<li>` element, we need to embed some JavaScript into our render() method to iterate over **this.state.names** and output the resulting element.  Fortunately, as we have seen, we can provide a valid JavaScript *expression* at any point in our JSX code.  Therefore, if we want to iterate over the names collection, we can make use of the [Array Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) Method to access each element in turn and output the related data.  For example, we can replace our `<li>TODO: ...</li>`: JSX with the following code.
+
+```javascript
+{this.state.names.map((name, index) => {
+    return (
+        <li>{name}</li>
+    );
+})}
+```
+This will iterate over every element in the "names" array and execute our callback function.  The callback function is then used to "wrap" each name in an `<li>` element before returning it.  Using this code, we can easily output one or more elements in an existing collection, using the formatting of our choice!  
+
+There is one caveat, however.  If we were to add our new component to our App (in one of the panels, for example) and examine our resulting view in the browser, we'll see that everything looks fine.  The only concern is a **warning** that we recieve in the browser console: 
+
+```
+"Warning: Each child in an array or iterator should have a unique "key" prop."
+```
+
+The concern here is that React uses a unique ["key" property](https://reactjs.org/docs/lists-and-keys.html#keys) to help identify which elements of a list have been changed, added or removed. If we don't have an obvious key (ie, ".\_id" from our Teams API data (which is the best option), we can simply use the index for each element in the array.  For example, to address the above warning, we would change the "map" code from above to read: 
+
+```javascript
+{this.state.names.map((name, index) => {
+    return (
+        <li key={index} >{name}</li>
+    );
+})}
+```
 
 <br>
 
