@@ -24,7 +24,7 @@ class Employees extends React.Component {
         });
     }
 
-    handleOnClick = (employeeId) => {
+    handleOnClick(employeeId){
         this.setState({ 
             redirect: true,
             targetEmployee: employeeId 
