@@ -95,6 +95,8 @@ Here, we can define our routes explicitly using the ["Switch" component](https:/
 
 In all three above routes, we use the ["exact"](https://reacttraining.com/react-router/web/api/Route/exact-bool) because we want to match the route *exactly* (ie, we don't care about "/Project/1" yet, only "/Project") 
 
+<br>
+
 ## Adding URL Parameters to our Routes
 
 If we wish to pass a specific URL pattern to a given route, we can use the same syntax as we're accustomed to in Node.js, ie: "/routeName/:parameter". To pass the ":parameter" to the `<Project />` component (so we can make use of routes like "/project/4", etc), we need to make the following changes to our files: 
@@ -117,6 +119,8 @@ If we wish to pass a specific URL pattern to a given route, we can use the same 
   
 Once we have made the above changes (removed "exact", added /:id, referenced props.match.params.id, etc.), we can now render routes that look like "/Project/9" or "/Project/abc" and see the results reflected in the browser.
 
+<br>
+
 ## Adding A "Not Found" Route
 
 Using React Router, we can easily define a "Not Found" route - this is analagous to the "404" error that we returned in our server.js files in WEB322 when a route was not matched.
@@ -128,4 +132,18 @@ To add a "Not Found" route, we simply need to add another route as a child to ou
         <h1>Not Found</h1>
 )}/>
 ```
+
+<br>
+
+## "Redirecting" to a Route
+
+Sometimes, we wish to "redirect" the user to a different route and override the current route in the "history" stack (or alternatively "push" it onto the current history stack) - this is similar to what we would use [res.redirect()](http://expressjs.com/en/4x/api.html#res.redirect) for in our Node.js servers.
+
+React provides an intuitive way to achieve this, by providing a special [&lt;Redirect /&gt;](https://reacttraining.com/react-router/web/api/Redirect) component.  When rendered, it will redirect the client to the specified route using the following syntax (Note: the use of "push" will add the new route to the "history" stack):
+
+```
+<Redirect push to={"/newRoute"} />
+```
+
+
       
