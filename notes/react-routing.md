@@ -68,7 +68,7 @@ we need to modify our App.js file as well as our index.js file.
   , document.getElementById('root'));
   ```
 
-The above code specifies the type of router that we will be using in our `<App />` component.  This could be either [&lt;BrowserRouter&gt;](https://reacttraining.com/react-router/web/api/BrowserRouter) or [&lt;HashRouter&gt;](https://reacttraining.com/react-router/web/api/HashRouter) - here, we have decited to use `<BrowserRouter>`, as the Hash Router technique is only really intended to support legacy browsers.
+The above code specifies the type of router that we will be using in our `<App />` component.  This could be either [&lt;BrowserRouter&gt;](https://reacttraining.com/react-router/web/api/BrowserRouter) or [&lt;HashRouter&gt;](https://reacttraining.com/react-router/web/api/HashRouter) - here, we have decided to use `<BrowserRouter>`, as the Hash Router technique is only really intended to support legacy browsers.
 
 <br>
 
