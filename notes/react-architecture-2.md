@@ -370,6 +370,8 @@ class ListNames extends Component {
         this.state = {
             names: ["Dean", "Adrien", "Sarah", "Chandra"]
         }
+        
+         this.handleListItemAdd = this.handleListItemAdd.bind(this);
     }
 
     handleListItemAdd(){
@@ -391,7 +393,7 @@ class ListNames extends Component {
                         );
                     })}
                 </ul>
-                <button type="button" className="btn btn-primary btn-sm" onClick={() => {this.handleListItemAdd()} }>Add List Item</button>
+                <button type="button" className="btn btn-primary btn-sm" onClick={this.handleListItemAdd}>Add List Item</button>
             </div>
         );
     }
@@ -402,18 +404,10 @@ export default ListNames;
 
 Notice how we had to wrap the entire JSX code in a `<div>` element?  This is because we can only return a **single** element in our Render method.  
 
-Also, instead of simply handing the **this.handleListItemAdd** function to the onClick event as a callback, we instead define an anonymous function using the arrow function syntax.  This anonymous function only has one job; to explicitly invoke the handleListItemAdd() method on "this".  If we fail to register our callback function in this manner, "this" in the callback will be "undefined" instead of a reference to "ListNames" and we will not have access to the "setState" method.
-
-An alternative method of solving this problem is to explicitly "bind" **this** to the handleListItemAdd method in the  constructor using the line:
+Also, we must to explicitly "bind" **this** to the handleListItemAdd method in the constructor (so that we can reference  ListNames in the function) using the line:
 
 ```javascript
  this.handleListItemAdd = this.handleListItemAdd.bind(this);
-```
-
-Now we can bind the "onClick" event in a more intuitive manner, ie: 
-
-```javascript
-onClick={this.handleListItemAdd}
 ```
 
 <br>
