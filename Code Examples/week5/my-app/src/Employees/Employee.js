@@ -17,8 +17,8 @@ class Employee extends React.Component {
             alertVisible: false
         }
 
-        //this.handleInputChange = this.handleInputChange.bind(this);
-        //this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this); // ensure that "this" in the event callback refers to Employee
+        this.handleSubmit = this.handleSubmit.bind(this); // ensure that "this" in the event callback refers to Employee
     }
 
     componentDidMount() {
@@ -34,7 +34,7 @@ class Employee extends React.Component {
         });
     }
 
-    handleInputChange = (event) => { // declared using an arrow function to preserve 'this' as the Employee
+    handleInputChange(event){
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
@@ -50,7 +50,7 @@ class Employee extends React.Component {
         });
     }
 
-    handleSubmit = (event) => { // declared using an arrow function to preserve 'this' as the Employee
+    handleSubmit(event){ 
 
         event.preventDefault();
 
