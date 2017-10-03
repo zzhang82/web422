@@ -60,5 +60,16 @@ Introduction to Component-based architecture using React:<br><br>
 </ul>
 </td>
 </tr>
+<tr>
+<td><a href="/web422/notes/week05">5 - Notes</a></td>
+<td>
+React Continued:<br><br>
+<ul>
+<li>React App Structure / Organization (Simple Style Guide) & Creating Pages using Components</li>
+<li>Routing in React</li>
+<li>Simple Forms & Connecting to our Teams API</li>
+</ul>
+</td>
+</tr>
 </tbody>
 </table>
