@@ -368,7 +368,7 @@ class ListNames extends Component {
         }
     }
 
-    handleListItemAdd = () =>{
+    handleListItemAdd(){
         let newArray = this.state.names;
         newArray.push("New Item");
 
@@ -396,12 +396,98 @@ class ListNames extends Component {
 export default ListNames;
 ```
 
-Notice how we had to wrap the whole thing in a `<div>` element?  This is because we can only return a **single** element in our Render method.
+Notice how we had to wrap the entire JSX code in a `<div>` element?  This is because we can only return a **single** element in our Render method.  
+
+Also, instead of simply handing the **this.handleListItemAdd** function to the onClick event as a callback, we instead define an anonymous function using the arrow function syntax.  This anonymous function only has one job; to explicitly invoke the handleListItemAdd() method on "this".  If we fail to register our callback function in this manner, "this" in the callback will be "undefined" instead of a reference to "ListNames" and we will not have access to the "setState" method.
+
+An alternative method to solving this problem is to explicitly "bind" **this** to the handleListItemAdd method in the  constructor using the line:
+
+```javascript
+ this.handleListItemAdd = this.handleListItemAdd.bind(this);
+```
+
+Now we can bind the "onClick" event in a more intuitive manner, ie: 
+
+```javascript
+onClick={this.handleListItemAdd}
+```
 
 <br>
 
-### Warning: Initializing this.state
+### Warning: Initializing this.state from a parent state using "props"
 
-... show how you can't use the state of one component to kickstart the state of a child component
+There is one stateful pattern that you may be tempted to try: setting the state of a child component via "props" to the "state" value of the parent.  
 
+The idea here is that when the **parent** state changes, so too should the **child** state.  Unfortunately, this does not occur, since each element has it's own state. Changes in the parent will not affect changes in the child, even if the value is passed via "props". 
+
+For example, take the two following components; "Inner" and "Outer".  "Outer" has "outerName" in it's state and passes it to the "Inner" component using the "name" property.  The "Inner" component uses this value to initialize it's own "innerName" property in it's own state.  After 2 seconds, the "Outer" component sets the "outerName" state to "Bob".  The expectation here is that the "innerName" should be updated as well, since innerName was initialized using "this.props.name":
+
+```javascript
+class Inner extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      innerName: this.props.name 
+    }
+  }
+
+  render(){ // innerName is not updated to reflect the new name: "Bob"
+    return <span>{this.state.innerName}</span>
+  }
+}
+
+class Outer extends Component {
+  constructor() {
+    super()
+    this.state = {
+      outerName: ""
+    }
+  }
+
+  componentDidMount(){
+    // set the "outerName" to change to "Bob" after 2 seconds
+    setTimeout(()=>{
+      this.setState({
+        outerName: "Bob"
+      });
+    },2000);
+  }
+
+  render() {
+    return <Inner name={this.state.outerName} />
+  }
+}
+  ```
+
+Unfortunately, this is not the case.  If we wish to reflect the changes of "outerName" in our "Inner" component, we must reference it using "this.props", not "this.state".  The corrected version can be seen here:
+
+```javascript
+class Inner extends Component{
+  render(){ // this.props.name IS updated to reflect the new name: "Bob"
+    return <span>{this.props.name}</span>
+  }
+}
+
+class Outer extends Component {
+  constructor() {
+    super()
+    this.state = {
+      outerName: ""
+    }
+  }
+
+  componentDidMount(){
+    // set the "outerName" to change to "Bob" after 2 seconds
+    setTimeout(()=>{
+      this.setState({
+        outerName: "Bob"
+      });
+    },2000);
+  }
+
+  render() {
+    return <Inner name={this.state.outerName} />
+  }
+}
+```
 
