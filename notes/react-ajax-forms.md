@@ -34,7 +34,7 @@ import axios from 'axios';
 
 ### Fetching the Data
 
-The following example shows how an "componentDidMount()" method can be used to make a request for data using "axios" and store the results in the "state" of the component as "data".  This example uses the popular [https://reqres.in](https://reqres.in) testing service as an example of how we can fetch the data.  This can easily be swapped out for your "Teams" API running on Heroku:
+The following example shows how a "componentDidMount()" lifecycle method can be used to make a request for data using "axios" and store the results in the "state" of the component as "data".  This example uses the popular [https://reqres.in](https://reqres.in) testing service as an example of how we can fetch the data.  This can easily be swapped out for your "Teams" API running on Heroku:
 
 ```javascript
 componentDidMount() {
