@@ -74,7 +74,7 @@ The above code specifies the type of router that we will be using in our `<App /
 
 ### App.js
 
-* "import" the `<Route>` and `<Switch>` Components using `import { Route, Switch} from 'react-router-dom'`
+* "import" the `<Route>` and `<Switch>` Components using `import { Route, Switch } from 'react-router-dom'`
 * Update the render() method of the "App" class to use the following JSX:
 
   ```javascript
