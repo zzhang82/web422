@@ -59,6 +59,7 @@ we need to modify our App.js file as well as our index.js file.  Starting with
 
 * "import" the `<BrowserRouter>` Component using `import { BrowserRouter } from 'react-router-dom'` 
 * Update the ReactDom.render() method to wrap the `<App />` component in a `<BrowserRouter>` component:
+
   ```javascript
   ReactDOM.render(
     <BrowserRouter>
@@ -74,3 +75,57 @@ The above code specifies the type of router that we will be using in our `<App /
 ### App.js
 
 * "import the `<Route>` and `<Switch>` Components using `import { Route, Switch} from 'react-router-dom'`
+* Update the render() method of the "App" class to use the following JSX:
+
+  ```javascript
+  <Switch>
+        <Route exact path='/' render={() => (
+                <Home />
+        )}/>
+        <Route exact path='/Projects' render={() => (
+                <Projects  />
+        )}/>
+        <Route exact path='/Project' render={() => (
+                <Project  />
+        )}/>
+  </Switch>
+  ```
+  
+Here, we can define our routes explicitly using the ["Switch" component](https://reacttraining.com/react-router/web/api/Switch) with our 3 nested ["Route" components](https://reacttraining.com/react-router/web/api/Route).  Each of the routes have a "path" property which we use to define the target route, as well as a "render" property which defines which component will be rendered for that route.  
+
+In all three above routes, we use the ["exact"](https://reacttraining.com/react-router/web/api/Route/exact-bool) because we want to match the route *exactly* (ie, we don't care about "/Project/1" yet, only "/Project") 
+
+## Adding URL Parameters to our Routes
+
+If we wish to pass a specific URL pattern to a given route, we can use the same syntax as we're accustomed to in Node.js, ie: "/routeName/:parameter". To pass the ":parameter" to the `<Project />` component (so we can make use of routes like "/project/4", etc), we need to make the following changes to our files: 
+
+* Update the "Project" component's "render()" method to include a reference to an "id" property:
+
+  ```javascript
+  render(){
+    return <h1>Project {this.props.id} Page</h1>
+  }
+  ```
+
+* Update the "Project" `<Route>` component:
+
+  ```javascript
+  <Route path='/Project/:id' render={(props) => (
+      <Project id={props.match.params.id} />
+  )}/>
+  ```
+  
+Once we have made the above changes (removed "exact", added /:id, referenced props.match.params.id, etc.), we can now render routes that look like "/Project/9" or "/Project/abc" and see the results reflected in the browser.
+
+## Adding A "Not Found" Route
+
+Using React Router, we can easily define a "Not Found" route - this is analagous to the "404" error that we returned in our server.js files in WEB322 when a route was not matched.
+
+To add a "Not Found" route, we simply need to add another route as a child to our `<Switch>` component defined in App.js.  This route will need to be **beneath** the other routes, so that it doesn't block any of our legitimate routes:
+
+```javascript
+<Route render={() => (
+        <h1>Not Found</h1>
+)}/>
+```
+      
