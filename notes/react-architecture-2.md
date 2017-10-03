@@ -21,7 +21,7 @@ Here, we invoke the [ReactDom.render](https://reactjs.org/docs/react-dom.html#re
 
 You will notice however, that `<App />` isn't defined in index.js and neither is `ReactDOM`.  References to the original source is included via ["import"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) statements at the top of the file.  This behaviour is defined in ES6 and it simply functions as a method for us to include modules from other files.  You can think of this as analogous to our "require" statements that we use when writing server code in Node.js.  
 
-In our current application (index.html file), we import the modules **React**, **ReactDOM**, **App** and **registerServiceWorker**.  We can discard the **registerServiceWorker** code for now (for more infomation see: [Service Workers: an Introduction](https://developers.google.com/web/fundamentals/primers/service-workers/)).  This should leave you with the following code:
+In our current application (index.js file), we import the modules **React**, **ReactDOM**, **App** and **registerServiceWorker**.  We can discard the **registerServiceWorker** code for now (for more infomation see: [Service Workers: an Introduction](https://developers.google.com/web/fundamentals/primers/service-workers/)).  This should leave you with the following code:
 
 ```js
 import React from 'react';
@@ -65,6 +65,8 @@ Remember this for later, as we will (generally) be using this syntax whenever we
 
 A simple way to start thinking about what components you'll need to develop your application is to simply start building out your **App** component.  As a brief exercise in what this process might look like, let's remove the boilerplate React content and start incorporating some simple Bootstrap components.
 
+<br>
+
 #### Incorporating Bootstrap 3.3.7
 
 For simpliity, we're simply going to include all of the relavent CDN links that we've been using in the past weeks, ie:
@@ -85,13 +87,15 @@ For simpliity, we're simply going to include all of the relavent CDN links that 
 * Copy the **CSS** code into the `<head>` section of your **public/index.html** file directly beneath the `<meta>` tags.
 * Copy the **JavaScript** code just before the closing `</body>` tag in the **public/index.html** file.
 
+<br>
+
 #### Starting Fresh & Adding JSX
 
 Now that we have the bootstrap CSS available to our "views" (rendered components), we can start adding code to our "App" component.
 
 Start by wiping out the boilerplate JSX code from within the **return** statement of the "App" component within your "App.js" file.  
 
-**Quick SideNote:** We aren't going to be worrying about writing test cases in our React app, so we can delete the "App.test.js" file.  For more information on testing in React (using Jest), see: [the ReadME.md file here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#writing-tests).
+**Quick SideNote:** We aren't going to worry about writing test cases in our React app, so we can delete the "App.test.js" file.  For more information on testing in React (using Jest), see: [the README.md file here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#writing-tests).
 
 Once you have removed the JSX code from the render() function in the App component, it should look like the following:
 
@@ -108,10 +112,10 @@ class App extends Component {
 We now have a fresh canvas to start adding some Bootstrap code from the [Bootstrap 3 Documentation](http://getbootstrap.com/docs/3.3/). Just remember: **The render() method *must* return a *single* element, with 0 or more children**. Let's begin by adding the following bootstrap components / layout options. 
 
 * A Minimal [Navbar](http://getbootstrap.com/docs/3.3/components/#navbar)
-* A ["Container"](http://getbootstrap.com/docs/3.3/css/#overview-container) containing a responsive [Grid](http://getbootstrap.com/docs/3.3/css/#grid-example-basic) with a one "row" and 2 "columns" (col-md-3 &amp; col-md-9)
+* A ["Container"](http://getbootstrap.com/docs/3.3/css/#overview-container) containing a responsive [Grid](http://getbootstrap.com/docs/3.3/css/#grid-example-basic) with one "row" and 2 "columns" (col-md-6 &amp; col-md-6)
   * Note: each "column" should contain a ["Panel with a heading"](http://getbootstrap.com/docs/3.3/components/#panels-heading)
   
-Once you're complete, the App component should look something like this:
+When you have completed adding the above elements, the App component should look something like this:
 
 ```javascript
 import React, { Component } from 'react';
@@ -169,7 +173,7 @@ class App extends Component {
 export default App;
 ```
 
-The code above has had some extra spaces added to it for clarity.  Notice how every "class" attribute had to be renamed to "className" and that our component returns only a single `<div>` element (with many children).
+The code above has some extra spaces added to it for clarity.  Notice how every "class" attribute had to be renamed to "className" and that our component returns only a single `<div>` element (with many children).
 
 <br>
 
@@ -243,7 +247,7 @@ class Panel extends Component {
 export default Panel;
 ```
 
-For the "Panel", we have removed all of the "panel" code and placed it in it's own component, defined in "Panel.js" (**src/Panel.js**).  The static title has been removed in favour of accepting a "title" property and the "content" of the panel is set up to render all components that rest inside the <Panel></Panel> element.  This is accomplished via a reserved property: **"children"**.
+Here, we have removed all of the "panel" code and placed it in it's own component, defined in "Panel.js" (**src/Panel.js**).  The static title has been removed in favour of accepting a "title" property and the "content" of the panel is set up to render all components that rest inside the <Panel></Panel> element.  This is accomplished via a reserved property: **"children"**.
 
 Like our "Navbar" component, if any other file wishes to use the "Panel", they can simply "import" the module.  For example, to ensure that we can use it in our App.js file, we add the line:
 
@@ -292,7 +296,7 @@ If you have been following along and implementing the above changes to the "App"
 
 <br>
 
-We could continue this trend by also making the "container", "row", and "col-md-6" `<div>` elements into their own containers as well.  This would place all of the containers that bootstrap class names into their own modules, which makes it much easier to manage any changes to our containers in the future (ie, new classes / modifying existing classes, or adding new child/parent elements to the containers).
+We could continue this trend by also making the "container", "row", and "col-md-6" `<div>` elements into their own containers as well.  This would place all of the containers that use bootstrap-specific class names into their own modules, which makes it much easier to manage any changes to our containers in the future (ie, adding new classes / modifying existing classes, or adding new child/parent elements to the containers).
 
 ### Rendering Data in a Collection
 
@@ -339,7 +343,7 @@ There is one caveat, however.  If we were to add our new component to our App (i
 "Warning: Each child in an array or iterator should have a unique "key" prop."
 ```
 
-The concern here is that React uses a unique ["key" property](https://reactjs.org/docs/lists-and-keys.html#keys) to help identify which elements of a list have been changed, added or removed. If we don't have an obvious key (ie, ".\_id" from our Teams API data (which is the best option), we can simply use the index for each element in the array.  For example, to address the above warning, we would change the "map" code from above to read: 
+The concern here is that React uses a unique ["key" property](https://reactjs.org/docs/lists-and-keys.html#keys) to help identify which elements of a list have been changed, added or removed. If we don't have an obvious key (ie, ".\_id" from our Teams API data), we can simply use the index for each element in the array.  For example, to address the above warning, we would change the "map" code from above to read: 
 
 ```javascript
 {this.state.names.map((name, index) => {
@@ -400,7 +404,7 @@ Notice how we had to wrap the entire JSX code in a `<div>` element?  This is bec
 
 Also, instead of simply handing the **this.handleListItemAdd** function to the onClick event as a callback, we instead define an anonymous function using the arrow function syntax.  This anonymous function only has one job; to explicitly invoke the handleListItemAdd() method on "this".  If we fail to register our callback function in this manner, "this" in the callback will be "undefined" instead of a reference to "ListNames" and we will not have access to the "setState" method.
 
-An alternative method to solving this problem is to explicitly "bind" **this** to the handleListItemAdd method in the  constructor using the line:
+An alternative method of solving this problem is to explicitly "bind" **this** to the handleListItemAdd method in the  constructor using the line:
 
 ```javascript
  this.handleListItemAdd = this.handleListItemAdd.bind(this);
