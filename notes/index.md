@@ -65,7 +65,7 @@ Introduction to Component-based architecture using React:<br><br>
 <td>
 React Continued:<br><br>
 <ul>
-<li>React App Structure / Organization (Simple Style Guide) & Creating Pages using Components</li>
+<li>React App Structure / Organization (Simple Style Guide) <br> & Creating Pages using Components</li>
 <li>Routing in React</li>
 <li>Simple Forms & Connecting to our Teams API</li>
 </ul>
