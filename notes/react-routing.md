@@ -5,7 +5,7 @@ layout: default
 
 ## "Routing" in React
 
-One of the key components in creating a SPA (Single Page Application) is Routing.  When Routing is implemented using a framework like React, we will find that we can browse different URL's within our app without actually reloading the page.  In this case, the components of one URI are swapped out for the components of another, giving the illusion that we're navigating through multiple pages, when we're really just adding / removing components based on the browser URL / history.  Our User-Interface is in sync with the URL.
+One of the key components in creating a SPA (Single Page Application) is Routing.  When Routing is implemented using a framework like React, we will find that we can browse different URL's within our app without actually reloading the page.  In this case, the components of one URL are swapped out for the components of another, giving the illusion that we're navigating through multiple pages, when we're really just adding / removing components based on the browser URL / history.  Our User-Interface is in sync with the URL.
 
 Recently, the major routing library used to achieve this in react; **React Router** has been updated to [version 4](https://reacttraining.com/react-router/):
 
