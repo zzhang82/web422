@@ -51,7 +51,7 @@ If we wish to conditionally render each of the above components (views) based on
 * "/projects" renders <Projects />
 * "/project" renders <Project />
 
-we need to modify our App.js file as well as our index.js file.  Starting with 
+we need to modify our App.js file as well as our index.js file.
 
 <br>
 
