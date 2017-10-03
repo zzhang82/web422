@@ -404,7 +404,7 @@ export default ListNames;
 
 Notice how we had to wrap the entire JSX code in a `<div>` element?  This is because we can only return a **single** element in our Render method.  
 
-Also, we must to explicitly "bind" **this** to the handleListItemAdd method in the constructor (so that we can reference  ListNames in the function) using the line:
+Also, we must to explicitly "bind" **this** to the handleListItemAdd method in the constructor (so that we can reference  ListNames using "this" in the function) using the line:
 
 ```javascript
  this.handleListItemAdd = this.handleListItemAdd.bind(this);
