@@ -173,7 +173,7 @@ Later, you will probably learn how to work with non-text media types. From now o
 
 **State, data**
 
-Let's discuss *state* in this section, and the next. 
+Let's discuss *state* in this section of the notes, and in the next section. 
 
 In this section, we are interested in the state of the *data* elements in a distributed system. (In the next section, we will be interested in the state of the *interaction* among programs in a distributed system.) 
 
@@ -186,7 +186,7 @@ A resource's state can be *changed* (or modified), of course. The stimulus for t
 > Does this work the other way, when a client app changes the state of an resource?  
 > Yes.  
 > A client can send a request that includes a *representation* of a resource. (For example, an HTTP POST or PUT request.)  
-> The *state* of the resource is *transferred*, from the client app to the server (web app or web service).  
+> The new or updated *state* of the resource is *transferred*, from the client app to the server (web app or web service).  
 > Upon acceptance (and validation etc.), the server appends to or updates the resource in the persistent store.  
 
 <br>

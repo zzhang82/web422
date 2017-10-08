@@ -5,10 +5,26 @@ layout: default
 
 ## Getting started with Angular
 
+Big ideas, and things that are "new".
+
 Three core concepts:
 1. Components  
 2. Dependency injection  
 3. Bindings
+
+<br>
+
+### Big ideas, and things that are "new"
+
+Custom HTML elements (just like React)
+
+Standards-based efforts - [Web Components](https://www.webcomponents.org/introduction)
+
+Angular CLI for building bits and pieces.  
+
+TypeScript.
+
+Brad Frost - [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
 
 <br>
 
