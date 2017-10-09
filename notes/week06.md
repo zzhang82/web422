@@ -5,7 +5,7 @@ layout: default
 
 ## WEB422 Week 6 Notes
 
-> This is being edited.  
+> This document is still being edited.  
 > This notice will be removed when the edits are complete.
 
 The theme for the *remainder of the course* is to cover the Angular platform.  
@@ -41,7 +41,7 @@ Getting started:
 
 ### Topic sequence
 
-The recent coverage of React introduced you to a new way to think about building a client-side web app. Now, we do it in Angular.  
+The recent coverage of React introduced you to a new way to think about building a client-side web app. Now, we do it again in Angular.  
 
 To get started, read this [introduction to Angular](angular-intro), and also follow its links to read or skim additional content.
 
