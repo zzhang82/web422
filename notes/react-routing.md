@@ -135,6 +135,23 @@ To add a "Not Found" route, we simply need to add another route as a child to ou
 
 <br>
 
+## Linking to a Route
+
+To use the react router effectively, we cannot simply use normal links to route to our pages from within the application. For example, using code like: 
+
+```html
+<a href="/myRoute">My Route</a>
+```
+would lead to a whole page reload (we only want to load the full app at the beginning, not after every route change).  Instead, what we need to do is use the <Link> component, to prevent this from happening.  
+
+The same code can updated to use the <Link> component as follows:
+
+```html
+<Link to='/myRoute'>My Route</Link>
+```
+
+<br>
+
 ## "Redirecting" to a Route
 
 Sometimes, we wish to "redirect" the user to a different route and override the current route in the "history" stack (or alternatively "push" it onto the current history stack) - this is similar to what we would use [res.redirect()](http://expressjs.com/en/4x/api.html#res.redirect) for in our Node.js servers.
