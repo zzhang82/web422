@@ -3,18 +3,50 @@ title: WEB422 Week 6
 layout: default
 ---
 
-## WEB422 Week 6 to 7 Notes
+## WEB422 Week 6 Notes
 
-The theme for the next week or more is to work with Angular (components/routing). This is one of a small number of important Angular topics that must be mastered early in your learning process.
+> This is being edited.  
+> This notice will be removed when the edits are complete.
+
+The theme for the *remainder of the course* is to cover the Angular platform.  
+
+This week, it's all about *getting started with Angular*. Then, beginning next week, we'll do a weekly deep dive into these important app dev topic areas:
+1. Components
+2. Routing
+3. Services
+4. Forms
+
+After that, we'll put together a number of apps. 
 
 Remember to frequently use the [learning resources](/web422/resources).
 
+<br>
+
 **Topics:**
 
-Components, deep dive, lots of coverage, typical use cases
+A number of them:
+* History
+* Orientation
+* Big ideas
+* Roadmap
 
-> Not sure whether "Components" should be covered first in a deep dive, or "Routing"
-> 
-> The idea is that the following week builds upon (re-uses) the content from the previous weeks
+Getting started:
+* Install
+* Edit cycle
+* TypeScript
+* Architecture
+* Components
+
+<br>
+
+### Topic sequence
+
+The recent coverage of React introduced you to a new way to think about building a client-side web app. Now, we do it in Angular.  
+
+To get started, read this [introduction to Angular](angular-intro), and also follow its links to read or skim additional content.
+
+Next, follow along as you [get started with Angular](angular-get-started). Learn how to install the developer bits, and generate a starter app. Then, start learning about its architecture. Follow the tutorials. 
+
+Then, we repeat or highlight some of [the important topics and concepts](angular-architecture) from the getting started guide and tutorials. 
 
 <br>

@@ -16,11 +16,42 @@ Angular is...
 
 ### Relevant history
 
+Angluar, and AngularJS  
+
+AngularJS...  
+Misko Hevery, 2009 (announced)  
+First appeared on GitHub in October 2010  
+Version 1 launched on June 14, 2012  
+About 5+ years old as of end-of-2017 and start-of-2018  
+
+Angular...  
+Announced in September 2014  
+Released in September 2016 (about 1+ years old)  
+Complete rewrite, clean cut away from AngularJS  
+Two major value propositions: 1) Features, 2) Simplification  
+
+
 Google...
 
 <br>
 
 ### What's similar, and what's different
+
+Features:
+* Declarative
+* Dependency injection
+* ? directives
+
+Extends HTML, manages the DOM, de-emphasize (decouple) direct/explicit DOM manipulation
+
+Decouple client-side app dev concerns from server-side app dev concerns
+
+Declarative programming...
+* For UI creation
+* Software components connections/connecting
+
+Imperative for...
+* Define an app's business logic
 
 Similar:
 * Component-based development and architecture
@@ -76,6 +107,6 @@ Paraphrasing and summarizing:
 * Same UI Technology for Web, Native Mobile, and Desktop
 
 Does server-side rendering make sense anymore?  
-Sure. But in far fewer situations than before. If you’re building a mostly static site, server-side rendering will be easier.
+Sure. But in far fewer situations than before. If you're building a mostly static site, server-side rendering will be easier.
 
 <br>
