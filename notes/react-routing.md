@@ -161,6 +161,3 @@ React provides an intuitive way to achieve this, by providing a special [&lt;Red
 ```
 <Redirect push to={"/newRoute"} />
 ```
-
-
-      
