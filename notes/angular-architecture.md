@@ -5,107 +5,80 @@ layout: default
 
 ## Angular architecture overview
 
-( more to come )
+This document is intended to be a light summary of the concepts and principles of the Angular architecture. 
+
+The authoritative source is the excellent "Architecture" section in the FUNDAMENTALS section of the Angular documentation. This content *complements* the official docs - it does *not* replace it. Make sure that you open and go through both.
+
+![Angular FUNDAMENTALS > Architecture](../media/angular-docs-fundamentals.png)
 
 <br>
 
-### Resources, references
+### The big picture
 
-[The Core Concepts of Angular](https://vsavkin.com/the-core-concepts-of-angular-2-c3d6cbe04d04) - Victor Savkin, the author, was on the Angular core team at Google, and built the dependency injection, change detection, forms, and router modules.  
+To begin to understand the Angular architecture, the dev team has created a "big picture" diagram. 
 
-<br>
-
-### Big ideas, and things that are "new"
-
-components, dependency injection, bindings
-
-Custom HTML elements (just like React)
-
-Standards-based efforts - [Web Components](https://www.webcomponents.org/introduction)
-
-Angular CLI for building bits and pieces.  
-
-TypeScript.
-
-Brad Frost - [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
+![Angular architecture overview](https://angular.io/generated/images/guide/architecture/overview2.png)
 
 <br>
 
-### Component
+**Let's start with "component"**
 
-A component controls a user interface or user interaction item in an application:  
-* UI element
-* Screen
-* Route
+For now, focus on the middle of that diagram, which shows a *component*. 
 
-An app has, or builds, a component *tree*.  
-
-A component is defined by source code files:
-* component-name.ts - TypeScript / JavaScript
-* component-name.html - markup and code expressions
+![Angular component](../media/angular-architecture-component.png)
 
 <br>
 
-#### component-name.ts structure
+To build an Angular app, we define a set of components, for every UI element, screen, and route. An app will always have a root component that contains all other components. (Credit to [Victor Savkin, "Core Concepts"](https://vsavkin.com/the-core-concepts-of-angular-2-c3d6cbe04d04).)
 
-Component structure:
-* import statements
-* component metadata directive
-* component source code
+In the `src/app` folder, there are five source code files. Ignore a few of them for now, and focus on these two, which essentially define a *component*:
 
-Component metadata directive...  
-Format is: @Component({object})  
-Object has some key-value pairs  
-selector: name of custom HTML element that this component controls  
-directives
+```text
+app.component.html
+app.component.ts
+```
 
-[Component](https://angular.io/docs/ts/latest/guide/glossary.html#!#component) - App class responsible for exposing data to a view, and handling the view's display and user interaction logic. (Is the "controller" role in the pure MVC - not "ASP.NET MVC" - pattern.) A plain class becomes a component by adding the "@Component() decorator. 
+The purpose of the `.html` file should be apparent, after you inspect it:
+* It includes a chunk of HTML, and so it defines the appearance of the rectangle (the area of the UI)
+* It includes a *data binding* expression, `{{title}}`
 
-More info about a component: Should be lean. Don't fetch data from a server. Or validate user input (huh?). Delegate these tasks to a service.  
+Now, look at the `.ts` file. By convention, JavaScript source code files use the "js" filename extension. Here, by convention, TypeScript source code files use the "ts" filename extension. 
 
-A component's job is to enable the user experience and nothing more. It mediates between the view (rendered by the template) and the application logic (which often includes some notion of a model). A good component presents properties and methods for data binding. It delegates everything nontrivial to services.
+So the file contains our program code for the component. All components have the same structure:
+* "import" statement(s)
+* A "decorator" - `@Component()` - this is a probable ES2016 (the next! version of JavaScript) language feature, which adds features and functionality to another class
+* The "class" declaration, which holds program code
 
-Angular help you follow these principles by making it easy to factor your application logic into services and make those services available to components through dependency injection.
-
-[Template](https://angular.io/docs/ts/latest/guide/glossary.html#!#template) - Some HTML for a view, guided (controlled) most often by a component. 
-
-[View](https://angular.io/docs/ts/latest/guide/glossary.html#!#view) - A portion of the screen, displays content, responds to user interaction. The term "view" is often used as a synonym to "component". 
-
-More info about a view: Often contains other views. A view may be loaded/unloaded by navigation, under the control of a router. 
-
-[Directive]() - Most fundamental feature. Associated with an HTML element or attribute. Responsible for creating, updating, interacting with an HTML element in the browser DOM.
-
-More info about a directive: Can be one of three kinds:
-* Component directive - Combines an HTML template with logic/code (in a class) to render a view, which ends up as a "component". Building block of an app. Most common.
-* [Attribute directive](https://angular.io/docs/ts/latest/guide/attribute-directives.html) - Listen to and/or modify an HTML element. Changes the appearance or behaviour of an element, component, or another directive. Their syntax looks like an HTML attribute (hence their name). For example, `<input [(ngModel)]="hero.name">`
-* [Structural directive](https://angular.io/docs/ts/latest/guide/structural-directives.html) - Render and modify HTML layout. For example, `*ngFor` will repeatedly render the element. And, `*ngIf` will render the element if the condition is true.  
-
-[Decorator]() - An ES2016 function syntax to define metadata for a class, its members, and function arguments. Add just above, or to the left, of the item.  
-
-[Router]() - View navigation, which causes view replacement (destruction, creation). Configure routing for a component by using `RouterConfig`. 
-
-[Service]() - Task needed by the app. Small and focused. Is a class with an `@Injectable` decorator. For example, logging, data, message, calculator, etc. Taken together, all services in an app are considered to be "application logic".  
-
-[Injector]() - Angular piece (not sure what word to use) that maintains a container of service instances that it has previously created. A service is created when it is accessed for the first time. 
-
-More about dependency injection: During compilation, Angular looks at constructor types. And "providers", which are declarations. Together, those are the services that the injector maintains.
-
-Add providers to the root module, which makes the same instance available everywhere in the app. Or add to a component, and the service will exist only for the use of that component.
+That's the getting-started explanation. Components that do more will have more code - as you would expect - but this is how we can begin to understand.
 
 <br>
 
-#### Defining input and output properties
+### Where to next?
 
-Component decorator or property decorator (?).  
+Back to the Angular documentation. 
 
-These are the public API of a component.  
+We are asking you to go through the TUTORIAL now. Doing this will enable you to feel the Angular dev workflow, and get some code in front of you, particularly TypeScript code, which will likely be new. 
 
-In the ts file, inside the class declaration:  
-@Input() var-name: var-type;  
-@Output() var-name: var-type; // typicall for event emitters  
+In a future class/session, we will circle back and connect some of this work to general architecture principles, so that we can build on this knowledge in the near future. 
 
-In the html file, inside the custom HTML element:  
-Can **set** input property with [var-name]  
-Can **subscribe** to output proerty using event bindings, with (var-name)
+The short-term goal for the week is to cover the content in the first four numbered steps of the tutorial:
+1. Introduction
+2. The Hero Editor
+3. Master/Detail
+4. Multiple Components
+
+<br>
+
+**Getting started**
+
+The "Setup..." info in step number 2 will enable you to get the code for the project. 
+
+Do that before continuing.
+
+<br>
+
+**Additional notes**
+
+The Angular documentation is excellent. At this point here, we cannot add value. So, follow along and learn.
 
 <br>
