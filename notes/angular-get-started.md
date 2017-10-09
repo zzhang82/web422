@@ -110,10 +110,12 @@ Here are some of the highlights that you should be looking for:
 
 There are some documents that can help you understand more about the Angular way to build an app.
 
-The first is the `README.md` that the React generator creates. As it states near the top of that file, you can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md). Surprisingly, there are many nuggets that give you hints about the app design and deployment process. Most will be beyond your need during this short two-week treatment of React, but many of the themes will be reused when we begin working with Angular (and you never know, you may end up working with React in the future). 
+The official [Angular tutorial](https://angular.io/tutorial) is a recommended skim/read, and you may or may not want to code along with it. 
 
-Another is the official [Angular tutorial](https://angular.io/tutorial). It's a recommended skim/read, and you may or may not want to code along with it. We recommend that you develop locally on your own computer (and not do the live online process). 
+> We recommend that you develop locally on your own computer (and not do the live online process). 
 
 The other is from the Visual Studio Code documentation set, titled [Using Angular in VS Code](https://code.visualstudio.com/docs/nodejs/angular-tutorial). It's a reasonably short document. One of its very useful topics is the how-to for debugging Angular in VS Code. 
 
 Happy coding!
+
+<br>
