@@ -5,11 +5,11 @@ layout: default
 
 ## Introduction to Angular
 
-Recall the [React intro notes](react-intro). It was described as a *library for building user interfaces*. As you learned, React is actually a rich and vibrant ecosystem for client-side app building. 
+Recall the [React intro notes](react-intro). React was described as a *library for building user interfaces*. As you learned, it is actually a rich and vibrant ecosystem for client-side app building. 
 
-Angular is a widely-used platform for building client-side apps. Like React, it's JavaScript-based, and assumes that it's targeting a browser or browser-like runtime on a device.
+Angular is also a widely-used platform for building client-side apps. Like React, it's JavaScript-based, and assumes that it's targeting a browser or browser-like runtime on a device.
 
-React introduced the idea of *component*-oriented architecture. Arguably, it was Angular that conceived this idea, many years before React. 
+React introduced the idea of *component*-oriented architecture to you. Arguably, it was Angular that conceived this idea, many years before React was released. 
 
 <br>
 
@@ -30,13 +30,13 @@ In September 2009 - approximately 8 years ago (as of late 2017) - Misko Hevery o
 > The original product name was *Angular*.  
 > It started to become known as *AngularJS* sometime in late 2012 or early 2013.  
 
-Its design and development approach were new and different. However, they proved to be impactful, and became part of Google's development techniques. This led to the project's open source release in October 201, and after wide adoption and uptake by the developer community, its "version 1" was officially launched on June 14, 2012. 
+Its design and development approach were new and different. However, they proved to be impactful, and became part of Google's development techniques. This led to the project's open source release in October 2010, and after wide adoption and uptake by the developer community, its "version 1" was officially launched on June 14, 2012. 
 
 Then, a series of typical and normal events happened in the early life of the platform. These included massive use in apps large and small, evolution at Google to current and future web topics, developer community feedback, and rapid improvement in the deployment ecosystem (HTML5, JavaScript engines, and browsers). 
 
-Obviously, work on "version 2" happened too. And, React happened - competitive pressure.  It became apparent only a year after the original release that the successor was going to be a bit of a departure, and not simply an upgrade (with the implications of smoothness, compatibility, and so on). 
+Obviously, work on "version 2" happened too. And, React happened, which contributed both subtle and overt competitive pressure.  It became apparent only a year after the original release that the successor was going to be a bit of a departure, and not simply an upgrade (with the implications of smoothness, compatibility, and so on). 
 
-By mid-2013 or so, the community was buzzing about breaking changes and effectively a rewrite. Much thrashing, discussion, prototyping, and the goal to get the successor right led to the September 2014 unveiling of "Angular 2" (and the subsequent renaming of the original to "AngularJS"). Much more tumult happened before its official release in September 2016, including the choice of programming language. It can be considered a complete rewrite, and a clean cut away from AngularJS. 
+By mid-2013 or so, the community was buzzing about breaking changes and effectively a rewrite. Much thrashing, discussion, prototyping, and the goal to get the successor right led to the September 2014 unveiling of "Angular 2" (and the subsequent renaming of the original to "AngularJS"). Much more tumult happened before its official release in September 2016, including the choice of programming language. Angular can be considered a complete rewrite, and a clean cut away from AngularJS. 
 
 As a developer who is contemplating the design and coding of an app, the old and the new have a good amount to share in their philosophy and approach. However, in terms of the actual coding and organization of the app, including tooling, packaging, and deployment, the old and the new have little in common. While we will give some old-and-new comparisons in linked articles, we're not going to delve into them here. 
 
@@ -50,7 +50,7 @@ There are many similarities, including:
 * Component-based development and architecture
 * Declarative style of programming, for the UI
 * Extends HTML, manages the DOM, de-emphasize (decouple) direct/explicit DOM manipulation  
-* Decouple client-side app dev concerns from server-side app dev concerns
+* Decouples client-side app dev concerns from server-side app dev concerns
 
 Here are a few differences:
 * Some argue that React is more focused to only building UIs
@@ -69,7 +69,7 @@ Similar to React, the big difference from legacy-style client-side programming i
 
 After the React topic coverage, you have a basis for understanding *modern* client-side app building. 
 
-It all starts with *components*, introduced recently. The app is composed of a hierarchy of nested or contained components, and each encapsulates is visible content and appearance, its interaction code, and interfaces to other components and services. This is arguably the most important concept in angular. 
+It all starts with *components*, introduced recently. The app is composed of a hierarchy of nested or contained components, and each encapsulates is visible content and appearance, its interaction code, and interfaces to other components and services. This is arguably the most important concept in Angular. 
 
 In code, the component architecture is driven by the design and coding environment of the TypeScript programming language. The organization of a folder to hold the component's source code, as well as the all the other bits have been influenced.
 
@@ -83,9 +83,9 @@ As a brief introduction and paraphrasing from the documentation:
 
 > TypeScript is a primary language for Angular application development. It is a superset of JavaScript with rich design-time support for type safety and tooling. It's JavaScript that scales. It boosts expressiveness, productivity, efficiency, and effectiveness. In other words, it enables the dev to get more out of their efforts. 
 > 
-> The developer tools transpile TypeScript code into plain JavaScript.
+> The developer tools [transpile](https://www.stevefenton.co.uk/2012/11/compiling-vs-transpiling/) TypeScript code into plain JavaScript.
 
-We're not going to obsess about the TypeScript differences from JavaScript. We're just going to begin using TypeScript, and incrementally and immediately explain anything that needs it.
+We're not going to obsess about the TypeScript differences from JavaScript. We're just going to simply begin using TypeScript, and incrementally and immediately explain anything that needs it.
 
 <br>
 

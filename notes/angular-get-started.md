@@ -5,18 +5,91 @@ layout: default
 
 ## Getting started with Angular
 
-Install 
+The next part of our learning journey will depend on the excellent content that the Angular development team has published. 
 
-Big ideas, and things that are "new".
+Get ready by visiting the [Angular home page](https://angular.io/), and read/scan the following content:
+* Landing page
+* FEATURES page
+* The DOCS landing page
 
-Three core concepts:
-1. Components  
-2. Dependency injection  
-3. Bindings
+![React web site](../media/angular-web-site.png)
 
 <br>
 
+### Installation
+
+As described in the GETTING STARTED installation notes, Angular is installed by using the Node Package Manager. 
+
+During the React topic coverage, you learned to install and use the *React app generator*. As you experienced, it adds a good amount of value to the dev process.
+
+Angular has an app generator too, the [Angular CLI](https://cli.angular.io/). 
+
+![Install and use Angular CLI](https://cli.angular.io/images/cli-logo.svg)
+
+<br>
+
+Install Angular CLI on your computer:
+
+```text
+npm install -g @angular/cli
+```
+
+<br>
+
+### Create an app
+
+Next, create a new app. Assuming that you want to create a new app (and folder) named "my-dream-app":
+
+```text
+ng new my-dream-app
+```
+
+> Note: "ng" is an Angular command.
+
+The process will create a new folder, with the code needed to get started.
+
+<br>
+
+### Run the app
+
+An Angular app is a client-side front-end app. It does NOT have a server part to it. A browser user "pulls" an Angular app, by visiting a URL that is the "root" of the app. As you will learn later, the packaging and deployment process creates a bundle of files that are sent to the browser when the root of the app is requested for the first time. 
+
+That being said, all Angular developers - you included now - will start an on-demand per-instance Node.js server, and listen on the app's URL. Then, from a browser, the app is pulled to the browser's memory, and is ready for use. 
+
+Therefore, start the server listener:
+
+```text
+cd my-dream-app
+ng serve
+```
+
+The server begins listening on HTTP port 4200. Open a browser to the [localhost port 4200 URL](http://localhost:4200/). 
+
+> Alternatively...  
+> You can start the server listener, *and* open a web browser, with one command:  
+> `ng serve --open`
+
+![Server is running](../media/angular-server-process.png)
+
+<br>
+
+### Edit the app
+
+Start Visual Studio Code. Open the "my-dream-app" folder. 
+
+Alternatively, you can use the command line. However, as you probably noticed in your Terminal window, the on-demand web server is blocking it from further interaction. So, open a new Terminal window (Shell > New Window). Then you can make "my-app" your current folder, and run the `code .` command (**Note**: this option requires you to have added 'code' to your PATH - see: [https://code.visualstudio.com/docs/setup/mac](https://code.visualstudio.com/docs/setup/mac)). 
+
+An easy edit, just to prove that you can do so, is to edit the `app.component.ts` file in the `src/app` folder. Change the text in the value of the "title" property. After you save your changes, switch over to the browser window. It should show the new content. Behind the scenes, the Terminal process will regenerate the content, making changes where necessary to the deployment assets. As part of the process, the browser will refresh the visible content.
+
+![Server is running](../media/angular-getting-started-edit-result.png)
+
+<br>
+
+
+
 ### Big ideas, and things that are "new"
+
+components, dependency injection, bindings
 
 Custom HTML elements (just like React)
 
