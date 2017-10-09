@@ -142,7 +142,7 @@ To use the react router effectively, we cannot simply use normal links to route 
 ```html
 <a href="/myRoute">My Route</a>
 ```
-would lead to a whole page reload (we only want to load the full app at the beginning, not after every route change).  Instead, what we need to do is use the `<Link>` component, to prevent this from happening.  
+would lead to a whole page reload (we only want to load the full app at the beginning, not after every route change).  Instead, what we need to do is use the `<Link>` component (from "react-router-dom"), to prevent this from happening.  
 
 The same code can updated to use the <Link> component as follows:
 
