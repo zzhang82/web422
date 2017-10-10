@@ -5,9 +5,6 @@ layout: default
 
 ## WEB422 Week 6 Notes
 
-> This document is still being edited.  
-> This notice will be removed when the edits are complete.
-
 The theme for the *remainder of the course* is to cover the Angular platform.  
 
 This week, it's all about *getting started with Angular*. Then, beginning next week, we'll do a weekly deep dive into these important app dev topic areas:
@@ -22,7 +19,7 @@ Remember to frequently use the [learning resources](/web422/resources).
 
 <br>
 
-**Topics:**
+#### Topics:
 
 A number of them:
 * History
