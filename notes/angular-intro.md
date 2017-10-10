@@ -57,10 +57,6 @@ Here are a few differences:
 * Angular describes itself as a *complete app dev platform* 
 * Angular's programming language is TypeScript
 
-A number of quality authors and developers have contributed comparisons between the two, so it's worthwhile scanning them to get a sense of the similarities and differences.
-
-> Links will be added here.
-
 Similar to React, the big difference from legacy-style client-side programming is that we will not work directly with the DOM. Yes, our work will affect the rendered DOM, but we cannot use that conceptual model as a foundation for building and modifying the DOM. 
 
 <br>
