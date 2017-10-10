@@ -17,8 +17,6 @@ After that, we'll put together a number of apps.
 
 Remember to frequently use the [learning resources](/web422/resources).
 
-<br>
-
 #### Topics:
 
 A number of them:
