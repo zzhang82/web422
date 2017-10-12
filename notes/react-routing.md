@@ -47,9 +47,9 @@ class Project extends Component{
 
 If we wish to conditionally render each of the above components (views) based on the following routes:
 
-* "/" renders <Home />
-* "/projects" renders <Projects />
-* "/project" renders <Project />
+* "/" renders &lt;Home /&gt;
+* "/projects" renders &lt;Projects /&gt;
+* "/project" renders &lt;Project /&gt;
 
 we need to modify our App.js file as well as our index.js file.
 
