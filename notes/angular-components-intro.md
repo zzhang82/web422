@@ -19,7 +19,17 @@ The following was summarized from Angular Docs > Fundamentals > [Architecture](h
 
 A *component* controls a patch of screen (display, UI surface, rectangle) called a *view*. 
 
-Tip: Forget about the browser and the web, as you begin to learn about components. Do not be concerned how and when a component appears on the screen.
+As code, a component is a class, with a decorator.
+
+The class is JavaScript, specifically TypeScript. It includes all the code needed for the the component's *behaviour* during its lifetime.
+
+A decorator is a function that modifies a class. It has one parameter, which is an object composed of configuration information as key-value pairs.
+
+One of the decorator's properties is a *template*, defines the *appearance* of the component. The template includes HTML, or the name of an HTML file. By definition, HTML is the language of the Angular template. Almost all HTML elements are valid in a template, except for these: `html`, `body`, `base`, and `script`.
+
+Another decorator property is the *selector*. Its value is the name of the custom HTML element in the parent template that becomes the component. 
+
+Tip: Forget about the browser and the web, as you begin to learn about components. Do not be concerned how and when a component appears on the screen. (Update... soften this a bit...)
 
 Tip: Recall iOS programming. A *view controller* manages a *view*. For beginners, the *view* often covers the entire screen area. A *view* is composed of *sub-view items* like labels, buttons, and other "controls" like sliders, table views and their cells, and so on. When you began to learn that, you weren't thinking about the browser and the web, were you?
 
@@ -65,7 +75,8 @@ One trouble point happens when the separate object's class is replaced with a ne
 
 Another trouble point happens when... (testing)
 
-(maybe another, configuration)
+(maybe another, configuration)  
+easier to implement, change, test, reuse 
 
 <br>
 
@@ -74,5 +85,33 @@ Another trouble point happens when... (testing)
 Dependency injection is a technique 
 
 the runtime must know about the technique
+
+your class has a constructor which accepts (i.e. has arguments for) the separate object(s)
+
+we still need a local variable of to hold the reference  
+often the type of that local variable is an interface  
+
+client (receiver) must know the interface type and its API
+
+which gives a bit more flexibility to support changes in the future  
+
+instead of *reaching out* to some other code, it *expects to receive* the other code
+
+there's a manager which does the injection (sometimes called an *injector*)
+
+contrasts with "service locator pattern", another reach-out pattern
+
+Some external resources to help you learn DI:
+
+[Wikipedia article](https://en.wikipedia.org/wiki/Dependency_injection) - skim/read the first page or two, and then go right to the [advantages](https://en.wikipedia.org/wiki/Dependency_injection#Advantages) and disadvantages lists
+
+[Martin Fowler article](https://martinfowler.com/articles/injection.html) - skim/read, contrasts dependency injection and service locator patterns
+
+[Anthony Ferrara explains DI](https://www.youtube.com/watch?v=IKD2-MAkXyQ) - 5-minute YouTube video, actually quite useful
+
+
+
+
+
 
 <br>
