@@ -29,7 +29,7 @@ One of the decorator's properties is a *template*, defines the *appearance* of t
 
 Another decorator property is the *selector*. Its value is the name of the custom HTML element in the parent template that becomes the component. 
 
-Tip: Forget about the browser and the web, as you begin to learn about components. Do not be concerned how and when a component appears on the screen. (Update... soften this a bit...)
+Tip: For now, forget about the details of the browser and the web, as you begin to learn about components. Do not be concerned about the details of how and when a component appears on the screen. (Update... soften this a bit...)
 
 Tip: Recall iOS programming. A *view controller* manages a *view*. For beginners, the *view* often covers the entire screen area. A *view* is composed of *sub-view items* like labels, buttons, and other "controls" like sliders, table views and their cells, and so on. When you began to learn that, you weren't thinking about the browser and the web, were you?
 
@@ -109,9 +109,66 @@ Some external resources to help you learn DI:
 
 [Anthony Ferrara explains DI](https://www.youtube.com/watch?v=IKD2-MAkXyQ) - 5-minute YouTube video, actually quite useful
 
+<br>
 
+### Dev env setup
 
+Assuming that the Angular bits are installed... you need these:
+* Visual Studio Code
+* Terminal window(s)
+* File explorer (e.g. Finder)
+* Browser
+* The "console" browser tool
 
+Also, assume the following, on macOS:
+* Services menu has "New Terminal at Folder" configured
+* Visual Studio Code has command-line start capability
 
+Here's a typical getting-started routine, from scratch:
+
+1. File explorer, navigate...
+
+In your file explorer (e.g. Finder), navigate to the folder that holds your project.
+
+2. Open Terminal...
+
+Right-click the folder, and choose "New Terminal at Folder".
+
+3. Open Visual Studio Code...
+
+In Terminal, run the command `code .` to start Visual Studio Code in the current folder.
+
+4. Run your app...
+
+In Terminal, run the command `ng serve --open` to build and load your project in your default browser.
+
+5. Open the console...
+
+In your default browser, open your dev tools console. That's where build errors will show up.
+
+<br>
+
+### Adding a new component
+
+Use the Angular CLI.
+
+Navigate to the `src` folder.
+
+Assuming that you wish to create a new component named "foo", run this command in Terminal:
+
+```text
+ng generate component foo --flat
+```
+
+The "--flat" flag will NOT create a folder to enclose the component's source code files. We'll use that for the first while, until the number of files in the app folder gets too unreasonable.
+
+<br>
+
+### How to think about and plan your components
+
+Visualize  
+Placeholder  
+Wireframe  
+etc.
 
 <br>
