@@ -57,6 +57,8 @@ export class HeroListComponent implements OnInit {
 }
 ```
 
+> Comment: Maybe we can mention the other component lifecycle hooks here? [https://angular.io/guide/lifecycle-hooks#lifecycle-sequence](https://angular.io/guide/lifecycle-hooks#lifecycle-sequence)
+
 ### Dependency injection introduction
 
 Consider this scenario:
@@ -164,11 +166,46 @@ The "--flat" flag will NOT create a folder to enclose the component's source cod
 
 <br>
 
+### Review - importing components / using multiple components
+
+see: (https://angular.io/tutorial/toh-pt3)[https://angular.io/tutorial/toh-pt3]
+
+ie: using "import" as well as the "declarations" array in app.module.ts (this is done for you if using `ng generate component`)
+
+<br>
+
+### Using "Templates" in your components
+
+... using `ng generate component` adds a .html file for every component... here is where we will write our HTML template for the component - enter "Template" discussion from: (https://angular.io/guide/template-syntax)[https://angular.io/guide/template-syntax], ie:
+
+* (Interpolation)[https://angular.io/guide/template-syntax#interpolation----]
+* (Template Expressions)[https://angular.io/guide/template-syntax#template-expressions]
+* (Template Statements)[https://angular.io/guide/template-syntax#template-statements]
+* (Binding syntax: An overview)[https://angular.io/guide/template-syntax#binding-syntax-an-overview]
+* (Property Binding)[https://angular.io/guide/template-syntax#property-binding--property-]
+* (Attribute, class, and style bindings)[https://angular.io/guide/template-syntax#attribute-class-and-style-bindings]
+* NOTE: Save Event Binding & Two-Way Binding for forms
+
+#### Quick Directive Overview
+
+[https://angular.io/guide/attribute-directives#directives-overview](https://angular.io/guide/attribute-directives#directives-overview)
+
+**Built In Directives**
+
+* [Built-in attribute directives](https://angular.io/guide/template-syntax#built-in-attribute-directives)
+* [Built-in structural directives](https://angular.io/guide/template-syntax#built-in-structural-directives)
+
+**Building a simple "attribute" directive**
+
+* [Build a simple attribute directive](https://angular.io/guide/attribute-directives#build-a-simple-attribute-directive)
+
+<br>
+
 ### How to think about and plan your components
 
-Visualize  
-Placeholder  
-Wireframe  
-etc.
+* Visualize  
+* Placeholder  
+* Wireframe  
+* etc.
 
 <br>
