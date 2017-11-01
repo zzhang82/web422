@@ -31,7 +31,7 @@ Here's some ideas for the proposed assignments:
 
 <br>
 
-#### Assign 4 - components
+#### Assign 5 - components
 
 Create an app that has multiple components.  
 
@@ -60,7 +60,7 @@ Component for the "edit existing" use case:
 
 <br>
 
-#### Assign 5 - routing
+#### Assign 6 - routing
 
 Build on the result of Assign 4. That's why it's important to have the due date BEFORE the Tuesday lecture class/session. 
 
@@ -74,7 +74,7 @@ This will result in an app that has separate routed views for each of the CRUD a
 
 <br>
 
-#### Assign 6 - services
+#### Assign 7 - services
 
 Ditto above, build on the result of Assign 5. Maybe provide a sample solution etc. 
 
@@ -86,7 +86,7 @@ And modification of the component code to accommodate a different data model.
 
 <br>
 
-#### Assign 7 - forms
+#### Assign 8 - forms
 
 Ditto above.
 
