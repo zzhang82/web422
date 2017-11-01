@@ -62,7 +62,7 @@ Component for the "edit existing" use case:
 
 #### Assign 6 - routing
 
-Build on the result of Assign 4. That's why it's important to have the due date BEFORE the Tuesday lecture class/session. 
+Build on the result of Assign 5. That's why it's important to have the due date BEFORE the Tuesday lecture class/session. 
 
 Maybe we can provide a sample solution, a base project or at least some of the components. That will enable problem students to start fresh with a best-practice sample solution. 
 
@@ -76,7 +76,7 @@ This will result in an app that has separate routed views for each of the CRUD a
 
 #### Assign 7 - services
 
-Ditto above, build on the result of Assign 5. Maybe provide a sample solution etc. 
+Ditto above, build on the result of Assign 6. Maybe provide a sample solution etc. 
 
 Then, modify the project so that it uses our web API project (that was used in the early weeks of the course). 
 
