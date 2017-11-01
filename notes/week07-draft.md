@@ -15,7 +15,7 @@ Remember to frequently use the [learning resources](/web422/resources).
 
 As a starting point, let's assume that we will have four (4) weeks remaining in the term when we return to work. If there are more than four weeks, that's OK. 
 
-If we have only four weeks remaining, I propose that we eliminate the activity that was originally scheduled for the last three weeks of the course, "putting it all together". 
+If we have only four weeks remaining, we can probably agree to eliminate the activity that was originally scheduled for the last three weeks of the course, "putting it all together". 
 
 That means staying with a week-long treatment of each of these four topic areas:
 1. Components
@@ -23,23 +23,25 @@ That means staying with a week-long treatment of each of these four topic areas:
 3. Services
 4. Forms
 
-There were originally five (5) assignments to be done. Realistically, that's not possible. So, I propose that we do four (4) smaller assignments. Each will be a week in length. Introduce it in the Tuesday lecture class/session. Maybe some part of it can be checked/verified in the Thursday computer-lab class/session (but maybe not). Make the assignment due BEFORE the next week's Tuesday lecture class/session (so there's no distractions or topic overlap).
+Do I assume that there was four (4) assignments remaining? (A5, A6, A7, and A8?)
 
-Here's the proposed assignments:
+If yes, then I propose that we do smaller assignments. Each will be a week in length. Introduce each in the Tuesday lecture class/session. Maybe some part of it can be checked/verified in the Thursday computer-lab class/session (but maybe not; let's think about that). Make the assignment due BEFORE the next week's Tuesday lecture class/session (so there's no distractions or topic overlap).
+
+Here's some ideas for the proposed assignments:
 
 <br>
 
 #### Assign 4 - components
 
-Create a project that has multiple components.  
+Create an app that has multiple components.  
 
-All components will be hosted by the main app-component. Therefore, they will be "stacked" from top to bottom. No routing.  
+All components will be hosted by the main app-component. Therefore, they will simply be "stacked" from top to bottom. No routing.  
 
 However, we will need a simple in-memory data source (similar to what was in early steps/parts of the Tour of Heroes tutorial).  
 
 The goal is to *write components that implement/simulates CRUD activity on data*.  We will enhance these components in future weeks (and assignments) as we learn more.  
 
-Also, let's look at an easy way to get the Bootstrap CSS library into the project right from the beginning, so that the content will look nicer. 
+Also, let's consider getting the Bootstrap CSS library into the project right from the beginning, so that the content will look nicer. Peter did a bit of research on this last week, [here's what was learned](https://github.com/peteratseneca/web.next/wiki/2017-10-26-research#bootstrap-and-angular).
 
 Component for the "get all" use case:
 * Simple version will use `*ngFor` to render table rows, one for each item in the collection
@@ -98,19 +100,19 @@ Brief review or recall of the "multiple components" step 4 of the Angular Tutori
 
 That was a super simple treatment of "multiple components", in that it resulted in only two components (`app` and `hero-detail`). Obviously we will go much further and deeper this week.
 
-I think we must introduce and use a workflow that will help the students learn about all this, but will help them with workflow techniques for repeatable and reliable app building. 
+I think we must introduce, use, and recommend / reinforce the use of a workflow that will help the students learn about all this, and will help them with workflow techniques for repeatable and reliable app building. 
 
 There are two workflow techniques that can be introduced:
 1. Visualization (drawing, sketching)
 2. Creating a new component
 
-I don't think that we can talk about components, in the abstract, without making them turn the abstraction into something that they can use as a coding plan. Therefore, I propose that we teach them how to draw - by hand - a screen design for the overall app, and specifically for a component. 
+I don't think that we can talk to students about components, in the abstract, without making them turn the abstraction into something that they can use as a coding plan right away. Therefore, I propose that we teach them how to draw - by hand - a screen design for the overall app, and specifically for a component. 
 
-Doing this should really help the rest of the process.
+Doing this should really help the rest of the process. (It helped Peter as he learned this stuff.)
 
-To create a new component, we can hand-write all of hits parts (file > new, for .ts, .html, .css). Or, we can use the Angular CLI. We will cover when and how to use each. 
+To create the code for a new component, we can hand-write all of hits parts (file > new, for .ts, .html, .css). Or, we can use the Angular CLI. We will cover when and how to use each. 
 
-As a companion, there will *always* be work done in `app.module.ts` to configure the component in the app. Whether hand-edited or auto-done (by the Angular CLI), understanding this is important. 
+As a companion task, there will *always* be work done in `app.module.ts` to configure the component in the app. Whether hand-edited or auto-done (by the Angular CLI), understanding this is important. 
 
 The topic areas to be learned include: 
 * Component structure and syntax (hammer that in, so that each student can hand-write from memory a component's code)
@@ -132,6 +134,8 @@ What I'm thinking is to introduce an app that does have layout considerations...
 * Navigation band
 * Footer (bottom matter)
 * Content area, which might have a left-side and right-side content areas, related or not
+
+The result is that it's a bit different from what they're expected to do for the assignment. 
 
 <br>
 
