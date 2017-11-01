@@ -9,6 +9,8 @@ layout: default
 
 > This notice will be removed when the edits are complete.
 
+
+
 (introductory content to orient the reader)
 
 <br>
@@ -95,9 +97,9 @@ This works well for simple scenarios. However, it will fall down as your needs (
 
 One trouble point happens when the separate object's class is replaced with a new version, perhaps with a different name. If several programmer-written classes use the coding technique described above, then several edits - one for each programmer-written class - will be needed to update the app to use the new version of the separate object's class.
 
-Another trouble point happens when... (testing)
+Another trouble point happens when... (testing; more to come...)
 
-(maybe another, configuration)  
+(maybe another, configuration; more to come...)  
 easier to implement, change, test, reuse 
 
 <br>
@@ -134,6 +136,9 @@ Some external resources to help you learn DI:
 <br>
 
 ### Dev env setup
+
+> Will be updated...  
+> Need to contrast projects that were made without and with Angular CLI.
 
 Assuming that the Angular bits are installed... you need these:
 * Visual Studio Code
@@ -180,6 +185,8 @@ Here's a typical routine to end and save your work:
 
 ### Adding a new component
 
+> Assumes that the project was originally created with the Angular CLI.  
+
 Use the Angular CLI.
 
 Navigate to the `src` folder.
@@ -193,8 +200,6 @@ ng generate component foo --flat
 The "--flat" flag will NOT create a folder to enclose the component's source code files. We'll use that for the first while, until the number of files in the app folder gets too unreasonable.
 
 Documentation for the `ng generate component` command is [here](https://github.com/angular/angular-cli/wiki/generate-component). 
-
-<br>
 
 <br>
 

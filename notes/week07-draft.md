@@ -41,7 +41,7 @@ However, we will need a simple in-memory data source (similar to what was in ear
 
 The goal is to *write components that implement/simulates CRUD activity on data*.  We will enhance these components in future weeks (and assignments) as we learn more.  
 
-Also, let's consider getting the Bootstrap CSS library into the project right from the beginning, so that the content will look nicer. Peter did a bit of research on this last week, [here's what was learned](https://github.com/peteratseneca/web.next/wiki/2017-10-26-research#bootstrap-and-angular).
+Also, let's get the Bootstrap CSS library into the project right from the beginning, so that the content will look nicer. 
 
 Component for the "get all" use case:
 * Simple version will use `*ngFor` to render table rows, one for each item in the collection
@@ -96,7 +96,9 @@ Implement some of the Angular Forms goodness (e.g. data validation etc.) Not so 
 
 ### Proposed coverage for this week
 
-Brief review or recall of the "multiple components" step 4 of the Angular Tutorial, which was covered before the strike. 
+With all coverage (this week and future weeks), continue to take advantage of existing docs out there, on the Angular.io web site, and at other places. We will add value where we can (and as discussed below).
+
+We would begin with a brief review or recall of the "multiple components" step 4 of the Angular Tutorial, which was covered before the strike. 
 
 That was a super simple treatment of "multiple components", in that it resulted in only two components (`app` and `hero-detail`). Obviously we will go much further and deeper this week.
 
@@ -140,5 +142,19 @@ The result is that it's a bit different from what they're expected to do for the
 <br>
 
 ### Proposed coverage for the following week, "routing"
+
+Preliminary thoughts, at this point in time...
+
+Like components, introduce a workflow that enables a repeatable and reliable technique. 
+
+<br>
+
+### Proposed coverage for the next-to-last week, "services"
+
+Preliminary thoughts, at this point in time...
+
+It is probable that the main task will be put together a service that exposes the web API. I suspect that will be a good exercise. 
+
+The other "service" idea, maybe, is a service that would (for example) provide date-and-time helpers, which all components can use. Not sure about this, however, maybe there are existing "pipes" or something else in the base/core Angular that handles this. What I'm thinking of is whether we can make use of the Moment JavaScript library again. 
 
 <br>
