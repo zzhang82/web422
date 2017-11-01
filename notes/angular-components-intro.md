@@ -23,19 +23,35 @@ As code, a component is a class, with a decorator.
 
 The class is JavaScript, specifically TypeScript. It includes all the code needed for the the component's *behaviour* during its lifetime.
 
-A decorator is a function that modifies a class. It has one parameter, which is an object composed of configuration information as key-value pairs.
+A decorator is a function that modifies a class. It has one parameter, which is an object composed of configuration information as key-value pairs. This object is *metadata*, and the Angular runtime uses the metadata when initializing the component. 
 
 One of the decorator's properties is a *template*, defines the *appearance* of the component. The template includes HTML, or the name of an HTML file. By definition, HTML is the language of the Angular template. Almost all HTML elements are valid in a template, except for these: `html`, `body`, `base`, and `script`.
 
-Another decorator property is the *selector*. Its value is the name of the custom HTML element in the parent template that becomes the component. 
+Another decorator property is the *selector*. Its value is the name of the custom HTML element in the *parent* template that becomes the component. 
 
-Tip: For now, forget about the details of the browser and the web, as you begin to learn about components. Do not be concerned about the details of how and when a component appears on the screen. (Update... soften this a bit...)
+In summary, from the Angular documentation's Fundamentals > Architecture guide:
+
+*The template, metadata, and component together describe a view.*
+
+![Component code + template + metadata = a view](https://angular.io/generated/images/guide/architecture/template-metadata-component.png)
+
+How does the MVC (or MVVM) design patterns map to Angular? Well, in Angular:
+
+The *component* has the code for the *controller* and the *view model*. 
+
+The *template* has the code for the *view*. 
+
+<br>
+
+Tip: For now, forget about the details of the browser DOM and the web, as you begin to learn about components. Do not be concerned about the details of how and when a component appears on the screen. (Update... soften this a bit...)
 
 Tip: Recall iOS programming. A *view controller* manages a *view*. For beginners, the *view* often covers the entire screen area. A *view* is composed of *sub-view items* like labels, buttons, and other "controls" like sliders, table views and their cells, and so on. When you began to learn that, you weren't thinking about the browser and the web, were you?
 
 > Comment: That tip will be useful for me, as I wrap my head around the component architecture.
 
 Keeping the comparison to iOS programming going, an Angular component is similar to an iOS view controller. In iOS, the view markup is most often (for beginners) defined on the *storyboard*, a graphical design surface, on which sub-view items can be placed and configured. In an Angular component, this is implemented by configuring the "templateUrl" property of the @Component() decorator.
+
+<br>
 
 ### Component initialization (startup)
 
@@ -56,8 +72,12 @@ export class HeroListComponent implements OnInit {
   }
 }
 ```
+<br>
 
-> Comment: Maybe we can mention the other component lifecycle hooks here? [https://angular.io/guide/lifecycle-hooks#lifecycle-sequence](https://angular.io/guide/lifecycle-hooks#lifecycle-sequence)
+> Comment: Maybe we can mention the other component lifecycle hooks here?  
+> [https://angular.io/guide/lifecycle-hooks#lifecycle-sequence](https://angular.io/guide/lifecycle-hooks#lifecycle-sequence)
+
+<br>
 
 ### Dependency injection introduction
 
@@ -123,10 +143,10 @@ Assuming that the Angular bits are installed... you need these:
 * The "console" browser tool
 
 Also, assume the following, on macOS:
-* Services menu has "New Terminal at Folder" configured
+* Services menu has "New Terminal at Folder" configured (see below for more about this)
 * Visual Studio Code has command-line start capability
 
-Here's a typical getting-started routine, from scratch:
+Here's a typical getting-started routine, from scratch, that will get you on the fastest path to coding:
 
 1. File explorer, navigate...
 
@@ -142,11 +162,19 @@ In Terminal, run the command `code .` to start Visual Studio Code in the current
 
 4. Run your app...
 
-In Terminal, run the command `ng serve --open` to build and load your project in your default browser.
+In Terminal, run the command `ng serve --open` to build your and load your project in your default browser. This command starts the on-demand web server (on "localhost"), which will deliver the app to the browser. 
 
 5. Open the console...
 
-In your default browser, open your dev tools console. That's where build errors will show up.
+In your default browser, open your dev tools console. That's where build information (including errors) will show up.
+
+As you make and save changes to your code, the watcher will re-build your project and update your browser and console. 
+
+Here's a typical routine to end and save your work:
+
+1. Close your browser and dev tools console. 
+2. In Terminal, press Ctrl+C to shut down the on-demand web server.
+3. If necessary, save your project to a backup storage medium. 
 
 <br>
 
@@ -163,6 +191,10 @@ ng generate component foo --flat
 ```
 
 The "--flat" flag will NOT create a folder to enclose the component's source code files. We'll use that for the first while, until the number of files in the app folder gets too unreasonable.
+
+Documentation for the `ng generate component` command is [here](https://github.com/angular/angular-cli/wiki/generate-component). 
+
+<br>
 
 <br>
 
@@ -186,6 +218,8 @@ ie: using "import" as well as the "declarations" array in app.module.ts (this is
 * (Attribute, class, and style bindings)[https://angular.io/guide/template-syntax#attribute-class-and-style-bindings]
 * NOTE: Save Event Binding & Two-Way Binding for forms
 
+<br>
+
 #### Quick Directive Overview
 
 [https://angular.io/guide/attribute-directives#directives-overview](https://angular.io/guide/attribute-directives#directives-overview)
@@ -203,7 +237,7 @@ ie: using "import" as well as the "declarations" array in app.module.ts (this is
 
 ### How to think about and plan your components
 
-* Visualize  
+* Visualize (paper and pencil/pen)  
 * Placeholder  
 * Wireframe  
 * etc.
