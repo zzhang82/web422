@@ -51,7 +51,7 @@ Router outlet (router-outlet) element is a placeholder, often in app-component.h
 
 An `<a>` element must include a routerLink attribute, and NOT an href attribute. 
 
-Often, a `<nav>` element encloses a set of links. Add a `routerLinkActive` attribute to the `<nav>` element so that it will add the CSS "active" class to the active/clicked link. A nice visual help for the browser user. 
+Often, a `<nav>` element encloses a set of links. Add a `routerLinkActive` attribute to the `<nav>` element so that it will add the CSS "active" class to the active/clicked link. A nice visual help cue/hint for the browser user. 
 
 The first part of the document's [summary](https://angular.io/guide/router#summary) is good and useful.  
 (ooh - I'm having a *deja vu* moment when writing this, from a long time ago!)
@@ -62,7 +62,33 @@ After looking at several examples, including how-to's (tutorials) and guides, I 
 
 One item that should be on the checklist is for the programmer to list (write out!) all the URL paths that are likely to be needed in the app. 
 
-The docs guide topic on routing and nav is just too much for our purposes.
+The docs FUNDAMENTALS > Routing & Navigation coverage is just too much for our purposes.
+
+<br>
+
+### Adding routing (our guidance)
+
+> Editing is in progress...  
+> Will have to carefully go through this
+
+When creating a new project, can add the `--routing` option to create an `app-routing.module.ts` file
+
+So... can:
+1. add to existing project, or
+2. generate a new project with routing
+
+Generate a module that will be dedicated to routing.
+
+```
+ng g module app-routing
+```
+
+In `app.module.ts`, import the router module.
+
+```javascript
+import { Router } from "@angular/router";
+```
+
 
 ( more to come )
 
