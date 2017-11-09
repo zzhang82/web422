@@ -18,8 +18,18 @@ The goal is to become comfortable with the idea of components, and the process o
 ### Getting started, new project
 
 Visualize  
+Draw a quick diagram  
 
 Gen a new project  
-With routing
+WITH routing!  
+
+Animals:
+* Horse
+* Lizard
+* Bear
+* Eagle
+* Dolphin
+
+
 
 <br>
