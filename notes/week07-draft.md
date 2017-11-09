@@ -139,6 +139,18 @@ What I'm thinking is to introduce an app that does have layout considerations...
 
 The result is that it's a bit different from what they're expected to do for the assignment. 
 
+**New content, on November 9**
+
+As a second example, and as a segue to the routing topics, I propose to work with a multi-component new project that does not have a data source etc. In other words, eliminate all the clutter that can result when you get other parts involved. 
+
+The idea is that we just create and display a bunch of components. Doing this repeatedly helps turn concepts into a better understanding of the source code assets involved, and the code changes in the base bits (e.g. `app-module.ts`) when a new component is added.
+
+The initial display will be top-to-bottom stacked. Boring, but effective.
+
+Then, in the "routing" topic, we can change how this app displays the components by using routing. 
+
+I created a new note, [Angular components example](angular-components-example.md), with my suggestions. 
+
 <br>
 
 ### Proposed coverage for the following week, "routing"
@@ -146,6 +158,12 @@ The result is that it's a bit different from what they're expected to do for the
 Preliminary thoughts, at this point in time...
 
 Like components, introduce a workflow that enables a repeatable and reliable technique. 
+
+**New content, on November 9**
+
+Continuing from the new content in the previous section, we'll take the code example, and add routing to it. 
+
+I will create a new note, [Angular routing example](angular-routing-example.md), which shows the way forward. 
 
 <br>
 
