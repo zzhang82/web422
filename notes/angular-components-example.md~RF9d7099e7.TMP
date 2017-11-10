@@ -1,0 +1,48 @@
+---
+title: Angular components example
+layout: default
+---
+
+## Angular components example
+
+> This document is being edited.
+
+> This notice will be removed when the edits are complete.
+
+In this document, you will create an app with several components. 
+
+The goal is to become comfortable with the idea of components, and the process of creating and displaying them. 
+
+<br>
+
+### Getting started, new project
+
+Visualize  
+Draw a quick diagram  
+
+![Multiple components](/media/angular-components-v1.png)
+
+Gen a new project  
+WITH routing! (even though we will not configure routing until next week; adding routing when a new project is created is a best practice)  
+
+Create structural components:
+* Header
+* Navigation (named "NavMain")
+* Main content (named "Content")
+* Secondary content (named "Guide")
+* Footer
+
+Create components to support routing:
+* Home (a home or start page)
+* Page not found (named "PageNotFound")
+
+Create components to hold content; we'll use an *animals* theme:
+* Horse
+* Lizard
+* Bear
+* Eagle
+* Dolphin
+
+
+
+<br>

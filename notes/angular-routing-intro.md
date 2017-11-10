@@ -21,6 +21,25 @@ To summarize, you learned some new ideas:
 
 ~ ~ ~ ~ ~ 
 
+Official docs... two sources:  
+
+**TUTORIAL > Routing**
+* Tour of Heroes example
+* Adds the app routing module manually
+* Route definitions distributed at first, then refactored into the routing module
+* Incrementally adds default and not found routes*
+
+**FUNDAMENTALS > Routing & Navigation**  
+* Same Tour of Heroes data set
+* Evolutionary detailed approach, too much detail
+* Also too many advanced topics (router state, router events, guard, child, lazy load, etc.)
+
+Other things to note:
+* Routed components don't need a selector (check this out)
+*
+
+<br>
+
 Return to the tutorial  
 Pick and choose the highlights  
 Done - not much new was learned there  
@@ -66,10 +85,12 @@ The docs FUNDAMENTALS > Routing & Navigation coverage is just too much for our p
 
 <br>
 
-### Adding routing (our guidance)
+### Adding routing to an app (our guidance)
 
 > Editing is in progress...  
 > Will have to carefully go through this
+
+To get started, 
 
 When creating a new project, can add the `--routing` option to create an `app-routing.module.ts` file
 
@@ -89,6 +110,11 @@ In `app.module.ts`, import the router module.
 import { Router } from "@angular/router";
 ```
 
+<br>
+
+**Suggestion**  
+Leave route parameters until the next week, when we learn services  
+Doing that will give context and deeper meaning to the topic
 
 ( more to come )
 
