@@ -112,10 +112,29 @@ import { Router } from "@angular/router";
 
 <br>
 
+Helpful note (in addition to the official docs):  
+[SO - add routing module](https://stackoverflow.com/questions/44990030/how-to-add-a-routing-module-to-an-existing-module-in-angular-cli-version-1-1-1)
+
+Another take:  
+[Config routing](https://shermandigital.com/blog/configure-routing-in-an-angular-cli-project/)
+
+<br>
+
 **Suggestion**  
 Leave route parameters until the next week, when we learn services  
 Doing that will give context and deeper meaning to the topic
 
 ( more to come )
 
+<br>
+
+**Future**
+
+Can add static assets to a project  
+Google search words: angular router ignore segment static assets  
+[SO - default path](https://stackoverflow.com/questions/40424907/whats-the-default-path-for-static-files-in-angular2)  
+
+Deployment - Angular app *and* web API in same host at the server?  
+"angular proxy server" will open up this topic  
+[SO - proxy API requests](https://stackoverflow.com/questions/37172928/angular-cli-server-how-to-proxy-api-requests-to-another-server)  
 <br>
