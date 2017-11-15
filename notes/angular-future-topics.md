@@ -38,6 +38,25 @@ From an Angular Air podcast, learned about the CDK and Material Components
 
 <br>
 
+### Static assets, deployment
+
+Can add static assets to a project  
+Google search words: angular router ignore segment static assets  
+[SO - default path](https://stackoverflow.com/questions/40424907/whats-the-default-path-for-static-files-in-angular2)  
+
+Deployment - Angular app *and* web API in same host at the server?  
+"angular proxy server" will open up this topic  
+[SO - proxy API requests](https://stackoverflow.com/questions/37172928/angular-cli-server-how-to-proxy-api-requests-to-another-server)  
+
+<br>
+
+### Other
+
+Emmet wrap with abbreviation for custom elements  
+Can be assigned to a key binding
+
+<br>
+
 ### ( more to come )
 
 ( more to come )
