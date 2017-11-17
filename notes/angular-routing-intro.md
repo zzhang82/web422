@@ -164,7 +164,15 @@ One of the first tasks in designing any app is to *sketch out* the user interfac
 
 This task will enable you to clearly and separately *list or document* the components that will enable your UI and interaction plan. Some will be structural (in that they will appear on every screen), while others will be routed components. 
 
-Finally, you will be able to design or infer the URL path segments for each routed component. 
+Let's assume that we will continue with the example from last week's components coverage. In other words, we're creating an "animals" app, with many components. Here's an example of a sketch, showing an example UI and interaction flow, for a couple of animals:
+
+![Animals app UI and interaction flow](../media/angular-routing-v1-nav-example.png)
+
+<br>
+
+Finally, as a result of sketching out the UI and interaction flow, and then listing/documenting the components that are needed, you will be able to design or infer the URL path segments for each routed component. 
+
+> Some of this work is done in the companion [getting started](angular-routing-example) document. 
 
 The result will enable you to begin creating components, using the Angular CLI generator. 
 

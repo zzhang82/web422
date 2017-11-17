@@ -14,7 +14,7 @@ The goal is to become comfortable with the routing foundations and configuration
 
 <br>
 
-### Getting started (more to come)
+### Getting started
 
 Here's what we're trying to do...  
 
