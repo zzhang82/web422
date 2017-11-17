@@ -5,11 +5,6 @@ layout: default
 
 ## Angular routing, introduction
 
-> This document is being edited.  
-> This notice will be removed when the edits are complete.
-
-<br> 
-
 Recall the ["Routing" in React](react-routing) notes from a few weeks ago. (Please review them before continuing.)
 
 To summarize, you learned some new ideas:
@@ -154,9 +149,24 @@ Then, in the `@NgModule` decorator, it matches up to an `AppRoutingModule` value
 To summarize so far, routing is recognized in an app by the presence of the app routing module code, and some new code in the app module. 
 
 To preview the rest of the procedure, here's what we must do:
-1. Add one or more components that will participate in routing
-2. In the HTML markup (i.e. the view code) of the component that will "host" the routed component, add a `<router-outlet>` element
-3. In the HTML markup of a navigation component (or any kind of component), use the `routerLink` attribute in the `<a>` element instead of the `href` attribute
+1. Planning your components and routes
+2. Add one or more components that will participate in routing
+3. In the HTML markup (i.e. the view code) of the component that will "host" the routed component, add a `<router-outlet>` element
+4. In the HTML markup of a navigation component (or any kind of component), use the `routerLink` attribute in the `<a>` element instead of the `href` attribute
+
+<br>
+
+#### Planning your components and routes
+
+This is the *think before you code* task. Very important. 
+
+One of the first tasks in designing any app is to *sketch out* the user interface (UI), and the interaction or usage flow. 
+
+This task will enable you to clearly and separately *list or document* the components that will enable your UI and interaction plan. Some will be structural (in that they will appear on every screen), while others will be routed components. 
+
+Finally, you will be able to design or infer the URL path segments for each routed component. 
+
+The result will enable you to begin creating components, using the Angular CLI generator. 
 
 <br>
 
@@ -186,7 +196,23 @@ const routes: Routes = [
 ];
 ```
 
-In summary, this enables a component to participate in routing. There's more to do however, explained next.
+In summary, this enables a component to participate in routing. There's more to do however, explained later.
+
+<br>
+
+**What's in a *route object*?**
+
+A *route object* a JavaScript object that conforms to the [Route interface](https://angular.io/api/router/Route). 
+
+While the interface documentation shows the members, we must look at the [Routes type](https://angular.io/api/router/Routes) documentation to learn about the purpose and use of each member. 
+
+For beginner topics, the most-often used members are:
+
+`path` - a string for the URL segment that follows the leading slash 
+
+`component` - a component type (class name)
+
+Soon, you will learn about a couple of other members for some specialty route objects.
 
 <br>
 
@@ -208,6 +234,17 @@ At runtime, the HTML markup from the routed component will be added to the docum
 
 <br>
 
+**More about router-outlet**
+
+In the [RouterOutlet documentation](https://angular.io/api/router/RouterOutlet), we learn that it is a directive. 
+
+"It acts as a placeholder that Angular dynamically fills based on the current router state." 
+
+> A directive is an important part of Angular architecture. A directive allows you to attach behaviour to elements in the DOM.  
+> As you have recently learned, a component is a directive that includes an HTML template.  
+
+<br>
+
 #### Making it appear - the routerLink attribute
 
 How can we cause the view for a routed component to appear? 
@@ -216,6 +253,7 @@ Most often - at least for beginner or introductory app scenarios - we use a navi
 
 In standard HTML documents, the `href` attribute is used. However, we do NOT use this attribute in links to routed components. Instead, re use the `routerLink` attribute.
 
+> To repeat:  
 > In an `<a>` element, REPLACE the `href` attribute  
 > with a `routerLink` attribute. 
 
@@ -228,6 +266,18 @@ For example, assume we are adding a link to the new "horse" component from above
   </li>
   <!-- other markup below -->
 ```
+<br>
+
+**More about routerLink**
+
+In the [RouterLink documentation](https://angular.io/api/router/RouterLink), we learn that it is a directive. 
+
+It "Lets you link to specific parts [components] of your app." 
+
+In the Description section, it briefly describes the usage of a static link, which we use today. It also has other coverage, which will be useful next week, or in the future:
+* Dynamic links/values
+* Segment naming and matching rules
+* Query string parameter handling
 
 <br>
 
@@ -254,7 +304,7 @@ ng g c PageNotFound --flat
 
 The Angular CLI will look at the CamelCase name, and generate properly-named source code files and a JavaScript class. 
 
-Then, in the app routing module, add another *route object* to the `routes` array:
+Then, in the app routing module, add another *route object* as the *last item* in the `routes` array:
 
 ```javascript
 const routes: Routes = [
@@ -264,112 +314,34 @@ const routes: Routes = [
 ];
 ```
 
-( more to come )
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 
-## resume edits here
+**Does the order of the *route objects* in the `routes` array matter?**
 
-<br>
-<br>
-<br>
-<br>
+Does the order of the *route objects* in the `routes` array matter? 
 
+Yes. Here are some getting-started guidelines:
 
-Return to the tutorial  
-Pick and choose the highlights  
-Done - not much new was learned there  
+Place the *more specific* route(s) (i.e. the one with more segments, and/or URL parameters, and/or query string paramaeters) above (before) the *less specific* route(s). This will make more sense next week, when we begin to use URL parameters. 
 
-Then go to the FUNDAMENTALS > Routing & Navigation  
-Work our way through that  
-Again, focus on the engineering aspects  
+Place the *empty*  route just above (before) the last route in the array. 
 
-Router features include (from the docs):
-* can interpret a URL as an instruction to navigate to a view
-* can pass optional parameters along to the view component 
-* can bind the router to links on a page
-* can navigate imperatively when the user clicks a button, selects from a drop box, or in response to some other stimulus from any source
-* and the router logs activity in the browser's history feature so the back and forward buttons work as well
-
-Routes (URL paths) must be defined. In the base config, there's no "by convention" route templates. This contrasts with ASP.NET MVC apps, which have a default route template. (Follow the convention, and there's no route code to write.)
-
-Order of the defined routes matters.  
-More specific to less specific.  
-Or, put another way, consider a scenario where you have more than one route that begins with the same segment. Place the *more specific* route(s) (i.e. the one with more segments, and/or URL parameters, and/or query string paramaeters) above the *less specific* route(s). 
-
-Route array id of type Routes. A few notes to get started:
-* path is a string; it's assumed (configured) that the string is added to the "base" href in index.html (its value is `"/"`)
-* as a result, the path string does *NOT* begin with a forward slash
-* empty path is often used todo a default redirect
-* path ** is a wildcard, to match any non-configured route; often used for 404 not found component (or redirect)
-* component names the component with the view to be displayed
-* data is optional, can pass an object to the component/view
-
-The router outlet element (`<router-outlet>`) is a placeholder, often seen in simple apps in the app-component.html source code file.  
-At runtime, Angular places the component's HTML just below the `<router-outlet>` element. 
-
-To create a link to a routed component, use an `<a>` element. However, replace the `href` attribute with a `routerLink` attribute.  
-
-Often, a `<nav>` element encloses a set of links. Add a `routerLinkActive` attribute to the `<nav>` element so that it will add the CSS "active" class to the active/clicked link. A nice visual help cue/hint for the browser user. 
-
-The first part of the document's [summary](https://angular.io/guide/router#summary) is good and useful.  
-(ooh - I'm having a *deja vu* moment when writing this, from a long time ago!)
-
-The [sample app in action](https://angular.io/guide/router#the-sample-application-in-action) has all the working pieces. 
-
-After looking at several examples, including how-to's (tutorials) and guides, I think that it's best to extract the "how to" rules to a checklist, then dive right in to code the app you're working on. The above "sample app in action" part of the document will likely provide us with all we need to make the checklist. 
-
-One item that should be on the checklist is for the programmer to list (write out!) all the URL paths that are likely to be needed in the app. 
-
-The docs FUNDAMENTALS > Routing & Navigation coverage is just too much for our purposes.
+Finally, place the *not found* route as the last item in the array. 
 
 <br>
 
-### Adding routing to an app (our guidance)
+### Summary, and next actions
 
-> Editing is in progress...  
-> Will have to carefully go through this
+Before this week, you learned how to create and work with *components*. The scenarios were simple, in that the goal was to package and display an area of the user interface. Multiple components were created and displayed. 
 
-To get started, 
+This week, we learned how to add *routing* to an app. This feature enables the app to swap out or replace a component (an area of the user interface) with another. 
 
-When creating a new project, can add the `--routing` option to create an `app-routing.module.ts` file
-
-So... can:
-1. add to existing project, or
-2. generate a new project with routing
-
-Generate a module that will be dedicated to routing.
-
-```
-ng g module app-routing
-```
-
-In `app.module.ts`, import the router module.
-
-```javascript
-import { Router } from "@angular/router";
-```
+The best plan is to ensure that a new project is created with the routing option. Then, adding routed components becomes a predictable and straightforward manner. 
 
 <br>
 
-<br>
+**Next actions**
 
-**Suggestion**  
-Leave route parameters until the next week, when we learn services  
-Doing that will give context and deeper meaning to the topic
-
-( more to come )
-
-Other things to note:
-* Routed components don't need a selector (check this out)
-*
+In our [getting started](angular-routing-example) document, you will learn to enhance last week's components example, by adding the routing feature. 
 
 <br>

@@ -20,7 +20,31 @@ Helpful note (in addition to the official docs):
 Another take:  
 [Config routing](https://shermandigital.com/blog/configure-routing-in-an-angular-cli-project/)
 
+<br>
 
+### Adding routing to an app (our guidance)
 
+> Editing is in progress...  
+> Will have to carefully go through this
+
+To get started, 
+
+When creating a new project, can add the `--routing` option to create an `app-routing.module.ts` file
+
+So... can:
+1. add to existing project, or
+2. generate a new project with routing
+
+Generate a module that will be dedicated to routing.
+
+```
+ng g module app-routing
+```
+
+In `app.module.ts`, import the router module.
+
+```javascript
+import { Router } from "@angular/router";
+```
 
 <br>
