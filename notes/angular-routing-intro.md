@@ -37,14 +37,14 @@ One is the **TUTORIAL > Routing** area. To preview its contents:
 * Its "version 1" approach is to define the route definitions among many source code files; after refactoring, its "version 2" approach gathers them into the preferred way, into the routing module
 * It incrementally adds *default* and *not found* routes
 
-In summary, the content is useful to read/skim. However, your professors think that its learning path should not be considered best practice or authoritative. Today, we will recommend an approach that provides many benefits, including coding ease, better quality, and repeatability. 
+In summary, the content is useful to read/skim. (Do that now.) However, your professors think that its learning path should not be considered best practice or authoritative. Today, we will recommend an approach that provides many benefits, including coding ease, better quality, and repeatability. 
 
 The other source of information is the **FUNDAMENTALS > Routing & Navigation** area. To preview its contents:
 * It uses the same *Tour of Heroes* problem and data set
 * An evolutionary and detailed approach through a wide range of routing and routing-related topics, with much detail
 * Includes many topics (router state, router events, guard, child, lazy load, etc.) that are too advanced for our current needs (later in the course, we will cover some of them)
 
-In summary, some of this content is useful to skim. However, your professors think that its learning path is too detailed and too tied to the *Tour of Heroes* example. As a result, it's not as clear as it could be to present routing topics to you in a way that you can understand, repeat, and implement. 
+In summary, some of this content is useful to skim. (Do that now.) However, your professors think that its learning path is too detailed and too tied to the *Tour of Heroes* example. As a result, it's not as clear as it could be to present routing topics to you in a way that you can understand, repeat, and implement. As noted above, we will recommend an approach that will be better. 
 
 > It is possible that we will include links to external documentation resources here...
 
@@ -52,9 +52,9 @@ In summary, some of this content is useful to skim. However, your professors thi
 
 ### Adding routing to an app
 
-The best and easiest way to add the routing feature to an app is to make sure that it has it when the project is created for the first time. 
+The best and easiest way to add the routing feature to an app is to make sure that it has it when the project is *created* for the first time. 
 
-As you learned last week, when learning more about components, use the `--routing` option when creating a new project:
+As you learned last week, when learning more about components, we should (must) use the `--routing` option when creating a new project:
 
 `ng new animals --routing -st`
 
@@ -66,7 +66,7 @@ The remainder of this document teaches you how to configure and use routing.
 
 We prefer to cover this topic in a [separate document](angular-routing-existing-app). 
 
-It is not very likely that you will be working with an app that does not yet have routing. As a result, we prefer to cover that topic separately, to minimize the distraction from our main message here in this document.
+It is not very likely that you will be working with an app that does not yet have routing. As a result, we prefer to cover that topic separately, to minimize the distraction from our main message, here in this document.
 
 <br>
 
@@ -74,7 +74,7 @@ It is not very likely that you will be working with an app that does not yet hav
 
 At this point in time, we have a project with the routing feature. 
 
-Let's study the project's code, to learn where to find the routing feature, and learn where to begin configuring and using it. 
+Let's study the project's code, to learn how to recognize routing in an app, and to learn where to find the routing feature. That will enable us to learn where to begin configuring and using it. 
 
 <br>
 
@@ -118,11 +118,151 @@ const routes: Routes = [
 ];
 ```
 
-> If you're coding while reading this, make sure that:
-> 1) the component exists, and 
+<br>
+
+> Notice - if you're coding the routes while reading this, make sure that:
+> 1) the component already exists, and 
 > 2) it is imported.
 
 <br>
+
+#### Updated: app.module.ts
+
+In the `src/app` folder, notice the familiar `app.module.ts` source code file. 
+
+The ability of the app to support routing is seen in this file. The code was added because the `--routing` option was used when the project was created. 
+
+First, in the "import" statements near the top, we see:
+
+```javascript
+import { AppRoutingModule } from './app-routing.module';
+```
+
+Then, in the `@NgModule` decorator, it matches up to an `AppRoutingModule` value in the `imports` array:
+
+```javascript
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+```
+
+<br>
+
+#### Checkpoint...
+
+To summarize so far, routing is recognized in an app by the presence of the app routing module code, and some new code in the app module. 
+
+To preview the rest of the procedure, here's what we must do:
+1. Add one or more components that will participate in routing
+2. In the HTML markup (i.e. the view code) of the component that will "host" the routed component, add a `<router-outlet>` element
+3. In the HTML markup of a navigation component (or any kind of component), use the `routerLink` attribute in the `<a>` element instead of the `href` attribute
+
+<br>
+
+#### Adding a *new* routed component
+
+Although the content in this section is mentioned in the "Notice" callout above, we'll cover it now in a clear and complete fashion. 
+
+Adding a *new* routed component is an easy thing to do, with a clear and unambiguous procedure. In fact, it adds only one more task to the overall task of adding a new component to an app. 
+
+You already know that a new component can be added to an app with an `ng g c foo --flat` command in the Angular CLI. The command will 1) generate the source code files for the new component, and 2) update the app component by adding an "import" statement and a value in the "declarations" array. 
+
+To enable the new component to participate in routing, we must do one more task (which you have seen above):
+
+Edit the `app-routing.module.ts` source code file. Assume we are working with a newly-created app that supports routing.
+
+Near the top, add an "import" statment. Assume that we have an already-existing "horse" component. The import statement will look like the following. It is no different from what you added to the app module:
+
+```javascript
+import { HorseComponent } from "./horse.component";
+```
+
+Then, add a *route* object to the `routes` array:
+
+```javascript
+const routes: Routes = [
+  { path: 'horse', component: HorseComponent }
+];
+```
+
+In summary, this enables a component to participate in routing. There's more to do however, explained next.
+
+<br>
+
+#### Add a router-outlet element to the hosting component
+
+The view for a routed component must appear somewhere, right?
+
+Choose a component that will be the "host" for routed components. Often it will be a simple content container that conceptually enables other content to be swapped in and out (i.e. routed) based on some interaction or context/environmental stimulus. 
+
+Then, in that component's HTML markup, in a suitable location, add a `<router-outlet>` element:
+
+```html
+<!-- other markup above -->
+<router-outlet></router-outlet>
+<!-- other markup below -->
+```
+
+At runtime, the HTML markup from the routed component will be added to the document object model (DOM) just below the `<router-outlet>` element. 
+
+<br>
+
+#### Making it appear - the routerLink attribute
+
+How can we cause the view for a routed component to appear? 
+
+Most often - at least for beginner or introductory app scenarios - we use a navigation component. For example, the view code (i.e. the HTML markup) for this kind of component is typically an unordered list of `<a>` (anchor/hyperlink) elements. 
+
+In standard HTML documents, the `href` attribute is used. However, we do NOT use this attribute in links to routed components. Instead, re use the `routerLink` attribute.
+
+> In an `<a>` element, REPLACE the `href` attribute  
+> with a `routerLink` attribute. 
+
+For example, assume we are adding a link to the new "horse" component from above. We add a new `<a>` element, as shown below. (The `nav-...` classes are from the Bootstrap styles.)
+
+```html
+  <!-- other markup below -->
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/horse">Horse</a>
+  </li>
+  <!-- other markup below -->
+```
+
+<br>
+
+#### Special routed components and routes
+
+While the tasks above will enable you to successfully define, configure, and use routing, an app needs a few more "special" routing-related tasks. 
+
+First, an app ought to have a "home" view, that serves as its "start page" or "landing page". That's easy to create and code. The component's name can be "home" or "start" or something that makes sense for your app.
+
+Next, an app must have a *route object* to handle an empty route. In other words, if the URL has no segments - just the host name - then the app must know what to show. Assuming that you have already created a "home" component (mentioned in the previous paragraph), add a new *route object* to the `routes` constant in the app routing module:
+
+```javascript
+const routes: Routes = [
+  // existing route objects
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
+];
+```
+
+Finally, an app must have a component that will appear whenever an invalid (non-existing) URL is entered or processed. This is the classic "page not found" use case. To accomplish this, create a new component using the Angular CLI, and pay attention to the use of upper and lower case, by using CamelCase:
+
+```text
+ng g c PageNotFound --flat
+```
+
+The Angular CLI will look at the CamelCase name, and generate properly-named source code files and a JavaScript class. 
+
+Then, in the app routing module, add another *route object* to the `routes` array:
+
+```javascript
+const routes: Routes = [
+  // existing route objects
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
+];
+```
 
 ( more to come )
 
