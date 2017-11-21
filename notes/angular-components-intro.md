@@ -114,7 +114,7 @@ You should now see the text "foo works" at the bottom of the default "start" pag
 
 Now that we are comfortable adding new (simple) components, why don't we try creating a view using *multiple* components.  
 
-> The content for this discussion can be found in ["Angular Components Example"]
+> The content for this discussion can be found in ["Angular Components Example"](angular-components-example)
 
 ### Using "Templates" in your components
 
