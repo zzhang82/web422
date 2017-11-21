@@ -51,7 +51,7 @@ Before we start writing components, we should get a new Angular project going.  
 
 The `-st` option does not add "testing" code. One of the effects is that it reduces the size of the project, and makes it slightly faster in the change detection and build processes.
   
-3. Change your working directory to the newly created folder and start the server listener, ie:
+Finally, change your working directory to the newly created folder and start the server listener, ie:
 
 ```
 cd my-dream-app
