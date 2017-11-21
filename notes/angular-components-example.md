@@ -255,6 +255,6 @@ Open the HTML template for the "navmain" component. Create a standard, Bootstrap
 
 The result will look something like the following:
 
-![Navigation menu](../media/angular-routing-v1-nav.png)
+![Navigation menu](../media/angular-routing-v1-nav2.png)
 
 <br>
