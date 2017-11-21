@@ -187,7 +187,7 @@ Notice the `app-content` selector. Let's look at the correspond "content" compon
 <div class="content row">
   <div class="col-md-12">
       <app-guide></app-guide>
-      <app-start></app-start>
+      <app-home></app-home>
       <app-page-not-found></app-page-not-found>
       <app-horse></app-horse>
       <app-lizard></app-lizard>
