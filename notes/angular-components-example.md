@@ -258,3 +258,7 @@ The result will look something like the following:
 ![Navigation menu](../media/angular-routing-v1-nav2.png)
 
 <br>
+
+### For the Complete Example
+
+See the "Week 7" Code Example in our WEB422 GitHub Repository:  [https://github.com/sictweb/web422/tree/master/Code%20Examples/week7/angular-components-example](https://github.com/sictweb/web422/tree/master/Code%20Examples/week7/angular-components-example)
