@@ -82,5 +82,17 @@ Introduction to Angular:<br><br>
 </ul>
 </td>
 </tr>
+<tr>
+<td><a href="/web422/notes/week07">7 - Notes</a></td>
+<td>
+Introduction to Angular Components:<br><br>
+<ul>
+<li>High Level Discussion of Angular Components</li>
+<li>Creating components manually / using the Angular CLI</li>
+<li>An introduction to using "templates" in components</li>
+<li>A brief discussion on attribute & structural directives.</li>
+</ul>
+</td>
+</tr>
 </tbody>
 </table>
