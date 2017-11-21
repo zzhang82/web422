@@ -125,7 +125,7 @@ From the example above, we have seen how we can add multiple components as child
 * [Template Statements](https://angular.io/guide/template-syntax#template-statements)
 * [Attribute, class, and style bindings](https://angular.io/guide/template-syntax#attribute-class-and-style-bindings)
 
-Essentially, the above logic is really referring to specific types of ["Binding Syntax"] (https://angular.io/guide/template-syntax#binding-syntax-an-overview). 
+Essentially, the above logic is really referring to specific types of ["Binding Syntax"](https://angular.io/guide/template-syntax#binding-syntax-an-overview). 
 
 Note:  We will save ["Two-way binding"](https://angular.io/guide/template-syntax#two-way-binding---) until we discuss forms in Angular.
 
