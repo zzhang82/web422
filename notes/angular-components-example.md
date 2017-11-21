@@ -89,19 +89,20 @@ In `header.component.ts`:
 In `header.component.html`, some getting-started text is generated. We always replace that generated text with our own. For example (using Bootstrap classes): 
 
 ```html
-<div class='header'>
-  <div class='row'>
-    <img class='img-fluid' src='https://via.placeholder.com/800x100' alt='Welcome'>
-  </div>
-  <div class='row'>
-    <p>This is the header component</p>
+<div class="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Header</h3>
+      </div>
+    </div>
   </div>
 </div>
 ```
 
 <br>
 
-#### Create components to support routing
+#### Create components to support routing (discussed next week)
 
 Create components to support routing:
 * Home (a home or start page)
@@ -114,7 +115,7 @@ ng g c home --flat
 ng g c PageNotFound --flat
 ```
 
-Notice the use of CamelCase on the "PageNotFound" name. The Angular CLI will parse that, and make the component's file name assets use lower case, with dash separators between the words. Nice. 
+Notice the use of CamelCase on the "PageNotFound" name. The Angular CLI will parse that, and make the component's file name assets use lower case, with dash separators between the words. Nice.
 
 <br> 
 
@@ -137,14 +138,25 @@ ng g c eagle --flat
 ng g c dolphin --flat
 ```
 
-At this point, you can edit the HTML template content to meet your needs. For example, the "horse" component has this HTML template (the text content is from Wikipedia, and the image is from a Google search):
+At this point, you can edit the HTML template content to meet your needs. For example, the "horse" component has this HTML template to render a Bootstrap 3 "Panel" (the text content is from Wikipedia, and the image is from a Google search):
 
 ```html
-<div class="horse">
-  <h3>Horse</h3>
-  <p>The horse (Equus ferus caballus)[2][3] is one of two extant subspecies of Equus ferus. It is an odd-toed ungulate mammal belonging to the taxonomic family Equidae. </p>
-  <p>The horse has evolved over the past 45 to 55 million years from a small multi-toed creature, Eohippus, into the large, single-toed animal of today. Humans began to domesticate horses around 4000 BC, and their domestication is believed to have been widespread by 3000 BC. Horses in the subspecies caballus are domesticated, although some domesticated populations live in the wild as feral horses. These feral populations are not true wild horses, as this term is used to describe horses that have never been domesticated, such as the endangered Przewalski's horse, a separate subspecies, and the only remaining true wild horse. There is an extensive, specialized vocabulary used to describe equine-related concepts, covering everything from anatomy to life stages, size, colors, markings, breeds, locomotion, and behavior.</p>
-  <img src="http://ashs.com.au/images/New_Buttons-2017-03-24/StudBook3.png" alt="Horse" class="w-25">
+<div class="horse panel panel-default" id="horse">
+  <div class="panel-heading">
+    <h3 class="panel-title">Horse</h3>
+  </div>
+  <div class="panel-body">
+    <p>The horse (Equus ferus caballus)[2][3] is one of two extant subspecies of Equus ferus. It is an odd-toed ungulate mammal
+      belonging to the taxonomic family Equidae. </p>
+    <p>The horse has evolved over the past 45 to 55 million years from a small multi-toed creature, Eohippus, into the large,
+      single-toed animal of today. Humans began to domesticate horses around 4000 BC, and their domestication is believed
+      to have been widespread by 3000 BC. Horses in the subspecies caballus are domesticated, although some domesticated
+      populations live in the wild as feral horses. These feral populations are not true wild horses, as this term is used
+      to describe horses that have never been domesticated, such as the endangered Przewalski's horse, a separate subspecies,
+      and the only remaining true wild horse. There is an extensive, specialized vocabulary used to describe equine-related
+      concepts, covering everything from anatomy to life stages, size, colors, markings, breeds, locomotion, and behavior.</p>
+    <img src="http://ashs.com.au/images/New_Buttons-2017-03-24/StudBook3.png" alt="Horse" class="w-25">
+  </div>
 </div>
 ```
 
