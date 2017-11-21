@@ -162,42 +162,7 @@ At this point, you can edit the HTML template content to meet your needs. For ex
 
 <br>
 
-### Add route info for the routed components
 
-Edit the app routing module. 
-
-Add the import statements:
-
-```javascript
-import { HorseComponent } from "./horse.component";
-import { LizardComponent } from "./lizard.component";
-import { BearComponent } from "./bear.component";
-import { EagleComponent } from "./eagle.component";
-import { DolphinComponent } from "./dolphin.component";
-import { HomeComponent } from "./home.component";
-import { PageNotFoundComponent } from "./page-not-found.component";
-```
-
-Next, add *route objects* to the `routes` array:
-
-```js
-const routes: Routes = [
-
-  // add routes here, for example...
-
-  { path: 'horse', component: HorseComponent },
-  { path: 'lizard', component: LizardComponent },
-  { path: 'bear', component: BearComponent },
-  { path: 'eagle', component: EagleComponent },
-  { path: 'dolphin', component: DolphinComponent },
-  { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent }
-
-];
-```
-
-<br>
 
 ### Building the user interface
 
@@ -208,60 +173,84 @@ The first substantial change will be in the app component's HTML template. (Why?
 Here, we will add elements for each of the structural components:
 
 ```html
-<div class="container">
-  <app-header></app-header>
-  <app-navmain></app-navmain>
+<app-header></app-header>
+<app-navmain></app-navmain>
+<div class="container"> <!-- All main "content" will be in a bootstrap "container" -->
   <app-content></app-content>
-  <app-footer></app-footer>
 </div>
+<app-footer></app-footer>
 ```
 
-Notice the `app-content` selector. Let's look at the "content" component next. Only its HTML template is interesting:
+Notice the `app-content` selector. Let's look at the correspond "content" component next. Only its HTML template needs to be updated at the moment:
 
 ```html
 <div class="content row">
-  <div class="col-md-9">
-      <router-outlet></router-outlet>
-    </div>
-  <div class="col-md-3">
+  <div class="col-md-12">
       <app-guide></app-guide>
-  </div>
+      <app-start></app-start>
+      <app-page-not-found></app-page-not-found>
+      <app-horse></app-horse>
+      <app-lizard></app-lizard>
+      <app-bear></app-bear>
+      <app-eagle></app-eagle>
+      <app-dolphin></app-dolphin>
+    </div>
 </div>
 ```
 
-Ah, very interesting. HTML content for the routed component will appear *below* the `<router-outlet>` element. The content will change as a result of user interaction. 
+Notice how the "content" component contains all of our other "content" and "routing" components.  This corresponds directly with our initial design from the "Getting Started" section above!  Once our components are defined, it's simple to place them within other components to create complex views.   
 
-An important idea here is that the selectors for the routed components *do not* appear in any template anywhere. In fact, the `selector` member of the [Component decorator](https://angular.io/api/core/Component) is optional (because it is defined as nullable, `selector?: string`). 
+#### Updating our Navigation component
 
-#### Making a routed component appear - navigation
-
-The navigation component - i.e. the menu bar - will be used here to make routed components appear. 
-
-Open the HTML template for the navigation component. Create a standard navigation menu:
+For now, the navigation component - i.e. the menu bar - will simply be used to jump to a specific "content" component (ie: "horse" using it's "id" element, ie
 
 ```html
-<div class="navmain row">
-  <ul class="nav">
-    <li class="nav-item">
-        <a class="nav-link" routerLink="/home"><b>Home page</b></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" routerLink="/horse">Horse</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" routerLink="/lizard">Lizard</a>
-    </li>
-    <li class="nav-item">
-          <a class="nav-link" routerLink="/bear">Bear</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" routerLink="/eagle">Eagle</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" routerLink="/dolphin">Dolphin</a>
-    </li>
-  </ul>
-</div>
+<a href="#horse">Horse</a>
+```
+
+Open the HTML template for the "navmain" component. Create a standard, Bootstrap 3 Navbar:
+
+```html
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#start">Start page</a>
+                </li>
+                <li>
+                    <a href="#horse">Horse</a>
+                </li>
+                <li>
+                    <a href="#lizard">Lizard</a>
+                </li>
+                <li>
+                    <a href="#bear">Bear</a>
+                </li>
+                <li>
+                    <a href="#eagle">Eagle</a>
+                </li>
+                <li>
+                    <a href="#dolphin">Dolphin</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
 ```
 
 The result will look something like the following:
