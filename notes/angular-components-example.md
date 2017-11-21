@@ -1,13 +1,9 @@
 ---
-title: Angular components example
+title: Angular Components Example
 layout: default
 ---
 
-## Angular components example
-
-> This document is being edited.
-
-> This notice will be removed when the edits are complete.
+## Angular Components Example
 
 In this document, you will create an app with several components. 
 
@@ -31,49 +27,37 @@ For our example app, here's what we're trying to do. Each rectangle will (or cou
 
 <br>
 
-#### Generate a new project  
+### Generate a new project  
 
-We will use the Angular CLI to generate a new project. It is the preferred way to do so, mostly because it offers you (as the developer) more, and it improves the developer experience.
+At this point, we will assume that you are comftorable using the Angular CLI to create a new project, ie:
 
-As noted above, we are creating an app that works with animals - information about animals, and some kind of undefined functionality. 
+  ```
+  ng new my-dream-app --routing -st
+  ```
+  
+  **Recall:** 
+  
+  The `--routing` option adds the code we need for "routing", which is a topic that will be covered in detail next week. Adding routing now (when the new project is created) is a *best practice*. 
 
-Before, you may have seen (and used) a simple Angular CLI command that created a new simple project. Starting now, we'll use a command with some additional options. In Terminal, while in your projects folder, run this command:
+The `-st` option does not add "testing" code. One of the effects is that it reduces the size of the project, and makes it slightly faster in the change detection and build processes.
 
-`ng new animals --routing -st`
+### Adding Bootstrap (3.3.7)
 
-<br>
-<br>
-<br>
+As we have seen, a quick way to kickstart the style / structure of your project is to use the Bootstrap framework.  At the time of writing Bootstrap 3.3.7 is a good choice, however Bootstrap 4 is currently in Beta and is available as well).
 
-> **Hey Pat...**  
-> I am suggesting (recommending) that we *always* add the `--routing` option when creating new projects.  
-> Let's try to get students into the habit of doing this. I cannot foresee any downside to doing this with the kind of apps that we/they are likely to create.  
-> Doing this is *way easier* than manually coding/adding routing after-the-fact to an existing project.  
-> Please comment/discuss if you think differently.  
+We can add this framework using the familiar lines:
 
-<br>
-<br>
-<br>
+```html
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+```
+to the &lt;head&gt; element inside the src/index.html file.  As well as:
 
-The `--routing` option adds the code we need for "routing", which is a topic that will be covered in detail next week. Adding routing now (when the new project is created) is a *best practice*. 
+```html
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+```
 
-The `-st` option does not add "testing" code. One of the effects is that it reduces the size of the project, and perhaps makes it a bit faster in the change detection and build processes.
-
-<br>
-
-**Optional - reduce the project size even further**
-
-If you want to reduce the size of the project even further, we can add one more option to the "ng new" command:
-
-`ng new animals --minimal --routing -st`
-
-The `--minimal` option does this. However, it has a side effect that we will probably not like, so if you do choose this option, please make one change to eliminate the side effect. How?
-
-Open, for editing, the project's `.angular-cli.json` configuration file. 
-
-Change the value of the `inlineStyle` and `inlineTemplate` properties to `false`. 
-
-<br>
+to the bottom of the &lt;body&gt; element inside the src/index.html file.
 
 #### Create structural components
 
@@ -94,7 +78,9 @@ ng g c guide --flat
 ng g c footer --flat
 ```
 
-To review, the `ng g c` command creates the component's source code files, and updates the app module (by adding import-related code). A few notes about the source code files and generated code, using the first command above, "header":
+To review, the `ng g c` command creates the component's source code files, and updates the app module (by adding import-related code). 
+
+A few notes about the source code files and generated code, using the first command above, "header":
 
 In `header.component.ts`:
 * A class named `HeaderComponent` is created
