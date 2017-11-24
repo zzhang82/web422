@@ -33,7 +33,7 @@ The *component* has the code for the *controller* and the *view model*.
 
 The *template* has the code for the *view*. 
 
-### Quick Review - Creating an Angular Project from Scracth
+### Quick Review - Creating an Angular Project from Scratch
 
 Before we start writing components, we should get a new Angular project going.  Recall, from week 6:
 
