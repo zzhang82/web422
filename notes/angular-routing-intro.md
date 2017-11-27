@@ -39,9 +39,7 @@ The other source of information is the **FUNDAMENTALS > Routing & Navigation** a
 * An evolutionary and detailed approach through a wide range of routing and routing-related topics, with much detail
 * Includes many topics (router state, router events, guard, child, lazy load, etc.) that are too advanced for our current needs (later in the course, we will cover some of them)
 
-In summary, some of this content is useful to skim. (Do that now.) However, your professors think that its learning path is too detailed and too tied to the *Tour of Heroes* example. As a result, it's not as clear as it could be to present routing topics to you in a way that you can understand, repeat, and implement. As noted above, we will recommend an approach that will be better. 
-
-> It is possible that we will include links to external documentation resources here...
+In summary, some of this content is useful to skim. (Do that now.) However, your professors think that its learning path is too detailed and too tied to the *Tour of Heroes* example. As a result, it's not as clear as it could be in presenting routing topics to you in a way that you can understand, repeat, and implement. As noted above, we will recommend an approach that will be better. 
 
 <br>
 
@@ -73,7 +71,7 @@ Let's study the project's code, to learn how to recognize routing in an app, and
 
 <br>
 
-#### New: app-routing.module.ts
+#### New source code: app-routing.module.ts
 
 In the `src/app` folder, notice a new `app-routing.module.ts` source code file. Its contents:
 
@@ -92,7 +90,7 @@ export class AppRoutingModule { }
 
 <br>
 
-Notice the `routes` constant. Soon, we will edit the contents of the array to add *route objects*. Each of these route objects has a *string path*, and the name of a *component class*. 
+Notice the `routes` constant. Soon, we will edit the contents of the empty array, and add *route objects*. Each of these route objects has a *string URL path*, and the name of a *component class*. 
 
 Before we add each route object, we will `import` the component that it refers to. For example:
 
@@ -115,13 +113,13 @@ const routes: Routes = [
 
 <br>
 
-> Notice - if you're coding the routes while reading this, make sure that:
-> 1) the component already exists, and 
+> Notice - if you're coding the routes while reading this, make sure that:  
+> 1) the component already exists, and  
 > 2) it is imported.
 
 <br>
 
-#### Updated: app.module.ts
+#### Updated code: app.module.ts
 
 In the `src/app` folder, notice the familiar `app.module.ts` source code file. 
 
@@ -149,7 +147,7 @@ Then, in the `@NgModule` decorator, it matches up to an `AppRoutingModule` value
 To summarize so far, routing is recognized in an app by the presence of the app routing module code, and some new code in the app module. 
 
 To preview the rest of the procedure, here's what we must do:
-1. Planning your components and routes
+1. Plan your components and routes
 2. Add one or more components that will participate in routing
 3. In the HTML markup (i.e. the view code) of the component that will "host" the routed component, add a `<router-outlet>` element
 4. In the HTML markup of a navigation component (or any kind of component), use the `routerLink` attribute in the `<a>` element instead of the `href` attribute
@@ -160,7 +158,7 @@ To preview the rest of the procedure, here's what we must do:
 
 This is the *think before you code* task. Very important. 
 
-One of the first tasks in designing any app is to *sketch out* the user interface (UI), and the interaction or usage flow. 
+One of the first tasks to be done when designing any app is to *sketch out* the user interface (UI), and the interaction or usage flow. 
 
 This task will enable you to clearly and separately *list or document* the components that will enable your UI and interaction plan. Some will be structural (in that they will appear on every screen), while others will be routed components. 
 
@@ -172,7 +170,7 @@ Let's assume that we will continue with the example from last week's components 
 
 Finally, as a result of sketching out the UI and interaction flow, and then listing/documenting the components that are needed, you will be able to design or infer the URL path segments for each routed component. 
 
-> Some of this work is done in the companion [getting started](angular-routing-example) document. 
+> Some of this work is done in the companion [getting started example](angular-routing-example) document. 
 
 The result will enable you to begin creating components, using the Angular CLI generator. 
 
@@ -182,7 +180,7 @@ The result will enable you to begin creating components, using the Angular CLI g
 
 Although the content in this section is mentioned in the "Notice" callout above, we'll cover it now in a clear and complete fashion. 
 
-Adding a *new* routed component is an easy thing to do, with a clear and unambiguous procedure. In fact, it adds only one more task to the overall task of adding a new component to an app. 
+Adding a new *routed* component is an easy thing to do, with a clear and unambiguous procedure. In fact, it adds only one more task to the overall task of adding a new component to an app. 
 
 You already know that a new component can be added to an app with an `ng g c foo --flat` command in the Angular CLI. The command will 1) generate the source code files for the new component, and 2) update the app component by adding an "import" statement and a value in the "declarations" array. 
 
@@ -190,13 +188,13 @@ To enable the new component to participate in routing, we must do one more task 
 
 Edit the `app-routing.module.ts` source code file. Assume we are working with a newly-created app that supports routing.
 
-Near the top, add an "import" statment. Assume that we have an already-existing "horse" component. The import statement will look like the following. It is no different from what you added to the app module:
+Near the top, add an "import" statment. Assume that we have just added (generated) a new "horse" component. The import statement will look like the following. It is no different from the code statement that was added to the app module:
 
 ```javascript
 import { HorseComponent } from "./horse.component";
 ```
 
-Then, add a *route* object to the `routes` array:
+Then, add a new *route* object to the `routes` array:
 
 ```javascript
 const routes: Routes = [
@@ -204,7 +202,7 @@ const routes: Routes = [
 ];
 ```
 
-In summary, this enables a component to participate in routing. There's more to do however, explained later.
+In summary, this enables a component to participate in routing. There's still a bit more to do however, explained soon.
 
 <br>
 
@@ -214,7 +212,7 @@ A *route object* a JavaScript object that conforms to the [Route interface](http
 
 While the interface documentation shows the members, we must look at the [Routes type](https://angular.io/api/router/Routes) documentation to learn about the purpose and use of each member. 
 
-For beginner topics, the most-often used members are:
+For beginner scenarios, the most-often used members are:
 
 `path` - a string for the URL segment that follows the leading slash 
 
@@ -238,7 +236,7 @@ Then, in that component's HTML markup, in a suitable location, add a `<router-ou
 <!-- other markup below -->
 ```
 
-At runtime, the HTML markup from the routed component will be added to the document object model (DOM) just below the `<router-outlet>` element. 
+At runtime, the HTML markup from the routed component will be added to the document object model (DOM) *just below* the `<router-outlet>` element. 
 
 <br>
 
@@ -248,12 +246,13 @@ In the [RouterOutlet documentation](https://angular.io/api/router/RouterOutlet),
 
 "It acts as a placeholder that Angular dynamically fills based on the current router state." 
 
-> A directive is an important part of Angular architecture. A directive allows you to attach behaviour to elements in the DOM.  
+> A directive is an important part of Angular architecture.  
+> A directive allows you to attach behaviour to elements in the DOM.  
 > As you have recently learned, a component is a directive that includes an HTML template.  
 
 <br>
 
-#### Making it appear - the routerLink attribute
+#### Showing a routed component - the routerLink attribute
 
 How can we cause the view for a routed component to appear? 
 
@@ -293,7 +292,7 @@ In the Description section, it briefly describes the usage of a static link, whi
 
 While the tasks above will enable you to successfully define, configure, and use routing, an app needs a few more "special" routing-related tasks. 
 
-First, an app ought to have a "home" view, that serves as its "start page" or "landing page". That's easy to create and code. The component's name can be "home" or "start" or something that makes sense for your app.
+First, an app should have a "home" view, that serves as its "start page" or "landing page". That's easy to create and code. The component's name can be "home" or "start" or something that makes sense for your app.
 
 Next, an app must have a *route object* to handle an empty route. In other words, if the URL has no segments - just the host name - then the app must know what to show. Assuming that you have already created a "home" component (mentioned in the previous paragraph), add a new *route object* to the `routes` constant in the app routing module:
 
@@ -350,6 +349,6 @@ The best plan is to ensure that a new project is created with the routing option
 
 **Next actions**
 
-In our [getting started](angular-routing-example) document, you will learn to enhance last week's components example, by adding the routing feature. 
+In our [getting started example](angular-routing-example) document, you will learn to enhance last week's components example, by adding the routing feature. 
 
 <br>
