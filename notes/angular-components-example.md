@@ -29,37 +29,40 @@ For our example app, here's what we're trying to do. Each rectangle will (or cou
 
 ### Generate a new project  
 
-At this point, we will assume that you are comftorable using the Angular CLI to create a new project, ie:
+At this point, we will assume that you are comfortable using the Angular CLI to create a new project, ie:
 
-  ```
-  ng new my-dream-app --routing -st
-  ```
+```
+ng new my-dream-app --routing -st
+```
   
-  **Recall:** 
+**Recall:** 
   
-  The `--routing` option adds the code we need for "routing", which is a topic that will be covered in detail next week. Adding routing now (when the new project is created) is a *best practice*. 
+The `--routing` option adds the code we need for "routing", which is a topic that will be covered in detail next week. Adding routing now (when the new project is created) is a *best practice*. 
 
 The `-st` option does not add "testing" code. One of the effects is that it reduces the size of the project, and makes it slightly faster in the change detection and build processes.
 
-### Adding Bootstrap (3.3.7)
+<br>
 
-As we have seen, a quick way to kickstart the style / structure of your project is to use the Bootstrap framework.  At the time of writing Bootstrap 3.3.7 is a good choice, however Bootstrap 4 is currently in Beta and is available as well).
+#### Adding the Bootstrap styles
 
-We can add this framework using the familiar lines:
+As we have seen, a quick way to kickstart the style / structure of your project is to use the Bootstrap framework. (At the time of writing, Bootstrap version 3.3.7 is a good choice, however Bootstrap 4 is currently in Beta and is available as well.)
+
+We can add this framework by adding this now-familiar code to the `<head>` element in the `src/index.html` file:
 
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 ```
-to the &lt;head&gt; element inside the src/index.html file.  As well as:
+
+Then, add the following code to the bottom of the `<body>` element:
 
 ```html
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 ```
 
-to the bottom of the &lt;body&gt; element inside the src/index.html file.
+<br>
 
-#### Create structural components
+#### Create the structural components
 
 Create the app's basic structural components:
 * Header
@@ -161,8 +164,6 @@ At this point, you can edit the HTML template content to meet your needs. For ex
 ```
 
 <br>
-
-
 
 ### Building the user interface
 

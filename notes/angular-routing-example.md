@@ -14,11 +14,33 @@ The goal is to become comfortable with the routing foundations and configuration
 
 <br>
 
-### Getting started
+### Getting started, new project
 
-Here's what we're trying to do...  
+To get started, we are repeating the advice from last week:
+
+Your professors believe that it is important to plan your work *before writing code*. How?
+
+Visualize what you are trying to do, and then quickly draw a simple diagram. 
+
+A simple diagram will help you identify the information and functionality that your app needs. It will also naturally suggest what components it will need. *It will also naturally suggest how routing will work in the app.* 
+
+> Do this *BEFORE WRITING CODE*. 
+
+For our example app, here's what we're trying to do. Each rectangle will (or could) have information and/or functionality inside.   
 
 ![Multiple components](../media/angular-routing-v1.png)
+
+<br>
+
+### Generate a new project  
+
+Use the Angular CLI to create a new project, *with the routing feature*. For example:
+
+```
+ng new animals --routing -st
+```
+
+
 
 ? sidebar (terminology)
 
