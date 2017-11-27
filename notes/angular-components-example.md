@@ -29,10 +29,10 @@ For our example app, here's what we're trying to do. Each rectangle will (or cou
 
 ### Generate a new project  
 
-At this point, we will assume that you are comfortable using the Angular CLI to create a new project, ie:
+At this point, we will assume that you are comfortable using the Angular CLI to create a new project. For example, this command will create a new "animals" project:
 
 ```
-ng new my-dream-app --routing -st
+ng new animals --routing -st
 ```
   
 **Recall:** 
