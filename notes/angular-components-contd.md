@@ -7,7 +7,7 @@ layout: default
 
 Before we move on to more advanced topics in Angular, it's important that we really understand some of the fundamental details about Components.  Since an Angular application is essentially a "tree of Angular components", we will continue to work with Components throughout the remainder of this course.  We will often circle back to some of these core concepts and expand upon them to add new functionality to our applications.
 
-For the next few sections, assume that we would like to create and work with two extremely trivial components: "RedBoxComponent" (&lt;app-red-box&gt;&lt;/app-red-box&gt; and "BlueBoxComponent" (&lt;app-blue-box&gt;&lt;/app-blue-box&gt;. The whole point of each component is to display a message inside either a **red box** or a **blue box**
+For the next few sections, assume that we would like to create and work with two extremely trivial components: "RedBoxComponent" (&lt;app-red-box&gt;&lt;/app-red-box&gt;) and "BlueBoxComponent" (&lt;app-blue-box&gt;&lt;/app-blue-box&gt;).
 
 ### Review: Creating Components Using the Angular CLI
 
