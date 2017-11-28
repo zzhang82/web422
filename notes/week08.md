@@ -25,8 +25,7 @@ The detailed notes for the above topics can be found in:
   * Component / Template Data Binding
   * Lifecycle Methods
   * Component Interaction
-  * Angular Directives (Structural / Attribute)
-<br>
+  * Angular Directives (Structural / Attribute)<br><br>
 * ["Angular Routing Introduction"](angular-routing-intro): This document contains all of the content related to our Angular routing introduction (the main topic covered this week).  It also includes links to additional information in separate documents including:
   * [The official Angular.io documentation](https://angular.io/docs) - ie: the [RouterOutlet documentation](https://angular.io/api/router/RouterOutlet) / [RouterLink documentation](https://angular.io/api/router/RouterLink)
   * [Adding Routing to an existing app](angular-routing-existing-app)
