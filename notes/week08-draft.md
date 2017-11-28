@@ -7,7 +7,7 @@ layout: default
 
 Recall, the theme for the *remainder of the course* is to cover the Angular platform.  
 
-To get started, we will do a short review of Angular Components from last week,including details surrounding data template structure, binding and directives.  We will then focus on showing how Components interact and share information, as well as go into further information about Component Lifecycle hooks.
+To get started, we will do a short review of Angular Components from last week, including details surrounding data template structure, binding and directives.  We will then focus on showing how Components interact and share information, as well as go into further information about Component Lifecycle hooks.
 
 Next, we will turn our attention to Routing in Angular, specifically: 
 
