@@ -81,15 +81,15 @@ For example, say we used the Angular CLI to create both the "RedBoxComponent" an
 We then decide that "BlueBoxComponent will be a child of the "RedBoxComponent", ie: the "RedBoxComponent" template contains html to render the "BlueBoxComponent", and "BlueBoxComponent" will simply render plain text that is *passed to it* from the parent component - in this case &lt;app-red-box&gt;. This will form a parent-child relationship, with the "Red Box" being the parent:
 
 ```html
-&lt;app-red-box&gt;
-&lt;app-blue-box&gt;&lt;/app-blue-box&gt;
-&lt;/app-red-box&gt;
+<app-red-box>
+<app-blue-box></app-blue-box>
+</app-red-box>
 ```
 
 To enable communication between "RedBoxComponent" and "BlueBoxComponent", we must add a **property** (let's call it: "message") to "BlueBoxComponent" that accepts a value sent from a parent (ie: "RedBoxComponent").  From our "property binding" above, this would look something like this (**NOTE**: It is important for the "message" property to be in hard brackets - [ ], otherwise "redMessage" will be interpreted as a string, not a value from a property in the parent Component):
 
 ```html
-&lt;app-blue-box [message]=&quot;redMessage&quot;&gt;&lt;/app-blue-box&gt;
+<app-blue-box [message]="redMessage"></app-blue-box>
 ```
 
 If we want to reference the "message" value inside the BlueBoxComponent, we simply add an "@input" decorator to the "message" property.
@@ -115,13 +115,14 @@ export class BlueBoxComponent implements OnInit {
 }
 ```
 
-Now the "BlueBoxComponent" can accept a string value as a property! To continue this discussion, we will refer to the official Angular documentation for:
+Now the "BlueBoxComponent" can accept a string value as a property! To continue this discussion, we will refer to:
 
-**[Component Interaction](https://angular.io/guide/component-interaction#component-interaction)**
+**[Angular's official documentation on Component Interaction](https://angular.io/guide/component-interaction#component-interaction)**
 
 
 ### Review: Angular Directives
 
+Before we move on to our next topic, it's important that we discuss Angular Directives:
 
-
-
+* [Attribute Directives / Directives Overview](https://angular.io/guide/attribute-directives#attribute-directives)
+* [Structural Directives](https://angular.io/guide/structural-directives#structural-directives)
