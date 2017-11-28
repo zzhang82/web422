@@ -62,19 +62,66 @@ After creating a component/directive by calling its constructor, Angular calls t
 
 **[Angular's official documentation on Lifecycle Hooks](https://angular.io/guide/lifecycle-hooks)**
 
-
 ### Component / Template Data Binding
 
+As we have seen, Angular templates are far from "static" - we can use special syntax to coordinate what users see, with actual component data values.  This is known as "data binding".  The Angular documentation does an excellent job of covering the key concepts here: [Binding syntax: An overview](https://angular.io/guide/template-syntax#binding-syntax-an-overview)
+
+This includes topics such as:
+
+* ["Binding Targets"](https://angular.io/guide/template-syntax#binding-targets) - Syntax that we can use in "templates" 
+* ["One-way in"](https://angular.io/guide/template-syntax#one-way-in) - Describes how property binding "flows in one direction"
+* ["Property binding or interpolation?"](https://angular.io/guide/template-syntax#property-binding-or-interpolation)
 
 ### Component Interaction
+
+Now that we are familiar with the syntax of data binding (specifically property binding), we can look at how to write components that can *read the property values*, effectively allowing communication between parent and child components.
+
+For example, say we used the Angular CLI to create both the "RedBoxComponent" and the "BlueBoxComponent". 
+
+We then decide that "BlueBoxComponent will be a child of the "RedBoxComponent", ie: the "RedBoxComponent" template contains html to render the "BlueBoxComponent", and "BlueBoxComponent" will simply render plain text that is *passed to it* from the parent component - in this case &lt;app-red-box&gt;. This will form a parent-child relationship, with the "Red Box" being the parent:
+
+```html
+&lt;app-red-box&gt;
+&lt;app-blue-box&gt;&lt;/app-blue-box&gt;
+&lt;/app-red-box&gt;
+```
+
+To enable communication between "RedBoxComponent" and "BlueBoxComponent", we must add a **property** (let's call it: "message") to "BlueBoxComponent" that accepts a value sent from a parent (ie: "RedBoxComponent").  From our "property binding" above, this would look something like this (**NOTE**: It is important for the "message" property to be in hard brackets - [ ], otherwise "redMessage" will be interpreted as a string, not a value from a property in the parent Component):
+
+```html
+&lt;app-blue-box [message]=&quot;redMessage&quot;&gt;&lt;/app-blue-box&gt;
+```
+
+If we want to reference the "message" value inside the BlueBoxComponent, we simply add an "@input" decorator to the "message" property.
+
+For example, the blue-box.component.ts file would look like this:
+
+```js
+import { Component, OnInit, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-blue-box',
+  templateUrl: './blue-box.component.html',
+  styleUrls: ['./blue-box.component.css']
+})
+export class BlueBoxComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  @Input() message: string; // make the "message" property available for binding
+}
+```
+
+Now the "BlueBoxComponent" can accept a string value as a property! To continue this discussion, we will refer to the official Angular documentation for:
+
+**[Component Interaction](https://angular.io/guide/component-interaction#component-interaction)**
 
 
 ### Review: Angular Directives
 
 
-#### Attribute Directives
-
-
-#### Structural Directives
 
 
