@@ -133,6 +133,16 @@ Add menu items for each routed content component. Notice that we do NOT use an `
 
 <br>
 
+#### Quick Note: RouterLinkActive Directive
+
+A great feature included in the @angular/router package is the ["RouterLinkActive" Directive](https://angular.io/api/router/RouterLinkActive).  Using this directive, we can specify a class to be added *only when the route is "active"*.  This is extremely useful when writing navigation components, as they typically require a class to be applied when the corresponding route is visible (ie: we wish to highlight the text "Horse" by setting the class "active" on the parent &lt;li&gt;&lt;/li&gt; element:
+
+```html
+<li class="nav-item" routerLinkActive="active">
+  <a class="nav-link" routerLink="/horse">Horse</a>
+</li>
+   
+
 ### Summary
 
 In this document, you learned to adapt the procedure you learned last week - an app with multiple components - to include and enable *routing*. 
