@@ -9,6 +9,8 @@ Before we move on to more advanced topics in Angular, it's important that we rea
 
 For the next few sections, assume that we would like to create and work with two extremely trivial components: "RedBoxComponent" (&lt;app-red-box&gt;&lt;/app-red-box&gt;) and "BlueBoxComponent" (&lt;app-blue-box&gt;&lt;/app-blue-box&gt;).
 
+<br>
+
 ### Review: Creating Components Using the Angular CLI
 
 To add one of our components, ie the "RedBox", we typically use the Angular CLI.  In this case, we wish to create a new component called "RedBox", so the command would be:
@@ -25,6 +27,8 @@ This would create the following 4 files in the src/app directory (Note: it will 
 * red-box.component.ts
 
 Our main component is defined in the TypeScript file "red-box.component.ts" while the .html file provides the "template" for our comopnent and the .css file provides the style for our component (scoped to "app-red-box").  At this point we aren't particulairly concerned with "red-box.component.spec.ts" file.  It's created to help us "unit test" the component (using [Jasmine](https://jasmine.github.io/2.4/introduction.html) / [Karma](https://karma-runner.github.io/1.0/index.html)), however at this point we aren't concerned with testing, so this file can effectively be ignored for the time being.
+
+<br>
 
 ### Structure of an Angular Component
 
@@ -56,11 +60,15 @@ The angular CLI has automatically included some important code:
 
 * A class definition for our "RedBoxComponent" that implements the "OnInit" Lifecycle method (explained below), as well as provides a skeleton for a "constructor" method (used to initialize the fields of the class - optionally using dependant objects passed into the constructor when it's instantiated (see: ["Dependaency Injection"](https://angular.io/guide/dependency-injection) - this will be discussed further when we discuss "services"/"Providers")
 
+<br>
+
 ### Component Lifecycle Hooks
 
 After creating a component/directive by calling its constructor, Angular calls the lifecycle hook methods at specific moments.  For detailed information, we will refer to:
 
 **[Angular's official documentation on Lifecycle Hooks](https://angular.io/guide/lifecycle-hooks)**
+
+<br>
 
 ### Component / Template Data Binding
 
@@ -71,6 +79,8 @@ This includes topics such as:
 * ["Binding Targets"](https://angular.io/guide/template-syntax#binding-targets) - Syntax that we can use in "templates" 
 * ["One-way in"](https://angular.io/guide/template-syntax#one-way-in) - Describes how property binding "flows in one direction"
 * ["Property binding or interpolation?"](https://angular.io/guide/template-syntax#property-binding-or-interpolation)
+
+<br>
 
 ### Component Interaction
 
@@ -119,6 +129,7 @@ Now the "BlueBoxComponent" can accept a string value as a property! To continue 
 
 **[Angular's official documentation on Component Interaction](https://angular.io/guide/component-interaction#component-interaction)**
 
+<br>
 
 ### Review: Angular Directives
 
