@@ -141,7 +141,9 @@ A great feature included in the @angular/router package is the ["RouterLinkActiv
 <li class="nav-item" routerLinkActive="active">
   <a class="nav-link" routerLink="/horse">Horse</a>
 </li>
-   
+```
+
+<br>
 
 ### Summary
 
