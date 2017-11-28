@@ -13,13 +13,13 @@ layout: default
 
 ### Component Data Binding
 
+### Component Lifecycle Methods
 
-### Communicating between component
+### Communicating between components
 
 
 ### Review: Angular Directives
 
-* ...
 
 #### Attribute Directives
 
@@ -27,4 +27,3 @@ layout: default
 #### Structural Directives
 
 
-###
