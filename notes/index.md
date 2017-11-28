@@ -94,5 +94,16 @@ Introduction to Angular Components:<br><br>
 </ul>
 </td>
 </tr>
+<tr>
+<td><a href="/web422/notes/week08">8 - Notes</a></td>
+<td>
+Introduction to Angular Routing / Componts cont'd:<br><br>
+<ul>
+<li>Additional details surrounding Components & Directives</li>
+<li>Introduction to Angular Routing Concepts</li>
+<li>Code / Walkthrough an application using Routing</li>
+</ul>
+</td>
+</tr>
 </tbody>
 </table>
