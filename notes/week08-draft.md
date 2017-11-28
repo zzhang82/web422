@@ -1,18 +1,26 @@
 ---
-title: WEB422 Week 8
+title: WEB422 Week 7
 layout: default
 ---
 
 ## WEB422 Week 8 Notes
 
-The theme for this week is to work with Angular (components/routing). This is one of a small number of important Angular topics that must be mastered early in your learning process.
+Recall, the theme for the *remainder of the course* is to cover the Angular platform.  
 
-Remember to frequently use the [learning resources](/web422/resources).
+To get started, we will do a short review of Angular Components from last week,including details surrounding data template structure, binding and directives.  We will then focus on showing how Components interact and share information, as well as go into further information about Component Lifecycle hooks.
 
-**Topics:**
+Next, we will turn our attention to Routing in Angular, specifically: 
 
-Routing, deep dive, lots of coverage  
-Planning for and implementing a multi-"page" web site/app  
-Handling static-like resources  
+* Examining the supporting documentation on Angular Routing
+* How to configure / use Routing
+* Adding Routing to an existing application
+* Planning Components / Routes
+* Configuring Special components / Routes (ie: "Page not Found").
 
-<br>
+The detailed notes for the above topics can be found in:
+
+* ["Angular Components Continued"](angular-components-contd): (TODO)
+
+* ["Angular Routing Introduction"](angular-routing-intro): (TODO)
+
+
