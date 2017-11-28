@@ -15,7 +15,7 @@ layout: default
 
 ### Component Lifecycle Methods
 
-### Communicating between components
+### Component Interaction
 
 
 ### Review: Angular Directives
