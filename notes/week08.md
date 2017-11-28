@@ -36,5 +36,3 @@ The detailed notes for the above topics can be found in:
   * [The official Angular.io documentation](https://angular.io/docs) - ie: the [RouterOutlet documentation](https://angular.io/api/router/RouterOutlet) / [RouterLink documentation](https://angular.io/api/router/RouterLink)
   * [Adding Routing to an existing app](angular-routing-existing-app)
   * [The "getting started" example](angular-routing-example)
-
-
