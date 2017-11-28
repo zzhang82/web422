@@ -10,8 +10,7 @@ layout: default
 
 ### Structure of an Angular Component
 
-
-### Component Data Binding
+### Component / Template Data Binding
 
 ### Component Lifecycle Methods
 
