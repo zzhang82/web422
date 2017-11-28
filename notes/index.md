@@ -101,7 +101,7 @@ Introduction to Angular Routing / Componts cont'd:<br><br>
 <ul>
 <li>Additional details surrounding Components & Directives</li>
 <li>Introduction to Angular Routing Concepts</li>
-<li>Code / Walkthrough an application using Routing</li>
+<li>Code / Walkthrough of an application using Routing</li>
 </ul>
 </td>
 </tr>
