@@ -164,7 +164,7 @@ This task will enable you to clearly and separately *list or document* the compo
 
 Let's assume that we will continue with the example from last week's components coverage. In other words, we're creating an "animals" app, with many components. Here's an example of a sketch, showing an example UI and interaction flow, for a couple of animals:
 
-![Animals app UI and interaction flow](../media/angular-routing-v1-nav-example.png)
+![Animals app UI and interaction flow](../media/angular-routing-v1-nav-example2.png)
 
 <br>
 
