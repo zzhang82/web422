@@ -1,0 +1,48 @@
+---
+title: Angular services extra content
+layout: default
+---
+
+## Angular services, extra content
+
+> This document has links that may be useful  
+> This notice will be removed when the edits are complete.  
+
+<br>
+
+### Links
+
+ng-book.com  
+[Tutorial: Building Redux in TypeScript with Angular 4 (Angular 2+)](http://blog.ng-book.com/introduction-to-redux-with-typescript-and-angular-2/)
+
+Rangle.io  
+[Observables](https://angular-2-training-book.rangle.io/handout/observables/)
+
+Telerik  
+[An Introduction to Observables for Angular Developers](https://developer.telerik.com/topics/web-development/introduction-observables-angular-developers/)
+
+Kohezion  
+[Online database software](https://www.kohezion.com)
+
+Codeburst.io  
+
+[The Front-End Checklist](https://codeburst.io/the-front-end-checklist-8b2292fdda44)
+
+[A gentle introduction to Ajax](https://codeburst.io/a-gentle-introduction-to-ajax-1e88e3db4e79)
+
+macOS Terminal history  
+[How to](https://www.macobserver.com/tmo/article/mac-terminal-viewing-your-command-history)
+
+Ayush Gupta  
+[HTML Web Component](https://ayushgp.github.io/html-web-components-using-vanilla-js/)
+
+CSS-Tricks  
+
+[The art of comments](https://css-tricks.com/the-art-of-comments/)
+
+[The output element](https://css-tricks.com/the-output-element/)
+
+SitePoint  
+[Getting started with Angular and user authentication](https://www.sitepoint.com/angular-app-sign-in/)
+
+<br>
