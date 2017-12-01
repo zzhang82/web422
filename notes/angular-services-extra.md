@@ -45,4 +45,13 @@ CSS-Tricks
 SitePoint  
 [Getting started with Angular and user authentication](https://www.sitepoint.com/angular-app-sign-in/)
 
+Medium  
+
+[The Cost of JavaScript](https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e)
+
+[Front end cheat sheets collection](https://medium.freecodecamp.org/modern-frontend-hacking-cheatsheets-df9c2566c72a)
+
+What? Web API from a Google Spreadsheet?  
+[Google apps script and web API](https://x-team.com/blog/google-apps-script-rest/)
+
 <br>
