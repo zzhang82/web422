@@ -8,7 +8,7 @@ layout: default
 > This document is still being edited.  
 > This notice will be removed when the edits are complete.  
 
-An Angular *service* is a code asset that performs a task. It does not have a user interface. Often its main task will be to perform data service operations (e.g. fetch, add, edit, transform). 
+An Angular *service* is a code asset that performs a task. It does not have a user interface. Often its main task is to perform data service operations (e.g. fetch, add, edit, transform). 
 
 A service can be used by *any* of your app's components. Its use promotes a layered system architecture, also known as a [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns). Enables you to write the code once, and use it in many places. 
 
@@ -32,7 +32,7 @@ In recent weeks, you learned that a *component* is a code asset that manages an 
 
 You also learned that *routing* enables navigation in an app. The user interface is updated, in whole or in part, as the result of a routing action. 
 
-The code examples that supported these topics used static content in the components' user interface templates. This was done to keep the focus on the main topics, components, and then routing. 
+The code examples that supported these topics used static content in the components' user interface templates. This was done to keep the focus on the main topics, *components*, and then *routing*. 
 
 This week, we will get data involved. The static content in component templates will be replaced by data that will be fetched from somewhere, and then rendered. Almost always, the data store will be external to the app, and will typically be a web service, like our Teams API. 
 
@@ -45,8 +45,7 @@ As introduced above, a *service* will be used to centralize the task of working 
 * Data binding in component templates
 * Structural directives, *ngFor and *ngIf 
 * Routing parameters
-
-( more to come )
+* Error handling
 
 <br>
 
@@ -58,38 +57,55 @@ As a result, there are several documentation sets that will help us get started,
 
 In the official [Angular.io documentation](https://angular.io/docs) set, there are two main sources of information on services. 
 
-> To be edited.  
-
 One is the **TUTORIAL > Services** area. To preview its contents:
 * It continues with the *Tour of Heroes* example
+* The basics are covered
+* Data comes from within the app itself (not from outside)
+* Introduces the notion of an asynchronous call to fetch data
+* Does show how to add a second service to an app
 
-In summary, the content is useful (our opinion coming soon). 
+In summary, the content is minimally useful to us. Its learning pathway is not as clear as we need.
 
 A companion is the **TUTORIAL > HTTP** area. To preview its contents:
-* (coming soon)
+* Also continues with the *Tour of Heroes* example 
+* Comprehensive coverage, maybe too much
+* Shows a simulated data server; an in-memory server
+* Introduces error-handling
+* And two-way data flow (updates back to the web service)
+
+In summary, some of this content is useful. The info nuggets are dispersed however. 
 
 Another source of information is the **FUNDAMENTALS > HttpClient** area. To preview its contents:
-* (coming soon)
+* Deep dive on HttpClient 
+* Covers many advanced topics
 
-In summary, some of this content is useful (our opinion coming soon). 
+In summary, some of this content will be useful in the future. 
+
+The community has some quality documentation too. A technology that comes from the community is Observables, which is part of the Reactive Extensions project (RxJS). Some links:
+
+[Reactive Extensions project home](http://reactivex.io/rxjs/)
+
+
+
+As a wrap-up, rely on these course notes to guide your learning path, and refer or link you out to other documentation sets. Following that path will enable you to make better use, in the future, of the supporting documentation introduced in this section. 
 
 <br>
 
 ### Adding a service to an app
 
-We can use the Angular CLI to add a service. In the example below, a service named "DataService" is added to the app:
+We can use the Angular CLI to add a service. In the example below, a service named "DataManager" is added to the app:
 
-`ng g s DataService --module=app --spec false`
+`ng g s DataManager --module=app --spec false`
 
 As you have seen when creating components, a CamelCase name is transformed into lower case with dash word separators, when it generates the source code files. 
 
-A new source code file is created, named `data-service.service.ts`. Its contents:
+A new source code file is created, named `data-manager.service.ts`. Its contents:
 
 ```js
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class DataServiceService {
+export class DataManagerService {
 
   constructor() { }
 
@@ -98,10 +114,13 @@ export class DataServiceService {
 
 The `@Injectable()` decorator indicates that this service is intended to be "injected" into another component or service at runtime. We'll have more to day about "injection" soon. 
 
-In the class code, we will add members: Properties to hold state, and methods to perform tasks. 
+In the class code, we will add members: Properties to hold state information, and functions to perform tasks. 
 
+The Angular CLI "generate service" command also updated the app module (`app.module.ts`) source code, in two related and important ways:
+1. A new `import` statement near the top
+2. A declaration in the `providers` array of the `@NgModule` decorator
 
-> Edits   
+These updates enable the new service to be available to *every* component in the app. 
 
 <br>
 
@@ -125,20 +144,20 @@ In the class code, we will add members: Properties to hold state, and methods to
 
 Above, you were introduced to the `@Injectable` decorator, which indicates that a service is intended to be "injected" into another component or service at runtime. 
 
-> Being edited...
+> Still being edited...
 
 Injector - Angular piece (not sure what word to use, but I'm pretty sure that it is "module") that maintains a container of service instances that it has previously created. A service is created when it is accessed for the first time.
 
 During compilation, Angular looks at constructor types. And "providers", which are declarations. Together, those are the services that the injector maintains.
 
-The idea behind dependency injection is very simple. You have a component that depends on a service. You do not create that service yourself. Instead, you request one in the constructor, and the framework will provide you one. 
+The idea behind dependency injection is very simple. You have a component that depends on a service. In the component's code, you do not create that service yourself. Instead, you request one in the constructor (as a parameter), and the framework will provide you one. 
 
-(esoteric? abstract? explain better? By doing so you can depend on interfaces rather than concrete types. This leads to more decoupled code, which enables testability, and other great things.
+(esoteric? abstract? explain better?) By doing so you can depend on interfaces rather than concrete types. This leads to more decoupled code, which enables testability, and other great things.
 
 How is a dependency injected? Into the component's constructor. 
 
 So, I think this is how it goes:
-1. Create an interface
+1. Create/define an interface
 2. Create a service class that implements the interface
 3. In the component constructor, specify the interface as the parameter type
 
@@ -148,17 +167,56 @@ So, I think this is how it goes:
 
 ### HttpClient and asynchrony
 
+Enable HTTP services
+
+HttpClient is Angular's mechanism for communicating with a remote server over HTTP.
+
+To make HttpClient available everywhere in the app,
+
+open the root AppModule,  
+import the HttpClientModule symbol from @angular/common/http,  
+add it to the @NgModule.imports array.
+
+HttpClient.get() returns an observable
+
 ( more to come )
 
 <br>
 
 ### RxJS
 
+Already part of an Angular project - we don't have to go fetch it or add it in
+
+Observable is one of the key classes in the RxJS library.
+
+In a later tutorial on HTTP, you'll learn that Angular's HttpClient methods return RxJS Observables. In this tutorial, you'll simulate getting data from the server with the RxJS of() function.
+
 ( more to come )
 
 <br>
 
 ### Observable
+
+[Learn about Observables](http://reactivex.io/rxjs/manual/overview.html)
+
+Observable.subscribe() is the critical difference.
+
+The previous version assigns an array of heroes to the component's heroes property. The assignment occurs synchronously, as if the server could return heroes instantly or the browser could freeze the UI while it waited for the server's response.
+
+That won't work when the HeroService is actually making requests of a remote server.
+
+The new version waits for the Observable to emit the array of heroes— which could happen now or several minutes from now. Then subscribe passes the emitted array to the callback, which sets the component's heroes property.
+
+This asynchronous approach will work when the HeroService requests heroes from the server.
+
+The callback is the parameter in the `subscribe()` function. It's an arrow function.
+
+```js
+getHeroes(): void {
+  this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
+}
+```
 
 ( more to come )
 
@@ -168,7 +226,7 @@ So, I think this is how it goes:
 
 > Some from Victor Savkin, The Core Concepts of Angular 2
 
-A component has input and output properties, which can be defined in the component decorator or using property decorators.
+A component has input and output properties, which can be defined in the component decorator or by using property decorators.
 
 Data flows into a component via input properties. Data flows out of a component via output properties.
 
@@ -190,11 +248,43 @@ You can set input properties using property bindings, through square brackets. Y
 
 ### Structural directives, *ngFor and *ngIf 
 
+Now useful, because we have data  
+
 ( more to come )
 
 <br>
 
 ### Routing parameters
+
+Now useful, because we can see master-detail  
+
+Most web APIs support a get by id request in the form api/hero/:id (such as api/hero/11). Add a HeroService.getHero() method to make that request:
+
+```js
+/** GET hero by id. Will 404 if id not found */
+getHero(id: number): Observable<Hero> {
+  const url = `${this.heroesUrl}/${id}`;
+  return this.http.get<Hero>(url).pipe(
+    tap(_ => this.log(`fetched hero id=${id}`)),
+    catchError(this.handleError<Hero>(`getHero id=${id}`))
+  );
+}
+```
+
+There are three significant differences from getHeroes().
+
+it constructs a request URL with the desired hero's id.
+the server should respond with a single hero rather than an array of heroes.
+therefore, getHero returns an Observable<Hero> ("an observable of Hero objects") rather than an observable of hero arrays .
+
+( more to come )
+
+<br>
+
+### Error handling
+
+Now useful, because we can see master-detail, and a specific fetch may fail  
+Prepares us for other errors in the future  
 
 ( more to come )
 
