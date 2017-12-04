@@ -63,7 +63,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DataManagerService {
 
-  // Properties
+  // Fields
 
   private teachers: string[] = [];
   
@@ -160,10 +160,157 @@ Now we can improve its appearance, by rendering *all* names in the teacher array
 ```
 {% endraw %}
 
+> The use of the `teachers` symbol is meaningful and important:  
+> It *must* match a symbol name in the component class.  
+> (It does - it matches the `teachers` property.)
+
 It should show this:
 
 ![One name](../media/angular-services-render2.png)
 
-( more to come )
+<br>
+
+#### Do this work again, in another component
+
+Let's do this work again, in another component, just to get some more practice. And to show that many components can use the same service.
+
+Which component? It does not matter. Here/below, we will modify the "guide" (sidebar) component. 
+
+Open the component class (`guide.component.ts`) for editing. Then:
+1. Add an import statement
+2. Add a parameter to the constructor
+3. Add a property to hold the data
+4. Fetch the data upon initialization
+
+Then, modify the HTML template (`guide.component.html`), to render the list of names. The result:
+
+![One name](../media/angular-services-render3.png)
 
 <br>
+
+#### Checkpoint
+
+At this point in time, we have added, configured, and used a service in our app. In multiple components. 
+
+The pattern is predictable:
+1. Create the service
+2. Add functions that deliver data (or otherwise perform data service operations)
+3. In a component, configure it to use a service
+4. Render whatever data you need in your component's HTML template
+
+<br>
+
+### Working with a web service
+
+In the "getting started" example above, the service created its data in memory, as part of its initialization process. 
+
+We want to add on to this functionality with another typical scenario - using a web service that's external (and outside) this app. In this section, we use a public web API that deliver simple data without fuss or muss. 
+
+When compared to the simple "getting started" example above, there are three new or additional interrelated concepts and techniques that we are interested in:
+1. HttpClient 
+2. RxJS 
+3. Observable
+
+We blend all three together when working with a web service. 
+
+<br>
+
+#### Enable the app to use HTTP
+
+Open the app module (`app.module.ts`) for editing. Near the top, add this import statement:
+
+```js
+import { HttpClientModule } from "@angular/common/http";
+```
+
+Then, add the `HttpClientModule` to the `imports` collection in the `@NgModule` decorator.
+
+This action will enable all services in the app to use HTTP (in other words, work with a web service). 
+
+<br>
+
+#### Visit and browse the web service
+
+A programmer with the moniker *typicode* has published a small-size web service. Open Postman (or JSON Formatter), and look at the results from these URLs:
+
+`http://jsonplaceholder.typicode.com/posts`
+
+`http://jsonplaceholder.typicode.com/users`
+
+`http://jsonplaceholder.typicode.com/comments`
+
+All return an array/collection of data. 
+
+<br>
+
+#### Write view model classes to match the data
+
+Now, write view model classes to match the data returned by the first two URLs above. We must do this when working with web services. Here's how:
+
+Create a new source code file named `vm-typicode.ts`. Its name suggests that this source code file will define "view models for the typicode web service". In it, we will write several classes, which will allow us to work with "posts", "users", and "comments":
+
+```js
+// View models for the typicode.com web service
+
+export class Post {
+    id:         number;
+    userId:     number;
+    title:      string;
+    body:       string;
+}
+
+export class Comment {
+    id:         number;
+    postId:     number;
+    email:      string;
+    name:       string;
+    body:       string;
+}
+
+export class Geo {
+    lat:        number;
+    lng:        number;
+}
+
+export class Address {
+    city:       string;
+    geo:        Geo;
+    street:     string;
+    suite:      string;
+    zipcode:    string;
+}
+
+export class Company {
+    bs:             string;
+    catchPhrase:    string;
+    name:           string;
+}
+
+export class User {
+    address:        Address;
+    company:        Company;
+    email:          string;
+    id:             number;
+    name:           string;
+    phone:          string;
+    username:       string;
+    website:        string;
+}
+```
+
+<br>
+
+#### Prepare the service
+
+Open the service for editing. Add the following near the top:
+
+```js
+import { Observable } from "rxjs/Observable";
+import { of } from "rxjs/observable/of";
+import { catchError, map } from "rxjs/operators";
+
+import { Program, Course } from "./vm-sict";
+```
+
+
+
