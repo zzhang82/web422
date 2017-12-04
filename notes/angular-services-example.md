@@ -217,10 +217,10 @@ We blend all three together when working with a web service.
 Open the app module (`app.module.ts`) for editing. Near the top, add this import statement:
 
 ```js
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 ```
 
-Then, add the `HttpClientModule` to the `imports` collection in the `@NgModule` decorator.
+Then, add the `HttpClient` to the `imports` collection in the `@NgModule` decorator.
 
 This action will enable all services in the app to use HTTP (in other words, work with a web service). 
 
