@@ -138,7 +138,7 @@ Back to the task at hand. At this point, our component has data in the `teachers
 In the panel body div, add another element:
 
 ```html
-<p>First name in the collection: {{ teachers[0] }}</p>
+<p>First name in the collection: \{\{ teachers[0] \}\}</p>
 ```
 
 We're using simple read-only binding syntax, to extract the first element of the `teachers` array/collection. It should show this:
@@ -151,7 +151,7 @@ Now we can improve its appearance, by rendering *all* names in the teacher array
     <p>All teachers:</p>
     <ul>
       <li *ngFor='let t of teachers'>
-        {{ t }}
+        \{\{ t \}\}
       </li>
     </ul>
 ```
