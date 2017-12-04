@@ -39,11 +39,10 @@ This week, we will get data involved. The static content in component templates 
 As introduced above, a *service* will be used to centralize the task of working with the data store. Learning this topic means that we will be learning much about a number of related topics and techniques, including: 
 * Dependency injection
 * HttpClient and [asynchrony](https://en.wikipedia.org/wiki/Asynchrony_(computer_programming))
-* RxJS
-* Observable
+* Observable (from RxJS)
 * Input directive
 * Data binding in component templates
-* Structural directives, *ngFor and *ngIf 
+* Structural directives, `*ngFor` and `*ngIf` 
 * Routing parameters
 * Error handling
 
@@ -85,7 +84,11 @@ The community has some quality documentation too. A technology that comes from t
 
 [Reactive Extensions project home](http://reactivex.io/rxjs/)
 
+[Rangle.io Angular Training Book, Observables topic](https://angular-2-training-book.rangle.io/handout/observables/)
 
+<br>
+
+**In summary...**
 
 As a wrap-up, rely on these course notes to guide your learning path, and refer or link you out to other documentation sets. Following that path will enable you to make better use, in the future, of the supporting documentation introduced in this section. 
 
@@ -126,17 +129,31 @@ These updates enable the new service to be available to *every* component in the
 
 ### Configure and use ( a service )
 
-> Edits  
+The [services example](angular-services-example) document will help you get started and successfully create, configure, and use a service, in detail. In this section, we present an overview. 
+
+The main task to complete is to write a function, in the service, that can be called by a component. The function will do something with data. In our simple getting-started examples, it will *deliver* data to the component. (Then, the component can display/render the data in its user interface.)
+
+Therefore, the simplest implementation of a service is to do the following two tasks:
+1. Declare a private field to hold the data 
+2. Write a public function to deliver the data
+
+Not included in the above is a task that would *materialize* the data. Yes, that is necessary too. In the example, you will see at least two examples; one will create local (in memory) data in the service class constructor, and the other will fetch data from a web service. 
 
 <br>
 
-> Back to comps and routing...  
-> Data flow, binding  
-> Routing with parameters (guards? etc.?)
+#### Use a service
 
-> Maybe discuss a scenario to work through 
+A service can be used by *any component*. There are typically about four coding tasks to be done in the component class, and then another in its HTML template. The four tasks are:
 
-( more to come )
+Import statement: As you would expect, we must `import` the service, to be able to use its members. 
+
+Constructor parameter: We "inject" the service into the constructor, as a parameter. More about this in the next section. 
+
+Property to hold the data: The main goal of our getting-started work is to work with data. Therefore, a component will need one or more properties to hold the results of a call to a web service resource. 
+
+Get the data: In our examples, we will fetch the data when the component is loaded/initialized. Later (but soon), we'll learn how to fetch data as the result of user interaction. 
+
+Incidentally, the HTML template coding task will require us to add/edit elements to display/render the data that was fetched. 
 
 <br>
 
@@ -144,58 +161,85 @@ These updates enable the new service to be available to *every* component in the
 
 Above, you were introduced to the `@Injectable` decorator, which indicates that a service is intended to be "injected" into another component or service at runtime. 
 
-> Still being edited...
+The Angular system is has dependency injectio (DI) built in. It includes an "Injector", which is a module that knows about and maintains a container of *service** instances that it has previously created. A service is created when it is accessed for the first time.
 
-Injector - Angular piece (not sure what word to use, but I'm pretty sure that it is "module") that maintains a container of service instances that it has previously created. A service is created when it is accessed for the first time.
+The idea behind dependency injection is very simple. You have a component that depends on a service. In the component's code, you do not create that service yourself. Instead, you request one in the constructor (as a parameter), and the framework will provide you one. This leads to more decoupled code, which enables testability, and other great things.
 
-During compilation, Angular looks at constructor types. And "providers", which are declarations. Together, those are the services that the injector maintains.
-
-The idea behind dependency injection is very simple. You have a component that depends on a service. In the component's code, you do not create that service yourself. Instead, you request one in the constructor (as a parameter), and the framework will provide you one. 
-
-(esoteric? abstract? explain better?) By doing so you can depend on interfaces rather than concrete types. This leads to more decoupled code, which enables testability, and other great things.
-
-How is a dependency injected? Into the component's constructor. 
-
-So, I think this is how it goes:
-1. Create/define an interface
-2. Create a service class that implements the interface
-3. In the component constructor, specify the interface as the parameter type
-
-( more to come )
+During compilation, Angular looks at constructor types, and "providers", which are declarations. Together, those are the services that the injector maintains.
 
 <br>
 
 ### HttpClient and asynchrony
 
-Enable HTTP services
-
 HttpClient is Angular's mechanism for communicating with a remote server over HTTP.
 
-To make HttpClient available everywhere in the app,
+From the official documentation:
 
-open the root AppModule,  
-import the HttpClientModule symbol from @angular/common/http,  
-add it to the @NgModule.imports array.
+> With `HttpClient`, `@angular/common/http` provides a simplified API for HTTP functionality for use with Angular applications, building on top of the `XMLHttpRequest` interface exposed by browsers. Additional benefits of `HttpClient` include testability support, strong typing of request and response objects, request and response interceptor support, and better error handling.
 
-HttpClient.get() returns an observable
-
-( more to come )
+To make HttpClient available everywhere in the app:
+1. Open the root AppModule for editing,  
+2. Import the HttpClientModule symbol from @angular/common/http,  
+3. Add it to the @NgModule.imports array.
 
 <br>
 
-### RxJS
+#### Asynchronous by nature
+
+As you have learned in the past, communication between systems over HTTP is asynchronous in nature. When we send a request, we just do not know when - or if - we will receive a response. 
+
+In our apps - in our components - the user interface must remain responsive. A call to a web service must not block or freeze the user interface.
+
+All the parts of our solutions will respect this requirement. In fact, you'll learn that the guidance will result in a flexible yet correct approach to handling interaction with a web service. 
+
+#### The get() function
+
+[HttpClient](https://angular.io/api/common/http/HttpClient) includes a `get()` function. Guess what it does?
+
+This is what we will use in our getting-started examples. In its simplest usage, we do two things:
+1. Specify the shape of the data that we're expecting
+2. Specify the URL
+ 
+The `get()` function returns an *observable*, to be explained in detail soon. In essence, it is a stream of asynchronous data. The data could be a single object, or a collection. (That's determined by the web service resource.)
+
+For example, you will work with a function, in the service, that looks like the following. It will request a collection of "users" from a web service:
+
+```js
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.url}/users`)
+  }
+```
+
+In the component, the stream of data - a collection of users - will be transformed into a more familiar array object that we can immediately work with. 
+
+<br>
+
+### Observable (from RxJS)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+> Hey Pat...  
+> I have to pause here at this point.  
+> I will have about an hour tomorrow morning to finish these sections off as best I can.  
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 Already part of an Angular project - we don't have to go fetch it or add it in
 
 Observable is one of the key classes in the RxJS library.
 
 In a later tutorial on HTTP, you'll learn that Angular's HttpClient methods return RxJS Observables. In this tutorial, you'll simulate getting data from the server with the RxJS of() function.
-
-( more to come )
-
-<br>
-
-### Observable
 
 [Learn about Observables](http://reactivex.io/rxjs/manual/overview.html)
 

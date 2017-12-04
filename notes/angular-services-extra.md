@@ -55,3 +55,20 @@ What? Web API from a Google Spreadsheet?
 [Google apps script and web API](https://x-team.com/blog/google-apps-script-rest/)
 
 <br>
+
+### Cut from the draft notes
+
+DI...
+
+(esoteric? abstract? explain better?) By doing so you can depend on interfaces rather than concrete types. 
+
+How is a dependency injected? Into the component's constructor. 
+
+So, I think this is how it goes:
+1. Create/define an interface
+2. Create a service class that implements the interface
+3. In the component constructor, specify the interface as the parameter type
+
+( more to come )
+
+<br>
