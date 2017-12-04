@@ -5,9 +5,6 @@ layout: default
 
 ## Angular services example
 
-> This document is still being edited.  
-> This notice will be removed when the edits are complete.  
-
 In this document, you will learn how to add and use a service in an app. It's the app that was worked on in the past few weeks, as we learned more about components and routing. Here, we will make the changes to support and use services. 
 
 <br>
@@ -166,7 +163,7 @@ Now we can improve its appearance, by rendering *all* names in the teacher array
 
 It should show this:
 
-![One name](../media/angular-services-render2.png)
+![All names](../media/angular-services-render2.png)
 
 <br>
 
@@ -184,7 +181,7 @@ Open the component class (`guide.component.ts`) for editing. Then:
 
 Then, modify the HTML template (`guide.component.html`), to render the list of names. The result:
 
-![One name](../media/angular-services-render3.png)
+![All names](../media/angular-services-render3.png)
 
 <br>
 
@@ -306,11 +303,100 @@ Open the service for editing. Add the following near the top:
 
 ```js
 import { Observable } from "rxjs/Observable";
-import { of } from "rxjs/observable/of";
-import { catchError, map } from "rxjs/operators";
 
-import { Program, Course } from "./vm-sict";
+import { Post, Comment, Geo, Address, Company, User } from "./vm-typicode";
 ```
 
+We need `Observable`, because that's the type of the web service result. 
 
+We need the view model classes to enable the model binder to correctly create the arrays/collections. 
 
+**Suggestion - create a "url" string field**
+
+Suggestion - create a "url" string field, to hold the long and constant part of the URL to the web service. Doing this will make it easy to create a concatenated string that includes the segment we want. 
+
+```js
+  private url = "http://jsonplaceholder.typicode.com";
+```
+
+**Write a function for each web service resource**
+
+Write a function for each web service resource that the app needs. Assume, as noted above, that we want posts, comments, and users.
+
+```js
+  getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.url}/posts`)
+  }
+
+  getComments(): Observable<Comment[]> {
+    return this.http.get<Comment[]>(`${this.url}/comments`)
+  }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.url}/users`)
+  }
+```
+<br>
+
+#### Use the new function(s) in the service
+
+Let's do the work in a different component, "horse". We'll just push the existing content down. Open the horse component class (`horse.component.ts`) for editing. 
+
+Import the service. 
+
+Import the view model class. Let's work with posts, so we need the Post class imported. 
+
+Inject the service into the constructor. 
+
+Create a field to hold the content we want; it will be a Post array/collection field. 
+
+Add a function that will call the service.
+
+We want to call this function when the component is loaded/initialized, so do that in the ngOnInit function code. 
+
+Finally, open the HTML template (`horse.component.html`) for editing. We want to push the existing content down. So, in the panel body, add these elements to the top:
+
+{% raw %}
+```html
+    <p>All posts:</p>
+    <table class="table table-striped">
+      <tr>
+        <th>User ID</th>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+      <tr *ngFor='let p of posts'>
+        <td>{{p.userId}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.body}}</td>
+      </tr>
+    </table>
+    <hr>
+```
+{% endraw %}
+
+The result should look like this:
+
+![Posts](../media/angular-services-render11.png)
+
+<br>
+
+#### Do it again
+
+Do it again, to the lizard component. Show the users resource, and push the existing content down.
+
+The result should look like this:
+
+![Users](../media/angular-services-render12.png)
+
+<br>
+
+### Summary
+
+In this document, you learned an incremental approach to creating and using a service. 
+
+We started by delivering static data that was created in the service. 
+
+Then, we got the more typical web service scenario involved, and learned a reliable and repeatable way to implement a very common scenario. 
+
+<br>
