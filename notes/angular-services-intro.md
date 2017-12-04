@@ -179,7 +179,7 @@ From the official documentation:
 
 To make HttpClient available everywhere in the app:
 1. Open the root AppModule for editing,  
-2. Import the HttpClientModule symbol from @angular/common/http,  
+2. Import the HttpClient symbol from @angular/common/http,  
 3. Add it to the @NgModule.imports array.
 
 <br>
@@ -249,7 +249,7 @@ The previous version assigns an array of heroes to the component's heroes proper
 
 That won't work when the HeroService is actually making requests of a remote server.
 
-The new version waits for the Observable to emit the array of heroes— which could happen now or several minutes from now. Then subscribe passes the emitted array to the callback, which sets the component's heroes property.
+The new version waits for the Observable to emit the array of heroesÂ— which could happen now or several minutes from now. Then subscribe passes the emitted array to the callback, which sets the component's heroes property.
 
 This asynchronous approach will work when the HeroService requests heroes from the server.
 
