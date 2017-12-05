@@ -221,6 +221,75 @@ In the component, the stream of data - a collection of users - will be transform
 
 ### Observable (from RxJS)
 
+**Reactive** E**x**tensions for **J**ava**S**cript ([RxJS](http://reactivex.io/rxjs/)) is a library that comes bundled with the Angular toolchain.
+
+> "RxJS is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code."
+
+This sounds like exactly what we need - something to "make it easier to compose **asynchronous** code".  However, you might be thinking "we have that already, it's called a **Promise**".  This is true, Promises do help us manage asynchronous code; they do so by giving us an opportunity to perform a task / queue up a follow up Promise to be executed upon the completion or failure of the first piece of asynchronous code (Promise).  By writing functions that return promises, we can inforce an order of execution for asychronous code while avoiding the use of callbacks, which tend to lead to ["Callback Hell"](http://callbackhell.com/).
+
+Observables on the other hand, allow us to watch (observe) the changing values of data over time and execute code when these changes occur.  For example:
+
+```js
+import { Observable } from 'rxjs/Observable';
+
+var source = Observable.create(function (observer) {
+  
+  let i = 0;
+  let interval = setInterval(() => {
+
+    observer.next(i++);
+
+    if (i == 5) {
+      clearInterval(interval);
+      observer.complete();
+    }
+
+  }, 1000);
+
+  // Any cleanup logic might go here
+  return function () {
+    console.log('disposed');
+  }
+});
+
+var subscription = source.subscribe(
+  function (x) { console.log('next: %s', x); }, // "next"
+  function (e) { console.log('error: %s', e); }, // "error"
+  function () { console.log('complete'); } // "complete"
+);
+```
+
+In the above code, we create an "Observable" by passing a function that contains operations that we wish to **subscribe** to (ie: "be notified of", or "observe").  In the above case, every 1000 ms, the function increases an internal counter ( **i** ) and notifies any subscribers of the change, by invoking the "next" method. 
+
+Once the function is complete, it notifies any subscribers by invoking the "complete" method.  Lastly, some cleanup code can be execute by providing a single function as a return value for the Observable (as this is guaranteed to be executed last, regardless of what happens in the function)
+
+If we wish to "subscribe" to our Observable method we an simply invoke the "subscribe" method on the Observable and pass in 1 (or more) callback functions to be executed on: **"next"**, **"error"** or **"complete"**.
+
+If we run the code above as-is, we should see the output: 
+
+```
+next: 0
+next: 1
+next: 2
+next: 3
+next: 4
+complete
+disposed
+```
+
+If we encounter an error (say, instead of calling "complete" on i==5, we call `observer.error("encountered an Error");` ), our output would instead look like:
+
+```
+next: 0
+next: 1
+next: 2
+next: 3
+next: 4
+error: encountered an Error
+disposed
+```
+
+
 <br>
 <br>
 <br>
@@ -228,9 +297,6 @@ In the component, the stream of data - a collection of users - will be transform
 <br>
 <br>
 
-> Hey Pat...  
-> I have to pause here at this point.  
-> I will have about an hour tomorrow morning to finish these sections off as best I can.  
 
 <br>
 <br>
