@@ -12,6 +12,7 @@ As we have seen in WEB322, a typical use-case for services is to provide an abst
 Lastly, we will expand upon our Angular Routing techniques and add the notion of Route Parameters (ie: /product/3 and /product-list?page=2)
 
 * ["Angular Service Introduction"](angular-services-intro) - The core notes for this week.
+
 * ["Angular Service Example"](angular-services-example) - A supporting example, explaining the "Code Example" for Week 9 (available on GitHub under "Code Examples")
 
 <br>
