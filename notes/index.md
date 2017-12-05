@@ -105,5 +105,17 @@ Introduction to Angular Routing / Componts cont'd:<br><br>
 </ul>
 </td>
 </tr>
+  <tr>
+<td><a href="/web422/notes/week09">9 - Notes</a></td>
+<td>
+Introduction to Angular Services / Routing cont'd:<br><br>
+<ul>
+<li>Introduction to Angular Services / Architecture (DI)</li>
+<li>HttpClient Module & "Observables" explained</li>
+<li>Updating an existing app to support Services</li>
+  <li>Angular Routing Continued (Routing Parameters Introduced)</li>
+</ul>
+</td>
+</tr>
 </tbody>
 </table>
