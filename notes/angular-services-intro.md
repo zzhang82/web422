@@ -485,5 +485,3 @@ This week, we learned how to add *services* to an app. This feature gets externa
 In our [getting started example](angular-services-example) document, you will learn to enhance last week's routing example, by adding services. 
 
 <br>
-
-test
