@@ -258,7 +258,7 @@ var subscription = source.subscribe(
   function () { console.log('complete'); } // "complete"
 );
 
-// Note: we can also "unsubscribe" to this service at any time using: 
+// Note: we can also "unsubscribe" to this service at any time using:
 // subscription.unsubscribe();
 ```
 
