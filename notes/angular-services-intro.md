@@ -1,9 +1,9 @@
 ---
-title: Angular services introduction
+title: Angular Services Introduction
 layout: default
 ---
 
-## Angular services, introduction
+## Angular Services - Introduction
 
 An Angular *service* is a code asset that performs a task. It does not have a user interface. Often its main task is to perform data service operations (e.g. fetch, add, edit, transform). 
 
@@ -474,42 +474,6 @@ export default class ProductList {
   }
 }
 ```
-
-
-
-Now useful, because we can see master-detail  
-
-Most web APIs support a get by id request in the form api/hero/:id (such as api/hero/11). Add a HeroService.getHero() method to make that request:
-
-```js
-/** GET hero by id. Will 404 if id not found */
-getHero(id: number): Observable<Hero> {
-  const url = `${this.heroesUrl}/${id}`;
-  return this.http.get<Hero>(url).pipe(
-    tap(_ => this.log(`fetched hero id=${id}`)),
-    catchError(this.handleError<Hero>(`getHero id=${id}`))
-  );
-}
-```
-
-There are three significant differences from getHeroes().
-
-it constructs a request URL with the desired hero's id.
-the server should respond with a single hero rather than an array of heroes.
-therefore, getHero returns an Observable<Hero> ("an observable of Hero objects") rather than an observable of hero arrays .
-
-( more to come )
-
-<br>
-
-### Error handling
-
-Now useful, because we can see master-detail, and a specific fetch may fail  
-Prepares us for other errors in the future  
-
-( more to come )
-
-<br>
 
 ### Summary, and next actions
 
