@@ -250,11 +250,6 @@ var source = Observable.create(function (observer) {
     }
 
   }, 1000);
-
-  // Any cleanup logic might go here
-  return function () {
-    console.log('disposed');
-  }
 });
 
 var subscription = source.subscribe(
@@ -262,11 +257,14 @@ var subscription = source.subscribe(
   function (e) { console.log('error: %s', e); }, // "error"
   function () { console.log('complete'); } // "complete"
 );
+
+// Note: we can also "unsubscribe" to this service at any time using: 
+// subscription.unsubscribe();
 ```
 
 In the above code, we create an "Observable" by passing a function that contains operations that we wish to **subscribe** to (ie: "be notified of", or "observe").  In the above case, every 1000 ms, the function increases an internal counter ( **i** ) and notifies any subscribers of the change, by invoking the "next" method. 
 
-Once the function is complete, it notifies any subscribers by invoking the "complete" method.  Lastly, some cleanup code can be executed by providing a single function as a return value for the Observable (as this is guaranteed to be executed last, regardless of what happens in the function)
+Once the function is complete, it notifies any subscribers by invoking the "complete" method.
 
 If we wish to "subscribe" to our Observable method we an simply invoke the "subscribe" method on the Observable and pass in 1 (or more) callback functions to be executed on: **"next"**, **"error"** or **"complete"**.
 
@@ -279,7 +277,6 @@ next: 2
 next: 3
 next: 4
 complete
-disposed
 ```
 
 If we encounter an error (say, instead of calling "complete" on i==5, we call `observer.error("encountered an Error");` ), our output would instead look like:
@@ -291,7 +288,6 @@ next: 2
 next: 3
 next: 4
 error: encountered an Error
-disposed
 ```
 
 In addition to simply "subscribing" to any changes identified using the "next" function, RxJS also provides additional methods to control the flow/output of observed data, ie:
