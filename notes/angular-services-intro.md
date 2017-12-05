@@ -317,7 +317,7 @@ Since we are now working with data more regularly, it makes sense to once again 
 
 Recall, the following [Table outlining Data Binding Syntax](https://angular.io/guide/template-syntax#binding-targets).  Specifically:
 
-* [Property Binding](https://angular.io/guide/template-syntax#property-binding--property-) - Recall: we can use the [\@Input decorator](https://angular.io/guide/template-syntax#declaring-input-and-output-properties) here to allow class properties to be written using "Property Binding" syntax
+* [Property Binding](https://angular.io/guide/template-syntax#property-binding--property-) - Recall: we can use the [@Input decorator](https://angular.io/guide/template-syntax#declaring-input-and-output-properties) here to allow class properties to be written using "Property Binding" syntax
 * [Event Binding](https://angular.io/guide/template-syntax#event-binding---event-)
 * [Attribute Binding](https://angular.io/guide/template-syntax#attribute-binding)
 * [Class Binding](https://angular.io/guide/template-syntax#class-binding)
