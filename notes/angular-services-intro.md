@@ -257,6 +257,9 @@ var subscription = source.subscribe(
   function (e) { console.log('error: %s', e); }, // "error"
   function () { console.log('complete'); } // "complete"
 );
+
+// Note: we can also "unsubscribe" to this service at any time using:
+// subscription.unsubscribe();
 ```
 
 In the above code, we create an "Observable" by passing a function that contains operations that we wish to **subscribe** to (ie: "be notified of", or "observe").  In the above case, every 1000 ms, the function increases an internal counter ( **i** ) and notifies any subscribers of the change, by invoking the "next" method. 
@@ -479,6 +482,6 @@ This week, we learned how to add *services* to an app. This feature gets externa
 
 **Next actions**
 
-In our [getting started example](angular-services-example) document, you will learn to enhance last week's routing example, by adding services.
+In our [getting started example](angular-services-example) document, you will learn to enhance last week's routing example, by adding services. 
 
 <br>
