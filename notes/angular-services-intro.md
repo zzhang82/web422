@@ -266,7 +266,7 @@ var subscription = source.subscribe(
 
 In the above code, we create an "Observable" by passing a function that contains operations that we wish to **subscribe** to (ie: "be notified of", or "observe").  In the above case, every 1000 ms, the function increases an internal counter ( **i** ) and notifies any subscribers of the change, by invoking the "next" method. 
 
-Once the function is complete, it notifies any subscribers by invoking the "complete" method.  Lastly, some cleanup code can be execute by providing a single function as a return value for the Observable (as this is guaranteed to be executed last, regardless of what happens in the function)
+Once the function is complete, it notifies any subscribers by invoking the "complete" method.  Lastly, some cleanup code can be executed by providing a single function as a return value for the Observable (as this is guaranteed to be executed last, regardless of what happens in the function)
 
 If we wish to "subscribe" to our Observable method we an simply invoke the "subscribe" method on the Observable and pass in 1 (or more) callback functions to be executed on: **"next"**, **"error"** or **"complete"**.
 
