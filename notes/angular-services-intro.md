@@ -205,14 +205,19 @@ This is what we will use in our getting-started examples. In its simplest usage,
 1. Specify the shape of the data that we're expecting
 2. Specify the URL
  
-The `get()` function returns an *observable*, to be explained in detail soon. In essence, it is a stream of asynchronous data. The data could be a single object, or a collection. (That's determined by the web service resource.)
+The `get()` function returns an *Observable*, to be explained in detail soon. In essence, it is a stream of asynchronous data. The data could be a single object, or a collection. (That's determined by the web service resource.)
 
-For example, you will work with a function, in the service, that looks like the following. It will request a collection of "users" from a web service:
+For example, you will work with a function, in a service (ie: "UserService"), that looks like the following. It will request a collection of "users" from a web service:
 
 ```js
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.url}/users`)
   }
+```
+We can then "subscribe" to the result by using the code (assuming we have injected the "UserService" as "userService"):
+
+```js
+this.userService.getUsers().subscribe(users => this.users = users);
 ```
 
 In the component, the stream of data - a collection of users - will be transformed into a more familiar array object that we can immediately work with. 
@@ -221,7 +226,7 @@ In the component, the stream of data - a collection of users - will be transform
 
 ### Observable (from RxJS)
 
-**Reactive** E**x**tensions for **J**ava**S**cript ([RxJS](http://reactivex.io/rxjs/)) is a library that comes bundled with the Angular toolchain.
+**R**eactive E**x**tensions for **J**ava**S**cript ([RxJS](http://reactivex.io/rxjs/)) is a library that comes bundled with the Angular toolchain.
 
 > "RxJS is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code."
 
@@ -289,87 +294,48 @@ error: encountered an Error
 disposed
 ```
 
+In addition to simply "subscribing" to any changes identified using the "next" function, RxJS also provides additional methods to control the flow/output of observed data, ie:
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+* [take()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-take)
+* [filter()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-filter)
+* [delay()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-delay)
+* [distinct()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-distinct)
+
+For a full reference of all methods available on the Observable object, see: [the official documentation here](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html).
+
+### Creating a Service to work with Data
+
+At this point, it's useful to visit the [Week 9 example](angular-services-example), as it reinforces the ideas introduced above, ie:
+
+* Correctly creating a service using the Angular CLI
+* Working with the HttpClient Module in our services / application
+* Creating classes to define the structure of the returned data (and using them to define "Observable" service methods)
+* Injecting the service into our Components using their constructor methods
+* Subscribing to (injected) Observable service methods and updating Component data
+* Rendering Component data in its template
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+### Review: Structural directives: \*ngFor and \*ngIf & Data binding
 
+Since we are now working with data more regularly, it makes sense to once again quickly touch (one-way) data binding syntax as well as the extremely useful **\*ngFor** and **\*ngIf** structural directives.  
 
-Already part of an Angular project - we don't have to go fetch it or add it in
+Recall, the following [Table outlining Data Binding Syntax](https://angular.io/guide/template-syntax#binding-targets).  Specifically:
 
-Observable is one of the key classes in the RxJS library.
+* [Property Binding](https://angular.io/guide/template-syntax#property-binding--property-) - Recall: we can use the [\@Input decorator](https://angular.io/guide/template-syntax#declaring-input-and-output-properties) here to allow class properties to be written using "Property Binding" syntax
+* [Event Binding](https://angular.io/guide/template-syntax#event-binding---event-)
+* [Attribute Binding](https://angular.io/guide/template-syntax#attribute-binding)
+* [Class Binding](https://angular.io/guide/template-syntax#class-binding)
+* [Style Binding](https://angular.io/guide/template-syntax#style-binding)
 
-In a later tutorial on HTTP, you'll learn that Angular's HttpClient methods return RxJS Observables. In this tutorial, you'll simulate getting data from the server with the RxJS of() function.
+Additionally, the information for the \*ngFor & \*ngIf structural directives can be found at:
 
-[Learn about Observables](http://reactivex.io/rxjs/manual/overview.html)
+* [\*ngFor](https://angular.io/guide/template-syntax#ngfor-microsyntax)
+* [\*ngIf](https://angular.io/guide/template-syntax#ngif)
 
-Observable.subscribe() is the critical difference.
-
-The previous version assigns an array of heroes to the component's heroes property. The assignment occurs synchronously, as if the server could return heroes instantly or the browser could freeze the UI while it waited for the server's response.
-
-That won't work when the HeroService is actually making requests of a remote server.
-
-The new version waits for the Observable to emit the array of heroes which could happen now or several minutes from now. Then subscribe passes the emitted array to the callback, which sets the component's heroes property.
-
-This asynchronous approach will work when the HeroService requests heroes from the server.
-
-The callback is the parameter in the `subscribe()` function. It's an arrow function.
-
-```js
-getHeroes(): void {
-  this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
-}
-```
-
-( more to come )
-
-<br>
-
-### Input directive
-
-> Some from Victor Savkin, The Core Concepts of Angular 2
-
-A component has input and output properties, which can be defined in the component decorator or by using property decorators.
-
-Data flows into a component via input properties. Data flows out of a component via output properties.
-
-Input and output properties are the public API of a component. You use them when you instantiate a component in your application.
-
-? 
-
-You can set input properties using property bindings, through square brackets. You can subscribe to output properties using event bindings, through parenthesis.
-
-( more to come )
-
-<br>
-
-### Data binding in component templates
-
-( more to come )
-
-<br>
-
-### Structural directives, *ngFor and *ngIf 
-
-Now useful, because we have data  
-
-( more to come )
-
-<br>
 
 ### Routing parameters
+
+Last week, we introduced a way to define simple routes (ie: display a specific Component when a route is matched / no route is matched, or redirect to a separate route altogether)  However, as we learned in WEB322, there are ways to capture variables within our routes, ie
 
 Now useful, because we can see master-detail  
 
