@@ -358,13 +358,14 @@ Note `:id` in the path of the `product-details` route, which places the paramete
 ##### Linking to Routes with Parameters
 
 In the ProductList component you could display a list of products. Each product would have a link to the product-details route, passing the ID of the product:
-
-```js
+{% raw %}
+```html
 <a *ngFor="let product of products"
   [routerLink]="['/product-details', product.id]">
   {{ product.name }}
 </a>
 ```
+{% endraw %}
 
 Note that the routerLink directive passes an array which specifies the path and the route parameter. Alternatively we could navigate to the route programmatically:
 
@@ -427,7 +428,7 @@ The key difference between query parameters and route parameters is that route p
 
 Use the **queryParams** directive along with **routerLink** to pass query parameters. For example:
 
-```js
+```html
 <a [routerLink]="['product-list']" [queryParams]="{ page: 99 }">Go to Page 99</a>
 ```
 
