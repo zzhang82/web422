@@ -333,9 +333,149 @@ Additionally, the information for the \*ngFor & \*ngIf structural directives can
 * [\*ngIf](https://angular.io/guide/template-syntax#ngif)
 
 
-### Routing parameters
+### Routing Continued (Introducing "Parameters")
 
-Last week, we introduced a way to define simple routes (ie: display a specific Component when a route is matched / no route is matched, or redirect to a separate route altogether)  However, as we learned in WEB322, there are ways to capture variables within our routes, ie
+Last week, we introduced a way to define simple routes (ie: display a specific Component when a route is matched / no route is matched, or redirect to a separate route altogether)  However, as we learned in WEB322, there are ways to capture variables within our routes, ie **Route** Parameters & **Query** Parameters.  
+
+The following explanations are from the excellent Rangle.io documentation for [Route Parameters](https://angular-2-training-book.rangle.io/handout/routing/routeparams.html) and [Query Parameters](https://angular-2-training-book.rangle.io/handout/routing/query_params.html) 
+
+#### Route parameters
+
+##### Declaring Route Parameters
+
+The route for the component that displays the details for a specific product would need a route parameter for the ID of that product. We could implement this using the following Routes:
+
+```js
+export const routes: Routes = [
+  { path: '', redirectTo: 'product-list', pathMatch: 'full' },
+  { path: 'product-list', component: ProductList },
+  { path: 'product-details/:id', component: ProductDetails }
+];
+```
+
+Note `:id` in the path of the `product-details` route, which places the parameter in the path. For example, to see the product details page for product with ID 5, you must use the following URL: `localhost:4200/product-details/5`
+
+##### Linking to Routes with Parameters
+
+In the ProductList component you could display a list of products. Each product would have a link to the product-details route, passing the ID of the product:
+
+```js
+<a *ngFor="let product of products"
+  [routerLink]="['/product-details', product.id]">
+  {{ product.name }}
+</a>
+```
+
+Note that the routerLink directive passes an array which specifies the path and the route parameter. Alternatively we could navigate to the route programmatically:
+
+```js
+goToProductDetails(id) {
+  this.router.navigate(['/product-details', id]);
+}
+```
+
+##### Reading Route Parameters
+
+The ProductDetails component must read the parameter, then load the product based on the ID given in the parameter.
+The ActivatedRoute service provides a params Observable which we can subscribe to to get the route parameters (see Observables).
+
+```js
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'product-details',
+  template: `
+    <div>
+      Showing product details for product: {{id}}
+    </div>
+  `,
+})
+export class LoanDetailsPage implements OnInit, OnDestroy {
+  id: number;
+  private sub: any;
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+       this.id = +params['id']; // (+) converts string 'id' to a number
+
+       // In a real app: dispatch action to load the details here.
+    });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+}
+```
+
+The reason that the **params** property on **ActivatedRoute** is an Observable is that the router may not recreate the component when navigating to the same component. In this case the parameter may change without the component being recreated.
+
+#### Passing Optional Parameters
+
+Query parameters allow you to pass optional parameters to a route such as pagination information.
+For example, on a route with a paginated list, the URL might look like the following to indicate that we've loaded the second page:
+
+```
+localhost:3000/product-list?page=2
+```
+The key difference between query parameters and route parameters is that route parameters are essential to determining route, whereas query parameters are optional.
+
+##### Passing Query Parameters
+
+Use the **queryParams** directive along with **routerLink** to pass query parameters. For example:
+
+```js
+<a [routerLink]="['product-list']" [queryParams]="{ page: 99 }">Go to Page 99</a>
+```
+
+Alternatively, we can navigate programmatically using the Router service:
+
+```js
+goToPage(pageNum) {
+    this.router.navigate(['/product-list'], { queryParams: { page: pageNum } });
+}
+```
+
+##### Reading Query Parameters
+
+Similar to reading route parameters, the Router service returns an Observable we can subscribe to to read the query parameters:
+
+```js
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+@Component({
+  selector: 'product-list',
+  template: `<!-- Show product list -->`
+})
+export default class ProductList {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router) {}
+
+  ngOnInit() {
+    this.sub = this.route
+      .queryParams
+      .subscribe(params => {
+        // Defaults to 0 if no query param provided.
+        this.page = +params['page'] || 0;
+      });
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  nextPage() {
+    this.router.navigate(['product-list'], { queryParams: { page: this.page + 1 } });
+  }
+}
+```
+
+
 
 Now useful, because we can see master-detail  
 
