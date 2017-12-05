@@ -5,9 +5,6 @@ layout: default
 
 ## Angular services, introduction
 
-> This document is still being edited.  
-> This notice will be removed when the edits are complete.  
-
 An Angular *service* is a code asset that performs a task. It does not have a user interface. Often its main task is to perform data service operations (e.g. fetch, add, edit, transform). 
 
 A service can be used by *any* of your app's components. Its use promotes a layered system architecture, also known as a [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns). Enables you to write the code once, and use it in many places. 
@@ -115,7 +112,7 @@ export class DataManagerService {
 }
 ```
 
-The `@Injectable()` decorator indicates that this service is intended to be "injected" into another component or service at runtime. We'll have more to day about "injection" soon. 
+The `@Injectable()` decorator indicates that this service is intended to be "injected" into another component or service at runtime. We'll have more to say about "injection" soon. 
 
 In the class code, we will add members: Properties to hold state information, and functions to perform tasks. 
 
@@ -137,7 +134,7 @@ Therefore, the simplest implementation of a service is to do the following two t
 1. Declare a private field to hold the data 
 2. Write a public function to deliver the data
 
-Not included in the above is a task that would *materialize* the data. Yes, that is necessary too. In the example, you will see at least two examples; one will create local (in memory) data in the service class constructor, and the other will fetch data from a web service. 
+Not included in the above is a task that would *materialize* the data. Yes, that is necessary too. In the week 9 example (link above), you will see at least two examples; one will create local (in memory) data in the service class constructor, and the other will fetch data from a web service. 
 
 <br>
 
@@ -145,13 +142,13 @@ Not included in the above is a task that would *materialize* the data. Yes, that
 
 A service can be used by *any component*. There are typically about four coding tasks to be done in the component class, and then another in its HTML template. The four tasks are:
 
-Import statement: As you would expect, we must `import` the service, to be able to use its members. 
+* **Import statement**: As you would expect, we must `import` the service, to be able to use its members. 
 
-Constructor parameter: We "inject" the service into the constructor, as a parameter. More about this in the next section. 
+* **Constructor parameter**: We "inject" the service into the constructor, as a parameter. More about this in the next section. 
 
-Property to hold the data: The main goal of our getting-started work is to work with data. Therefore, a component will need one or more properties to hold the results of a call to a web service resource. 
+* **Property to hold the data**: The main goal of our getting-started work is to work with data. Therefore, a component will need one or more properties to hold the results of a call to a web service resource. 
 
-Get the data: In our examples, we will fetch the data when the component is loaded/initialized. Later (but soon), we'll learn how to fetch data as the result of user interaction. 
+* **Get the data**: In our examples, we will fetch the data when the component is loaded/initialized. Later (but soon), we'll learn how to fetch data as the result of user interaction. 
 
 Incidentally, the HTML template coding task will require us to add/edit elements to display/render the data that was fetched. 
 
@@ -161,7 +158,7 @@ Incidentally, the HTML template coding task will require us to add/edit elements
 
 Above, you were introduced to the `@Injectable` decorator, which indicates that a service is intended to be "injected" into another component or service at runtime. 
 
-The Angular system is has dependency injectio (DI) built in. It includes an "Injector", which is a module that knows about and maintains a container of *service** instances that it has previously created. A service is created when it is accessed for the first time.
+The Angular system is has dependency injection (DI) built in. It includes an "Injector", which is a module that knows about and maintains a container of **service** instances that it has previously created. A service is created when it is accessed for the first time.
 
 The idea behind dependency injection is very simple. You have a component that depends on a service. In the component's code, you do not create that service yourself. Instead, you request one in the constructor (as a parameter), and the framework will provide you one. This leads to more decoupled code, which enables testability, and other great things.
 
@@ -186,7 +183,7 @@ To make HttpClient available everywhere in the app:
 
 **Important Note:**
 
-When trying to use HttpClient anywhere else in your application (ie: a service.ts file), be sure to import HttpClient (Not HttpClientModule), ie:
+When trying to use **HttpClient** anywhere else in your application (ie: a service.ts file), be sure to *import* ***HttpClient*** (not HttpClientModule), ie:
 
 ```js
 import { HttpClient } from "@angular/common/http";
