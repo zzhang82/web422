@@ -224,6 +224,14 @@ Then, add the `HttpClientModule` to the `imports` collection in the `@NgModule` 
 
 This action will enable all services in the app to use HTTP (in other words, work with a web service). 
 
+**Important Note:**
+
+When trying to use **HttpClient** anywhere else in your application (ie: a service.ts file), be sure to *import* ***HttpClient*** (not HttpClientModule), ie:
+
+```js
+import { HttpClient } from "@angular/common/http";
+```
+
 <br>
 
 #### Visit and browse the web service
