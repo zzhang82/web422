@@ -178,11 +178,19 @@ From the official documentation:
 > With `HttpClient`, `@angular/common/http` provides a simplified API for HTTP functionality for use with Angular applications, building on top of the `XMLHttpRequest` interface exposed by browsers. Additional benefits of `HttpClient` include testability support, strong typing of request and response objects, request and response interceptor support, and better error handling.
 
 To make HttpClient available everywhere in the app:
-1. Open the root AppModule for editing,  
-2. Import the HttpClient symbol from @angular/common/http,  
-3. Add it to the @NgModule.imports array.
+1. Open the root AppModule for editing (app.module.ts),  
+2. Import the **HttpClienModule** symbol from @angular/common/http,  
+3. Add it to the **@NgModule.imports** array.
 
 <br>
+
+**Important Note:**
+
+When trying to use HttpClient anywhere else in your application (ie: a service.ts file), be sure to import HttpClient (Not HttpClientModule), ie:
+
+```js
+import { HttpClient } from "@angular/common/http";
+```
 
 #### Asynchronous by nature
 
