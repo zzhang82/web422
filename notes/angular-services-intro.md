@@ -297,6 +297,15 @@ In addition to simply "subscribing" to any changes identified using the "next" f
 * [delay()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-delay)
 * [distinct()](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-distinct)
 
+Note: To use the above mehods, we need to import each individual method using the syntax:
+
+```
+import "rxjs/add/operator/map"; 
+import "rxjs/add/operator/filter";
+import "rxjs/add/operator/delay";
+import "rxjs/add/operator/distinct";
+```
+
 For a full reference of all methods available on the Observable object, see: [the official documentation here](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html).
 
 ### Creating a Service to work with Data
