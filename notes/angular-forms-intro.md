@@ -5,12 +5,25 @@ layout: default
 
 ## Angular forms introduction
 
-> This document is being edited.  
-> This notice will be removed when the edits are complete.  
-
 In recent weeks, we have had a straight-line topic treatment of components, routing, and services. However, we have mostly avoided the topic of *user interaction*, but now it's time to do that, now that we have a good foundation on which to build. 
 
 As the [official Angular documentation states](https://angular.io/guide/forms), "Forms are the mainstay of business applications. You use forms to log in, submit a help request, place an order, book a flight, schedule a meeting, and perform countless other data-entry tasks."
+
+<br>
+
+**Topic coverage plan**
+
+First, we describe three ways to do forms in Angular. We will use only one, *Template-driven Forms*. 
+
+Next, we refresh your memory by showing a simple and standard HTML Form. 
+
+Then, we show the Angular version of that form, and discuss the highlights and differences. 
+
+This plan helps you get comfortable as fast as you can with this topic. 
+
+Then... we go into some depth, using the official Angular documentation topic set. After getting right to the destination early, the overall journey through the topic set will be more useful and purposeful. 
+
+Finally, a brief summary of the highlights and dev tips is presented. 
 
 <br>
 
@@ -137,6 +150,8 @@ Two-way data-binding is the most notable and most important change.
 
 ### Learning more, the details
 
+Now, we turn to the documentation for more. It's all useful, and in the long run, necessary for success when building apps. First time through, it may take a couple of hours, but it's worth the time and effort.
+
 Open the [official Angular documentation](https://angular.io/docs). 
 
 Start with the first topic in **FUNDAMENTALS > Forms**, which is [User Input](https://angular.io/guide/user-input). (You can likely skip / skim / ignore the `$event` binding discussion for now.)
@@ -151,7 +166,24 @@ Your professors believe that the quality and coverage of these sections are very
 
 ### Summary of the big ideas
 
-> More to come.  
-> It will be a fairly short section.  
+While there are *many* new ideas, some new syntax, plenty of Angular parts (directives, classes, etc.), working with forms at a beginner level is not hard. Use the guidance at the top of this document to quickly build success. 
+
+Here are the important "big ideas".
+
+Enable forms for the entire app by adding an import in the app module. It's a one-time task per app. Doing this enables Angular to do its magic whenever a form is declared and used. 
+
+Always plan on using a model - often known or referred to as a *view model* - when using a form. 
+
+If you're thinking that we don't really need a view model when displaying a form for the first time, we would suggest that is wrong. In almost all situations, we want to *push some data* to the form, to make it a better user interaction experience. For example, items in a select list, or default or initial/starter values for some of the form elements. 
+
+Write a function that will handle form submit. It can do anything you want it to do. 
+
+When writing a form, *always* declare a template variable on the opening `<form>` tag. 
+
+Two-way data-binding is a huge feature. Use it when appropriate. Remember it is still appropriate to use one-way read-only data binding to pull in values (curly braces). And, it is still appropriate to define event handlers on form elements (parentheses) if you need special behaviours. 
+
+<br>
+
+Happy programming! Enjoy!
 
 <br>

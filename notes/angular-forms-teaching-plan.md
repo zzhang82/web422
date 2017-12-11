@@ -10,30 +10,6 @@ layout: default
 
 <br>
 
-### Documentation examples, and testing them
-
-Teach and demonstrate this to students...
-
-Using Angular CLI, generate a new project:  
-`ng new Testing --routing -sg -st`
-
-In Terminal, navigate to the project's folder.
-
-Open the project in Visual Studio Code:  
-`code .`
-
-In Terminal, build and run the project:  
-`ng serve --open`
-
-In the browser, show the JavaScript console dev tool.
-
-In VS Code, open these two source code files for editing:
-* `app.component.ts`
-* `app.component.html`
-
-From a code example, copy-paste code to the appropriate location, replacing existing code. Save the changes, and then switch to the browser to see and test the result.
-
-<br> 
 
 ### Big ideas content
 
@@ -73,3 +49,18 @@ The effect is that the function named in the ngSubmit event handler replaces the
 If we create/designate a local template variable for the form (the value is ngForm), then we get full access to every form property. (Metadata.)
 
 <br>
+
+**Links**
+
+[Template syntax guide](https://angular.io/guide/template-syntax#ngModel)
+
+[NgForm](https://angular.io/api/forms/NgForm) directive
+
+[NgModel](https://angular.io/api/forms/NgModel) directive
+
+[SelectControlValueAccessor](https://angular.io/api/forms/SelectControlValueAccessor) directive
+
+[RadioControlValueAccessor](https://angular.io/api/forms/RadioControlValueAccessor) directive
+
+[CheckboxControlValueAccessor](https://angular.io/api/forms/CheckboxControlValueAccessor) directive
+
