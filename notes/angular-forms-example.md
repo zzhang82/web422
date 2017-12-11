@@ -49,7 +49,7 @@ You'll build this form in small steps:
 * Add custom CSS to provide visual feedback.
 * Show and hide validation-error messages.
 * Handle form submission with ngSubmit.
-* Disable the form’s Submit button until the form is valid.
+* Disable the form's Submit button until the form is valid.
 
 <br>
 
