@@ -137,8 +137,8 @@ import { Component, OnInit } from '@angular/core';
 export class Driver{
     name: string; 
     description: string; 
-    ownedTransportation: option[]; 
-    favouriteTransportation: option; 
+    ownedTransportation: string[]; 
+    favouriteTransportation: string; 
     driverLicence: boolean; 
     vehicleUse: string; 
 }
@@ -174,12 +174,11 @@ export class DriverComponent implements OnInit {
     this.driverData = {
       name: "Richard Hammond",
       description: "Richard is a motor vehicle enthusiast",
-      ownedTransportation: [{value: "C", text: "Car"}, {value: "M", text: "Motorcycle"}], 
-      favouriteTransportation: {value: "M", text: "Motorcycle"},
+      ownedTransportation: ["C", "M"], 
+      favouriteTransportation: "M",
       driverLicence: true, 
       vehicleUse: "pleasure"
-    };
-    
+    }
   }
 }
 
@@ -227,8 +226,21 @@ Here, we simply add the "two-way" binding syntax with ngModel to reference the "
 
 This is very similar to the **input** example above, ie: we simply add the two-way data binding to ngModel with the correct Component property
 
-##### select (multiple)
+##### select / select multiple
 
+```html
+<select multiple class="form-control" id="ownedTransportation" name="ownedTransportation" [(ngModel)]="driverData.ownedTransportation">
+        <option *ngFor = "let transportation of transportationList" [value]="transportation.value">{{transportation.text}}</option>
+</select>
+```
+
+and
+
+```html
+<select  class="form-control" id="favouriteTransportation" name="favouriteTransportation" [(ngModel)]="driverData.favouriteTransportation">
+          <option *ngFor = "let transportation of transportationList" [value]="transportation.value">{{transportation.text}}</option>
+</select>
+```
 
 
 ##### input (type="text")
