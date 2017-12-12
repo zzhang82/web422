@@ -178,7 +178,8 @@ export class DriverComponent implements OnInit {
       favouriteTransportation: "M",
       driverLicence: true, 
       vehicleUse: "pleasure"
-    }
+    };
+    
   }
 }
 
@@ -200,7 +201,7 @@ With our component in place we can begin to update the original "Standard" form 
 >
 > ([https://angular.io/guide/template-syntax#two-way-binding---](https://angular.io/guide/template-syntax#two-way-binding---))
 
-Since we're working with "Forms" Angular actually provides a very handy **NgModel** Directive that we can bind to, to update our model!
+Since we're working with "Forms", Angular actually provides a very handy **NgModel** Directive that we can bind to, so that we can update our data model!
 
 So, every time we have a form element that we wish to "bind" to our Component data, we can use the syntax:
 
@@ -210,6 +211,8 @@ So, every time we have a form element that we wish to "bind" to our Component da
 
 For example, let's see how we can update each of our form element types in our "Simple" form using this syntax, paired with the "DriverComponent" data:
 
+<br>
+
 ##### input (type="text")
 
 ```html
@@ -217,6 +220,8 @@ For example, let's see how we can update each of our form element types in our "
 ```
 
 Here, we simply add the "two-way" binding syntax with ngModel to reference the "driverData.name" property
+
+<br>
 
 ##### textarea
 
@@ -226,6 +231,8 @@ Here, we simply add the "two-way" binding syntax with ngModel to reference the "
 
 This is very similar to the **input** example above, ie: we simply add the two-way data binding to ngModel with the correct Component property
 
+<br>
+
 ##### select / select multiple
 
 ```html
@@ -234,35 +241,71 @@ This is very similar to the **input** example above, ie: we simply add the two-w
 </select>
 ```
 
-and
-
 ```html
-<select  class="form-control" id="favouriteTransportation" name="favouriteTransportation" [(ngModel)]="driverData.favouriteTransportation">
+<select class="form-control" id="favouriteTransportation" name="favouriteTransportation" [(ngModel)]="driverData.favouriteTransportation">
           <option *ngFor = "let transportation of transportationList" [value]="transportation.value">{{transportation.text}}</option>
 </select>
 ```
 
+The above two examples are practically identical, the only difference is the property that they're binding two and the first &lt;select&gt; element has the "multiple" attribute.
 
-##### input (type="text")
+You will notice that our ```[(ngMode)]``` binding syntax has not changed, however the method for displaying the &gt;option&gt; elements is different.  Here, we use the standard \*ngFor structural directive, but we have added a **value** property that we can / must set.  
 
+Since both the "ownedTransportation" and "favouriteTransportation properties use the "value" of the transportation, we must use "transportation.value" as the "value" for the &lt;option&gt; elements, if we want to correctly bind to the lists
 
-##### input (type="text")
+<br>
+
+##### input (type="checkbox")
+
+```html
+<input type="checkbox" id="driverLicence" name="driverLicence" [(ngModel)]="driverData.driverLicence" />
+```
+
+Once again, nothing special here.  We simply bind to ngModel as before.
+
+##### input (type="radio")
+
+```html
+<input type="radio" id="vehicleUseBusiness" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="business" /> <label for="vehicleUseBusiness"> Business</label><br />
+      <input type="radio" id="vehicleUsePleasure" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="pleasure" /> <label for="vehicleUsePleasure"> Pleasure</label><br />
+      <input type="radio" id="vehicleUseOther" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="other" /> <label for="vehicleUseOther"> Other</label><br />
+```
+
+Here, we must place identical ngModel binding on each "radio" button with the same "name" attribute.
+
+As a rule of thumb, whenever you would like to "read from" / "write to" a form using **two-way** binding, always bind to ngModel on a form element that would typically have a "name" property.  
+
+<br />
 
 #### Handling the Form "Submission"
 
+Finally, all of our data for "Richard Hammond" should be correctly rendered in the form.  As a way to inspect/test that the two-way binding is working, you can add the following line somewhere below the form:
+
 ```
+{{driverData | json}}
+```
+
+This will show you how your driverData "data model" is being updated with every change you make in the form!
+
+If we want to handle a form submission event, we simply add the event handler "ngSubmit" to our &lt;form&gt; element:
+
+```html
+<form (ngSubmit)='onSubmit()'>
+```
+
+The above will execute the method "onSubmit" (to be added) when the form is submitted.  If we wish to pass a reference to the specific form to the onSubmit() event handler, we can use 'ngForm' to assign a reference variable ([Template Reference Variables](https://angular.io/guide/template-syntax#ref-vars) to teh form itself, and pass it to onSubmit().
+
+If we decide to do this, our onSubmit handler will take the form:
+
+```js
+onSubmit(f: NgForm): void { }
+```
+
+Notice that "f" is type "NgForm"?  For this to function properly, we must:
+
+```js
 import { NgForm } from "@angular/forms";
-
-aaand
-
-<form #f='ngForm' (ngSubmit)='onSubmit(f)'>
-
-with
-
-  onSubmit(f: NgForm): void { }
 ```
-
-
 
 #### Tracking the "state" of elements using CSS classes
 
