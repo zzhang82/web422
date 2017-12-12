@@ -282,11 +282,11 @@ As a rule of thumb, whenever you would like to "read from" / "write to" a form u
 #### Handling the Form "Submission"
 
 Finally, all of our data for "Richard Hammond" should be correctly rendered in the form.  As a way to inspect/test that the two-way binding is working, you can add the following line somewhere below the form:
-
+{% raw %}
 ```js
 {{driverData | json}}
 ```
-
+{% endraw %}
 This will show you how your driverData "data model" is being updated with every change you make in the form!
 
 If we want to handle a form submission event, we simply add the event handler "ngSubmit" to our &lt;form&gt; element:
