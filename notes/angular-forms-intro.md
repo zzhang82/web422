@@ -238,19 +238,20 @@ This is very similar to the **input** example above, ie: we simply add the two-w
 <br>
 
 #### select / select multiple
-
+{% raw %}
 ```html
 <select multiple class="form-control" id="ownedTransportation" name="ownedTransportation" [(ngModel)]="driverData.ownedTransportation">
         <option *ngFor = "let transportation of transportationList" [value]="transportation.value">{{transportation.text}}</option>
 </select>
 ```
-
+{% endraw %}
+{% raw %}
 ```html
 <select class="form-control" id="favouriteTransportation" name="favouriteTransportation" [(ngModel)]="driverData.favouriteTransportation">
           <option *ngFor = "let transportation of transportationList" [value]="transportation.value">{{transportation.text}}</option>
 </select>
 ```
-
+{% endraw %}
 The above two examples are practically identical, the only differences are the property that they're binding to and the "multiple" attribute.
 
 You will notice that our ```[(ngMode)]``` binding syntax has not changed, however the method for displaying the &lt;option&gt; elements is different.  Here, we use the standard \*ngFor structural directive, but we have added a **value** property that we can / must set.  
