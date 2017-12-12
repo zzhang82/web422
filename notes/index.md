@@ -117,5 +117,16 @@ Introduction to Angular Services / Routing cont'd:<br><br>
 </ul>
 </td>
 </tr>
+  <tr>
+<td><a href="/web422/notes/week10">10 - Notes</a></td>
+<td>
+Introduction to Angular Forms<br><br>
+<ul>
+<li>Introduction to Angular Forms / Data Binding</li>
+<li>Providing visual feedback for element "states"</li>
+<li>Short introduction to form validation using Angular</li>
+</ul>
+</td>
+</tr>
 </tbody>
 </table>
