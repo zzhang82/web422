@@ -299,7 +299,11 @@ If we want to handle a form submission event, we simply add the event handler "n
 <form (ngSubmit)='onSubmit()'>
 ```
 
-The above will execute the method "onSubmit" (to be added) when the form is submitted.  If we wish to pass a reference to the specific form to the onSubmit() event handler, we can use 'ngForm' to assign a reference variable (see: [Template Reference Variables](https://angular.io/guide/template-syntax#ref-vars)) to the form itself, and pass it to onSubmit().
+The above will execute the method "onSubmit" (to be added) when the form is submitted.  If we wish to pass a reference to the specific form to the onSubmit() event handler, we can use 'ngForm' to assign a reference variable (see: [Template Reference Variables](https://angular.io/guide/template-syntax#ref-vars)) to the form itself, and pass it to onSubmit(), ie:
+
+```html
+<form #f='ngForm' (ngSubmit)='onSubmit(f)'>
+```
 
 If we decide to do this, our onSubmit handler will take the form:
 
@@ -312,6 +316,7 @@ Notice that "f" is type "NgForm"?  For this to function properly, we must:
 ```js
 import { NgForm } from "@angular/forms";
 ```
+By passing a reference to the form into onSubmit, we gain access to the aggregate value (```f.value```) and validity status (```f.valid```) of the form, as well as user interaction properties like dirty (```f.dirty```) and touched (```f.touched```).
 
 <br>
 
