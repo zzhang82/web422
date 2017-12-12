@@ -251,7 +251,7 @@ This is very similar to the **input** example above, ie: we simply add the two-w
 </select>
 ```
 
-The above two examples are practically identical, the only difference is the property that they're binding two and the first &lt;select&gt; element has the "multiple" attribute.
+The above two examples are practically identical, the only differences are the property that they're binding to and the "multiple" attribute.
 
 You will notice that our ```[(ngMode)]``` binding syntax has not changed, however the method for displaying the &gt;option&gt; elements is different.  Here, we use the standard \*ngFor structural directive, but we have added a **value** property that we can / must set.  
 
