@@ -13,17 +13,19 @@ As the [official Angular documentation states](https://angular.io/guide/forms), 
 
 **Topic coverage plan**
 
-First, we describe three ways to do forms in Angular. We will use only one, *Template-driven Forms*. 
+* First, we describe three ways to do forms in Angular. We will use only one, *Template-driven Forms*. 
 
-Next, we refresh your memory by showing a simple and standard HTML Form. 
+* Next, we refresh your memory by showing a simple and standard HTML Form. 
 
-Then, we show the Angular version of that form, and discuss the highlights and differences. 
+* Then, we show how to configure an Angular app to use HTML forms
 
-This plan helps you get comfortable as fast as you can with this topic. 
+* Once the Angular app configured properly, we will add some data in a Component to be used with the form
 
-Then... we go into some depth, using the official Angular documentation topic set. After getting right to the destination early, the overall journey through the topic set will be more useful and purposeful. 
+* We will then show the changes required to the form as well as each of the standard form elements to "bind" our data (using "two-way" binding) and "submit" the form
 
-Finally, a brief summary of the highlights and dev tips is presented. 
+* Finally, we will illustrate some of the special CSS classes Angular uses to automatically track the "state" of elements, ie: "untouched", "dirty", "invalid", etc
+
+Once this is compete, a brief summary of the highlights and dev tips are presented. 
 
 <br>
 
@@ -62,7 +64,7 @@ As above, we will not work with Dynamic Forms in this course. After understandin
 
 <br>
 
-#### HTML Form, without Angular
+#### "Standard" HTML Form, without Angular
 
 Here's a simple form, in pure HTML5, which features all of the most typical form elements, ie:
 * input (type: "text", "checkbox", "radio")
@@ -75,7 +77,7 @@ It also uses the bootstrap "forms" classes, ie "form-group" and "form-control" f
 <form action="/path/to/handler" method="post">
   <div class="form-group">
     <label for="name">Full Name:</label>
-    <input class="form-control" id="name" name="name" required autofocus>
+    <input type="text" class="form-control" id="name" name="name" required autofocus>
   </div>
   <div class="form-group">
     <label for="description">Description</label>
@@ -91,7 +93,7 @@ It also uses the bootstrap "forms" classes, ie "form-group" and "form-control" f
     </select>
   </div>
   <div class="form-group">
-    <label for="favouriteTransportation">Owned Transportation</label>
+    <label for="favouriteTransportation">Favourite Transportation</label>
     <select class="form-control" id="favouriteTransportation" name="favouriteTransportation">
       <option value="C">Car</option>
       <option value="B">Bus</option>
@@ -116,7 +118,153 @@ It's likely that you have written hundreds of these forms. It's a very well-unde
 
 <br>
 
-#### HTML Form, in an Angular app
+#### Configuring an Angular app to use HTML forms
+
+Before making any changes to the form, we must add the Angular forms-handling bits to the project. In the documentation's [Revise *app.module.ts*](https://angular.io/guide/forms#revise-appmodulets) section, we do a task with two related steps:
+
+1. Import the FormsModule
+2. Add FormsModule to the "imports" array
+
+#### Adding a Component with data (ie: a data model)
+
+Next, we *always assume* that an Angular form is backed by a data model. The model is defined or maintained in the component class. Its data values are *made available to* the form when it is built and rendered, and *updated by* the form during user interaction and submission. 
+
+For example, consider the following Component.  It contains all the data that is required to populate our "Standard" html, including some class definitions to define the "shape" of the data, as well as some sample data that we can use to "bind" to our form:
+
+```js
+import { Component, OnInit } from '@angular/core';
+
+export class Driver{
+    name: string; 
+    description: string; 
+    ownedTransportation: option[]; 
+    favouriteTransportation: option; 
+    driverLicence: boolean; 
+    vehicleUse: string; 
+}
+
+export class option{
+  value: string;
+  text: string;
+}
+
+@Component({
+  selector: 'app-driver',
+  templateUrl: './driver.component.html',
+  styleUrls: ['./driver.component.css']
+})
+export class DriverComponent implements OnInit {
+
+  constructor() { }
+ 
+  // the data that will be used in the form
+  driverData: Driver;
+
+  // Define the preset list of "transportation" options
+  transportationList: option[] = [
+    {value: "C", text: "Car"},
+    {value: "B", text: "Bus"},
+    {value: "M", text: "Motorcycle"},
+    {value: "H", text: "Helicopter"}
+  ];
+
+  ngOnInit() {
+
+    // Populate the "driverData" with some static data (this would normally come from a data service)
+    this.driverData = {
+      name: "Richard Hammond",
+      description: "Richard is a motor vehicle enthusiast",
+      ownedTransportation: [{value: "C", text: "Car"}, {value: "M", text: "Motorcycle"}], 
+      favouriteTransportation: {value: "M", text: "Motorcycle"},
+      driverLicence: true, 
+      vehicleUse: "pleasure"
+    };
+    
+  }
+}
+
+```
+
+There's a lot going on in the above Component, however there's nothing in there that we haven't seen before.  
+
+We define a "Driver" class that will represent the type of data that we will be "binding" to our form so that it can be modified.  We also define a generic "option" class, which is simply defining what our "options" will look like, ie ```{value: "C", text: "Car"}``` - this can be used as an "option" in an "&lt;select&gt;" list or the value / label used in a radio button.
+
+#### "Binding" the data / Form Events
+
+With our component in place we can begin to update the original "Standard" form to work directly with the data using "two-way binding" syntax:
+
+> You often want to both display a data property and update that property when the user makes changes.
+>
+> On the element side that takes a combination of setting a specific element property and listening for an element change event.
+>
+> Angular offers a special two-way data binding syntax for this purpose, ```[(x)]```. The ```[(x)]``` syntax combines the brackets of property binding, ```[x]```, with the parentheses of event binding, ```(x)```.
+>
+> ([https://angular.io/guide/template-syntax#two-way-binding---](https://angular.io/guide/template-syntax#two-way-binding---))
+
+Since we're working with "Forms" Angular actually provides a very handy **NgModel** Directive that we can bind to, to update our model!
+
+So, every time we have a form element that we wish to "bind" to our Component data, we can use the syntax:
+
+```html
+[(ngModel)]='componentProperty'
+```
+
+For example, let's see how we can update each of our form element types in our "Simple" form using this syntax, paired with the "DriverComponent" data:
+
+##### input (type="text")
+
+```html
+<input type="text" class="form-control" id="name" name="name" [(ngModel)]="driverData.name" required autofocus>
+```
+
+Here, we simply add the "two-way" binding syntax with ngModel to reference the "driverData.name" property
+
+##### textarea
+
+```html
+<textarea class="form-control" id="description" name="description" [(ngModel)]="driverData.description"></textarea>
+```
+
+This is very similar to the **input** example above, ie: we simply add the two-way data binding to ngModel with the correct Component property
+
+##### select (multiple)
+
+
+
+##### input (type="text")
+
+
+##### input (type="text")
+
+#### Handling the Form "Submission"
+
+```
+import { NgForm } from "@angular/forms";
+
+aaand
+
+<form #f='ngForm' (ngSubmit)='onSubmit(f)'>
+
+with
+
+  onSubmit(f: NgForm): void { }
+```
+
+
+
+#### Tracking the "state" of elements using CSS classes
+
+(for more information about HTML5 validation see.......) - we'll just do required here .. to see how we can do template-driven validation, see: https://angular.io/guide/form-validation#template-driven-validation
+
+
+
+
+
+
+
+
+
+
 
 
 
