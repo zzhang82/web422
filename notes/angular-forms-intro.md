@@ -350,7 +350,7 @@ By using CSS to track the "state" we can now *style* the elements that have not 
 
 #### "Valid" Form elements
 
-You will notice that there is a notion of "validity" with a form field, but what exactly makes a form "valid" - what controls those CSS classes?  Recall way back in WEB222 when we disused [HTML5 attribute / constraint based validation](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) 
+You will notice that there is a notion of "validity" with a form element, but what exactly makes a form element "valid"? - what controls those CSS classes?  Recall way back in WEB222 when we disused [HTML5 attribute / constraint based validation](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) 
 
 > Angular uses directives to match these attributes with [validator](https://angular.io/api/forms/Validators) functions in the framework.
 > 
