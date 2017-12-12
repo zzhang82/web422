@@ -354,7 +354,7 @@ You will notice that there is a notion of "validity" with a form element, but wh
 
 > Angular uses directives to match these attributes with [validator](https://angular.io/api/forms/Validators) functions in the framework.
 > 
-> Every time the value of a form control changes, Angular runs validation and generates either a list of validation errors, > which results in an INVALID status, or null, which results in a VALID status.
+> Every time the value of a form control changes, Angular runs validation and generates either a list of validation errors, which results in an INVALID status, or null, which results in a VALID status.
 > 
 > You can then inspect the control's state by exporting ngModel to a local template variable.
 
