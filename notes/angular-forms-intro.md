@@ -64,21 +64,49 @@ As above, we will not work with Dynamic Forms in this course. After understandin
 
 #### HTML Form, without Angular
 
-Here's a simple form, in pure HTML5, which has two textboxes and a button:
+Here's a simple form, in pure HTML5, which features all of the most typical form elements, ie:
+* input (type: "text", "checkbox", "radio")
+* textarea
+* select (single / "multiple")
+
+It also uses the bootstrap "forms" classes, ie "form-group" and "form-control" for formatting:
 
 ```html
 <form action="/path/to/handler" method="post">
-  <p>
-    <label for="fname">First name:</label><br>
-    <input name="fname" required autofocus>
-  </p>
-  <p>
-    <label for="lname">Last name:</label><br>
-    <input name="lname" required>
-  </p>
-  <p>
-    <button type="submit">Create</button>
-  </p>
+  <div class="form-group">
+    <label for="name">Full Name:</label>
+    <input class="form-control" id="name" name="name" required autofocus>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description" name="description"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="ownedTransportation">Owned Transportation</label>
+    <select multiple class="form-control" id="ownedTransportation" name="ownedTransportation">
+      <option value="C">Car</option>
+      <option value="B">Bus</option>
+      <option value="M">Motorcycle</option>
+      <option value="H">Helicopter</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="favouriteTransportation">Owned Transportation</label>
+    <select class="form-control" id="favouriteTransportation" name="favouriteTransportation">
+      <option value="C">Car</option>
+      <option value="B">Bus</option>
+      <option value="M">Motorcycle</option>
+      <option value="H">Helicopter</option>
+    </select>
+  </div>
+  <input  type="checkbox" id="driverLicence" name="driverLicence" /> <label for="driverLicence">Driver's Licence</label><br />
+  <div class="form-group">
+    <h5>Vehicle Usage:</h5>
+    <input type="radio" id="vehicleUseBusiness" name="vehicleUse" value="business" /> <label for="vehicleUseBusiness"> Business</label><br />
+    <input type="radio" id="vehicleUsePleasure" name="vehicleUse" value="pleasure" /> <label for="vehicleUsePleasure"> Pleasure</label><br />
+    <input type="radio" id="vehicleUseOther" name="vehicleUse" value="other" /> <label for="vehicleUseOther"> Other</label><br />
+  </div>
+  <button class="btn btn-primary" type="submit">Create</button>
 </form>
 ```
 
@@ -90,7 +118,7 @@ It's likely that you have written hundreds of these forms. It's a very well-unde
 
 #### HTML Form, in an Angular app
 
-How do we do this in an Angular app?
+
 
 Well, before making any changes to the form, add the Angular forms-handling bits to the project. In the documentation's [Revise *app.module.ts*](https://angular.io/guide/forms#revise-appmodulets) section, we do a task with two related steps:
 1. Import the FormsModule
