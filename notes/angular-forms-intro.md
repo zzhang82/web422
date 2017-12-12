@@ -131,7 +131,7 @@ Before making any changes to the form, we must add the Angular forms-handling bi
 
 Next, we *always assume* that an Angular form is backed by a data model. The model is defined or maintained in the component class. Its data values are *made available to* the form when it is built and rendered, and *updated by* the form during user interaction and submission. 
 
-For example, consider the following Component.  It contains all the data that is required to populate our "Standard" html, including some class definitions to define the "shape" of the data, as well as some sample data that we can use to "bind" to our form:
+For example, consider the following Component.  It contains all the data that is required to populate our "Standard" html form, including some class definitions to define the "shape" of the data, as well as some sample data that we can use to "bind" to our form:
 
 ```js
 import { Component, OnInit } from '@angular/core';
