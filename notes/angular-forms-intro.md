@@ -344,7 +344,7 @@ If we use the integrated Developer tools in the browser when testing our form, w
 </tbody>
 </table>
 
-By using CSS to track the "state" we can now *style* the elements that have not yet been visited / changed or are invalid  to create a richer and more interactive user experience.
+By using CSS to track the "state" we can now *style* the elements that have not yet been visited / changed or are invalid,  to create a richer and more interactive user experience.
 
 <br>
 
