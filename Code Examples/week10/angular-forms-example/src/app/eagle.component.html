@@ -1,0 +1,54 @@
+<div class="eagle panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Eagle</h3>
+  </div>
+  <div class="panel-body">
+  <form action="/path/to/handler" method="post">
+    <div class="form-group">
+      <label for="name">Full Name:</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="driverData.name" required autofocus #name="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" name="description" [(ngModel)]="driverData.description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="ownedTransportation">Owned Transportation</label>
+      <select multiple class="form-control" id="ownedTransportation" name="ownedTransportation" [(ngModel)]="driverData.ownedTransportation">
+        <option *ngFor = "let transportation of transportationList" [value]="transportation.value">{{transportation.text}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="favouriteTransportation">Favourite Transportation</label>
+      <select  class="form-control" id="favouriteTransportation" name="favouriteTransportation" [(ngModel)]="driverData.favouriteTransportation">
+          <option *ngFor = "let transportation of transportationList" [value]="transportation.value">{{transportation.text}}</option>
+      </select>
+    </div>
+    <input type="checkbox" id="driverLicence" name="driverLicence" [(ngModel)]="driverData.driverLicence" /> <label for="driverLicence">Driver's Licence</label><br />
+    <div class="form-group">
+      <h5>Vehicle Usage:</h5>
+      <input type="radio" id="vehicleUseBusiness" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="business" /> <label for="vehicleUseBusiness"> Business</label><br />
+      <input type="radio" id="vehicleUsePleasure" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="pleasure" /> <label for="vehicleUsePleasure"> Pleasure</label><br />
+      <input type="radio" id="vehicleUseOther" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="other" /> <label for="vehicleUseOther"> Other</label><br />
+    </div>
+    <button class="btn btn-primary" type="submit">Create</button>
+  </form>
+
+  <div *ngIf="name.errors && name.errors.required">
+    <strong>Warning: </strong> "Full Name:" is required.
+  </div>
+    <br /><br /><br />
+    <p>Eagles are large, powerfully built birds of prey, with heavy heads and beaks. Even the smallest eagles, such as the booted
+      eagle (Aquila pennata), which is comparable in size to a common buzzard (Buteo buteo) or red-tailed hawk (B. jamaicensis),
+      have relatively longer and more evenly broad wings, and more direct, faster flight – despite the reduced size of aerodynamic
+      feathers.</p>
+    <p> Most eagles are larger than any other raptors apart from some vultures. The smallest species of eagle is the South Nicobar
+      serpent eagle (Spilornis klossi), at 450 g (0.99 lb) and 40 cm (16 in). The largest species are discussed below. Like
+      all birds of prey, eagles have very large, hooked beaks for ripping flesh from their prey, strong, muscular legs, and
+      powerful talons. The beak is typically heavier than that of most other birds of prey. Eagles' eyes are extremely powerful,
+      having up to 3.6 times human acuity for the martial eagle, which enables them to spot potential prey from a very long
+      distance.[2] This keen eyesight is primarily attributed to their extremely large pupils which ensure minimal diffraction
+      (scattering) of the incoming light. The female of all known species of eagles is larger than the male.</p>
+    <img src="http://www.baldeagleinfo.com/images/eagleBC.jpg" alt="Eagle" class="w-25">
+  </div>
+</div>
