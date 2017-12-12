@@ -101,7 +101,7 @@ It also uses the bootstrap "forms" classes, ie "form-group" and "form-control" f
       <option value="H">Helicopter</option>
     </select>
   </div>
-  <input  type="checkbox" id="driverLicence" name="driverLicence" /> <label for="driverLicence">Driver's Licence</label><br />
+  <input type="checkbox" id="driverLicence" name="driverLicence" /> <label for="driverLicence">Driver's Licence</label><br />
   <div class="form-group">
     <h5>Vehicle Usage:</h5>
     <input type="radio" id="vehicleUseBusiness" name="vehicleUse" value="business" /> <label for="vehicleUseBusiness"> Business</label><br />
