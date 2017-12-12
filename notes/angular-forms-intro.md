@@ -217,7 +217,7 @@ For example, let's see how we can update each of our form element types in our "
 
 <br>
 
-##### input (type="text")
+#### input (type="text")
 
 ```html
 <input type="text" class="form-control" id="name" name="name" [(ngModel)]="driverData.name" required autofocus>
@@ -227,7 +227,7 @@ Here, we simply add the "two-way" binding syntax with ngModel to reference the "
 
 <br>
 
-##### textarea
+#### textarea
 
 ```html
 <textarea class="form-control" id="description" name="description" [(ngModel)]="driverData.description"></textarea>
@@ -237,7 +237,7 @@ This is very similar to the **input** example above, ie: we simply add the two-w
 
 <br>
 
-##### select / select multiple
+#### select / select multiple
 
 ```html
 <select multiple class="form-control" id="ownedTransportation" name="ownedTransportation" [(ngModel)]="driverData.ownedTransportation">
@@ -259,7 +259,7 @@ Since both the "ownedTransportation" and "favouriteTransportation properties use
 
 <br>
 
-##### input (type="checkbox")
+#### input (type="checkbox")
 
 ```html
 <input type="checkbox" id="driverLicence" name="driverLicence" [(ngModel)]="driverData.driverLicence" />
@@ -269,7 +269,7 @@ Once again, nothing special here.  We simply bind to ngModel as before.
 
 <br>
 
-##### input (type="radio")
+#### input (type="radio")
 
 ```html
 <input type="radio" id="vehicleUseBusiness" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="business" /> <label for="vehicleUseBusiness"> Business</label><br />
