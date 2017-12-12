@@ -22,6 +22,8 @@ The first few steps are familiar. The last few seem like common sense, but if yo
 Using Angular CLI, generate a new project:  
 `ng new Testing --routing -sg -st`
 
+(For more information on the flags for the 'ng new' command, see: [https://github.com/angular/angular-cli/wiki/new#options](https://github.com/angular/angular-cli/wiki/new#options)
+
 In Terminal, navigate to the project's folder.
 
 Open the project in Visual Studio Code:  
