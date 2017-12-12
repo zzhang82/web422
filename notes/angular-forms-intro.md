@@ -267,8 +267,8 @@ Once again, nothing special here.  We simply bind to ngModel as before.
 
 ```html
 <input type="radio" id="vehicleUseBusiness" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="business" /> <label for="vehicleUseBusiness"> Business</label><br />
-      <input type="radio" id="vehicleUsePleasure" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="pleasure" /> <label for="vehicleUsePleasure"> Pleasure</label><br />
-      <input type="radio" id="vehicleUseOther" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="other" /> <label for="vehicleUseOther"> Other</label><br />
+<input type="radio" id="vehicleUsePleasure" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="pleasure" /> <label for="vehicleUsePleasure"> Pleasure</label><br />
+<input type="radio" id="vehicleUseOther" name="vehicleUse" [(ngModel)]="driverData.vehicleUse" value="other" /> <label for="vehicleUseOther"> Other</label><br />
 ```
 
 Here, we must place identical ngModel binding on each "radio" button with the same "name" attribute.
@@ -293,7 +293,7 @@ If we want to handle a form submission event, we simply add the event handler "n
 <form (ngSubmit)='onSubmit()'>
 ```
 
-The above will execute the method "onSubmit" (to be added) when the form is submitted.  If we wish to pass a reference to the specific form to the onSubmit() event handler, we can use 'ngForm' to assign a reference variable ([Template Reference Variables](https://angular.io/guide/template-syntax#ref-vars) to teh form itself, and pass it to onSubmit().
+The above will execute the method "onSubmit" (to be added) when the form is submitted.  If we wish to pass a reference to the specific form to the onSubmit() event handler, we can use 'ngForm' to assign a reference variable ([Template Reference Variables](https://angular.io/guide/template-syntax#ref-vars) to the form itself, and pass it to onSubmit().
 
 If we decide to do this, our onSubmit handler will take the form:
 
@@ -309,91 +309,72 @@ import { NgForm } from "@angular/forms";
 
 #### Tracking the "state" of elements using CSS classes
 
-(for more information about HTML5 validation see.......) - we'll just do required here .. to see how we can do template-driven validation, see: https://angular.io/guide/form-validation#template-driven-validation
+If we use the integrated Developer tools in the browser when testing our form, we will notice that there are CSS classes that get added or removed as we edit the data.  The below table (from the [documentation](https://angular.io/guide/forms#track-control-state-and-validity-with-ngmodel)) illustrates the meanings of each class added.
 
+<table>
+<tbody>
+<tr>
+<th>State</th>
+<th>Class if true</th>
+<th>Class if false</th>
+</tr>
+<tr>
+<td>The control has been visited.</td>
+<td>`ng-touched`</td>
+<td>`ng-untouched`</td>
+</tr>
+<tr>
+<td>The control's value has changed.</td>
+<td>`ng-dirty`</td>
+<td>`ng-pristine`</td>
+</tr>
+<tr>
+<td>The control's value is valid.</td>
+<td>`ng-valid`</td>
+<td>`ng-invalid`</td>
+</tr>
+</tbody>
+</table>
 
+By using CSS to track the "state" we can now *style* the elements that have not yet been visited / changed or are invalid  to create a richer and more interactive user experience.
 
+#### "Valid" Form elements
 
+You will notice that there is a notion of "validity" with a form field, but what exactly makes a form "valid" - what controls those CSS classes?  Recall way back in WEB222 when we disused [HTML5 attribute / constraint based validation](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) 
 
+> Angular uses directives to match these attributes with [validator](https://angular.io/api/forms/Validators) functions in the framework.
+> 
+> Every time the value of a form control changes, Angular runs validation and generates either a list of validation errors, > which results in an INVALID status, or null, which results in a VALID status.
+> 
+> You can then inspect the control's state by exporting ngModel to a local template variable.
 
+In addition to leveraging the native HTML5 validation attributes, we can also create [Custom Validators](https://angular.io/guide/form-validation#custom-validators), however this is beyond the scope of the lecture today. 
 
-
-
-
-
-
-
-Well, before making any changes to the form, add the Angular forms-handling bits to the project. In the documentation's [Revise *app.module.ts*](https://angular.io/guide/forms#revise-appmodulets) section, we do a task with two related steps:
-1. Import the FormsModule
-2. Add FormsModule to the "imports" array
-
-This is a one-time task, per project.
-
-Next, we *always assume* that an Angular form is backed by a data model. The model is defined or maintained in the component class. Its data values are *made available to* the form when it is built and rendered, and *updated by* the form during user interaction and submission. 
-
-Then, here's what the same form (from above) looks like in Angular:
+Basically, if we wish to display a message for a specific type of error, we make a template reference to the element we want using "ngModel" (same procedure as above), ie:
 
 ```html
-<form #f="ngForm" (ngSubmit)="onSubmit(f)">
-  <p>
-    <label for="fname">First name:</label><br>
-    <input name="fname" required autofocus [(ngModel)]="model.fname">
-  </p>
-  <p>
-    <label for="lname">Last name:</label><br>
-    <input name="lname" required [(ngModel)]="model.lname">
-  </p>
-  <p>
-    <button>Create</button>
-  </p>
-</form>
+<input type="text" class="form-control" id="name" name="name" [(ngModel)]="driverData.name" required autofocus #name="ngModel">
+```
+we can then access it's "error" property, ie: **name.error**.  For a quick glimpse at what error properties get applied, we can place the following diagnostic output somewhere near the "name" control:
+
+```html
+{{name.errors | json}}
 ```
 
-<br>
+This will initially show "null" as the text "Richard Hammond" is currently entered.  However, if we delete the text, we will see 
 
-Not too different, right? Almost the same. 
+```js
+{ "required": true } 
+```
 
-<br>
+appear in our diagnostic code.  We can then use this to conditionally show a warning the moment the user violates the validation rule, using the code:
 
-**Differences**
+```html
+<div *ngIf="name.errors && name.errors.required">
+  <strong>Warning:</strong> "Full Name:" is required.
+</div>
+```
 
-There are a couple of notable differences.
-
-The opening `<form>` tag has new attributes:
-* Template reference variable to hold the form
-* Event handler function name (in the component class) for the form submit action
-
-We use two-way data binding in the form fields:
-* Each references a value in a component class variable named "model" (which is an object with two key-value pairs)
-
-This is the clearest distillation of the differences between pure *HTML Forms* and *Angular Template-driven Forms*. All other changes that you may consider making will add features and behaviour to make the user interaction and experience better, and will improve the quality of data we get from the user. 
-
-<br>
-
-**Take-away**
-
-Two-way data-binding is the most notable and most important change. 
-
-> Where have you seen this functionality before?  
-> During [our coverage of Knockout](https://sictweb.github.io/web422/notes/knockout), a few weeks ago.
-
-<br>
-
-### Learning more, the details
-
-Now, we turn to the documentation for more. It's all useful, and in the long run, necessary for success when building apps. First time through, it may take a couple of hours, but it's worth the time and effort.
-
-Open the [official Angular documentation](https://angular.io/docs). 
-
-Start with the first topic in **FUNDAMENTALS > Forms**, which is [User Input](https://angular.io/guide/user-input). (You can likely skip / skim / ignore the `$event` binding discussion for now.)
-
-Then, move on to the [Template-driven Forms](https://angular.io/guide/forms) topic. This is the core content that will help you understand and get started with forms in Angular apps. 
-
-Finally, after getting some experience and comfort, use the [Form Validation](https://angular.io/guide/form-validation) content. It rounds out or finishes off the forms topic with discussion and techniques to improve the quality of data coming in from form users. 
-
-Your professors believe that the quality and coverage of these sections are very good, so we will not attempt to rewrite or restate the content. Please use the content as-is. 
-
-<br>
 
 ### Summary of the big ideas
 
