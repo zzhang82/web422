@@ -263,6 +263,8 @@ Since both the "ownedTransportation" and "favouriteTransportation properties use
 
 Once again, nothing special here.  We simply bind to ngModel as before.
 
+<br>
+
 ##### input (type="radio")
 
 ```html
@@ -281,7 +283,7 @@ As a rule of thumb, whenever you would like to "read from" / "write to" a form u
 
 Finally, all of our data for "Richard Hammond" should be correctly rendered in the form.  As a way to inspect/test that the two-way binding is working, you can add the following line somewhere below the form:
 
-```
+```js
 {{driverData | json}}
 ```
 
@@ -306,6 +308,8 @@ Notice that "f" is type "NgForm"?  For this to function properly, we must:
 ```js
 import { NgForm } from "@angular/forms";
 ```
+
+<br>
 
 #### Tracking the "state" of elements using CSS classes
 
@@ -337,6 +341,8 @@ If we use the integrated Developer tools in the browser when testing our form, w
 </table>
 
 By using CSS to track the "state" we can now *style* the elements that have not yet been visited / changed or are invalid  to create a richer and more interactive user experience.
+
+<br>
 
 #### "Valid" Form elements
 
@@ -375,6 +381,7 @@ appear in our diagnostic code.  We can then use this to conditionally show a war
 </div>
 ```
 
+<br>
 
 ### Summary of the big ideas
 
