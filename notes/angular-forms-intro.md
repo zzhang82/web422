@@ -125,6 +125,8 @@ Before making any changes to the form, we must add the Angular forms-handling bi
 1. Import the FormsModule
 2. Add FormsModule to the "imports" array
 
+<br>
+
 #### Adding a Component with data (ie: a data model)
 
 Next, we *always assume* that an Angular form is backed by a data model. The model is defined or maintained in the component class. Its data values are *made available to* the form when it is built and rendered, and *updated by* the form during user interaction and submission. 
@@ -188,6 +190,8 @@ export class DriverComponent implements OnInit {
 There's a lot going on in the above Component, however there's nothing in there that we haven't seen before.  
 
 We define a "Driver" class that will represent the type of data that we will be "binding" to our form so that it can be modified.  We also define a generic "option" class, which is simply defining what our "options" will look like, ie ```{value: "C", text: "Car"}``` - this can be used as an "option" in an "&lt;select&gt;" list or the value / label used in a radio button.
+
+<br>
 
 #### "Binding" the data / Form Events
 
