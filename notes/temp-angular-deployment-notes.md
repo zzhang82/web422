@@ -28,6 +28,6 @@ This is just a short document containing the notes collected when Deploying the 
 
 * Copy the link at the end of the output (should be under "Launching...", ie.. someUrl "deployed to Heroku") 
 
-* Paste the link in the browser (working example: [https://fathomless-spire-30005.herokuapp.com/](https://fathomless-spire-30005.herokuapp.com/)
+* Paste the link in the browser (working example: [https://fathomless-spire-30005.herokuapp.com/](https://fathomless-spire-30005.herokuapp.com/))
 
 * Profit
