@@ -16,7 +16,7 @@ export class DataManagerService {
 
   private teachers: string[] = [];
 
-  private url = "http://jsonplaceholder.typicode.com";
+  private url = "https://jsonplaceholder.typicode.com";
 
     constructor(private http: HttpClient) { 
     // Load the teachers collection
