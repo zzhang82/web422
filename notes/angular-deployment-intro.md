@@ -160,6 +160,19 @@ The `--prod` meta-flag engages the following optimization features.
 * Dead code elimination: removes unreferenced modules and much unused code.
 * The remaining copy deployment steps are the same as before.
 
+**Note:** if we try building our app with the `--prod` flag, we will see that the files generated in the "dist" folder are very different, ie:
+
+```
+3rdpartylicenses.txt
+favicon.ico
+index.html
+inline.975d4158716a8b79f2cd.bundle.js
+main.09fa7588e0f35133f8b0.bundle.js
+polyfills.0f52673dc7e4a9584220.bundle.js
+styles.c6579778e645a191babc.bundle.css
+vendor.e609b78c2bd8545031ef.bundle.js
+```
+
 You may further reduce bundle sizes by adding the build-optimizer flag.
 
 ```
@@ -167,7 +180,6 @@ ng build --prod --build-optimizer
 ```
 
 See the [CLI Documentation](https://github.com/angular/angular-cli/wiki/build) for details about available build options and what they do.
-
 
 
 
