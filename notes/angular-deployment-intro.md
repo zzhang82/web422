@@ -134,6 +134,40 @@ app.listen(HTTP_PORT, function(){
 
 If we rebuild the server and try again, we will see that the routing does indeed work as expected.  The route is not found in our Express app, so it simply redirects to the Angular app with the route intact.  Even our Angular 404 handler will still work as expected.
 
-From here we can push our server.js file to Heroku, just as we have done in WEB322!
+From here, we can push our Node/Express server to Heroku, just as we have done in WEB322!
+
+<br>
+
+### Optimizing for production
+
+The official documentation has the following information on generating an optimized build:
+
+Although deploying directly from the development environment works, you can generate an optimized build with additional CLI command line flags, starting with `--prod`.
+
+Build with --prod
+
+```
+ng build --prod
+```
+
+The `--prod` meta-flag engages the following optimization features.
+
+* [Ahead-of-Time (AOT) Compilation](https://angular.io/guide/aot-compiler): pre-compiles Angular component templates.
+* [Production mode](https://angular.io/guide/deployment#enable-prod-mode): deploys the production environment which enables production mode.
+* Bundling: concatenates your many application and library files into a few bundles.
+* Minification: removes excess whitespace, comments, and optional tokens.
+* Uglification: rewrites code to use short, cryptic variable and function names.
+* Dead code elimination: removes unreferenced modules and much unused code.
+* The remaining copy deployment steps are the same as before.
+
+You may further reduce bundle sizes by adding the build-optimizer flag.
+
+```
+ng build --prod --build-optimizer
+```
+
+See the [CLI Documentation](https://github.com/angular/angular-cli/wiki/build) for details about available build options and what they do.
+
+
 
 
