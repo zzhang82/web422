@@ -33,7 +33,7 @@ ng build --base-href=/my/app/
 
   You'll see that the <base href> is set properly in the generated dist/index.html.
   
-  If you copy to the server's root directory, omit this step and leave the <base href> alone.
+  If you copy to the server's root directory (*which we will be doing*), omit this step and leave the &lt;base href&gt; alone.
   
   Learn more about the role of <base href> [here](https://angular.io/guide/deployment#base-tag).
 
