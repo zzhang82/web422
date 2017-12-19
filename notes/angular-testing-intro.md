@@ -454,7 +454,7 @@ Essentially, TestBed provides the functionality to enable the configuration of t
 
 ### ComponentFixture
 
-The createComponent method returns a **ComponentFixture**, a handle on the test environment surrounding the created component. The fixture provides access to the **component instance itself** and to the **DebugElement**, which is a handle on the component's DOM element (to be used in testing - ie: `fixture.debugElement`).
+The createComponent method returns a **ComponentFixture**, a handle on the test environment surrounding the created component. The fixture provides access to the **component instance itself** and to the [**DebugElement**](https://angular.io/guide/testing#debugelement), which is a handle on the component's DOM element (to be used in testing - ie: `fixture.debugElement`).
 
 ### async
 
