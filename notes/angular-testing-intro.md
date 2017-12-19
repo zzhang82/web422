@@ -464,9 +464,9 @@ A second (synchronous) beforeeach is used to actually **create** the component u
 
 <br>
 
-### Updating the Component & Writing Simple Tests
+### Updating the Component & Writing a Simple Test
 
-Finally - the testing environment is all configured.  Now we can begin to update "ComponentOne" and write some simple tests.
+Finally - the testing environment is all configured.  Now we can begin to update "ComponentOne" and write a simple test.
 
 <br>
 
@@ -503,6 +503,14 @@ it('must have at least 1 paragraph', () => {
   expect(pElements.length).toBeGreaterThan(0);
 });
 ```
+
+### More Examples
+
+Angular testing is an extremely complex topic and beyond the scope of this lecture.  However, the good news is that (as we have seen) the documentation is very clear and well written.  For the full documentation on testing in Angular using the techniques mentioned above as a starting point, check out:
+
+[https://angular.io/guide/testing](https://angular.io/guide/testing)
+
+Happy Coding!
 
 
 
