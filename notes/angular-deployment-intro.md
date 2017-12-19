@@ -3,7 +3,7 @@ title: Angular Deployment Introduction
 layout: default
 ---
 
-## Angular Deployement Introduction
+## Angular Deployment Introduction
 
 Until now, we've been working with our web applications in a local environment.  We have relied on the frameworks (ie, the integrated "development servers" included in React / Angular) to execute our code on **localhost**.  However, sooner or later we will have to build and publish these applications so that they are available for the public / clients to use. Fortunately, Angular offers An extremely simple "build" process:
 
