@@ -35,7 +35,7 @@ ng build --base-href=/my/app/
   
   If you copy to the server's root directory (*which we will be doing*), omit this step and leave the &lt;base href&gt; alone.
   
-  Learn more about the role of <base href> [here](https://angular.io/guide/deployment#base-tag).
+  Learn more about the role of &lt;base href&gt; [here](https://angular.io/guide/deployment#base-tag).
 
 * Configure the server to *redirect requests for missing files to **index.html***
 
