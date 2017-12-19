@@ -395,6 +395,110 @@ it("should not call the callBack", function () {
 });
 ```
 
+<br>
+
+### Creating a New Component & Examining the .spec File
+
+Now that we're familiar with some of the key functions of the Jasmine testing syntax, we can begin to make sense of some of the testing logic that we see generated in those .spec files.
+
+Let's create a new component, ie: `ng n c componentOne`
+
+This should generate a "component-one" directory with the following files:
+
+```
+component-one.component.css
+component-one.component.html
+component-one.component.spec.ts
+component-one.component.ts
+```
+
+The file that we're currently interested in looking at here is: **component-one.component.spec.ts**:
+
+```js
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ComponentOneComponent } from './component-one.component';
+
+describe('ComponentOneComponent', () => {
+  let component: ComponentOneComponent;
+  let fixture: ComponentFixture<ComponentOneComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ ComponentOneComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ComponentOneComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+```
+
+The above code is "boilerplate" and the minimum required code to create the single 'should create' test to ensure that the component ("component") is indeed created.  We can see that this test passes by starting up the test server again `npm test` (Note: we will no longer be working with 1st.spec.ts, so it's code can be commented out / the file can be removed).
+
+While this does work as expected, there's a lot of strange code in here.  Why don't we take a look at the pieces one-by-one:
+
+### TestBed
+
+"**TestBed** is the first and most important of the Angular testing utilities. It creates an Angular testing module — an `@NgModule` class—that you configure with the `configureTestingModule` method to produce the module environment for the class you want to test. In effect, you detach the tested component from its own application module and re-attach it to a dynamically-constructed Angular test module tailored specifically for this battery of tests."
+
+Essentially, TestBed provides the functionality to enable the configuration of the testing module &amp; to compile / create components. 
+
+### ComponentFixture
+
+The createComponent method returns a **ComponentFixture**, a handle on the test environment surrounding the created component. The fixture provides access to the **component instance itself** and to the **DebugElement**, which is a handle on the component's DOM element (to be used in testing - ie: `fixture.debugElement`).
+
+### async
+
+We simply need this to envoke the first of two [beforeEach()](https://jasmine.github.io/2.4/introduction.html#section-Setup_and_Teardown) setup methods "asynchronously", ie: the test setup for ComponentOne must give the Angular template compiler [time to read &amp; compile the files](https://angular.io/guide/testing#waiting-for-compilecomponents).
+
+A second (synchronous) beforeeach is used to actually **create** the component using the TestBed.
+
+<br>
+
+### Updating the Component & Writing Simple Tests
+
+Finally - the testing environment is all configured.  Now we can begin to update "ComponentOne" and write some simple tests.
+
+<br>
+
+### Test One - Checking for Elements in the Template
+
+Say our specification requires there to be certain elements present in the template for ComponentOne (for example, the lone paragraph (&lt;p&gt;) element that currently exists in the `component-one.component.html` file.  
+
+This would make a great test, but first we must learn how we can gain access to elements in the compiled template.
+
+Fortunately, this can be accomplished through the use of the **debugElement** as mentioned above, with a special ".query" method, ie:
+
+```js
+fixture.debugElement.query()
+```
+
+In order to "query" the element, we can use one of three methods (Note: to use "By" we must `import { By } from '@angular/platform-browser';`):
+
+* By.all - return all elements.
+* By.css(selector) - return elements with matching CSS selectors.
+* By.directive(directive) - return elements that Angular matched to an instance of the directive class.
+
+In our case, we wish to ensure that we have at least one &lt;p&gt; element (from above).  We can use the following syntax to get a collection of all &lt;p&gt; elements.
+
+```js
+fixture.debugElement.query(By.css('p'));
+```
+
+This would allow us to write our test as follows:
+
+
+
+
 
 
 
