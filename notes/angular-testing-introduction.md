@@ -170,7 +170,229 @@ A test suite begins with a call to the global Jasmine function **describe** with
 
 **it()**
 
-Calling the global Jasmine function **it** actually defines a "spec" which, like describe takes a **string** and a **function**. The string is the title of the spec and the function is the spec, or test. A spec contains one or more expectations that test the state of the code. An expectation in Jasmine is an assertion that is either true or false. A spec with all true expectations is a passing spec. A spec with one or more false expectations is a failing spec.
+Calling the global Jasmine function **it** actually defines a "spec" which, like describe takes a **string** and a **function**. The string is the title of the spec and the function is the spec, or test. A spec contains **one or more** expectations that test the state of the code. An expectation in Jasmine is an assertion that is either true or false. A spec with all true expectations is a passing spec. A spec with one or more false expectations is a failing spec.
+
+Note: "Describing" test suites and "specs" helps us to group tests and easily identify (or report on) 1 or more failing tests.
+
+**expect()**
+
+The **expect** function is used to build "Expections", by providing a value, called the actual. It is chained with a Matcher function (ie: `toBe()`), which takes the expected value.
+
+**Matcher Functions**
+
+Jasmine comes with the following "Matcher Functions" that we can use to test our code.  Please note however, that it is also possible to create [custom matchers](https://jasmine.github.io/2.4/custom_matcher.html) when required as well.
+
+### toBe()
+
+```js
+it("The 'toBe' matcher compares with ===", function () {
+    var a = 12;
+    var b = a;
+
+    expect(a).toBe(b);
+    expect(a).not.toBe(null);
+});
+```
+
+### toEqual()
+
+```js
+it("works for simple literals and variables", function () {
+    var a = 12;
+    expect(a).toEqual(12);
+});
+
+it("should work for objects", function () {
+    var foo = {
+        a: 12,
+        b: 34
+    };
+    var bar = {
+        a: 12,
+        b: 34
+    };
+    expect(foo).toEqual(bar);
+});
+```
+
+### toMatch()
+
+```js
+it("The 'toMatch' matcher is for regular expressions", function () {
+    var message = "foo bar baz";
+
+    expect(message).toMatch(/bar/);
+    expect(message).toMatch("bar");
+    expect(message).not.toMatch(/quux/);
+});
+```
+
+### toBeDefined()
+
+```js
+it("The 'toBeDefined' matcher compares against `undefined`", function () {
+    var a = {
+        foo: "foo"
+    };
+
+    expect(a.foo).toBeDefined();
+    expect(a.bar).not.toBeDefined();
+});
+```
+
+### toBeUndefined()
+
+```js
+it("The `toBeUndefined` matcher compares against `undefined`", function () {
+    var a = {
+        foo: "foo"
+    };
+
+    expect(a.foo).not.toBeUndefined();
+    expect(a.bar).toBeUndefined();
+});
+```
+
+### toBeNull()
+
+```js
+it("The 'toBeNull' matcher compares against null", function () {
+    var a = null;
+    var foo = "foo";
+
+    expect(null).toBeNull();
+    expect(a).toBeNull();
+    expect(foo).not.toBeNull();
+});
+```
+
+### toBeTruthy()
+
+```js
+it("The 'toBeTruthy' matcher is for boolean casting testing", function () {
+    var a, foo = "foo";
+
+    expect(foo).toBeTruthy();
+    expect(a).not.toBeTruthy();
+});
+```
+
+### toBeFalsy()
+
+```js
+it("The 'toBeFalsy' matcher is for boolean casting testing", function () {
+    var a, foo = "foo";
+
+    expect(a).toBeFalsy();
+    expect(foo).not.toBeFalsy();
+});
+```
+
+### toContain()
+
+```js
+it("works for finding an item in an Array", function () {
+    var a = ["foo", "bar", "baz"];
+
+    expect(a).toContain("bar");
+    expect(a).not.toContain("quux");
+});
+
+it("also works for finding a substring", function () {
+    var a = "foo bar baz";
+
+    expect(a).toContain("bar");
+    expect(a).not.toContain("quux");
+});
+```
+
+### toBeLessThan()
+
+```js
+it("The 'toBeLessThan' matcher is for mathematical comparisons", function () {
+    var pi = 3.1415926,
+        e = 2.78;
+
+    expect(e).toBeLessThan(pi);
+    expect(pi).not.toBeLessThan(e);
+});
+```
+
+### toBeGreaterThan()
+
+```js
+it("The 'toBeGreaterThan' matcher is for mathematical comparisons", function () {
+    var pi = 3.1415926,
+        e = 2.78;
+
+    expect(pi).toBeGreaterThan(e);
+    expect(e).not.toBeGreaterThan(pi);
+});
+```
+
+### toBeCloseTo()
+
+```js
+it("The 'toBeCloseTo' matcher is for precision math comparison", function () {
+    var pi = 3.1415926,
+        e = 2.78;
+
+    expect(pi).not.toBeCloseTo(e, 2);
+    expect(pi).toBeCloseTo(e, 0);
+});
+```
+
+### toThrow()
+
+```js
+it("The 'toThrow' matcher is for testing if a function throws an exception", function () {
+    var foo = function () {
+        return 1 + 2;
+    };
+    var bar = function () {
+        return a + 1;
+    };
+    var baz = function () {
+        throw 'what';
+    };
+
+    expect(foo).not.toThrow();
+    expect(bar).toThrow();
+    expect(baz).toThrow('what');
+});
+```
+
+### toThrowError()
+
+```js
+it("The 'toThrowError' matcher is for testing a specific thrown exception", function () {
+    var foo = function () {
+        throw new TypeError("foo bar baz");
+    };
+
+    expect(foo).toThrowError("foo bar baz");
+    expect(foo).toThrowError(/bar/);
+    expect(foo).toThrowError(TypeError);
+    expect(foo).toThrowError(TypeError, "foo bar baz");
+});
+```
+
+### Manually failing a spec with 'fail'
+
+```js
+var foo = function (x, callBack) {
+    if (x) {
+        callBack();
+    }
+};
+
+it("should not call the callBack", function () {
+    foo(false, function () {
+        fail("Callback has been called");
+    });
+});
+```
+
 
 
 
