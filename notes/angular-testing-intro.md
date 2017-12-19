@@ -164,25 +164,27 @@ Debug specs in the browser in the same way that you debug an application.
 
 Before we move on to test our first component, let's take a look at a couple of the functions that we used to perform our "1st tests" using Karma.  As we know from above, the functions
 
-**describe()**
+### describe()
 
 A test suite begins with a call to the global Jasmine function **describe** with two parameters: a **string** and a **function**. The string is a name or title for a spec suite - usually what is being tested. The function is a block of code that implements the suite.
 
-**it()**
+### it()
 
 Calling the global Jasmine function **it** actually defines a "spec" which, like describe takes a **string** and a **function**. The string is the title of the spec and the function is the spec, or test. A spec contains **one or more** expectations that test the state of the code. An expectation in Jasmine is an assertion that is either true or false. A spec with all true expectations is a passing spec. A spec with one or more false expectations is a failing spec.
 
 Note: "Describing" test suites and "specs" helps us to group tests and easily identify (or report on) 1 or more failing tests.
 
-**expect()**
+### expect()
 
 The **expect** function is used to build "Expections", by providing a value, called the actual. It is chained with a Matcher function (ie: `toBe()`), which takes the expected value.
 
-**Matcher Functions**
+<br>
+
+### Matcher Functions
 
 Jasmine comes with the following "Matcher Functions" that we can use to test our code.  Please note however, that it is also possible to create [custom matchers](https://jasmine.github.io/2.4/custom_matcher.html) when required as well.
 
-### toBe()
+#### toBe()
 
 ```js
 it("The 'toBe' matcher compares with ===", function () {
@@ -194,7 +196,7 @@ it("The 'toBe' matcher compares with ===", function () {
 });
 ```
 
-### toEqual()
+#### toEqual()
 
 ```js
 it("works for simple literals and variables", function () {
@@ -215,7 +217,7 @@ it("should work for objects", function () {
 });
 ```
 
-### toMatch()
+#### toMatch()
 
 ```js
 it("The 'toMatch' matcher is for regular expressions", function () {
@@ -227,7 +229,7 @@ it("The 'toMatch' matcher is for regular expressions", function () {
 });
 ```
 
-### toBeDefined()
+#### toBeDefined()
 
 ```js
 it("The 'toBeDefined' matcher compares against `undefined`", function () {
@@ -240,7 +242,7 @@ it("The 'toBeDefined' matcher compares against `undefined`", function () {
 });
 ```
 
-### toBeUndefined()
+#### toBeUndefined()
 
 ```js
 it("The `toBeUndefined` matcher compares against `undefined`", function () {
@@ -253,7 +255,7 @@ it("The `toBeUndefined` matcher compares against `undefined`", function () {
 });
 ```
 
-### toBeNull()
+#### toBeNull()
 
 ```js
 it("The 'toBeNull' matcher compares against null", function () {
@@ -266,7 +268,7 @@ it("The 'toBeNull' matcher compares against null", function () {
 });
 ```
 
-### toBeTruthy()
+#### toBeTruthy()
 
 ```js
 it("The 'toBeTruthy' matcher is for boolean casting testing", function () {
@@ -277,7 +279,7 @@ it("The 'toBeTruthy' matcher is for boolean casting testing", function () {
 });
 ```
 
-### toBeFalsy()
+#### toBeFalsy()
 
 ```js
 it("The 'toBeFalsy' matcher is for boolean casting testing", function () {
@@ -288,7 +290,7 @@ it("The 'toBeFalsy' matcher is for boolean casting testing", function () {
 });
 ```
 
-### toContain()
+#### toContain()
 
 ```js
 it("works for finding an item in an Array", function () {
@@ -306,7 +308,7 @@ it("also works for finding a substring", function () {
 });
 ```
 
-### toBeLessThan()
+#### toBeLessThan()
 
 ```js
 it("The 'toBeLessThan' matcher is for mathematical comparisons", function () {
@@ -318,7 +320,7 @@ it("The 'toBeLessThan' matcher is for mathematical comparisons", function () {
 });
 ```
 
-### toBeGreaterThan()
+#### toBeGreaterThan()
 
 ```js
 it("The 'toBeGreaterThan' matcher is for mathematical comparisons", function () {
@@ -330,7 +332,7 @@ it("The 'toBeGreaterThan' matcher is for mathematical comparisons", function () 
 });
 ```
 
-### toBeCloseTo()
+#### toBeCloseTo()
 
 ```js
 it("The 'toBeCloseTo' matcher is for precision math comparison", function () {
@@ -342,7 +344,7 @@ it("The 'toBeCloseTo' matcher is for precision math comparison", function () {
 });
 ```
 
-### toThrow()
+#### toThrow()
 
 ```js
 it("The 'toThrow' matcher is for testing if a function throws an exception", function () {
@@ -362,7 +364,7 @@ it("The 'toThrow' matcher is for testing if a function throws an exception", fun
 });
 ```
 
-### toThrowError()
+#### toThrowError()
 
 ```js
 it("The 'toThrowError' matcher is for testing a specific thrown exception", function () {
@@ -377,7 +379,7 @@ it("The 'toThrowError' matcher is for testing a specific thrown exception", func
 });
 ```
 
-### Manually failing a spec with 'fail'
+#### Manually failing a spec with 'fail'
 
 ```js
 var foo = function (x, callBack) {
