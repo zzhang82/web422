@@ -128,5 +128,15 @@ Introduction to Angular Forms<br><br>
 </ul>
 </td>
 </tr>
+    <tr>
+<td><a href="/web422/notes/week11">11 - Notes</a></td>
+<td>
+Introduction to Angular Deployment &amp; Testing<br><br>
+<ul>
+<li>Introduction to Building / Deploying an Angular app using Node.js</li>
+<li>A brief introduction to the Angular testing landscape</li>
+</ul>
+</td>
+</tr>
 </tbody>
 </table>
