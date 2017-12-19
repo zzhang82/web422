@@ -476,7 +476,7 @@ Say our specification requires there to be certain elements present in the templ
 
 This would make a great test, but first we must learn how we can gain access to elements in the compiled template.
 
-Fortunately, this can be accomplished through the use of the **debugElement** as mentioned above, with a special ".query" &amp; ".queryAll" methods, ie:
+Fortunately, this can be accomplished through the use of the **debugElement** as mentioned above, with special ".query" &amp; ".queryAll" methods, ie:
 
 ```js
 fixture.debugElement.query() // return one element (the first matching element)
