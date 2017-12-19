@@ -108,7 +108,9 @@ For now, let's see how we can perform our first, simple unit test:
 
 ```js
 describe('1st tests', () => {
-  it('true is true', () => expect(true).toBe(true));
+    it('true is true', () => {
+        expect(true).toBe(true);
+    });
 });
 ```
 
@@ -134,7 +136,9 @@ If we make a quick change in our 1st.spec.ts by changing the expectation from **
 
 ```js
 describe('1st tests', () => {
-  it('true is true', () => expect(false).toBe(true));
+    it('true is true', () => {
+        expect(false).toBe(true);
+    });
 });
 ```
 
@@ -156,9 +160,17 @@ Debug specs in the browser in the same way that you debug an application.
 
 <br>
 
-### Karma Syntax
+### Jasmine Syntax
 
-Before we move on to test our first component
+Before we move on to test our first component, let's take a look at a couple of the functions that we used to perform our "1st tests" using Karma.  As we know from above, the functions
+
+**describe()**
+
+A test suite begins with a call to the global Jasmine function **describe** with two parameters: a **string** and a **function**. The string is a name or title for a spec suite - usually what is being tested. The function is a block of code that implements the suite.
+
+**it()**
+
+Calling the global Jasmine function **it** actually defines a "spec" which, like describe takes a **string** and a **function**. The string is the title of the spec and the function is the spec, or test. A spec contains one or more expectations that test the state of the code. An expectation in Jasmine is an assertion that is either true or false. A spec with all true expectations is a passing spec. A spec with one or more false expectations is a failing spec.
 
 
 
