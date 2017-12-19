@@ -7,7 +7,7 @@ layout: default
 
 Throughout our discussion of Angular, we have largely been ignoring the test features that have been made available to us.  For example, we have opted to ignore the spec files and "skip tests" using the "-st" command when creating a "new" application (skipping the creation the spec files altogether, as well as excluding the end-to-end (e2e) testing functionality).
 
-However, running e2e tests & unit testing is an extremely important(https://www.agiletestingframework.com/atf/testing/unit-testing/) part of the Agile development cycle.  For example, unit / e2e testing:
+However, running e2e tests & unit testing is an [extremely important](https://www.agiletestingframework.com/atf/testing/unit-testing/) part of the Agile development cycle.  For example, unit / e2e testing:
 
 * Guards against changes that break existing code (“regressions”).
 
@@ -98,7 +98,68 @@ We will get a new Angular application with "routing" enabled out of the box - th
 
 For now, let's see how we can perform our first, simple unit test:
 
-1. Create a new file called 1st.spec.ts in the application root folder, src/app/
+1. Open the file src/app/app.component.spec.ts & comment out all of the code (we will be coming back to this later).
+
+2. Create a new file called `1st.spec.ts` in the application root folder, `src/app/`
+
+  NOTE: Tests written in Jasmine are called specs. **The filename extension must be** .spec.ts, the convention adhered to by karma.conf.js and other tooling.
+  
+3. Open the file and enter the following code:
+
+```js
+describe('1st tests', () => {
+  it('true is true', () => expect(true).toBe(true));
+});
+```
+
+4. Run the command `npm test` from the integrated terminal
+
+  You should see some text output to the terminal, ie:
+  
+  ```
+18 12 2017 23:02:29.790:WARN [karma]: No captured browser, open http://localhost:9876/
+18 12 2017 23:02:29.800:INFO [karma]: Karma v1.7.1 server started at http://0.0.0.0:9876/
+18 12 2017 23:02:29.801:INFO [launcher]: Launching browser Chrome with unlimited concurrency
+18 12 2017 23:02:29.804:INFO [launcher]: Starting browser Chrome
+...
+```
+
+You may or may not see the "No captured browser" warning - if your default browser opens to a "Karma" page, then everything is working as expected and no further action is required.  If you see the warning, simply open the browser to the address identified, ie: `http://localhost:9876/`
+
+We can now safely keep the "Karma" page running and every time we save a change to our code (as before), we will see the compiled results tested and our results shown.
+
+For example:
+
+If we make a quick change in our 1st.spec.ts by changing the expectation from **true** to **false**, ie:
+
+```js
+describe('1st tests', () => {
+  it('true is true', () => expect(false).toBe(true));
+});
+```
+
+We can see that it fails with "Expected false to be true".  Before moving on, change the expection back to "true" so that we no longer see the error
+
+<br>
+
+### Test Debugging
+
+Debug specs in the browser in the same way that you debug an application.
+
+1. Reveal the karma browser window (hidden earlier).
+2. Click the DEBUG button; it opens a new browser tab and re-runs the tests.
+3. Open the browser's “Developer Tools” (Ctrl-Shift-I on windows; Command-Option-I in OSX).
+4. Pick the "sources" section.
+5. Open the 1st.spec.ts test file (Control/Command-P, then start typing the name of the file).
+6. Set a breakpoint in the test.
+7. Refresh the browser, and it stops at the breakpoint.
+
+<br>
+
+### Karma Syntax
+
+Before we move on to test our first component
+
 
 
 
