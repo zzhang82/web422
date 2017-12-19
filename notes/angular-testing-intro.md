@@ -476,13 +476,14 @@ Say our specification requires there to be certain elements present in the templ
 
 This would make a great test, but first we must learn how we can gain access to elements in the compiled template.
 
-Fortunately, this can be accomplished through the use of the **debugElement** as mentioned above, with a special ".query" method, ie:
+Fortunately, this can be accomplished through the use of the **debugElement** as mentioned above, with a special ".query" &amp; ".queryAll" methods, ie:
 
 ```js
-fixture.debugElement.query()
+fixture.debugElement.query() // return one element (the first matching element)
+fixture.debugElement.queryAll() // return a collection of elements
 ```
 
-In order to "query" the element, we can use one of three methods (Note: to use "By" we must `import { By } from '@angular/platform-browser';`):
+In order to "query" the component element, we can use one of three methods (Note: to use "By" we must `import { By } from '@angular/platform-browser';`):
 
 * By.all - return all elements.
 * By.css(selector) - return elements with matching CSS selectors.
@@ -491,10 +492,17 @@ In order to "query" the element, we can use one of three methods (Note: to use "
 In our case, we wish to ensure that we have at least one &lt;p&gt; element (from above).  We can use the following syntax to get a collection of all &lt;p&gt; elements.
 
 ```js
-fixture.debugElement.query(By.css('p'));
+fixture.debugElement.queryAll(By.css('p'));
 ```
 
 This would allow us to write our test as follows:
+
+```js
+it('must have at least 1 paragraph', () => {
+  let pElements = fixture.debugElement.queryAll(By.css('p'));
+  expect(pElements.length).toBeGreaterThan(0);
+});
+```
 
 
 
