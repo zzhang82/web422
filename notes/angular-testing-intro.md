@@ -401,7 +401,7 @@ it("should not call the callBack", function () {
 
 Now that we're familiar with some of the key functions of the Jasmine testing syntax, we can begin to make sense of some of the testing logic that we see generated in those .spec files.
 
-Let's create a new component, ie: `ng n c componentOne`
+Let's create a new component, ie: `ng g c componentOne`
 
 This should generate a "component-one" directory with the following files:
 
