@@ -450,7 +450,7 @@ While this does work as expected, there's a lot of strange code in here.  Why do
 
 "**TestBed** is the first and most important of the Angular testing utilities. It creates an Angular testing module — an `@NgModule` class—that you configure with the `configureTestingModule` method to produce the module environment for the class you want to test. In effect, you detach the tested component from its own application module and re-attach it to a dynamically-constructed Angular test module tailored specifically for this battery of tests."
 
-Essentially, TestBed provides the functionality to enable the configuration of the testing module &amp; to compile / create components. 
+Essentially, TestBed provides the functionality to enable the configuration of the testing module &amp; to compile components / create component "fixtures". 
 
 ### ComponentFixture
 
