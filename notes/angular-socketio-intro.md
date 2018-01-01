@@ -17,6 +17,8 @@ From the Socket.io documentation:
 
 > This means that the server can push messages to clients. Whenever you write a chat message, the idea is that the server will get it and push it to all other connected clients.
 
+<br>
+
 ### Getting Started
 
 Creating any application that makes use of socket.io, requires two parts: a **client** and a **server**.  We will start with creating the **server** piece, before developing an Angular application that connects to it.
@@ -107,50 +109,30 @@ socket.on('chat message', function (msg) { // when the socket recieves a "chat m
 });
 ```
 
-This is the most interesting piece of code in our server.js file, as it handles both incoming and outgoing messages.  The "event" is "chat message" - a custom "event" that we will use in our **client** code as a means of directing our communication.  The callback function provides the actual message sent to the server as a "chat message" as the "msg" parameter.  To send this message back to all users listening to "chat message"
+This is the most interesting piece of code in our server.js file, as it handles both incoming and outgoing messages.  The "event" is "chat message" - a custom "event" that we will use in our **client** code as a means of directing our communication.  
 
-
-- I first created a simple express server "chatServer":
+The callback function provides the actual "chat message" message sent to the server as the "msg" parameter.  To send this message back to all clients listening to "chat message" (we will see this when we write the **client**), we call `io.emit()` and specify the event (ie, "chat message"), as well as the data (ie, msg).
 
 ```js
-const express = require("express");
-const app = express();
-const path = require("path");
-
-// get socket.io going
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-
-const HTTP_PORT = process.env.PORT || 8080;
-
-// setup the static folder 
-app.use(express.static("public"));
-
-io.on('connection', function(socket){
-    console.log('a user connected'); // show when the user connected
-
-    socket.on('disconnect', function(){
-      console.log('user disconnected'); // show when the user disconnected
-    });
-
-    socket.on('chat message', function(msg){ // when the socket recieves a "chat message"
-        console.log("user sent: " + msg);
-        io.emit('chat message', 'a user sent: ' + msg); // send the message back to the users
-    });
-  });
-
 http.listen(HTTP_PORT,()=>{ // note - we use http here, not app
     console.log("listening on: " + HTTP_PORT);
 });
 ```
 
-- I then created a simple "index.html" file to connect: 
+Lastly, we make a call to the "listen" method as usual.  However, we must call it on the "http" server instance, *instead* of the express "app" (as we have traditionally done).
+
+<br>
+
+### Testing Our Server
+
+Before we move on to create an Angular application to serve as a **client**, we should write a simple page to test the server as it is.  To do this, we can simply create an **index.html** file within a **"public"** directory.  This will approximate our Angular app that we will create next.
+
+Once this file (public/index.html) is created, enter the following HTML:
 
 ```html
-<!doctype html>
 <html>
   <head>
-    <title>Socket.IO Connection Test</title>
+     <title>Socket.IO Connection Test</title>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
      
      <script>
@@ -161,14 +143,33 @@ http.listen(HTTP_PORT,()=>{ // note - we use http here, not app
       socket.on('chat message', function(msg){
         console.log("recieved: " + msg);
       });
-    
     </script>
+    
   </head>
   <body>
    <p>Testing Socket Connection</p>
   </body>
 </html>
 ```
+
+Before we can run our server and see our "chat message" echoed back to us, we need to tell the server where to find the "public" files.  This is done by adding the middleware function call (near the top of server.js - beneath the line that specifies HTTP_PORT):
+
+```js
+app.use(express.static("public"));
+```
+
+If we run the server now, we should see the text: "recieved: Hello World" in the Console! Our server has successfully recieved the message and sent it back out to our clients.  Once we implement a more dynamic client, we will see how this will work across multiple connections to 'chat message' on 'http://localhost:8080'.
+
+<br>
+
+### Writing a Client (Using Angular)
+
+...
+
+
+<br><br><br><br>
+### (Notes)
+
 - I then created a new angular app with 'routing'
 
 - added the libraries
