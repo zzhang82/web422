@@ -3,7 +3,19 @@ title: Angular Socket.io Introduction
 layout: default
 ---
 
-## Notes
+## Socket.io Introduction
+
+We have now reached a point in our Angular learning where we can start to play with some of the more interesting tools and libraries.  We are familiar with the basics of how to create Compoments, Services, Routes, Forms with Two-Way Binding and even how to use some of the testing frameworks used by Angular. However, one common tool that is often used in modern applications is still missing from our skillset: Sockets, specifically the "Socket.io" library.
+
+Essentially, Socket.io enables "realtime, bi-directional communication between web clients and servers".  It can be extremely 
+
+From the Socket.io documentation: 
+
+Writing a chat application with popular web applications stacks like LAMP (PHP) has traditionally been very hard. It involves polling the server for changes, keeping track of timestamps, and it’s a lot slower than it should be.
+
+Sockets have traditionally been the solution around which most realtime chat systems are architected, providing a bi-directional communication channel between a client and a server.
+
+This means that the server can push messages to clients. Whenever you write a chat message, the idea is that the server will get it and push it to all other connected clients.
 
 - I first created a simple express server "chatServer":
 
@@ -104,4 +116,22 @@ http.listen(HTTP_PORT,()=>{ // note - we use http here, not app
 ```
 
 - uncommented out the "public" bit from server.js (it's a simple chat server now)
+
+- need to add forms module... ie in app.module.ts
+
+```
+import { FormsModule } from '@angular/forms';
+
+[...]
+
+@NgModule({
+  imports: [
+    [...]
+    FormsModule
+  ],
+  [...]
+})
+```
+
+- updated the chatWindow template:
 
