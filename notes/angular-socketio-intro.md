@@ -64,5 +64,44 @@ http.listen(HTTP_PORT,()=>{ // note - we use http here, not app
   </body>
 </html>
 ```
+- I then created a new angular app with 'routing'
 
+- added the libraries
+
+- `npm install --save socket.io-client`
+- `npm install --save-dev @types/socket.io-client`
+- `npm install --save @types/socket.io-client --only=dev`
+
+- I then needed to update the file: tsconfig.app.json to add the types (ie, add "socket.io-client" to the "types" array
+
+```
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "baseUrl": "./",
+    "module": "es2015",
+    "types": ["socket.io-client"]
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}
+```
+
+- added a new service:
+
+- ng g s socketIo --module=app
+
+```js
+```
+
+
+- added a new component "chatWindow" - `ng g c chatWindow`
+
+```js
+```
+
+- uncommented out the "public" bit from server.js (it's a simple chat server now)
 
