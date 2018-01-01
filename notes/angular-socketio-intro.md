@@ -61,8 +61,53 @@ http.listen(HTTP_PORT,()=>{ // note - we use http here, not app
 
 Before we move on, let's explain what's going on in the above code.
 
+```js
+const express = require("express");
+const app = express();
+const path = require("path");
 
+const HTTP_PORT = process.env.PORT || 8080;
+```
 
+This is fairly standard and was discussed in detail during our time in WEB322.  Essentially it loads the "express" & "path" modules as well as sets the port to either 8080 *or* the PORT identified within an environment variable (used by Heroku).
+
+```js
+// setup socket.io
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+```
+
+This code is a little different than what we're used to when working with Express in Node.js.  Here, we require the 'http' module, and invoke it's "Server" function with the express "app" to return an http server instance (ie "http"). We will be
+referencing "http" instead of "app" when listening on our "HTTP_PORT".  We also require the "socket.io" library and provide the "http" server that we will "bind" our socket to.  This must be an "http" server, and will not work with "app" (which is why we must use the "http" module).
+
+```js
+io.on('connection', function (socket) {
+    console.log('a user connected'); // show when the user connected
+
+    // ...
+});
+```
+
+This block of code specifies a callback function to be executed when a client "connects" to the socket.  A reference to the socket is provided to the function.  It is within this callback that we will wire up all of our "socket" events using this reference.  
+
+Lastly, to confirm that the client is indeed connected, we will simply output "a user connected" to the console.  
+
+```js
+socket.on('disconnect', function () {
+    console.log('user disconnected'); // show when the user disconnected
+});
+```
+
+Here, we wire up the "disconnect" event and simply output "user disconnected" to the console.
+
+```js
+socket.on('chat message', function (msg) { // when the socket recieves a "chat message"
+    console.log("user sent: " + msg);
+    io.emit('chat message', msg); // send the message back to the users
+});
+```
+
+This is the most interesting piece of code in our server.js file, as it handles both incoming and outgoing messages.  The "event" is "chat message" - a custom "event" that we will use in our **client** code as a means of directing our communication.  The callback function provides the actual message sent to the server as a "chat message" as the "msg" parameter.  To send this message back to all users listening to "chat message"
 
 
 - I first created a simple express server "chatServer":
