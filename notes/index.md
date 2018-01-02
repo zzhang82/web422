@@ -138,5 +138,15 @@ Introduction to Angular Deployment &amp; Testing<br><br>
 </ul>
 </td>
 </tr>
+  <tr>
+<td><a href="/web422/notes/week12">12 - Notes</a></td>
+<td>
+Introduction to Socket.io <br><br>
+<ul>
+<li>Creating a server using Node/Express for managing socket connections</li>
+<li>Developing an Angular application which contains a working "chat window"</li>
+</ul>
+</td>
+</tr>
 </tbody>
 </table>
