@@ -386,6 +386,8 @@ We now have everything in place to create the template for our ChatWindow Compon
 
 Here, we have a "well" with a few simple inline styles added (these should be moved into chat-window.component.css), that is used to contain a &lt;div&gt; element for every "message" in the "messages" array.  This can be thought of as our "chat window".  Beneath this is a very small form consisting of a text box and submit button.  The textbox is bound (using two-way binding) to the "currentMessage" property and when the form submits, the "sendMessage()" method is invoked.
 
+<br>
+
 #### Step 6: Updating app.compoment.html
 
 Everything is nearly ready for testing, the only thing left is to update app.component.html to include our ChatWindowComponent (`&lt;app-chat-window&gt;&lt;/app-chat-window&gt;`).  Since we're using Bootstrap 3, we will ensure that this component sits within the responsive grid system:
