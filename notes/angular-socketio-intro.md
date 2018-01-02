@@ -369,11 +369,12 @@ At first glance, it looks like there's a lot going on in this Compoment, but rea
 #### Step 5: Updating ChatWindowComponent Template
 
 We now have everything in place to create the template for our ChatWindow Component.  Enter the following code in the "chat-window.compoment.html" file:
-
+{% raw %}
 ```html
 <div class="well" style="height: 300px; overflow-y: scroll; margin-top:15px">
   <div *ngFor="let message of messages">{{message}}</div>
 </div>
+{% endraw %}
 
 <form (ngSubmit)="sendMessage()">
     <input type="text" name="currentMessage" class="form-control" [(ngModel)]="currentMessage" />
