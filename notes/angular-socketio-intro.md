@@ -46,6 +46,9 @@ var io = require('socket.io')(http);
 
 io.on('connection', function(socket){
     console.log('a user connected'); // show when the user connected
+    
+    // assign them a temporary user name:
+    let tempUserName = "User-" + Math.floor(Math.random() * (100000 - 1 + 1)) + 1; 
 
     socket.on('disconnect', function(){
       console.log('user disconnected'); // show when the user disconnected
@@ -53,7 +56,7 @@ io.on('connection', function(socket){
 
     socket.on('chat message', function(msg){ // when the socket recieves a "chat message"
         console.log("user sent: " + msg);
-        io.emit('chat message', msg); // send the message back to the users
+        io.emit('chat message', tempUserName + ": " + msg); // send the message back to the users
     });
   });
 
@@ -103,6 +106,15 @@ This block of code specifies a callback function to be executed when a client "c
 
 <br>
 
+```js
+// assign them a temporary user name:
+    let tempUserName = "User-" + Math.floor(Math.random() * (100000 - 1 + 1)) + 1; 
+```
+
+To help distinguish which user wrote which message, we simply create a "tempUserName" that consists of the text "User-" followed by a random number between 1 and 100000 inclusive.
+
+<br>
+
 To confirm that the client is indeed connected, we will simply output "a user connected" to the console.  
 
 ```js
@@ -118,7 +130,7 @@ Here, we wire up the "disconnect" event and simply output "user disconnected" to
 ```js
 socket.on('chat message', function (msg) { // when the socket recieves a "chat message"
     console.log("user sent: " + msg);
-    io.emit('chat message', msg); // send the message back to the users
+    iio.emit('chat message', tempUserName + ": " + msg); // send the message back to the users
 });
 ```
 
@@ -175,7 +187,7 @@ Before we can run our server and see our "chat message" echoed back to us, we ne
 app.use(express.static("public"));
 ```
 
-If we run the server now, we should see the text: "recieved: Hello World" in the Console! Our server has successfully recieved the message and sent it back out to our clients.  Once we implement a more dynamic client, we will see how this will work across multiple connections to 'chat message' on 'http://localhost:8080'.
+If we run the server now, we should see the text: "recieved: User-xx Hello World" (where xx is a random number) in the Console! Our server has successfully recieved the message and sent it back out to our clients.  Once we implement a more dynamic client, we will see how this will work across multiple connections to 'chat message' on 'http://localhost:8080'.
 
 <br>
 
@@ -327,6 +339,7 @@ export class ChatWindowComponent implements OnInit {
 
   sendMessage(){
     this.chatService.sendMessage(this.currentMessage);
+    this.currentMessage = "";
   }
 
   ngOnDestroy(){    
@@ -349,7 +362,7 @@ At first glance, it looks like there's a lot going on in this Compoment, but rea
 
 - Subscribe to the getMessages property of "this.chatService" and push any incoming chats into the "messages" array
 
-- Declare a "sendMessage()" method that will invoke the "sendMessage" method of "chatService" with the value of "this.currentMessage"
+- Declare a "sendMessage()" method that will invoke the "sendMessage" method of "chatService" with the value of "this.currentMessage" before clearing it for the next entry
 
 - Destroy the "getMessages" subscription on the ngOnDestroy lifecycle method
 
@@ -360,16 +373,38 @@ At first glance, it looks like there's a lot going on in this Compoment, but rea
 We now have everything in place to create the template for our ChatWindow Component.  Enter the following code in the "chat-window.compoment.html" file:
 
 ```html
+<div class="well" style="height: 300px; overflow-y: scroll; margin-top:15px">
+  <div *ngFor="let message of messages">{{message}}</div>
+</div>
+
+<form (ngSubmit)="sendMessage()">
+    <input type="text" name="currentMessage" class="form-control" [(ngModel)]="currentMessage" />
+    <br />
+    <button type="submit" class="btn btn-primary" >Send Message</button>
+</form>
 ```
 
+Here, we have a "well" with a few simple inline styles added (these should be moved into chat-window.component.css), that is used to contain a &lt;div&gt; element for every "message" in the "messages" array.  This can be thought of as our "chat window".  Beneath this is a very small form consisting of a text box and submit button.  The textbox is bound (using two-way binding) to the "currentMessage" property and when the form submits, the "sendMessage()" method is invoked.
 
-NOTE: We will have to replace the code in app.component.html with `<app-chat-window></app-chat-window>` before testing
+#### Step 6: Updating app.compoment.html
 
+Everything is nearly ready for testing, the only thing left is to update app.component.html to include our ChatWindowComponent (`&lt;app-chat-window&gt;&lt;/app-chat-window&gt;`).  Since we're using Bootstrap 3, we will ensure that this component sits within the responsive grid system:
 
-<br><br><br><br>
-### (Notes)
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <app-chat-window></app-chat-window>
+  </div>
+  </div>
+</div> 
+```
 
+#### Step 7: Testing &amp; Future Work
 
+The application should now be ready for testing.  You should be able to serve the app and open multiple windows to `http://localhost:4200` and be able to enter chat messages that are echoed in every window.
 
-- updated the chatWindow template:
+This is a good start in getting a proof-of-concept chat window going, but there's lots of room for improvement.  For example, we can add a feature that lets users choose their own user name or even log in prior to using the chat window.  We could also persist existing message boards using MongoDB so that new users can see an existing conversation when they first log in, or continue a conversation later on.  We could even implement different chat "rooms" (see the documentation for "Rooms and Namespaces" in the [official socket.io documentation](https://socket.io/docs/rooms-and-namespaces/).  
+
+Another interesting use case might be an application with a single "project lead" that assigns "tasks" to users in the application.  If a logged-in user recieves a "task", we can use socket.io to alert that user immediately that a new task has been assigned to them.  This can be done *without* constantly polling the database / API for "task" updates (the traditional approach to solving this problem).
 
