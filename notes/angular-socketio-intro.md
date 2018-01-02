@@ -128,7 +128,7 @@ Here, we wire up the "disconnect" event and simply output "user disconnected" to
 ```js
 socket.on('chat message', function (msg) { // when the socket recieves a "chat message"
     console.log("user sent: " + msg);
-    iio.emit('chat message', tempUserName + ": " + msg); // send the message back to the users
+    io.emit('chat message', tempUserName + ": " + msg); // send the message back to the users
 });
 ```
 
