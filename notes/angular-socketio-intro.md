@@ -61,7 +61,11 @@ http.listen(HTTP_PORT,()=>{ // note - we use http here, not app
 });
 ```
 
+<br>
+
 Before we move on, let's explain what's going on in the above code.
+
+<br>
 
 ```js
 const express = require("express");
@@ -73,6 +77,8 @@ const HTTP_PORT = process.env.PORT || 8080;
 
 This is fairly standard and was discussed in detail during our time in WEB322.  Essentially it loads the "express" & "path" modules as well as sets the port to either 8080 *or* the PORT identified within an environment variable (used by Heroku).
 
+<br>
+
 ```js
 // setup socket.io
 var http = require('http').Server(app);
@@ -81,6 +87,8 @@ var io = require('socket.io')(http);
 
 This code is a little different than what we're used to when working with Express in Node.js.  Here, we require the 'http' module, and invoke it's "Server" function with the express "app" to return an http server instance (ie "http"). We will be
 referencing "http" instead of "app" when listening on our "HTTP_PORT".  We also require the "socket.io" library and provide the "http" server that we will "bind" our socket to.  This must be an "http" server, and will not work with "app" (which is why we must use the "http" module).
+
+<br>
 
 ```js
 io.on('connection', function (socket) {
@@ -92,7 +100,9 @@ io.on('connection', function (socket) {
 
 This block of code specifies a callback function to be executed when a client "connects" to the socket.  A reference to the socket is provided to the function.  It is within this callback that we will wire up all of our "socket" events using this reference.  
 
-Lastly, to confirm that the client is indeed connected, we will simply output "a user connected" to the console.  
+<br>
+
+To confirm that the client is indeed connected, we will simply output "a user connected" to the console.  
 
 ```js
 socket.on('disconnect', function () {
@@ -101,6 +111,8 @@ socket.on('disconnect', function () {
 ```
 
 Here, we wire up the "disconnect" event and simply output "user disconnected" to the console.
+
+<br>
 
 ```js
 socket.on('chat message', function (msg) { // when the socket recieves a "chat message"
@@ -114,6 +126,8 @@ This is the most interesting piece of code in our server.js file, as it handles 
 The callback function provides the actual "chat message" message sent to the server as the "msg" parameter.  To send this message back to **all clients** listening to "chat message" (we will see this when we write the **client**), we call `io.emit()` and specify the event (ie, "chat message"), as well as the data (ie, msg).  
 
 **Note:** If we wanted to only communicate this message back to the original sender, we would use `socket.emit()` instead.
+
+<br>
 
 ```js
 http.listen(HTTP_PORT,()=>{ // note - we use http here, not app
@@ -138,7 +152,7 @@ Once this file (public/index.html) is created, enter the following HTML:
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
      
      <script>
-      var socket = io.connect('http://localhost:8080');
+      var socket = io.connect('http://localhost:8080'); // we can also use io.connect() to connect to the current host
       socket.on('connect', function(data) {
           socket.emit('chat message', 'Hello World');
       });
@@ -166,7 +180,9 @@ If we run the server now, we should see the text: "recieved: Hello World" in the
 
 ### Writing a Client (Using Angular)
 
-...
+Now that we know our server is capable of sending and receiving messages, we can write an Angular app as the "client" to communicate with the server.
+
+In the same 
 
 
 <br><br><br><br>
