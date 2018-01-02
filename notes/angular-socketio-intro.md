@@ -189,7 +189,7 @@ With the server still running, click the "+" icon next to the dropdown in the to
 
 <br >
 
-#### Step 1: Enable Angular Forms
+#### Step 1: Enable Angular Forms & Bootstrap 3
 
 We will be using a simple web form to write "chat" messages, so we must enable Angular Forms.  Recall, this involves adding the "FormsModule" to the "@NgModule" imports array within **app.module.ts**, ie:
 
@@ -207,11 +207,25 @@ import { FormsModule } from '@angular/forms';
 })
 ```
 
+Additionally, we will use Bootstrap 3 to ensure that our UI is consistant.  Add the following CSS/JS imports to the index.html file:
+
+```
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+```
+
+```
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+```
+
+```
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+```
+
 <br>
 
 #### Step 2: Setting up the "socket.io" Client Library
 
-For us to use the features of socket.io on the client side, we must use NPM to obtain some packages and "types", so that TypeScript will recognize our new code.
+For us to use the features of socket.io on the client side in Angular, we must use NPM to obtain the "socket.io-client" library, as well as some packages defining the "types", so that TypeScript will recognize our new code.
 
 In the Integrated terminal, execute the following 3 "npm install" commands:
 
@@ -219,23 +233,9 @@ In the Integrated terminal, execute the following 3 "npm install" commands:
 - `npm install --save-dev @types/socket.io-client`
 - `npm install --save @types/socket.io-client --only=dev`
 
+Once this is complete, we must add the new "socket.io-client" to the **"types"** array within the file **"tsconfig.app.json"**, ie:
 
-
-
-<br><br><br><br>
-### (Notes)
-
-- I then created a new angular app with 'routing'
-
-- added the libraries
-
-- `npm install --save socket.io-client`
-- `npm install --save-dev @types/socket.io-client`
-- `npm install --save @types/socket.io-client --only=dev`
-
-- I then needed to update the file: tsconfig.app.json to add the types (ie, add "socket.io-client" to the "types" array
-
-```
+```js
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
@@ -251,36 +251,64 @@ In the Integrated terminal, execute the following 3 "npm install" commands:
 }
 ```
 
-- added a new service:
+<br>
 
-- ng g s socketIo --module=app
+#### Step 3: Adding a new ChatService
 
-```js
-```
+Our application will be making use of socket.io within a "service".  To create this service, we use our usual Angular CLI code: `ng g s Chat --module=app`.  
 
-
-- added a new component "chatWindow" - `ng g c chatWindow`
+With our new ChatService created, we can update chat.service.ts to use the following code: 
 
 ```js
+import { Injectable } from '@angular/core';
+import * as io from 'socket.io-client';
+import { Subject } from "rxjs/Subject";  
+
+@Injectable()
+export class ChatService {
+
+  private socket: SocketIOClient.Socket; // The client instance of socket.io
+  public getMessages: any; 
+
+  constructor() {
+    this.getMessages = new Subject(); 
+    
+    this.socket = io.connect('http://localhost:8080');
+
+    this.socket.on('chat message', (msg) => {
+      this.getMessages.next(msg); // send the new message
+    });
+
+  }
+
+  sendMessage(msg){
+    this.socket.emit('chat message', msg);
+  }
+
+}
 ```
 
-- uncommented out the "public" bit from server.js (it's a simple chat server now)
+Here, you will notice that we import the required files for "socket.io-client" and "Subject" (Recall, "Subjects" are a special kind of Observable - for a quick explanation of the differences, see: http://javascript.tutorialhorizon.com/2017/03/23/rxjs-subject-vs-observable/ ). 
 
-- need to add forms module... ie in app.module.ts
+We declare a local "socket" as type "SocketIOClient.Socket" and connect to it within the constructor function using our familiar "io.connect" code.  We also make use of the socket.on() method, only instead of outputting the "msg" to the console (as we did in our test code), we will instead use our "getMessages" Subject to send the message out to the "Subscribers" of the service, using it's "next()" method.
 
-```
-import { FormsModule } from '@angular/forms';
+Lastly, we include a "sendMessage()" method that simply sends a given message to the socket, using the familiar socket.emit() method from the test code
 
-[...]
+<br>
 
-@NgModule({
-  imports: [
-    [...]
-    FormsModule
-  ],
-  [...]
-})
-```
+#### Step 4: Adding a new ChatWindowComponent
+
+For our example, we will place all of the code within a single "ChatWindowCompoment".  To create this Component, execute the usual Angular CLI code: `ng g c chatWindow`
+
+<br>
+
+#### Step 5: Updating ChatWindowComponent Template
+
+
+<br><br><br><br>
+### (Notes)
+
+
 
 - updated the chatWindow template:
 
