@@ -400,6 +400,8 @@ Everything is nearly ready for testing, the only thing left is to update app.com
 </div> 
 ```
 
+<br>
+
 #### Step 7: Testing &amp; Future Work
 
 The application should now be ready for testing.  You should be able to serve the app and open multiple windows to `http://localhost:4200` and be able to enter chat messages that are echoed in every window.
