@@ -111,7 +111,9 @@ socket.on('chat message', function (msg) { // when the socket recieves a "chat m
 
 This is the most interesting piece of code in our server.js file, as it handles both incoming and outgoing messages.  The "event" is "chat message" - a custom "event" that we will use in our **client** code as a means of directing our communication.  
 
-The callback function provides the actual "chat message" message sent to the server as the "msg" parameter.  To send this message back to all clients listening to "chat message" (we will see this when we write the **client**), we call `io.emit()` and specify the event (ie, "chat message"), as well as the data (ie, msg).
+The callback function provides the actual "chat message" message sent to the server as the "msg" parameter.  To send this message back to **all clients** listening to "chat message" (we will see this when we write the **client**), we call `io.emit()` and specify the event (ie, "chat message"), as well as the data (ie, msg).  
+
+**Note:** If we wanted to only communicate this message back to the original sender, we would use `socket.emit()` instead.
 
 ```js
 http.listen(HTTP_PORT,()=>{ // note - we use http here, not app
