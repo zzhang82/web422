@@ -115,8 +115,6 @@ To help distinguish which user wrote which message, we simply create a "tempUser
 
 <br>
 
-To confirm that the client is indeed connected, we will simply output "a user connected" to the console.  
-
 ```js
 socket.on('disconnect', function () {
     console.log('user disconnected'); // show when the user disconnected
