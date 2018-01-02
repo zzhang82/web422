@@ -24,13 +24,14 @@ From the Socket.io documentation:
 Creating any application that makes use of socket.io, requires two parts: a **client** and a **server**.  We will start with creating the **server** piece, before developing an Angular application that connects to it.
 
 1. Create a new folder called "Week12Example"
-2. Within that folder, create a "chatServer" folder and open it in Visual Studio Code
-3. We will create a Node/Express server using our usual steps, ie:
+2. Within that folder, create a "chatServer" folder
+3. Open the "Week12Example" folder in Visual Studio Code and right-click the "chatServer" folder - choose "open in Terminal".  You can expand this folder, as it will be our "working folder"
+4. We will create a Node/Express server using our usual steps, ie:
     - Create a file **server.js** but leave it empty for now.
     - Run the command "npm init" in the Integrated Terminal
     - Install & Save "express" - `npm install --save express`
     - Install & Save "socket.io" - `npm install --save socket.io`
-4. Enter the following code for "server.js":
+5. Enter the following code for "server.js":
 
 ```js
 const express = require("express");
@@ -182,7 +183,43 @@ If we run the server now, we should see the text: "recieved: Hello World" in the
 
 Now that we know our server is capable of sending and receiving messages, we can write an Angular app as the "client" to communicate with the server.
 
-In the same 
+**Before we begin**: Please note that we must keep the server running in the background, so that our Angular app will have something to connect to.  Therefore, we will *not* stop the server or close the Integrated Terminal window.
+
+With the server still running, click the "+" icon next to the dropdown in the top-right corner of the Integrated Terminal (this will open a 2nd Terminal).  With this new Terminal window open, ensure that your working directory is the "Week12Example" directory (ie, `pwd`).  While in this directory, create a new Angular application (with Routing) called "chatApp", ie: `ng n chatApp --routing`.  Once this is complete, change your working directory to "chatApp" and expand the "chatApp" folder.
+
+<br >
+
+#### Step 1: Enable Angular Forms
+
+We will be using a simple web form to write "chat" messages, so we must enable Angular Forms.  Recall, this involves adding the "FormsModule" to the "@NgModule" imports array within **app.module.ts**, ie:
+
+```
+import { FormsModule } from '@angular/forms';
+
+[...]
+
+@NgModule({
+  imports: [
+    [...]
+    FormsModule
+  ],
+  [...]
+})
+```
+
+<br>
+
+#### Step 2: Setting up the "socket.io" Client Library
+
+For us to use the features of socket.io on the client side, we must use NPM to obtain some packages and "types", so that TypeScript will recognize our new code.
+
+In the Integrated terminal, execute the following 3 "npm install" commands:
+
+- `npm install --save socket.io-client`
+- `npm install --save-dev @types/socket.io-client`
+- `npm install --save @types/socket.io-client --only=dev`
+
+
 
 
 <br><br><br><br>
