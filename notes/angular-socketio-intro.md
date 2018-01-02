@@ -390,7 +390,7 @@ Here, we have a "well" with a few simple inline styles added (these should be mo
 
 #### Step 6: Updating app.compoment.html
 
-Everything is nearly ready for testing, the only thing left is to update app.component.html to include our ChatWindowComponent (`&lt;app-chat-window&gt;&lt;/app-chat-window&gt;`).  Since we're using Bootstrap 3, we will ensure that this component sits within the responsive grid system:
+Everything is nearly ready for testing, the only thing left is to update app.component.html to include our ChatWindowComponent (`<app-chat-window></app-chat-window>`).  Since we're using Bootstrap 3, we will ensure that this component sits within the responsive grid system:
 
 ```html
 <div class="container">
