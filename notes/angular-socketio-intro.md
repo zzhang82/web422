@@ -300,9 +300,70 @@ Lastly, we include a "sendMessage()" method that simply sends a given message to
 
 For our example, we will place all of the code within a single "ChatWindowCompoment".  To create this Component, execute the usual Angular CLI code: `ng g c chatWindow`
 
+With our new ChatWindowComponent created, we can update chat-window.compoment.ts to use the following code: 
+
+```js
+import { Component, OnInit } from '@angular/core';
+import {ChatService} from '../chat.service';
+
+@Component({
+  selector: 'app-chat-window',
+  templateUrl: './chat-window.component.html',
+  styleUrls: ['./chat-window.component.css']
+})
+export class ChatWindowComponent implements OnInit {
+
+  private getMessagesSub: any;
+  messages: string[] = [];
+  currentMessage: string;
+
+  constructor(private chatService: ChatService) { }
+
+  ngOnInit() {
+    this.getMessagesSub = this.chatService.getMessages.subscribe((data) => {
+      this.messages.push(data);
+    });
+  }    
+
+  sendMessage(){
+    this.chatService.sendMessage(this.currentMessage);
+  }
+
+  ngOnDestroy(){    
+     if(this.getMessagesSub){this.getMessagesSub.unsubscribe();}   
+  } 
+
+}
+
+```
+
+At first glance, it looks like there's a lot going on in this Compoment, but really we're following along with the Angular Service design pattern that we've been working with for the past few weeks.  In this case, we:
+
+- Declare a **getMessagesSub** to hold a reference to the subscription to **chatService.getMessages** (so that we can "unsubscribe" to it in the **ngOnDestroy** lifecycle method
+
+- Declare a "messages" property that will hold an array of Strings (the messages recieved from **chatService.getMessages**)
+
+- Declare a "currentMessage" property that will hold the message that the user has entered (to be added to the chat).
+
+- Inject the "ChatService" into our class as "chatService" using the constructor.
+
+- Subscribe to the getMessages property of "this.chatService" and push any incoming chats into the "messages" array
+
+- Declare a "sendMessage()" method that will invoke the "sendMessage" method of "chatService" with the value of "this.currentMessage"
+
+- Destroy the "getMessages" subscription on the ngOnDestroy lifecycle method
+
 <br>
 
 #### Step 5: Updating ChatWindowComponent Template
+
+We now have everything in place to create the template for our ChatWindow Component.  Enter the following code in the "chat-window.compoment.html" file:
+
+```html
+```
+
+
+NOTE: We will have to replace the code in app.component.html with `<app-chat-window></app-chat-window>` before testing
 
 
 <br><br><br><br>
