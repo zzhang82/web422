@@ -29,6 +29,16 @@ Most assignments have a two-week lifetime. Most are independent of each other. I
 
 Each assignment will be worth 10% of your final course grade. The total value of all assignments will be 50%. At the end of the course, the lowest assignment result will be discarded, leaving your best five results.
 
+#### Submission Policy
+
+* Assignments must be created as specified in the assignment specification
+* Late Assignment submissions will not be accepted and will receive a **grade of zero (0)** if not complete by the due date
+* Submitted assignments must run locally, ie: start up errors causing the assignment/app to fail on startup will result in a **grade of zero (0)** for the assignment.
+* The lowest assignment will be dropped
+
+**Important Note:** Posting your assignment solutions anywhere online (ie: stackoverflow, public gitHub repositories, etc.) constitutes a violation of Seneca College’s Academic Honesty Policy, ie:
+“Knowingly helping another student to commit an act of cheating by letting him/her view your answers by lending your work or by working together on a project not specifically assigned and/or approved as a group effort. (Cheating)” ( [Seneca College Academic Honesty Policy – Appendix E](http://www.senecacollege.ca/academic-policy/appe.html) )
+
 <br>
 
 ### Summary
