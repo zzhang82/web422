@@ -63,7 +63,7 @@ Each assignment will be worth 10% of your final course grade. The total value of
 
 ### Summary
 
-6 Tests - 50% (10%/ea)
+6 Tests - 50% (10%/ea)<br>
 6 Assignments - 50% (10%/ea)  
 
 <br>
