@@ -33,28 +33,28 @@ Please Note: The following is taken directly from the <a href="/web422/graded-wo
 
 ### Tests
 
-We have planned twelve (12) tests during the term.
+We have planned six (6) tests during the term.
 
-The duration of each test will range from 10 to 20 minutes. Each test will be worth 5% of your final course grade. All tests will be hand-written, and will happen sometime during the class timeslot. The total value of all tests will be 60%.
+The duration of each test will range from 30 to 35 minutes. Each test will be worth 10% of your final course grade. All tests will be hand-written, and will happen sometime during the class timeslot. The total value of all tests will be 50%.
 
-If you miss a test, there is no opportunity to do a replacement test. However, absence due to illness or other reasons happen occasionally. As a result, you can miss up to two (2) tests, without suffering the loss of grades.
+If you miss a test, there is no opportunity to do a replacement test. However, absence due to illness or other reasons happen occasionally. As a result, you can miss up to one (1) test, without suffering the loss of grades.
 
-The effect of this policy will be extended to all students. At the end of the course, your two lowest test results will be discarded, leaving your best ten results.
+The effect of this policy will be extended to all students. At the end of the course, your lowest test result will be discarded, leaving your best five results.
 
 ### Assignments
 
-We have planned eight (8) assignments during the term.
+We have planned eight (6) assignments during the term.
 
-Most assignments have a one-week lifetime. Most are independent of each other. If you do not submit an assignment by the due date, its grade is zero, and there is no opportunity to earn marks for a late submission.
+Most assignments have a two-week lifetime. Most are independent of each other. If you do not submit an assignment by the due date, its grade is zero, and there is no opportunity to earn marks for a late submission.
 
-Each assignment will be worth 5% of your final course grade. The total value of all assignments will be 40%. At the end of the course, the lowest assignment result will be discarded, leaving your best seven results.
+Each assignment will be worth 10% of your final course grade. The total value of all assignments will be 45%. At the end of the course, the lowest assignment result will be discarded, leaving your best five results.
 
 <br />
 
 ### Summary
 
-Tests - about 12 - 60%  
-Assignments - about 8 - 40%  
+6 Tests - 50% (10%/ea)
+6 Assignments - 50% (10%/ea)  
 
 <br>
 
