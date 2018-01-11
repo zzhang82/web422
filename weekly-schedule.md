@@ -83,15 +83,17 @@ We will have a test at the start of every **Lecture** starting on **Week 2** (we
 </tr>
 
 <tr>
+<td colspan="4"><br /><strong>Study Break - No Classes</strong><br /><br /></td>
+</tr>
+
+<tr>
 <td>7</td>
 <td><ul><li>Components</li></ul></td>
 <td><ul><li>Test 3<br />(Weeks 5-6)</li></ul></td>
 <td></td>
 </tr>
 
-<tr>
-<td colspan="4"><br /><strong>Study Break - No Classes</strong><br /><br /></td>
-</tr>
+
 
 <tr>
 <td>8</td>
