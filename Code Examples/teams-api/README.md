@@ -6,7 +6,7 @@
 
 > This guide requires that you have Node.js and MongoDB correctly installed on your system.  If you cannot execute the commands: `npm --version` or `mongorestore --version`, please [Install NodeJS](https://nodejs.org/) and/or [MongoDB](https://www.mongodb.com/) (See: the [Official Install Guide](https://docs.mongodb.com/manual/administration/install-community/) or the [WEB322 Notes](http://zenit.senecac.on.ca/~patrick.crawford/index.php/web322/course-notes/week8-class1/) for detailed instructions).
 
-Once you have cloned the repository, open the folder in Visual Studio code and issue the command "npm install" from the integrated terminal.  This will look at the package.json file and add the required dependant modules.
+Once you have cloned the repository, move the teams-api folder out of the "Code Examples" folder and open it in Visual Studio code and issue the command "npm install" from the integrated terminal.  This will look at the package.json file and add the required dependant modules.
 
 If you open the "server.js" file, you will notice that the top 2 lines define the constants "mongoDBConnectionString" and "HTTP_PORT".  The HTTP_PORT is fine the way it is (unless you have a conflict on your local machine with port 8081), however the mongoDBConnectionString value will need to change...
 
