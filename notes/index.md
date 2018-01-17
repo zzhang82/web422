@@ -5,8 +5,6 @@ layout: default
 
 ## Notes
 
-Please note: new notes will be published as they become available.
-
 <table>
 <thead>
 <tr>
