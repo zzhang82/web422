@@ -308,7 +308,7 @@ Using this strategy of creating DOM elements in response to the acquisition of n
 * Continuing coverage of jQuery, including topics:
   * [jQuery Utility Methods](http://api.jquery.com/category/utilities/)
   * jQuery Plugin Community: [https://plugins.jquery.com/](https://plugins.jquery.com/) & [NPM](https://www.npmjs.com/browse/keyword/jquery-plugin)
-  * Advanced data rendering (Bootstrap, flot, populating forms)
+  * Advanced data rendering (Bootstrap, populating forms, etc)
   * Using jQuery to invoke Bootstrap Controls
   
   
