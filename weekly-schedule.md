@@ -28,7 +28,7 @@ We will have a test at the start of every **Lecture** starting on **Week 2** (we
 <li>Intro to front end dev</li>
 <li>Dev env setup</li>
 <li>Re-introduction to web services / back end API</li>
-<li>jQuery coverage, new code, and existing code/projects (Bootstrap Components, Flot, etc)</li>
+<li>jQuery coverage, new code, and existing code/projects (Bootstrap Components, etc)</li>
 <li>Some coverage of other useful libraries (Moment, Underscore)</li>
 </ul>
 </td>
