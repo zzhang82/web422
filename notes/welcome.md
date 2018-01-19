@@ -84,14 +84,12 @@ Class/sessions are important. This is not a distance education (online) course. 
 
 ### What do we expect from you?
 
-Before the class in which there's a weekly test, we expect you to prepare for the class. This means:
+Before the class in which there's a test, we expect you to prepare for the class. This means:
 * Read and study the class notes page
 * Read and study the linked documents
 * Make your own notes, including questions that you have
 
 In other words, do not come into the classroom expecting somehow to soak up knowledge like a sponge. You need to prepare before class, so that you understand the topics and their context.
-
-Also, beginning in Week 2 (usually the first class/session of the week), there will be a test sometime during the timeslot. The questions are based on the week's new topics.
 
 In the Lecture class, we expect you to be an engaged and actively-learning participant. This means:
 * Listening effectively
